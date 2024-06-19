@@ -1,5 +1,5 @@
 ---
-title: "Course Title"
+title: "Data Science and Digital Tools for Transport Planning"
 ---
 
-Course info & details here
+Planned course on Data Science and Digital Tools for Transport Planning
