@@ -24,7 +24,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations",
+    "text": "Day 1\n\n09:30-10:00 Introduction\n10:00-11:00 Development environments, system commands, and version control\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n12:30-13:30 Lunch\n13:30-15:00 Data visualisation\n15:00-15:15 Break\n15:15-17:00 Transport Planning Challenge 1\n\n\n\nDay 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nSpatial data operatioins\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n16:30-17:00 Presentations and wrap-up",
     "crumbs": [
       "Schedule"
     ]
