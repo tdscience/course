@@ -2,14 +2,27 @@
 title: "Schedule"
 ---
 
-Example schedule:
+# Day 1
 
-|     |                Morning              |          Afternoon                     |
-|:---:|:-----------------------------------:|:--------------------------------------:|
-|  L  | Intro + Data manipulation           | git / GitHub                           |
-|  M  | Generalised Linear Models           | Data visualisation                     |
-|  X  | Mixed models / GAM / Bayes          | Functional programming + Students work |
-|  J  | Multivariate analyses               | Reproducible workflows                 |
-|  V  | Using R as GIS + Students work      | Project presentations                  |
+- 09:30-10:00 Introduction
+- 10:00-11:00 Development environments, system commands, and version control
+- 11:00-11:15 Break
+- 11:15-12:30 Sharing code and data
+- 12:30-13:30 Lunch
+- 13:30-15:00 Data visualisation
+- 15:00-15:15 Break
+- 15:15-17:00 Transport Planning Challenge 1
 
+# Day 2
+
+- 09:00-10:30 Data manipulation
+    - Key verbs: filter, select, mutate, summarise
+    - Spatial data operatioins
+- 10:30-10:45 Break
+- 10:45-12:00 Web application development
+- 12:00-13:00 Lunch
+- 13:00-14:30 Transport Planning Challenge 2
+- 14:30-14:45 Break
+- 14:45-16:30 Transport Planning Challenge 2: continued
+- 16:30-17:00 Presentations and wrap-up
 
