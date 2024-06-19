@@ -17,7 +17,7 @@ title: "Schedule"
 
 - 09:00-10:30 Data manipulation
     - Key verbs: filter, select, mutate, summarise
-    - Spatial data operatioins
+    - Spatial data operations
 - 10:30-10:45 Break
 - 10:45-12:00 Web application development
 - 12:00-13:00 Lunch
