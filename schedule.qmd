@@ -48,17 +48,22 @@ title: "Schedule"
   - Topic selection
   - Individual work on paper drafts
 - 10:30-10:45 Break
-- 10:45-12:00 Interactive content for papers
+- 10:45-12:00 Generating reproducible publication-quality visualisations
+  - An introduction to visualisation and web application development for transport planning
+  - A deep dive into ggplot2
+  - Practical: creating a visualisation for your paper
+  <!-- - Interactive content for papers
   - Static vs dynamic web applications
   - Practical introduction to Shiny for R and Python
-  - (Optional): Front-end development
+  - (Optional): Front-end development -->
 - 12:00-13:00 Lunch
-- 13:00-14:30 Generating reproducible publication-quality visualisations
-  - A deep dive into ggplot2
-  - Practical: applying the principles to your data and paper
+- 13:00-14:30 Editing other people's work
+  - Reviewing and commenting on papers
+  - Making changes and submitting Pull Requests
+  - Controlled chaos: choose a paper and make some changes!
 - 14:30-14:45 Break
 - 14:45-16:00 Working on papers
-  - Practical session bringing together all the elements
+  - Practical session bringing together elements from the course
 - 16:00-17:00 Presentations and wrap-up
 
 
