@@ -4,6 +4,10 @@ title: "Schedule"
 
 # Tools and and Skills for Reproducible Transport Research
 
+<!-- Course team (TBC):
+
+Robin Lovelace, Rosa Felix, TBC -->
+
 ## Learning objectives
 
 - Be able to share reproducible code for more scientific and transparent transport research
