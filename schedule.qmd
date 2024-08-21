@@ -2,9 +2,9 @@
 title: "Schedule"
 ---
 
-# Tools and and Skills for Reproducible Transport Planning
+# Tools and and Skills for Reproducible Transport Research
 
-# Day 1
+## Day 1
 
 - 09:30-10:00 Introduction
   - Welcome and introductions (participatory)
@@ -41,7 +41,7 @@ title: "Schedule"
     - Bibliographies
     - Tables and figures
 
-# Day 2
+## Day 2
 
 - 09:00-10:30 Drafting a reproducible paper
   - Recap of Day 1
@@ -69,7 +69,7 @@ title: "Schedule"
 
 # Data Science and Digital Tools for Transport Planning
 
-# Day 1
+## Day 1
 
 - 09:30-10:00 Introduction
   - Welcome and introductions (participatory)
@@ -106,7 +106,7 @@ title: "Schedule"
    - Deciding on a topic and questions
    - Practical: working on the challenge
 
-# Day 2
+## Day 2
 
 - 09:00-10:30 Data manipulation
     - Key verbs: filter, select, mutate, summarise
