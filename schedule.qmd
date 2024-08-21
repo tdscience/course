@@ -68,16 +68,19 @@ You should bring a laptop with the following software installed and tested to ch
     - Markdown, LaTeX, and file formats
     - Code chunks and settings
     - Publishing your work
+    - Demonstration of reproducible papers
+    - Practical: creating a minimal reproducible paper
 - 15:00-15:15 Break
-- 15:15-17:00 Cross-references and citations with Quarto
+- 15:15-16:30 Cross-references and citations with Quarto
     - Cross-references
     - Citations
     - Bibliographies
     - Tables and figures
+    - Practical: adding citations and references to your paper
 
 ## Day 2
 
-- 09:00-10:30 Drafting a reproducible paper
+- 09:30-10:30 Drafting a reproducible paper
   - Recap of Day 1
   - Topic selection
   - Individual work on paper drafts
@@ -99,7 +102,6 @@ You should bring a laptop with the following software installed and tested to ch
 - 14:45-16:00 Working on papers
   - Practical session bringing together elements from the course
 - 16:00-17:00 Presentations and wrap-up
-
 
 # Data Science and Digital Tools for Transport Planning
 
