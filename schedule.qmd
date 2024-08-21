@@ -122,7 +122,7 @@ You should bring a laptop with the following software installed and tested to ch
 - Getting your work out there
 - Deciding which tools to use -->
 
-# Data Science and Digital Tools for Transport Planning
+<!-- # Data Science and Digital Tools for Transport Planning
 
 Details TBC.
 
@@ -185,5 +185,5 @@ Details TBC.
 - 14:30-14:45 Break
 - 14:45-16:30 Transport Planning Challenge 2: continued
   - Practical: working on the challenge
-- 16:30-17:00 Presentations and wrap-up
+- 16:30-17:00 Presentations and wrap-up -->
 
