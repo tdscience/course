@@ -1,5 +1,5 @@
 ---
-title: "Tools and and Skills for Reproducible Transport Research"
+title: "Tools and Skills for Reproducible Transport Research"
 ---
 
 <!-- Course team (TBC):
