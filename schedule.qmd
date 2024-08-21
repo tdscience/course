@@ -1,8 +1,6 @@
 ---
-title: "Schedule"
+title: "Tools and and Skills for Reproducible Transport Research"
 ---
-
-# Tools and and Skills for Reproducible Transport Research
 
 <!-- Course team (TBC):
 
