@@ -4,6 +4,40 @@ title: "Schedule"
 
 # Tools and and Skills for Reproducible Transport Research
 
+## Prerequisites
+
+This course assumes working knowledge with R or Python for research.
+We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code.
+You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.
+
+Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.
+
+## Software prerequisites
+
+You should bring a laptop with the following software installed and tested to check it works:
+
+- Quarto (minimum version: 1.5.45)
+- R or Python or both
+- RStudio (recommended for most people) or VS Code
+  - If you will use VS Code for the course, you need the following extensions:
+    - The R extension `reditorsupport.r` if using R
+    - The Python extension `ms-python.python` if using Python
+    - The quarto extention `quarto.quarto`
+- Git, installed with one of the following packages:
+  - GitHub Desktop (see [desktop.github.com](https://desktop.github.com/))
+  - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+- The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
+
+## Learning objectives
+
+- Be able to share reproducible code for more scientific and transparent transport research
+- To be confident reproducing your own work and that of others
+- To become skilled at using Git and GitHub to manage versions of your code and collaborate with others
+- To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing
+- To understand how Quarto extensions can be used as a basis for creating publication-ready papers
+- To be aware of 'continuous integration' and 'GitHub workflows' and how they can be used to ensure reproducibility, share your work, and save time
+- Understanding of best practices around code sharing and collaboration for reproducible research in transport planning
+
 ## Day 1
 
 - 09:30-10:00 Introduction
@@ -11,7 +45,7 @@ title: "Schedule"
   - Definitions and motivations
   - Course structure and objectives 
 - 10:00-11:00 Development environments, system commands, and version control
-  - Introduction to VS Code, RStudio, and Jupyter
+  - Introduction to RStudio and VS Code
   - Key features and extensions of VS Code
   - The system shell and basic commands
   - Introduction to Git and GitHub
