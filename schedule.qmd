@@ -4,6 +4,16 @@ title: "Schedule"
 
 # Tools and and Skills for Reproducible Transport Research
 
+## Learning objectives
+
+- Be able to share reproducible code for more scientific and transparent transport research
+- To be confident reproducing your own work and that of others
+- To become skilled at using Git and GitHub to manage versions of your code and collaborate with others
+- To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing
+- To understand how Quarto extensions can be used as a basis for creating publication-ready papers
+- To be aware of 'continuous integration' and 'GitHub Actions' and how they can be used to ensure reproducibility, share your work, and save time
+- Understanding of best practices around code sharing and collaboration for reproducible research in transport planning
+
 ## Prerequisites
 
 This course assumes working knowledge with R or Python for research.
@@ -28,16 +38,6 @@ You should bring a laptop with the following software installed and tested to ch
   - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
 
-## Learning objectives
-
-- Be able to share reproducible code for more scientific and transparent transport research
-- To be confident reproducing your own work and that of others
-- To become skilled at using Git and GitHub to manage versions of your code and collaborate with others
-- To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing
-- To understand how Quarto extensions can be used as a basis for creating publication-ready papers
-- To be aware of 'continuous integration' and 'GitHub workflows' and how they can be used to ensure reproducibility, share your work, and save time
-- Understanding of best practices around code sharing and collaboration for reproducible research in transport planning
-
 ## Day 1
 
 - 09:30-10:00 Introduction
@@ -50,6 +50,12 @@ You should bring a laptop with the following software installed and tested to ch
   - The system shell and basic commands
   - Introduction to Git and GitHub
   - The `gh` command-line tool
+  - Practical: setting up your development environment and using the `gh` command-line tool
+    - Worked example starting with:
+      - `gh repo clone tdscience/course`
+      - `cd course`
+      - `gh issue list`
+      - `gh issue create` 
 - 11:00-11:15 Break
 - 11:15-12:30 Sharing code and data
   - Navigating GitHub
@@ -62,6 +68,9 @@ You should bring a laptop with the following software installed and tested to ch
     - Branches and pull requests
     - Merging changes
     - Resolving conflicts
+  - Automated workflows with GitHub Actions
+  - Best practices for collaboration, sharing code and data
+  - Practical: creating a repository and making changes
 - 12:30-13:30 Lunch
 - 13:30-15:00 Reproducible papers and documentation with Quarto
     - Introduction to Quarto
@@ -103,7 +112,15 @@ You should bring a laptop with the following software installed and tested to ch
   - Practical session bringing together elements from the course
 - 16:00-17:00 Presentations and wrap-up
 
+<!-- Ideas:
+- Web app development
+- Visualisation
+- Getting your work out there
+- Deciding which tools to use -->
+
 # Data Science and Digital Tools for Transport Planning
+
+Details TBC.
 
 ## Day 1
 
