@@ -1,10 +1,6 @@
 ---
-title: "Tools and Skills for Reproducible Transport Research"
+title: "Data Science and Digital Tools for Transport Planning"
 ---
-
-<!-- Course team (TBC):
-
-Robin Lovelace, Rosa Felix, TBC -->
 
 ## Learning objectives
 
@@ -40,6 +36,13 @@ You should bring a laptop with the following software installed and tested to ch
   - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
 
+Ideas:
+- Web app development
+- Visualisation
+- Getting your work out there
+- Deciding which tools to use
+
+
 ## Day 1
 
 - 09:30-10:00 Introduction
@@ -47,17 +50,11 @@ You should bring a laptop with the following software installed and tested to ch
   - Definitions and motivations
   - Course structure and objectives 
 - 10:00-11:00 Development environments, system commands, and version control
-  - Introduction to RStudio and VS Code
+  - Introduction to VS Code, RStudio, and Jupyter
   - Key features and extensions of VS Code
   - The system shell and basic commands
   - Introduction to Git and GitHub
   - The `gh` command-line tool
-  - Practical: setting up your development environment and using the `gh` command-line tool
-    - Worked example starting with:
-      - `gh repo clone tdscience/course`
-      - `cd course`
-      - `gh issue list`
-      - `gh issue create` 
 - 11:00-11:15 Break
 - 11:15-12:30 Sharing code and data
   - Navigating GitHub
@@ -70,52 +67,39 @@ You should bring a laptop with the following software installed and tested to ch
     - Branches and pull requests
     - Merging changes
     - Resolving conflicts
-  - Automated workflows with GitHub Actions
-  - Best practices for collaboration, sharing code and data
-  - Practical: creating a repository and making changes
 - 12:30-13:30 Lunch
-- 13:30-15:00 Reproducible papers and documentation with Quarto
-    - Introduction to Quarto
-    - Markdown, LaTeX, and file formats
-    - Code chunks and settings
-    - Publishing your work
-    - Demonstration of reproducible papers
-    - Practical: creating a minimal reproducible paper
+- 13:30-15:00 Data visualisation
+  - Univariate plots
+  - Bivariate plots
+  - Multivariate plots and facets
+  - Interactive visualisations
+  - Interactive maps
 - 15:00-15:15 Break
-- 15:15-16:30 Cross-references and citations with Quarto
-    - Cross-references
-    - Citations
-    - Bibliographies
-    - Tables and figures
-    - Practical: adding citations and references to your paper
+- 15:15-17:00 Transport Planning Challenge 1
+   - Introduction to challenge datasets
+   - Deciding on a topic and questions
+   - Practical: working on the challenge
 
 ## Day 2
 
-- 09:30-10:30 Drafting a reproducible paper
-  - Recap of Day 1
-  - Topic selection
-  - Individual work on paper drafts
+- 09:00-10:30 Data manipulation
+    - Key verbs: filter, select, mutate, summarise
+    - Joins: inner, left, right, full
+    - Spatial data operations
+      - Spatial subsetting
+      - Spatial joins
+      - Spatial aggregation
 - 10:30-10:45 Break
-- 10:45-12:00 Generating reproducible publication-quality visualisations
-  - An introduction to visualisation and web application development for transport planning
-  - A deep dive into ggplot2
-  - Practical: creating a visualisation for your paper
-  <!-- - Interactive content for papers
+- 10:45-12:00 Web application development
   - Static vs dynamic web applications
   - Practical introduction to Shiny for R and Python
-  - (Optional): Front-end development -->
+  - (Optional): Front-end development
 - 12:00-13:00 Lunch
-- 13:00-14:30 Editing other people's work
-  - Reviewing and commenting on papers
-  - Making changes and submitting Pull Requests
-  - Controlled chaos: choose a paper and make some changes!
+- 13:00-14:30 Transport Planning Challenge 2
+  - Discussion of datasets from Challenge 1
+  - Deciding on a topic and questions
+  - Practical: working on the challenge
 - 14:30-14:45 Break
-- 14:45-16:00 Working on papers
-  - Practical session bringing together elements from the course
-- 16:00-17:00 Presentations and wrap-up
-
-<!-- Ideas:
-- Web app development
-- Visualisation
-- Getting your work out there
-- Deciding which tools to use -->
+- 14:45-16:30 Transport Planning Challenge 2: continued
+  - Practical: working on the challenge
+- 16:30-17:00 Presentations and wrap-up 
