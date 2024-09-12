@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tools and Skills for Reproducible Transport Research – Data Science and Digital Tools for Transport Planning</title>
+<title>Data Science and Digital Tools for Transport Planning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./schedule.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tp_schedule.html">Data Science and Digital Tools for Transport Planning</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./schedule.html" class="sidebar-item-text sidebar-link active">
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tp_schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="./tp_schedule.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Science and Digital Tools for Transport Planning</span></a>
   </div>
 </li>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tools and Skills for Reproducible Transport Research</h1>
+<h1 class="title">Data Science and Digital Tools for Transport Planning</h1>
 </div>
 
 
@@ -176,9 +176,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- Course team (TBC):
-
-Robin Lovelace, Rosa Felix, TBC -->
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
@@ -218,6 +215,7 @@ Robin Lovelace, Rosa Felix, TBC -->
 </ul></li>
 <li>The <code>gh</code> command-line tool (see <a href="https://cli.github.com/">cli.github.com</a> for installation and set-up instructions)</li>
 </ul>
+<p>Ideas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use</p>
 </section>
 <section id="day-1" class="level2">
 <h2 class="anchored" data-anchor-id="day-1">Day 1</h2>
@@ -230,21 +228,11 @@ Robin Lovelace, Rosa Felix, TBC -->
 </ul></li>
 <li>10:00-11:00 Development environments, system commands, and version control
 <ul>
-<li>Introduction to RStudio and VS Code</li>
+<li>Introduction to VS Code, RStudio, and Jupyter</li>
 <li>Key features and extensions of VS Code</li>
 <li>The system shell and basic commands</li>
 <li>Introduction to Git and GitHub</li>
 <li>The <code>gh</code> command-line tool</li>
-<li>Practical: setting up your development environment and using the <code>gh</code> command-line tool
-<ul>
-<li>Worked example starting with:
-<ul>
-<li><code>gh repo clone tdscience/course</code></li>
-<li><code>cd course</code></li>
-<li><code>gh issue list</code></li>
-<li><code>gh issue create</code></li>
-</ul></li>
-</ul></li>
 </ul></li>
 <li>11:00-11:15 Break</li>
 <li>11:15-12:30 Sharing code and data
@@ -263,69 +251,60 @@ Robin Lovelace, Rosa Felix, TBC -->
 <li>Merging changes</li>
 <li>Resolving conflicts</li>
 </ul></li>
-<li>Automated workflows with GitHub Actions</li>
-<li>Best practices for collaboration, sharing code and data</li>
-<li>Practical: creating a repository and making changes</li>
 </ul></li>
 <li>12:30-13:30 Lunch</li>
-<li>13:30-15:00 Reproducible papers and documentation with Quarto
+<li>13:30-15:00 Data visualisation
 <ul>
-<li>Introduction to Quarto</li>
-<li>Markdown, LaTeX, and file formats</li>
-<li>Code chunks and settings</li>
-<li>Publishing your work</li>
-<li>Demonstration of reproducible papers</li>
-<li>Practical: creating a minimal reproducible paper</li>
+<li>Univariate plots</li>
+<li>Bivariate plots</li>
+<li>Multivariate plots and facets</li>
+<li>Interactive visualisations</li>
+<li>Interactive maps</li>
 </ul></li>
 <li>15:00-15:15 Break</li>
-<li>15:15-16:30 Cross-references and citations with Quarto
+<li>15:15-17:00 Transport Planning Challenge 1
 <ul>
-<li>Cross-references</li>
-<li>Citations</li>
-<li>Bibliographies</li>
-<li>Tables and figures</li>
-<li>Practical: adding citations and references to your paper</li>
+<li>Introduction to challenge datasets</li>
+<li>Deciding on a topic and questions</li>
+<li>Practical: working on the challenge</li>
 </ul></li>
 </ul>
 </section>
 <section id="day-2" class="level2">
 <h2 class="anchored" data-anchor-id="day-2">Day 2</h2>
 <ul>
-<li>09:30-10:30 Drafting a reproducible paper
+<li>09:00-10:30 Data manipulation
 <ul>
-<li>Recap of Day 1</li>
-<li>Topic selection</li>
-<li>Individual work on paper drafts</li>
+<li>Key verbs: filter, select, mutate, summarise</li>
+<li>Joins: inner, left, right, full</li>
+<li>Spatial data operations
+<ul>
+<li>Spatial subsetting</li>
+<li>Spatial joins</li>
+<li>Spatial aggregation</li>
+</ul></li>
 </ul></li>
 <li>10:30-10:45 Break</li>
-<li>10:45-12:00 Generating reproducible publication-quality visualisations
+<li>10:45-12:00 Web application development
 <ul>
-<li>An introduction to visualisation and web application development for transport planning</li>
-<li>A deep dive into ggplot2</li>
-<li>Practical: creating a visualisation for your paper <!-- - Interactive content for papers
-- Static vs dynamic web applications
-- Practical introduction to Shiny for R and Python
-- (Optional): Front-end development --></li>
+<li>Static vs dynamic web applications</li>
+<li>Practical introduction to Shiny for R and Python</li>
+<li>(Optional): Front-end development</li>
 </ul></li>
 <li>12:00-13:00 Lunch</li>
-<li>13:00-14:30 Editing other people’s work
+<li>13:00-14:30 Transport Planning Challenge 2
 <ul>
-<li>Reviewing and commenting on papers</li>
-<li>Making changes and submitting Pull Requests</li>
-<li>Controlled chaos: choose a paper and make some changes!</li>
+<li>Discussion of datasets from Challenge 1</li>
+<li>Deciding on a topic and questions</li>
+<li>Practical: working on the challenge</li>
 </ul></li>
 <li>14:30-14:45 Break</li>
-<li>14:45-16:00 Working on papers
+<li>14:45-16:30 Transport Planning Challenge 2: continued
 <ul>
-<li>Practical session bringing together elements from the course</li>
+<li>Practical: working on the challenge</li>
 </ul></li>
-<li>16:00-17:00 Presentations and wrap-up</li>
+<li>16:30-17:00 Presentations and wrap-up</li>
 </ul>
-<!-- Ideas:
-- Web app development
-- Visualisation
-- Getting your work out there
-- Deciding which tools to use -->
 
 
 </section>
