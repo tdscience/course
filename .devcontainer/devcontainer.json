@@ -1,0 +1,15 @@
+{
+	"name": "rocker-rpy",
+	"image": "ghcr.io/geocompx/docker:rocker-rpy",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"reditorsupport.r",
+				"GitHub.copilot-chat",
+				"quarto.quarto",
+				"ms-python.python",
+				"ms-toolsai.jupyter"
+			]
+		}
+	}
+}
