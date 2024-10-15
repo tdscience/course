@@ -16,11 +16,6 @@ author:
 date: 2024-10-15
 ---
 
-```{r}
-#| include: false
-library(tibble)
-```
-
 # Introduction {background-color="#40666e"}
 
 ## About me and my work
