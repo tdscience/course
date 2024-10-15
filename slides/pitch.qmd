@@ -1,0 +1,142 @@
+---
+title: Tools and Skills for Reproducible Transport Research
+subtitle: EIT course proposal
+format: 
+  # Install plugin with quarto install extension grantmcdermott/quarto-revealjs-clean
+  clean-revealjs:
+    self-contained: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: DTN Call<br>Robin Lovelace
+    orcid: 0000-0001-5679-6536
+    email: r.lovelace@leeds.ac.uk
+    affiliations: University of Leeds, Active Travel England
+date: 2024-10-15
+---
+
+```{r}
+#| include: false
+library(tibble)
+```
+
+# Introduction {background-color="#40666e"}
+
+## About me and my work
+
+::::::: columns
+:::: {.column width="40%"}
+::: incremental
+-   Professor of Transport Data Science
+-   Work with government
+-   Focus on impact
+-   R package developer and data scientist
+-   New methods for more reproducible, data-driven and participatory transport planning
+:::
+::::
+
+:::: {.column width="60%"}
+::: {layout="[[1,2], [1]]"}
+![](https://r.geocompx.org/images/cover.png)
+
+![](https://github.com/npct/pct-team/blob/master/figures/front-page-leeds-pct-demo.png?raw=true)
+
+![](images/paste-17.png)
+:::
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Learning objectives
+
+- Be able to share reproducible code for more scientific and transparent transport research
+- To be confident reproducing your own work and that of others
+- To become skilled at using Git and GitHub to manage versions of your code and collaborate with others
+- To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing
+- To understand how Quarto extensions can be used as a basis for creating publication-ready papers
+- To be aware of 'continuous integration' and 'GitHub Actions' and how they can be used to ensure reproducibility, share your work, and save time
+- Understanding of best practices around code sharing and collaboration for reproducible research in transport planning
+
+## Prerequisites
+
+This course assumes working knowledge with R or Python for research.
+We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code.
+You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.
+
+Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.
+
+## Questions for students (pre-course)
+
+- What language would you prefer a course on reproducible research to be taught in?
+  - R
+  - Python
+  - Both
+- Which interactive development environment would you prefer to be used as the main editor used and taught during the course?
+  - RStudio
+  - VSCode
+  - Positron (new data science-focussed IDE by Posit)
+
+# Draft agenda and contents
+
+## Day 1 (morning)
+
+- 09:30-10:00 Introduction
+  - Welcome and introductions (participatory)
+  - Definitions and motivations
+  - Course structure and objectives 
+- 10:00-11:00 Development environments, system commands, and version control
+- 11:00-11:15 Break
+- 11:15-12:30 Sharing code and data
+- 12:30-13:30 Lunch
+
+## Day 1 (afternoon)
+
+- 13:30-15:00 Reproducible papers and documentation with Quarto
+    - Introduction to Quarto ...
+    - Practical: creating a minimal reproducible paper
+- 15:00-15:15 Break
+- 15:15-16:30 Cross-references and citations with Quarto
+    - Cross-references
+    - Citations
+    - Bibliographies
+    - Tables and figures
+    - Practical: adding citations and references to your paper
+
+## Day 2 (morning)
+
+- 09:30-10:30 Drafting a reproducible paper
+  - Recap of Day 1
+  - Topic selection
+  - Individual work on paper drafts
+- 10:30-10:45 Break
+- 10:45-12:00 Generating reproducible publication-quality visualisations
+  - An introduction to visualisation and web application development for transport planning
+  - A deep dive into ggplot2
+  - Practical: creating a visualisation for your paper
+  <!-- - Interactive content for papers
+  - Static vs dynamic web applications
+  - Practical introduction to Shiny for R and Python
+  - (Optional): Front-end development -->
+- 12:00-13:00 Lunch
+
+## Day 2 (afternoon)
+
+- 13:00-14:30 Editing other people's work
+  - Reviewing and commenting on papers
+  - Making changes and submitting Pull Requests
+  - Controlled chaos: choose a paper and make some changes!
+- 14:30-14:45 Break
+- 14:45-16:00 Working on papers
+  - Practical session bringing together elements from the course
+- 16:00-17:00 Presentations and wrap-up
+
+## Practicalities
+
+- Course website and open, reproducible code: [tdscience.github.io/course/](https://tdscience.github.io/course/)
+- In person or online?
+- Teaching assistants
+- Number of participants
+- Incorportating feedback
+- Costs
