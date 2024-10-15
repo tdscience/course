@@ -1,5 +1,138 @@
 [
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#learning-objectives",
+    "href": "schedule.html#learning-objectives",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#prerequisites",
+    "href": "schedule.html#prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#software-prerequisites",
+    "href": "schedule.html#software-prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Software prerequisites",
+    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-1",
+    "href": "schedule.html#day-1",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 1",
+    "text": "Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to RStudio and VS Code\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\nPractical: setting up your development environment and using the gh command-line tool\n\nWorked example starting with:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create\n\n\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\nAutomated workflows with GitHub Actions\nBest practices for collaboration, sharing code and data\nPractical: creating a repository and making changes\n\n12:30-13:30 Lunch\n13:30-15:00 Reproducible papers and documentation with Quarto\n\nIntroduction to Quarto\nMarkdown, LaTeX, and file formats\nCode chunks and settings\nPublishing your work\nDemonstration of reproducible papers\nPractical: creating a minimal reproducible paper\n\n15:00-15:15 Break\n15:15-16:30 Cross-references and citations with Quarto\n\nCross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-2",
+    "href": "schedule.html#day-2",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 2",
+    "text": "Day 2\n\n09:30-10:30 Drafting a reproducible paper\n\nRecap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n10:30-10:45 Break\n10:45-12:00 Generating reproducible publication-quality visualisations\n\nAn introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper \n\n12:00-13:00 Lunch\n13:00-14:30 Editing other people’s work\n\nReviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n14:30-14:45 Break\n14:45-16:00 Working on papers\n\nPractical session bringing together elements from the course\n\n16:00-17:00 Presentations and wrap-up",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "slides/pitch.html#about-me-and-my-work",
+    "href": "slides/pitch.html#about-me-and-my-work",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "About me and my work",
+    "text": "About me and my work\n\n\n\n\nProfessor of Transport Data Science\nWork with government\nFocus on impact\nR package developer and data scientist\nNew methods for more reproducible, data-driven and participatory transport planning"
+  },
+  {
+    "objectID": "slides/pitch.html#learning-objectives",
+    "href": "slides/pitch.html#learning-objectives",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nBe able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "slides/pitch.html#prerequisites",
+    "href": "slides/pitch.html#prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
+  },
+  {
+    "objectID": "slides/pitch.html#questions-for-students-pre-course",
+    "href": "slides/pitch.html#questions-for-students-pre-course",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Questions for students (pre-course)",
+    "text": "Questions for students (pre-course)\n\nWhat language would you prefer a course on reproducible research to be taught in?\n\nR\nPython\nBoth\n\nWhich interactive development environment would you prefer to be used as the main editor used and taught during the course?\n\nRStudio\nVSCode\nPositron (new data science-focussed IDE by Posit)"
+  },
+  {
+    "objectID": "slides/pitch.html#day-1-morning",
+    "href": "slides/pitch.html#day-1-morning",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 1 (morning)",
+    "text": "Day 1 (morning)\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n12:30-13:30 Lunch"
+  },
+  {
+    "objectID": "slides/pitch.html#day-1-afternoon",
+    "href": "slides/pitch.html#day-1-afternoon",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 1 (afternoon)",
+    "text": "Day 1 (afternoon)\n\n13:30-15:00 Reproducible papers and documentation with Quarto\n\nIntroduction to Quarto …\nPractical: creating a minimal reproducible paper\n\n15:00-15:15 Break\n15:15-16:30 Cross-references and citations with Quarto\n\nCross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper"
+  },
+  {
+    "objectID": "slides/pitch.html#day-2-morning",
+    "href": "slides/pitch.html#day-2-morning",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 2 (morning)",
+    "text": "Day 2 (morning)\n\n09:30-10:30 Drafting a reproducible paper\n\nRecap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n10:30-10:45 Break\n10:45-12:00 Generating reproducible publication-quality visualisations\n\nAn introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper \n\n12:00-13:00 Lunch"
+  },
+  {
+    "objectID": "slides/pitch.html#day-2-afternoon",
+    "href": "slides/pitch.html#day-2-afternoon",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Day 2 (afternoon)",
+    "text": "Day 2 (afternoon)\n\n13:00-14:30 Editing other people’s work\n\nReviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n14:30-14:45 Break\n14:45-16:00 Working on papers\n\nPractical session bringing together elements from the course\n\n16:00-17:00 Presentations and wrap-up"
+  },
+  {
+    "objectID": "slides/pitch.html#practicalities",
+    "href": "slides/pitch.html#practicalities",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Practicalities",
+    "text": "Practicalities\n\nCourse website and open, reproducible code: tdscience.github.io/course/\nIn person or online?\nTeaching assistants\nNumber of participants\nIncorportating feedback\nCosts"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Planned course on Data Science and Digital Tools for Transport Planning",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "tp_schedule.html",
     "href": "tp_schedule.html",
     "title": "Data Science and Digital Tools for Transport Planning",
@@ -60,6 +193,13 @@
     ]
   },
   {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Pitch slides"
+  },
+  {
     "objectID": "materials.html",
     "href": "materials.html",
     "title": "Course Materials",
@@ -67,76 +207,6 @@
     "text": "Datasets\nSlides",
     "crumbs": [
       "Materials"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Planned course on Data Science and Digital Tools for Transport Planning",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#learning-objectives",
-    "href": "schedule.html#learning-objectives",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#prerequisites",
-    "href": "schedule.html#prerequisites",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#software-prerequisites",
-    "href": "schedule.html#software-prerequisites",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Software prerequisites",
-    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#day-1",
-    "href": "schedule.html#day-1",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 1",
-    "text": "Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to RStudio and VS Code\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\nPractical: setting up your development environment and using the gh command-line tool\n\nWorked example starting with:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create\n\n\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\nAutomated workflows with GitHub Actions\nBest practices for collaboration, sharing code and data\nPractical: creating a repository and making changes\n\n12:30-13:30 Lunch\n13:30-15:00 Reproducible papers and documentation with Quarto\n\nIntroduction to Quarto\nMarkdown, LaTeX, and file formats\nCode chunks and settings\nPublishing your work\nDemonstration of reproducible papers\nPractical: creating a minimal reproducible paper\n\n15:00-15:15 Break\n15:15-16:30 Cross-references and citations with Quarto\n\nCross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#day-2",
-    "href": "schedule.html#day-2",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 2",
-    "text": "Day 2\n\n09:30-10:30 Drafting a reproducible paper\n\nRecap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n10:30-10:45 Break\n10:45-12:00 Generating reproducible publication-quality visualisations\n\nAn introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper \n\n12:00-13:00 Lunch\n13:00-14:30 Editing other people’s work\n\nReviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n14:30-14:45 Break\n14:45-16:00 Working on papers\n\nPractical session bringing together elements from the course\n\n16:00-17:00 Presentations and wrap-up",
-    "crumbs": [
-      "Schedule"
     ]
   }
 ]
