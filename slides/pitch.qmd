@@ -13,6 +13,11 @@ author:
     orcid: 0000-0001-5679-6536
     email: r.lovelace@leeds.ac.uk
     affiliations: University of Leeds, Active Travel England
+    role: Course leader
+  - name: Rosa Félix
+    orcid: 0000-0002-5642-6006
+    affiliations: University of Lisbon
+    role: Course co-leader
 date: 2024-10-15
 ---
 
