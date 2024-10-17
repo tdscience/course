@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tdscience.github.io/course/schedule.html</loc>
-    <lastmod>2024-10-15T09:03:19.322Z</lastmod>
+    <loc>https://tdscience.github.io/course/materials.html</loc>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
   </url>
   <url>
     <loc>https://tdscience.github.io/course/slides/pitch.html</loc>
-    <lastmod>2024-10-15T09:03:19.323Z</lastmod>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
   </url>
   <url>
     <loc>https://tdscience.github.io/course/index.html</loc>
-    <lastmod>2024-10-15T09:03:19.321Z</lastmod>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tdscience.github.io/course/schedule.html</loc>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
   </url>
   <url>
     <loc>https://tdscience.github.io/course/tp_schedule.html</loc>
-    <lastmod>2024-10-15T09:03:19.323Z</lastmod>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
   </url>
   <url>
     <loc>https://tdscience.github.io/course/slides/index.html</loc>
-    <lastmod>2024-10-15T09:03:19.323Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tdscience.github.io/course/materials.html</loc>
-    <lastmod>2024-10-15T09:03:19.322Z</lastmod>
+    <lastmod>2024-10-17T09:25:06.856Z</lastmod>
   </url>
 </urlset>
