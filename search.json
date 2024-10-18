@@ -143,6 +143,16 @@
     ]
   },
   {
+    "objectID": "schedule.html#alignment-with-overarching-learning-outcomes",
+    "href": "schedule.html#alignment-with-overarching-learning-outcomes",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Alignment with Overarching Learning Outcomes",
+    "text": "Alignment with Overarching Learning Outcomes\n\nThe course will contribute to the development of the following skills and competencies:\n\nEntrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.\nInnovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.\nCreativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.\nLeadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
     "objectID": "tp_schedule.html",
     "href": "tp_schedule.html",
     "title": "Data Science and Digital Tools for Transport Planning",
