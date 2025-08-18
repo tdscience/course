@@ -1,0 +1,152 @@
+---
+title: "STATS19"
+---
+
+```{r}
+#| label: packages
+#| message: false
+
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+if (!require("remotes")) install.packages("remotes")
+pkgs = c(
+    "sf",
+    "tidyverse",
+    "tmap",
+    "data.table",
+    "stats19"
+)
+
+remotes::install_cran(pkgs)
+sapply(pkgs, require, character.only = TRUE)
+```
+
+Defining study area
+
+```{r}
+# Long - Lat
+my_coords <- c(-1.5241472919091428,53.81103164185766)
+```
+
+Converting the coordinates to a spatial object (a Point)
+
+```{r}
+my_study_point <- st_point(my_coords)
+my_study_point
+```
+
+Now let's transform the point into something meaningful with a defined CRS
+
+```{r}
+sfc_point <- my_study_point |> st_sfc(crs = 4326)
+```
+
+Let's visualise the location of the point
+
+```{r}
+tmap_mode("view") # for interactive visualisation
+
+tm_shape(sfc_point)+
+  tm_dots()
+
+```
+
+Let's define a buffer around our point
+
+```{r}
+study_buffer <- sfc_point |>
+  st_buffer(dist = 200)
+
+tm_shape(study_buffer)+
+  tm_fill("gray80",fill_alpha = 0.8)+
+  tm_shape(sfc_point)+
+  tm_dots()
+```
+
+```{r}
+collision_data <- lapply(2019:2024,
+                         get_stats19,
+                         type = "collision",
+                         silent = TRUE,
+                         output_format = "sf") |> 
+  bind_rows()
+```
+
+An inspection of the data
+
+```{r}
+names(collision_data)
+```
+
+Let's reconcile some data to match the appropriate convention
+
+```{r}
+collision_data <- collision_data |> 
+  mutate(collision_year = coalesce(collision_year,accident_year),
+         legacy_collision_severity = coalesce(legacy_collision_severity,accident_severity))
+```
+
+Let's visualise all the data we extracted
+
+```{r}
+collision_data |>
+  slice_sample(n = 5000) |>
+  st_geometry() |> 
+  tm_shape()+
+  tm_dots()
+```
+
+Creating a subset of the collisions within our study area
+
+```{r}
+st_crs(collision_data,)
+st_crs(study_buffer)
+```
+
+Let's transform the buffer to match the British Grid
+
+```{r}
+study_buffer_BNG <- study_buffer |> st_transform(st_crs(collision_data))
+```
+
+```{r}
+study_collisions <- collision_data[study_buffer_BNG,]
+```
+
+A quick exploration of the amount
+
+```{r}
+study_collisions |>
+  count(legacy_collision_severity)
+```
+
+A quick visualisation
+
+```{r}
+study_collisions |>
+tm_shape()+
+  tm_dots(fill = "legacy_collision_severity",
+          size = 1,
+          fill_alpha = 0.7,
+          fill.scale = tm_scale_categorical(
+            labels = c("Slight","Serious"),
+            values = c("orange","dodgerblue")))
+```
+
+A better version
+
+```{r}
+study_collisions |>
+  mutate(legacy_collision_severity = factor(legacy_collision_severity,
+                                            c("Slight","Serious","Fatal"),
+                                            ordered = T)) |>
+  arrange(legacy_collision_severity) |> 
+  mutate(X = st_coordinates(geometry)[,1],
+         Y = st_coordinates(geometry)[,2]) |> 
+  ggplot(aes(x = X,y = Y,col = legacy_collision_severity))+
+  geom_jitter(alpha = 0.8,
+              size = 2,
+              position = position_jitter(width = 5, height = 5))+
+  theme_void()+
+  scale_color_manual(values = c("dodgerblue","orange","red"))+
+  theme(plot.background = element_rect(fill = "gray20"))
+```
