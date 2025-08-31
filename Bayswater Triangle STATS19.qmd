@@ -4,11 +4,18 @@ title: "STATS19"
 
 <!-- https://a58improvements.commonplace.is/ -->
 
+# Introduction
+
 This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds.
 Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city.
 The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the [consultation "Have Your Say Today - A58 Improvements - Commonplace"](https://a58improvements.commonplace.is/) and [illustrated](https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step1) in @fig-overview.
 
 ![Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.](images/paste-1.png){#fig-overview}
+
+# Setup and prerequisites
+
+We will use packages listed in the following code chunk to reproduce the analysis.
+Run the code chunk below to install and load the required packages.
 
 ```{r}
 #| label: packages
@@ -28,17 +35,42 @@ remotes::install_cran(pkgs)
 sapply(pkgs, require, character.only = TRUE)
 ```
 
-Defining study area
+# Results presented in the consultation
+
+[Step 4 of the consultation](https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step4) contains the map presented in @fig-collisions-consultation.
+
+![Map of collisions in the study area. Credit: Leeds City Council](images/paste-2.png){#fig-collisions-consultation}
+
+Let's try to reproduce the map.
+
+# Defining study area
+
+There are different ways to define the study area.
+We could manually look it up but geocoding may be a better approach.
+Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area.
+
 
 ```{r}
-# Long - Lat
-my_coords <- c(-1.5241472919091428,53.81103164185766)
+case_study_coords = stplanr::geo_code("Cross Roseville Road, Leeds")
+```
+
+That gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:
+
+```{r}
+#| eval: false
+#| echo: false
+dput(case_study_coords)
+```
+
+```{r}
+#| eval: false
+case_study_coords = c(-1.5243862, 53.8109931)
 ```
 
 Converting the coordinates to a spatial object (a Point)
 
 ```{r}
-my_study_point <- st_point(my_coords)
+my_study_point <- st_point(case_study_coords)
 my_study_point
 ```
 
