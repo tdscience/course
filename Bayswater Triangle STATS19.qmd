@@ -47,11 +47,13 @@ Let's try to reproduce the map.
 
 There are different ways to define the study area.
 We could manually look it up but geocoding may be a better approach.
-Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area.
+Looking at the area on [Google Maps](https://maps.app.goo.gl/HskRsZN4aTphrfG4A) shows that Cross Roseville Road is roughly in the centre of the study area:
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d588.9481434425684!2d-1.5250005303031762!3d53.8109745901335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795c74dde958e3%3A0xc55eec5350b1f74c!2sCross%20Roseville%20Rd%2C%20Harehills%2C%20Leeds%20LS8%205NA!5e0!3m2!1sen!2suk!4v1756659076613!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
 ```{r}
-case_study_coords = stplanr::geo_code("Cross Roseville Road, Leeds")
+study_coords = stplanr::geo_code("Cross Roseville Road, Leeds")
 ```
 
 That gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:
@@ -59,46 +61,36 @@ That gives us the coordinates we need, which could also be obtained using other 
 ```{r}
 #| eval: false
 #| echo: false
-dput(case_study_coords)
+dput(study_coords)
 ```
 
 ```{r}
 #| eval: false
-case_study_coords = c(-1.5243862, 53.8109931)
+study_coords = c(-1.5243862, 53.8109931)
 ```
 
-Converting the coordinates to a spatial object (a Point)
+Convert the coordinates to an sf object as follows, remembering to add the coordinate reference system (CRS):
 
 ```{r}
-my_study_point <- st_point(case_study_coords)
-my_study_point
+study_point <- study_coords |>
+  st_point() |>
+  sf::st_sfc() |>
+  sf::st_sf(geometry = _, crs = "EPSG:4326") 
+study_point
 ```
 
-Now let's transform the point into something meaningful with a defined CRS
+Note: the `|>` symbol above is R's 'native pipe' which passes the result of the left-hand side expression to the right-hand side expression as the first argument, allowing for more readable and concise code.
+The `_` symbol refers to the current object being processed in the pipeline.
+
+Let's define a buffer around our point. There isn't a scale bar in the original map, so it's hard to know the exact distance to use for the buffer. However, we can start with a 500 meter buffer.
 
 ```{r}
-sfc_point <- my_study_point |> st_sfc(crs = 4326)
-```
-
-Let's visualise the location of the point
-
-```{r}
-tmap_mode("view") # for interactive visualisation
-
-tm_shape(sfc_point)+
-  tm_dots()
-
-```
-
-Let's define a buffer around our point
-
-```{r}
-study_buffer <- sfc_point |>
-  st_buffer(dist = 200)
+study_buffer <- study_point |>
+  st_buffer(dist = 500)
 
 tm_shape(study_buffer)+
   tm_fill("gray80",fill_alpha = 0.8)+
-  tm_shape(sfc_point)+
+  tm_shape(study_point)+
   tm_dots()
 ```
 
