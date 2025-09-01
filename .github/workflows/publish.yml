@@ -19,6 +19,11 @@ jobs:
         with:
           r-version: 'release'
 
+      - name: Install local package
+        run: |
+          Rscript -e "install.packages('remotes')"
+          Rscript -e "remotes::install_local()"
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
