@@ -96,7 +96,7 @@ You should bring a laptop with the following software installed and tested to ch
   - Topic selection
   - Individual work on paper drafts
 - 10:30-10:45 Break
-- 10:45-12:00 Generating reproducible publication-quality visualisations
+- 10:45-12:30 Generating reproducible publication-quality visualisations
   - An introduction to visualisation and web application development for transport planning
   - A deep dive into ggplot2
   - Practical: creating a visualisation for your paper
@@ -104,8 +104,8 @@ You should bring a laptop with the following software installed and tested to ch
   - Static vs dynamic web applications
   - Practical introduction to Shiny for R and Python
   - (Optional): Front-end development -->
-- 12:00-13:00 Lunch
-- 13:00-14:30 Editing other people's work
+- 12:30-13:30 Lunch
+- 13:30-14:30 Editing other people's work
   - Reviewing and commenting on papers
   - Making changes and submitting Pull Requests
   - Controlled chaos: choose a paper and make some changes!
