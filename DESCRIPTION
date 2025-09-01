@@ -17,6 +17,7 @@ Imports:
     tmap,
     data.table,
     stats19,
-    quarto
+    quarto,
+    stplanr
 Suggests:
     remotes
