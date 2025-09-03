@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science and Digital Tools for Transport Planning</title>
+<title>Drafting a reproducible paper – Data Science and Digital Tools for Transport Planning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Drafting a reproducible paper</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -153,24 +153,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#software-prerequisites" id="toc-software-prerequisites" class="nav-link" data-scroll-target="#software-prerequisites">Software prerequisites</a></li>
-  <li><a href="#alignment-with-overarching-learning-outcomes" id="toc-alignment-with-overarching-learning-outcomes" class="nav-link" data-scroll-target="#alignment-with-overarching-learning-outcomes">Alignment with Overarching Learning Outcomes</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Science and Digital Tools for Transport Planning</h1>
+<h1 class="title">Drafting a reproducible paper</h1>
 </div>
 
 
@@ -187,94 +178,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- Course team (TBC):
-
-Robin Lovelace, Rosa Felix, TBC -->
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
-<li>Be able to share reproducible code for more scientific and transparent transport research</li>
-<li>To be confident reproducing your own work and that of others</li>
-<li>To become skilled at using Git and GitHub to manage versions of your code and collaborate with others</li>
-<li>To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing</li>
-<li>To understand how Quarto extensions can be used as a basis for creating publication-ready papers</li>
-<li>To be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time</li>
-<li>Understanding of best practices around code sharing and collaboration for reproducible research in transport planning</li>
-</ul>
-</section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>This course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.</p>
-<p>Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.</p>
-</section>
-<section id="software-prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="software-prerequisites">Software prerequisites</h2>
-<p>You should bring a laptop with the following software installed and tested to check it works:</p>
-<ul>
-<li>Quarto (minimum version: 1.5.45)</li>
-<li>R or Python or both</li>
-<li>RStudio (recommended for most people) or VS Code
-<ul>
-<li>If you will use VS Code for the course, you need the following extensions:
-<ul>
-<li>The R extension <code>reditorsupport.r</code> if using R</li>
-<li>The Python extension <code>ms-python.python</code> if using Python</li>
-<li>The quarto extention <code>quarto.quarto</code></li>
-</ul></li>
-</ul></li>
-<li>Git, installed with one of the following packages:
-<ul>
-<li>GitHub Desktop (see <a href="https://desktop.github.com/">desktop.github.com</a>)</li>
-<li>Git for the command line (see <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git-scm.com</a>)</li>
-</ul></li>
-<li>The <code>gh</code> command-line tool (see <a href="https://cli.github.com/">cli.github.com</a> for installation and set-up instructions)</li>
-</ul>
-</section>
-<section id="alignment-with-overarching-learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="alignment-with-overarching-learning-outcomes">Alignment with Overarching Learning Outcomes</h2>
-<!-- ### OLO 1: Entrepreneurship skills and competencies
-
-> The capacity to identify, synthesize and act upon opportunities and ideas to create social, cultural and financial
-value for others, including translating innovations into feasible business solutions, with sustainability at their
-core, and to lead and support others in this process.
-
-### OLO 2: Innovation skills and competencies
-
-The ability to evaluate the research experiences combined with the knowledge, ideas and technology of
-others to create, test and implement new or significantly improved products, services, processes, policies, new
-business models or jobs, and to mobilize system innovation to contribute to broader societal change, while
-evaluating the unintended consequences of innovation and technology.
-
-### OLO 3: Creativity skills and competencies
-
-The ability to extend boundaries and systematically explore and generate new ideas and to inspire and support others in this process and contribute to the further development of those ideas.
-
-### OLO 4: Intercultural skills and competencies
-
-The ability to engage and act internationally and to function effectively ‐ in research and other activities ‐ 
-across cultures, sectors and/or organizations, to think and act appropriately and to communicate and work
-with people from different cultural and organizational backgrounds.
-
-### OLO 5: Making value judgments and sustainability competencies
-
-The ability to identify short‐ and long‐term future consequences of plans and decisions from an integrated
-scientific, ethical and intergenerational perspective and to merge this into their professional activities, moving
-towards a sustainable and green society.
-
-
-### OLO 6: Leadership skills and competencies
-
-The ability of decision‐making and leadership based on a holistic understanding of the contributions of Higher Education, research and business to value creation. -->
-<p>The course will contribute to the development of the following skills and competencies:</p>
-<ul>
-<li><p>Entrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.</p></li>
-<li><p>Innovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.</p></li>
-<li><p>Creativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.</p></li>
-<li><p>Leadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.</p></li>
+<li>Recap of Day 1</li>
+<li>Topic selection</li>
+<li>Individual work on paper drafts</li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -684,7 +594,7 @@ The ability of decision‐making and leadership based on a holistic understandin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
