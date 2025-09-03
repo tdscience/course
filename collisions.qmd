@@ -4,7 +4,7 @@ title: "STATS19"
 
 <!-- https://a58improvements.commonplace.is/ -->
 
-# Introduction
+## Introduction
 
 This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds.
 Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city.
@@ -12,7 +12,7 @@ The changes focus on the southern part of Roundhay Road around its intersections
 
 ![Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.](images/paste-1.png){#fig-overview}
 
-# Setup and prerequisites
+## Setup and prerequisites
 
 We will use packages listed in the following code chunk to reproduce the analysis.
 Run the code chunk below to install and load the required packages.
@@ -35,7 +35,7 @@ remotes::install_cran(pkgs)
 sapply(pkgs, require, character.only = TRUE)
 ```
 
-# Results presented in the consultation
+## Results presented in the consultation
 
 [Step 4 of the consultation](https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step4) contains the map presented in @fig-collisions-consultation.
 
@@ -43,7 +43,7 @@ sapply(pkgs, require, character.only = TRUE)
 
 Let's try to reproduce the map.
 
-# Defining study area
+## Defining study area
 
 There are different ways to define the study area.
 We could manually look it up but geocoding may be a better approach.

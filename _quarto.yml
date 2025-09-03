@@ -4,9 +4,14 @@ project:
 
 website:
   title: "Data Science and Digital Tools for Transport Planning"
+  repo-url: "https://github.com/tdscience/course"
+  repo-actions: [issue]
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "Materials by [Robin Lovelace](https://www.robinlovelace.net/), 2025."
   sidebar:
     background: primary
-    # logo: "images/logo.png"
+    logo: "images/DSDT4TP.png"
     pinned: true
     align: center
     tools:
@@ -32,7 +37,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: lux
     # css: styles.css
     toc: true
 
