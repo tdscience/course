@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f0e83b7a4700a6dfdfebaa74536b1b7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3f85d3ece1fb055ea7ca4fd7d48dc3e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -128,12 +128,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Science and Digital Tools for Transport Planning</a> 
-        <div class="sidebar-tools-main">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/DSDT4TP.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/tdscience/course" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#results-presented-in-the-consultation" id="toc-results-presented-in-the-consultation" class="nav-link" data-scroll-target="#results-presented-in-the-consultation">Results presented in the consultation</a></li>
   <li><a href="#defining-study-area" id="toc-defining-study-area" class="nav-link" data-scroll-target="#defining-study-area">Defining study area</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -229,8 +229,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <!-- https://a58improvements.commonplace.is/ -->
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds. Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city. The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the <a href="https://a58improvements.commonplace.is/">consultation “Have Your Say Today - A58 Improvements - Commonplace”</a> and <a href="https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step1">illustrated</a> in <a href="#fig-overview" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="fig-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -243,8 +243,8 @@ Figure&nbsp;1: Overview of changes to the southern section of Roundhay road prop
 </figure>
 </div>
 </section>
-<section id="setup-and-prerequisites" class="level1">
-<h1>Setup and prerequisites</h1>
+<section id="setup-and-prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="setup-and-prerequisites">Setup and prerequisites</h2>
 <p>We will use packages listed in the following code chunk to reproduce the analysis. Run the code chunk below to install and load the required packages.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
@@ -265,8 +265,8 @@ Figure&nbsp;1: Overview of changes to the southern section of Roundhay road prop
 </div>
 </div>
 </section>
-<section id="results-presented-in-the-consultation" class="level1">
-<h1>Results presented in the consultation</h1>
+<section id="results-presented-in-the-consultation" class="level2">
+<h2 class="anchored" data-anchor-id="results-presented-in-the-consultation">Results presented in the consultation</h2>
 <p><a href="https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step4">Step 4 of the consultation</a> contains the map presented in <a href="#fig-collisions-consultation" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div id="fig-collisions-consultation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -280,8 +280,8 @@ Figure&nbsp;2: Map of collisions in the study area. Credit: Leeds City Council
 </div>
 <p>Let’s try to reproduce the map.</p>
 </section>
-<section id="defining-study-area" class="level1">
-<h1>Defining study area</h1>
+<section id="defining-study-area" class="level2">
+<h2 class="anchored" data-anchor-id="defining-study-area">Defining study area</h2>
 <p>There are different ways to define the study area. We could manually look it up but geocoding may be a better approach. Looking at the area on <a href="https://maps.app.goo.gl/HskRsZN4aTphrfG4A">Google Maps</a> shows that Cross Roseville Road is roughly in the centre of the study area:</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d588.9481434425684!2d-1.5250005303031762!3d53.8109745901335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795c74dde958e3%3A0xc55eec5350b1f74c!2sCross%20Roseville%20Rd%2C%20Harehills%2C%20Leeds%20LS8%205NA!5e0!3m2!1sen!2suk!4v1756659076613!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
@@ -992,6 +992,19 @@ Projected CRS: OSGB36 / British National Grid
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Materials by <a href="https://www.robinlovelace.net/">Robin Lovelace</a>, 2025.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
