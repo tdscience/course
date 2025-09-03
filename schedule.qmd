@@ -6,117 +6,87 @@ title: "Schedule"
 
 ### 09:30-10:00 Introduction
 
--   Welcome and introductions (participatory)
+<!-- -   Welcome and introductions (participatory)
+
 -   Definitions and motivations
--   Course structure and objectives
+
+-   Course structure and objectives -->
+ 
+-   🎞️ Slides 
 
 ### 10:00-11:00 Session 1
 
-**Development environments, system commands, and version control** 
+#### *Development environments, system commands, and version control*
 
-- Introduction to RStudio and VS Code 
-- Key features and extensions of VS Code 
-- The system shell and basic commands 
-- Introduction to Git and GitHub 
-- The `gh` command-line tool 
-- Practical: setting up your development environment and using the `gh` command-line tool 
-- Worked example starting with: 
-  - `gh repo clone tdscience/course` 
-  - `cd course` 
-  - `gh issue list` 
-  - `gh issue create`
+📖 [Materials](Day1_session1.qmd) 
+🎞️ Slides 
 
 ### 11:00-11:15 Break
 
 ### 11:15-12:30 Session 2
 
-**Sharing code and data**
+#### *Sharing code and data*
 
--   Navigating GitHub
--   Your profile and repositories
--   Creating and managing repositories
--   Cloning repositories
--   Making changes and committing
--   Pushing changes to GitHub
--   Collaboration with GitHub
--   Branches and pull requests
--   Merging changes
--   Resolving conflicts
--   Automated workflows with GitHub Actions
--   Best practices for collaboration, sharing code and data
--   Practical: creating a repository and making changes
+📖 [Materials](Day1_session2.qmd) 
+🎞️ Slides 
 
 ### 12:30-13:30 Lunch
 
 ### 13:30-15:00 Session 3
 
-**Reproducible papers and documentation with Quarto**
+#### *Reproducible papers and documentation with Quarto*
 
--   Introduction to Quarto
--   Markdown, LaTeX, and file formats
--   Code chunks and settings
--   Publishing your work
--   Demonstration of reproducible papers
--   Practical: creating a minimal reproducible paper
+📖 [Materials](Day1_session3.qmd) 
+🎞️ Slides 
 
 ### 15:00-15:15 Break
 
 ### 15:15-16:30 Session 4
 
-**Cross-references and citations with Quarto**
+#### *Cross-references and citations with Quarto*
 
--   Cross-references
--   Citations
--   Bibliographies
--   Tables and figures
--   Practical: adding citations and references to your paper
+📖 [Materials](Day1_session4.qmd) 
+🎞️ Slides 
 
 ## Day 2
 
 ### 09:30-10:30 Session 5
 
-**Drafting a reproducible paper**
+#### *Drafting a reproducible paper*
 
--   Recap of Day 1
--   Topic selection
--   Individual work on paper drafts
+📖 [Materials](Day2_session5.qmd) 
+🎞️ Slides 
 
 ### 10:30-10:45 Break
 
 ### 10:45-12:30 Session 6
 
-**Generating reproducible publication-quality visualisations**
+#### *Generating reproducible publication-quality visualisations*
 
--   An introduction to visualisation and web application development for transport planning
--   A deep dive into ggplot2
--   Practical: creating a visualisation for your paper
-
-```{=html}
-<!-- - Interactive content for papers
-  - Static vs dynamic web applications
-  - Practical introduction to Shiny for R and Python
-  - (Optional): Front-end development -->
-```
+📖 [Materials](Day2_session6.qmd) 
+🎞️ Slides 
 
 ### 12:30-13:30 Lunch
 
 ### 13:30-14:30 Session 7
 
-**Editing other people's work**
+#### *Editing other people's work*
 
--   Reviewing and commenting on papers
--   Making changes and submitting Pull Requests
--   Controlled chaos: choose a paper and make some changes!
+📖 [Materials](Day2_session7.qmd) 
+🎞️ Slides 
 
 ### 14:30-14:45 Break
 
 ### 14:45-16:00 Session 8
 
-**Working on papers**
+#### *Working on papers*
 
--   Practical session bringing together elements from the course
+📖 [Materials](Day2_session8.qmd) 
+🎞️ Slides 
 
 ### 16:00-17:00 Presentations and wrap-up
+
+🎞️ Slides 
 
 ```{=html}
 <!-- Ideas:
