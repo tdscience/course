@@ -1,0 +1,10 @@
+---
+title: "Cross-references and citations with Quarto"
+format: html
+---
+
+-   Cross-references
+-   Citations
+-   Bibliographies
+-   Tables and figures
+-   Practical: adding citations and references to your paper

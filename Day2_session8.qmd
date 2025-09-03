@@ -1,0 +1,6 @@
+---
+title: "Working on papers"
+format: html
+---
+
+-   Practical session bringing together elements from the course

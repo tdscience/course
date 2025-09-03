@@ -1,0 +1,18 @@
+---
+title: "Sharing code and data"
+format: html
+---
+
+-   Navigating GitHub
+-   Your profile and repositories
+-   Creating and managing repositories
+-   Cloning repositories
+-   Making changes and committing
+-   Pushing changes to GitHub
+-   Collaboration with GitHub
+-   Branches and pull requests
+-   Merging changes
+-   Resolving conflicts
+-   Automated workflows with GitHub Actions
+-   Best practices for collaboration, sharing code and data
+-   Practical: creating a repository and making changes

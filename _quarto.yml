@@ -24,8 +24,8 @@ website:
         text: Home
       - href: schedule.qmd
         text: Schedule
-      - href: tp_schedule.qmd
-        text: Data Science and Digital Tools for Transport Planning
+      # - href: tp_schedule.qmd
+      #   text: Data Science and Digital Tools for Transport Planning
       - href: materials.qmd
         text: Materials
       - section: "Examples"
