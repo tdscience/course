@@ -4,11 +4,11 @@ title: "Schedule"
 
 ## Day 1
 
-- 09:30-10:00 Introduction
+### 09:30-10:00 Introduction
   - Welcome and introductions (participatory)
   - Definitions and motivations
   - Course structure and objectives 
-- 10:00-11:00 Development environments, system commands, and version control
+### 10:00-11:00 Development environments, system commands, and version control
   - Introduction to RStudio and VS Code
   - Key features and extensions of VS Code
   - The system shell and basic commands
@@ -20,8 +20,8 @@ title: "Schedule"
       - `cd course`
       - `gh issue list`
       - `gh issue create` 
-- 11:00-11:15 Break
-- 11:15-12:30 Sharing code and data
+### 11:00-11:15 Break
+### 11:15-12:30 Sharing code and data
   - Navigating GitHub
   - Your profile and repositories
   - Creating and managing repositories
@@ -35,16 +35,16 @@ title: "Schedule"
   - Automated workflows with GitHub Actions
   - Best practices for collaboration, sharing code and data
   - Practical: creating a repository and making changes
-- 12:30-13:30 Lunch
-- 13:30-15:00 Reproducible papers and documentation with Quarto
+### 12:30-13:30 Lunch
+### 13:30-15:00 Reproducible papers and documentation with Quarto
     - Introduction to Quarto
     - Markdown, LaTeX, and file formats
     - Code chunks and settings
     - Publishing your work
     - Demonstration of reproducible papers
     - Practical: creating a minimal reproducible paper
-- 15:00-15:15 Break
-- 15:15-16:30 Cross-references and citations with Quarto
+### 15:00-15:15 Break
+### 15:15-16:30 Cross-references and citations with Quarto
     - Cross-references
     - Citations
     - Bibliographies
@@ -53,12 +53,12 @@ title: "Schedule"
 
 ## Day 2
 
-- 09:30-10:30 Drafting a reproducible paper
+### 09:30-10:30 Drafting a reproducible paper
   - Recap of Day 1
   - Topic selection
   - Individual work on paper drafts
-- 10:30-10:45 Break
-- 10:45-12:30 Generating reproducible publication-quality visualisations
+### 10:30-10:45 Break
+### 10:45-12:30 Generating reproducible publication-quality visualisations
   - An introduction to visualisation and web application development for transport planning
   - A deep dive into ggplot2
   - Practical: creating a visualisation for your paper
@@ -66,15 +66,15 @@ title: "Schedule"
   - Static vs dynamic web applications
   - Practical introduction to Shiny for R and Python
   - (Optional): Front-end development -->
-- 12:30-13:30 Lunch
-- 13:30-14:30 Editing other people's work
+### 12:30-13:30 Lunch
+### 13:30-14:30 Editing other people's work
   - Reviewing and commenting on papers
   - Making changes and submitting Pull Requests
   - Controlled chaos: choose a paper and make some changes!
-- 14:30-14:45 Break
-- 14:45-16:00 Working on papers
+### 14:30-14:45 Break
+### 14:45-16:00 Working on papers
   - Practical session bringing together elements from the course
-- 16:00-17:00 Presentations and wrap-up
+### 16:00-17:00 Presentations and wrap-up
 
 <!-- Ideas:
 - Web app development
