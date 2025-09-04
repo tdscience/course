@@ -19,6 +19,7 @@ Imports:
     stats19,
     quarto,
     stplanr,
-    osmextract
+    osmextract,
+    zonebuilder
 Suggests:
     remotes

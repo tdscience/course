@@ -36,6 +36,8 @@ You should bring a laptop with the following software installed and tested to ch
   - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
 - The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
 
+See the [prerequisites](prerequisites) page for details and to test your setup.
+
 Ideas:
 - Web app development
 - Visualisation

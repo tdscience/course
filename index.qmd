@@ -23,21 +23,13 @@ You must have a GitHub account and it will be beneficial to be familiar with the
 
 Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.
 
-## Software prerequisites
-
-You should bring a laptop with the following software installed and tested to check it works:
+You also need to have some software installed:
 
 - Quarto (minimum version: 1.5.45)
 - R or Python or both
-- RStudio (recommended for most people) or VS Code
-  - If you will use VS Code for the course, you need the following extensions:
-    - The R extension `reditorsupport.r` if using R
-    - The Python extension `ms-python.python` if using Python
-    - The quarto extention `quarto.quarto`
-- Git, installed with one of the following packages:
-  - GitHub Desktop (see [desktop.github.com](https://desktop.github.com/))
-  - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-- The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
+- An IDE for data science that you have some familiarity with, e.g. RStudio, VS Code or Positron.
+
+See the [prerequisites](prerequisites) page for details and to test your setup.
 
 ## Alignment with Overarching Learning Outcomes
 

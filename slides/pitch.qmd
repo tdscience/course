@@ -67,6 +67,8 @@ You must have a GitHub account and it will be beneficial to be familiar with the
 
 Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.
 
+See the [prerequisites](prerequisites) page for details and to test your setup.
+
 ## Questions for students (pre-course)
 
 - What language would you prefer a course on reproducible research to be taught in?
