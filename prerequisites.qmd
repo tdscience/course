@@ -38,6 +38,7 @@ Students should take these short but very useful online courses to prepare:
 You can test your setup by running the following code in R or Python.
 
 ::: panel-tabset
+
 ## R
 
 ```{r}
@@ -122,3 +123,5 @@ plt.show()
 ![](images/paste-3.png)
 
 :::
+
+Let us know how you get on and let us know if you have any issues getting set up, either by email, or (preferably) via the Discussion forum on GitHub associated with this course repository at [github.com/tdscience/course/discussions](https://github.com/tdscience/course/discussions).
