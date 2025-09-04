@@ -111,7 +111,9 @@ plt.show()
 
 You can test your Python installation by running the following code. It uses the `osmnx`, `geopandas`, and `matplotlib` libraries to download and plot street data for Lisbon, Portugal. If this script runs without errors, your environment is likely configured correctly for the course.
 
-```python
+```{python}
+#| eval: false
+#| label: python-test-2
 import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
