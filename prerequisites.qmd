@@ -4,7 +4,9 @@ title: "Prerequisites"
 
 ## Course Prerequisites
 
-This course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.
+This course assumes working knowledge with R or Python for research.
+We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code.
+You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.
 
 Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.
 
@@ -12,36 +14,36 @@ Familiarity with referencing software such as Zotero (recommended) and bibliogra
 
 You should bring a laptop with the following software installed and tested to check it works:
 
-- Quarto (minimum version: 1.5.45)
-- A tested R or Python installation or both (note: if you have Docker installed you should be able to run R and Python inside a devcontainer, works best with VS Code)
-- RStudio or VS Code
-  - If you will use VS Code for the course, you need the following extensions:
-    - The R extension `reditorsupport.r` if using R
-    - The Python extension `ms-python.python` if using Python
-    - The quarto extention `quarto.quarto`
-- Git, installed with one of the following packages:
-  - GitHub Desktop (see [desktop.github.com](https://desktop.github.com/))
-  - Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-- The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
+-   Quarto (minimum version: 1.5.45)
+-   A tested R or Python installation or both (note: if you have Docker installed you should be able to run R and Python inside a devcontainer, works best with VS Code)
+-   RStudio or VS Code
+    -   If you will use VS Code for the course, you need the following extensions:
+        -   The R extension `reditorsupport.r` if using R
+        -   The Python extension `ms-python.python` if using Python
+        -   The quarto extention `quarto.quarto`
+-   Git, installed with one of the following packages:
+    -   GitHub Desktop (see [desktop.github.com](https://desktop.github.com/))
+    -   Git for the command line (see [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+-   The `gh` command-line tool (see [cli.github.com](https://cli.github.com/) for installation and set-up instructions)
 
 ## Recommended Online Courses
 
 Students should take these short but very useful online courses to prepare:
 
-- [Intro to GitHub](https://github.com/skills/introduction-to-github)
-- [Communicate using Markdown](https://github.com/skills/communicate-using-markdown)
+-   [Intro to GitHub](https://github.com/skills/introduction-to-github)
+-   [Communicate using Markdown](https://github.com/skills/communicate-using-markdown)
 
 ## Testing your setup
 
 You can test your setup by running the following code in R or Python.
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## R
 
 ```{r}
 #| label: r-test
 #| message: false
+#| warning: false
 #| results: hide
 options(repos = c(CRAN = "https://cloud.r-project.org"))
 if (!require("remotes")) install.packages("remotes")
@@ -56,14 +58,12 @@ pkgs = c(
     "osmextract",
     "zonebuilder"
 )
-remotes::install_cran(pkgs)
-```
-
-
-```{r}
-#| label: r-test-lisbon
+pkgs_to_install = pkgs[!pkgs %in% installed.packages()[, "Package"]]
+if (length(pkgs_to_install) > 0) {
+  install.packages(pkgs_to_install)
+}
 library(tidyverse)
-zones = zonebuilder::zb_zone("Lisbon", n_circles = 2)
+zones = zonebuilder::zb_zone("Lisbon", n_circles = 3)
 study_area = zones |>
   sf::st_union()
 extra_tags = c(
@@ -71,12 +71,16 @@ extra_tags = c(
   "lit",
   "cycleway"
 )
-osm_network = osmextract::oe_get_network(
+osm_network = osmextract::oe_get(
   place = "Lisbon, Portugal",
   boundary = study_area,
   boundary_type = "clipsrc",
   extra_tags = extra_tags
 )
+```
+
+```{r}
+#| label: r-test-lisbon
 osm_network |>
   select(maxspeed) |>
   plot()
@@ -94,6 +98,7 @@ reticulate::py_install(c("osmnx", "geopandas", "matplotlib"), pip = TRUE)
 
 ```{python}
 #| label: python-test
+#| eval: false
 import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -101,9 +106,11 @@ import shapely
 
 study_point = shapely.Point(-9.1393, 38.7223)  # Latitude and Longitude for Lisbon
 study_geom = gpd.GeoSeries([study_point], crs=4326)
-study_polygon = study_geom.to_crs(epsg=3857).buffer(10000).to_crs(epsg=4326).unary_union
+study_polygon = study_geom.to_crs(epsg=3857).buffer(6000).to_crs(epsg=4326).unary_union
 study_polygon_gpd = gpd.GeoDataFrame(geometry=[study_polygon], crs="EPSG:4326")
-study_polygon_gpd.explore()
+# Read-in geosjon already saved from R
+study_polygon = gpd.read_file("lisbon_study_area.geojson")
+# study_polygon_gpd.explore()
 tags = {"highway": True, "maxspeed": True, "lit": True, "cycleway": True}
 gdf = ox.features_from_polygon(study_polygon, tags)
 gdf = gdf[gdf.geom_type.isin(["LineString", "MultiLineString"])]
@@ -112,30 +119,5 @@ gdf.plot(column="maxspeed", figsize=(10, 10), legend=True)
 plt.show()
 ```
 
-## Testing your Python setup
-
-You can test your Python installation by running the following code. It uses the `osmnx`, `geopandas`, and `matplotlib` libraries to download and plot street data for Lisbon, Portugal. If this script runs without errors, your environment is likely configured correctly for the course.
-
-```{python}
-#| eval: false
-#| label: python-test-2
-import osmnx as ox
-import geopandas as gpd
-import matplotlib.pyplot as plt
-
-# Download street network data for Lisbon
-place = "Lisbon, Portugal"
-tags = {"highway": True, "maxspeed": True, "lit": True, "cycleway": True}
-gdf = ox.geometries_from_place(place, tags)
-
-# Filter for line geometries (streets)
-gdf = gdf[gdf.geom_type.isin(["LineString", "MultiLineString"])]
-
-# Reproject to a projected CRS for accurate plotting
-gdf = gdf.to_crs(epsg=3857)
-
-# Plot the data, with streets colored by max speed
-gdf.plot(column="maxspeed", figsize=(10, 10), legend=True)
-plt.title("Streets in Lisbon by Max Speed")
-plt.show()
-```
+![](images/paste-3.png)
+:::
