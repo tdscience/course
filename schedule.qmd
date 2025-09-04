@@ -4,89 +4,33 @@ title: "Schedule"
 
 ## Day 1
 
-### 09:30-10:00 Introduction
+| Time | Session  |   |   |
+|-----------------|-----------------------|:---------------:|-----------------|
+| 09:30 - 10:00 | Introduction |  | [{{< bi easel size=1.5em >}}](schedule.qmd) |
+| 10:00 - 11:00 | Development environments, system commands, and version control | [{{< bi file-earmark-code size=1.5em >}}](Day1_session1.qmd) |  |
+| 11:00 - 11:15 | Break |  |  |
+| 11:15 - 12:30 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](Day1_session2.qmd) |  |
+| 12:30 - 13:30 | Lunch |  |  |
+| 13:30 - 15:00 | Reproducible papers and documentation with Quarto | [{{< bi file-earmark-code size=1.5em >}}](Day1_session3.qmd) |  |
+| 15:00 - 15:15 | Break |  |  |
+| 15:15 - 16:30 | Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](Day1_session4.qmd) |  |
 
-<!-- -   Welcome and introductions (participatory)
-
--   Definitions and motivations
-
--   Course structure and objectives -->
- 
--   🎞️ Slides 
-
-### 10:00-11:00 Session 1
-
-#### *Development environments, system commands, and version control*
-
-📖 [Materials](Day1_session1.qmd) 
-🎞️ Slides 
-
-### 11:00-11:15 Break
-
-### 11:15-12:30 Session 2
-
-#### *Sharing code and data*
-
-📖 [Materials](Day1_session2.qmd) 
-🎞️ Slides 
-
-### 12:30-13:30 Lunch
-
-### 13:30-15:00 Session 3
-
-#### *Reproducible papers and documentation with Quarto*
-
-📖 [Materials](Day1_session3.qmd) 
-🎞️ Slides 
-
-### 15:00-15:15 Break
-
-### 15:15-16:30 Session 4
-
-#### *Cross-references and citations with Quarto*
-
-📖 [Materials](Day1_session4.qmd) 
-🎞️ Slides 
+: {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
 ## Day 2
 
-### 09:30-10:30 Session 5
+| Time | Session  |   |   |
+|-----------------|-----------------------|:---------------:|-----------------|
+| 09:30 - 10:30 | Drafting a reproducible paper | [{{< bi file-earmark-code size=1.5em >}}](Day2_session5.qmd) | | |
+| 10:30 - 10:45 | Break | | | 
+| 10:45 - 12:30 | Generating reproducible publication-quality visualisations | [{{< bi file-earmark-code size=1.5em >}}](Day2_session6.qmd) | | 
+| 12:30 - 13:30 | Lunch | | | 
+| 13:30 - 14:30 | Editing other people's work | [{{< bi file-earmark-code size=1.5em >}}](Day2_session7.qmd) | | 
+| 14:30 - 14:45 | Break | | | 
+| 14:45 - 16:00 | Working on papers | [{{< bi file-earmark-code size=1.5em >}}](Day2_session8.qmd) | | 
+| 16:00 - 17:00 | Presentations and wrap-up | | | 
 
-#### *Drafting a reproducible paper*
-
-📖 [Materials](Day2_session5.qmd) 
-🎞️ Slides 
-
-### 10:30-10:45 Break
-
-### 10:45-12:30 Session 6
-
-#### *Generating reproducible publication-quality visualisations*
-
-📖 [Materials](Day2_session6.qmd) 
-🎞️ Slides 
-
-### 12:30-13:30 Lunch
-
-### 13:30-14:30 Session 7
-
-#### *Editing other people's work*
-
-📖 [Materials](Day2_session7.qmd) 
-🎞️ Slides 
-
-### 14:30-14:45 Break
-
-### 14:45-16:00 Session 8
-
-#### *Working on papers*
-
-📖 [Materials](Day2_session8.qmd) 
-🎞️ Slides 
-
-### 16:00-17:00 Presentations and wrap-up
-
-🎞️ Slides 
+: {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
 ```{=html}
 <!-- Ideas:
@@ -95,3 +39,4 @@ title: "Schedule"
 - Getting your work out there
 - Deciding which tools to use -->
 ```
+
