@@ -1,5 +1,295 @@
 [
   {
+    "objectID": "prerequisites.html",
+    "href": "prerequisites.html",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "This course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#course-prerequisites",
+    "href": "prerequisites.html#course-prerequisites",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "This course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#software-prerequisites",
+    "href": "prerequisites.html#software-prerequisites",
+    "title": "Prerequisites",
+    "section": "Software Prerequisites",
+    "text": "Software Prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nA tested R or Python installation or both (note: if you have Docker installed you should be able to run R and Python inside a devcontainer, works best with VS Code)\nRStudio or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#recommended-online-courses",
+    "href": "prerequisites.html#recommended-online-courses",
+    "title": "Prerequisites",
+    "section": "Recommended Online Courses",
+    "text": "Recommended Online Courses\nStudents should take these short but very useful online courses to prepare:\n\nIntro to GitHub\nCommunicate using Markdown",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#testing-your-setup",
+    "href": "prerequisites.html#testing-your-setup",
+    "title": "Prerequisites",
+    "section": "Testing your setup",
+    "text": "Testing your setup\nYou can test your setup by running the following code in R or Python.\n\nRPython\n\n\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\",\n    \"quarto\",\n    \"stplanr\",\n    \"osmextract\",\n    \"zonebuilder\"\n)\npkgs_to_install = pkgs[!pkgs %in% installed.packages()[, \"Package\"]]\nif (length(pkgs_to_install) &gt; 0) {\n  install.packages(pkgs_to_install)\n}\nlibrary(tidyverse)\nzones = zonebuilder::zb_zone(\"Lisbon\", n_circles = 3)\nstudy_area = zones |&gt;\n  sf::st_union()\nextra_tags = c(\n  \"maxspeed\",\n  \"lit\",\n  \"cycleway\"\n)\nosm_network = osmextract::oe_get(\n  place = \"Lisbon, Portugal\",\n  boundary = study_area,\n  boundary_type = \"clipsrc\",\n  extra_tags = extra_tags\n)\n\n\nosm_network |&gt;\n  select(maxspeed) |&gt;\n  plot()\n\n\n\n\n\n\n\nsf::write_sf(study_area, \"lisbon_study_area.geojson\")\n\n\n\n\nimport osmnx as ox\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport shapely\n\nstudy_point = shapely.Point(-9.1393, 38.7223)  # Latitude and Longitude for Lisbon\nstudy_geom = gpd.GeoSeries([study_point], crs=4326)\nstudy_polygon = study_geom.to_crs(epsg=3857).buffer(6000).to_crs(epsg=4326).unary_union\nstudy_polygon_gpd = gpd.GeoDataFrame(geometry=[study_polygon], crs=\"EPSG:4326\")\n# Read-in geosjon already saved from R\nstudy_polygon = gpd.read_file(\"lisbon_study_area.geojson\")\n# study_polygon_gpd.explore()\ntags = {\"highway\": True, \"maxspeed\": True, \"lit\": True, \"cycleway\": True}\ngdf = ox.features_from_polygon(study_polygon, tags)\ngdf = gdf[gdf.geom_type.isin([\"LineString\", \"MultiLineString\"])]\ngdf = gdf.to_crs(epsg=3857)\ngdf.plot(column=\"maxspeed\", figsize=(10, 10), legend=True)\nplt.show()",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Pitch slides"
+  },
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Course Materials",
+    "section": "",
+    "text": "Datasets\nSlides",
+    "crumbs": [
+      "Materials"
+    ]
+  },
+  {
+    "objectID": "tp_schedule.html",
+    "href": "tp_schedule.html",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "tp_schedule.html#learning-objectives",
+    "href": "tp_schedule.html#learning-objectives",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "tp_schedule.html#prerequisites",
+    "href": "tp_schedule.html#prerequisites",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
+  },
+  {
+    "objectID": "tp_schedule.html#software-prerequisites",
+    "href": "tp_schedule.html#software-prerequisites",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Software prerequisites",
+    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)\n\nSee the prerequisites page for details and to test your setup.\nIdeas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use"
+  },
+  {
+    "objectID": "tp_schedule.html#day-1",
+    "href": "tp_schedule.html#day-1",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Day 1",
+    "text": "Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to VS Code, RStudio, and Jupyter\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\n\n12:30-13:30 Lunch\n13:30-15:00 Data visualisation\n\nUnivariate plots\nBivariate plots\nMultivariate plots and facets\nInteractive visualisations\nInteractive maps\n\n15:00-15:15 Break\n15:15-17:00 Transport Planning Challenge 1\n\nIntroduction to challenge datasets\nDeciding on a topic and questions\nPractical: working on the challenge"
+  },
+  {
+    "objectID": "tp_schedule.html#day-2",
+    "href": "tp_schedule.html#day-2",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Day 2",
+    "text": "Day 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nJoins: inner, left, right, full\nSpatial data operations\n\nSpatial subsetting\nSpatial joins\nSpatial aggregation\n\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n\nStatic vs dynamic web applications\nPractical introduction to Shiny for R and Python\n(Optional): Front-end development\n\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n\nDiscussion of datasets from Challenge 1\nDeciding on a topic and questions\nPractical: working on the challenge\n\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n\nPractical: working on the challenge\n\n16:30-17:00 Presentations and wrap-up"
+  },
+  {
+    "objectID": "Day1_session4.html",
+    "href": "Day1_session4.html",
+    "title": "Cross-references and citations with Quarto",
+    "section": "",
+    "text": "Cross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nYou also need to have some software installed:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nAn IDE for data science that you have some familiarity with, e.g. RStudio, VS Code or Positron.\n\nSee the prerequisites page for details and to test your setup.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#alignment-with-overarching-learning-outcomes",
+    "href": "index.html#alignment-with-overarching-learning-outcomes",
+    "title": "Data Science and Digital Tools for Transport Planning",
+    "section": "Alignment with Overarching Learning Outcomes",
+    "text": "Alignment with Overarching Learning Outcomes\n\nThe course will contribute to the development of the following skills and competencies:\n\nEntrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.\nInnovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.\nCreativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.\nLeadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "Day2_session7.html",
+    "href": "Day2_session7.html",
+    "title": "Editing other people’s work",
+    "section": "",
+    "text": "Reviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-1",
+    "href": "schedule.html#day-1",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-2",
+    "href": "schedule.html#day-2",
+    "title": "Schedule",
+    "section": "Day 2",
+    "text": "Day 2\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:30\nDrafting a reproducible paper\n\n\n\n\n10:30 - 10:45\nBreak\n\n\n\n\n10:45 - 12:30\nGenerating reproducible publication-quality visualisations\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 14:30\nEditing other people’s work\n\n\n\n\n14:30 - 14:45\nBreak\n\n\n\n\n14:45 - 16:00\nWorking on papers\n\n\n\n\n16:00 - 17:00\nPresentations and wrap-up",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "Day1_session1.html",
+    "href": "Day1_session1.html",
+    "title": "Development environments, system commands, and version control",
+    "section": "",
+    "text": "Introduction to RStudio and VS Code\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\nPractical: setting up your development environment and using the gh command-line tool\nWorked example starting with:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
+  },
+  {
+    "objectID": "Day1_session2.html",
+    "href": "Day1_session2.html",
+    "title": "Sharing code and data",
+    "section": "",
+    "text": "Navigating GitHub\nYour profile and repositories\nCreating and managing repositories\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\nCollaboration with GitHub\nBranches and pull requests\nMerging changes\nResolving conflicts\nAutomated workflows with GitHub Actions\nBest practices for collaboration, sharing code and data\nPractical: creating a repository and making changes"
+  },
+  {
+    "objectID": "Day2_session6.html",
+    "href": "Day2_session6.html",
+    "title": "Generating reproducible publication-quality visualisations",
+    "section": "",
+    "text": "An introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper"
+  },
+  {
+    "objectID": "collisions.html",
+    "href": "collisions.html",
+    "title": "STATS19",
+    "section": "",
+    "text": "This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds. Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city. The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the consultation “Have Your Say Today - A58 Improvements - Commonplace” and illustrated in Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.",
+    "crumbs": [
+      "Examples",
+      "Road traffic collisions"
+    ]
+  },
+  {
+    "objectID": "collisions.html#introduction",
+    "href": "collisions.html#introduction",
+    "title": "STATS19",
+    "section": "",
+    "text": "This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds. Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city. The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the consultation “Have Your Say Today - A58 Improvements - Commonplace” and illustrated in Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.",
+    "crumbs": [
+      "Examples",
+      "Road traffic collisions"
+    ]
+  },
+  {
+    "objectID": "collisions.html#setup-and-prerequisites",
+    "href": "collisions.html#setup-and-prerequisites",
+    "title": "STATS19",
+    "section": "Setup and prerequisites",
+    "text": "Setup and prerequisites\nWe will use packages listed in the following code chunk to reproduce the analysis. Run the code chunk below to install and load the required packages.\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\"\n)\n\nremotes::install_cran(pkgs)\nsapply(pkgs, require, character.only = TRUE)\n\n        sf  tidyverse       tmap data.table    stats19 \n      TRUE       TRUE       TRUE       TRUE       TRUE \n\n\nSee the prerequisites page for details and to test your setup.",
+    "crumbs": [
+      "Examples",
+      "Road traffic collisions"
+    ]
+  },
+  {
+    "objectID": "collisions.html#results-presented-in-the-consultation",
+    "href": "collisions.html#results-presented-in-the-consultation",
+    "title": "STATS19",
+    "section": "Results presented in the consultation",
+    "text": "Results presented in the consultation\nStep 4 of the consultation contains the map presented in Figure 2.\n\n\n\n\n\n\nFigure 2: Map of collisions in the study area. Credit: Leeds City Council\n\n\n\nLet’s try to reproduce the map.",
+    "crumbs": [
+      "Examples",
+      "Road traffic collisions"
+    ]
+  },
+  {
+    "objectID": "collisions.html#defining-study-area",
+    "href": "collisions.html#defining-study-area",
+    "title": "STATS19",
+    "section": "Defining study area",
+    "text": "Defining study area\nThere are different ways to define the study area. We could manually look it up but geocoding may be a better approach. Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area:\n\n\n\nstudy_coords = stplanr::geo_code(\"Cross Roseville Road, Leeds\")\n\nThat gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:\n\nstudy_coords = c(-1.5243862, 53.8109931)\n\nConvert the coordinates to an sf object as follows, remembering to add the coordinate reference system (CRS):\n\nstudy_point &lt;- study_coords |&gt;\n  st_point() |&gt;\n  sf::st_sfc() |&gt;\n  sf::st_sf(geometry = _, crs = \"EPSG:4326\") \nstudy_point\n\nSimple feature collection with 1 feature and 0 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -1.524386 ymin: 53.81099 xmax: -1.524386 ymax: 53.81099\nGeodetic CRS:  WGS 84\n                    geometry\n1 POINT (-1.524386 53.81099)\n\n\nNote: the |&gt; symbol above is R’s ‘native pipe’ which passes the result of the left-hand side expression to the right-hand side expression as the first argument, allowing for more readable and concise code. The _ symbol refers to the current object being processed in the pipeline.\nLet’s define a buffer around our point. There isn’t a scale bar in the original map, so it’s hard to know the exact distance to use for the buffer. However, we can start with a 500 meter buffer.\n\nstudy_buffer &lt;- study_point |&gt;\n  st_buffer(dist = 500)\n\ntm_shape(study_buffer)+\n  tm_fill(\"gray80\",fill_alpha = 0.8)+\n  tm_shape(study_point)+\n  tm_dots()\n\n\n\n\n\n\n\n\n\ncollision_data &lt;- lapply(2019:2024,\n                         get_stats19,\n                         type = \"collision\",\n                         silent = TRUE,\n                         output_format = \"sf\") |&gt; \n  bind_rows()\n\ndate and time columns present, creating formatted datetime column\n\n\n28 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n14 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n17 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n22 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n12 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n84 rows removed with no coordinates\n\n\nAn inspection of the data\n\nnames(collision_data)\n\n [1] \"accident_index\"                              \n [2] \"accident_year\"                               \n [3] \"accident_reference\"                          \n [4] \"longitude\"                                   \n [5] \"latitude\"                                    \n [6] \"police_force\"                                \n [7] \"accident_severity\"                           \n [8] \"number_of_vehicles\"                          \n [9] \"number_of_casualties\"                        \n[10] \"date\"                                        \n[11] \"day_of_week\"                                 \n[12] \"time\"                                        \n[13] \"local_authority_district\"                    \n[14] \"local_authority_ons_district\"                \n[15] \"local_authority_highway\"                     \n[16] \"first_road_class\"                            \n[17] \"first_road_number\"                           \n[18] \"road_type\"                                   \n[19] \"speed_limit\"                                 \n[20] \"junction_detail\"                             \n[21] \"junction_control\"                            \n[22] \"second_road_class\"                           \n[23] \"second_road_number\"                          \n[24] \"pedestrian_crossing_human_control\"           \n[25] \"pedestrian_crossing_physical_facilities\"     \n[26] \"light_conditions\"                            \n[27] \"weather_conditions\"                          \n[28] \"road_surface_conditions\"                     \n[29] \"special_conditions_at_site\"                  \n[30] \"carriageway_hazards\"                         \n[31] \"urban_or_rural_area\"                         \n[32] \"did_police_officer_attend_scene_of_accident\" \n[33] \"trunk_road_flag\"                             \n[34] \"lsoa_of_accident_location\"                   \n[35] \"enhanced_severity_collision\"                 \n[36] \"datetime\"                                    \n[37] \"geometry\"                                    \n[38] \"status\"                                      \n[39] \"collision_index\"                             \n[40] \"collision_year\"                              \n[41] \"collision_reference\"                         \n[42] \"legacy_collision_severity\"                   \n[43] \"did_police_officer_attend_scene_of_collision\"\n[44] \"lsoa_of_collision_location\"                  \n\n\nLet’s reconcile some data to match the appropriate convention\n\ncollision_data &lt;- collision_data |&gt; \n  mutate(collision_year = coalesce(collision_year,accident_year),\n         legacy_collision_severity = coalesce(legacy_collision_severity,accident_severity))\n\nLet’s visualise all the data we extracted\n\ncollision_data |&gt;\n  slice_sample(n = 5000) |&gt;\n  st_geometry() |&gt; \n  tm_shape()+\n  tm_dots()\n\n\n\n\n\n\n\n\nCreating a subset of the collisions within our study area\n\nst_crs(collision_data,)\n\nCoordinate Reference System:\n  User input: EPSG:27700 \n  wkt:\nPROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]\n\nst_crs(study_buffer)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n\nLet’s transform the buffer to match the British Grid\n\nstudy_buffer_BNG &lt;- study_buffer |&gt; st_transform(st_crs(collision_data))\n\n\nstudy_collisions &lt;- collision_data[study_buffer_BNG,]\n\nA quick exploration of the amount\n\nstudy_collisions |&gt;\n  count(legacy_collision_severity)\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: MULTIPOINT\nDimension:     XY\nBounding box:  xmin: 430986 ymin: 434604 xmax: 431916 ymax: 435550\nProjected CRS: OSGB36 / British National Grid\n# A tibble: 2 × 3\n  legacy_collision_severity     n                                       geometry\n* &lt;chr&gt;                     &lt;int&gt;                               &lt;MULTIPOINT [m]&gt;\n1 Serious                      32 ((431178 435174), (431239 434801), (431262 43…\n2 Slight                      109 ((430986 434873), (431028 434897), (431110 43…\n\n\nA quick visualisation\n\nstudy_collisions |&gt;\ntm_shape()+\n  tm_dots(fill = \"legacy_collision_severity\",\n          size = 1,\n          fill_alpha = 0.7,\n          fill.scale = tm_scale_categorical(\n            labels = c(\"Slight\",\"Serious\"),\n            values = c(\"orange\",\"dodgerblue\")))\n\n\n\n\n\n\n\n\nA better version\n\nstudy_collisions |&gt;\n  mutate(legacy_collision_severity = factor(legacy_collision_severity,\n                                            c(\"Slight\",\"Serious\",\"Fatal\"),\n                                            ordered = T)) |&gt;\n  arrange(legacy_collision_severity) |&gt; \n  mutate(X = st_coordinates(geometry)[,1],\n         Y = st_coordinates(geometry)[,2]) |&gt; \n  ggplot(aes(x = X,y = Y,col = legacy_collision_severity))+\n  geom_jitter(alpha = 0.8,\n              size = 2,\n              position = position_jitter(width = 5, height = 5))+\n  theme_void()+\n  scale_color_manual(values = c(\"dodgerblue\",\"orange\",\"red\"))+\n  theme(plot.background = element_rect(fill = \"gray20\"))",
+    "crumbs": [
+      "Examples",
+      "Road traffic collisions"
+    ]
+  },
+  {
+    "objectID": "Day1_session3.html",
+    "href": "Day1_session3.html",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "",
+    "text": "Introduction to Quarto\nMarkdown, LaTeX, and file formats\nCode chunks and settings\nPublishing your work\nDemonstration of reproducible papers\nPractical: creating a minimal reproducible paper"
+  },
+  {
+    "objectID": "Day2_session5.html",
+    "href": "Day2_session5.html",
+    "title": "Drafting a reproducible paper",
+    "section": "",
+    "text": "Recap of Day 1\nTopic selection\nIndividual work on paper drafts"
+  },
+  {
+    "objectID": "Day2_session8.html",
+    "href": "Day2_session8.html",
+    "title": "Working on papers",
+    "section": "",
+    "text": "Practical session bringing together elements from the course"
+  },
+  {
     "objectID": "slides/pitch.html#about-me-and-my-work",
     "href": "slides/pitch.html#about-me-and-my-work",
     "title": "Tools and Skills for Reproducible Transport Research",
@@ -18,7 +308,7 @@
     "href": "slides/pitch.html#prerequisites",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nSee the prerequisites page for details and to test your setup."
   },
   {
     "objectID": "slides/pitch.html#questions-for-students-pre-course",
@@ -61,255 +351,5 @@
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Practicalities",
     "text": "Practicalities\n\nCourse website and open, reproducible code: tdscience.github.io/course/\nIn person or online?\nTeaching assistants\nNumber of participants\nIncorportating feedback\nCosts"
-  },
-  {
-    "objectID": "Day2_session8.html",
-    "href": "Day2_session8.html",
-    "title": "Working on papers",
-    "section": "",
-    "text": "Practical session bringing together elements from the course"
-  },
-  {
-    "objectID": "Day2_session5.html",
-    "href": "Day2_session5.html",
-    "title": "Drafting a reproducible paper",
-    "section": "",
-    "text": "Recap of Day 1\nTopic selection\nIndividual work on paper drafts"
-  },
-  {
-    "objectID": "Day1_session3.html",
-    "href": "Day1_session3.html",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "",
-    "text": "Introduction to Quarto\nMarkdown, LaTeX, and file formats\nCode chunks and settings\nPublishing your work\nDemonstration of reproducible papers\nPractical: creating a minimal reproducible paper"
-  },
-  {
-    "objectID": "collisions.html",
-    "href": "collisions.html",
-    "title": "STATS19",
-    "section": "",
-    "text": "This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds. Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city. The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the consultation “Have Your Say Today - A58 Improvements - Commonplace” and illustrated in Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.",
-    "crumbs": [
-      "Examples",
-      "Road traffic collisions"
-    ]
-  },
-  {
-    "objectID": "collisions.html#introduction",
-    "href": "collisions.html#introduction",
-    "title": "STATS19",
-    "section": "",
-    "text": "This practical workbook guides you through the process of importing, processing and visualising STATS19 data using R with reference to a real-world case study: changes to the A58 in Leeds. Roundhay Road is a major road which runs from central Leeds to Rounday Park in the North of the city. The changes focus on the southern part of Roundhay Road around its intersections with Bayswater Road and Spencer Place, as highlighted in the consultation “Have Your Say Today - A58 Improvements - Commonplace” and illustrated in Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of changes to the southern section of Roundhay road proposed by Connecting Leeds in 2025. Credit: Leeds City Council.",
-    "crumbs": [
-      "Examples",
-      "Road traffic collisions"
-    ]
-  },
-  {
-    "objectID": "collisions.html#setup-and-prerequisites",
-    "href": "collisions.html#setup-and-prerequisites",
-    "title": "STATS19",
-    "section": "Setup and prerequisites",
-    "text": "Setup and prerequisites\nWe will use packages listed in the following code chunk to reproduce the analysis. Run the code chunk below to install and load the required packages.\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\"\n)\n\nremotes::install_cran(pkgs)\nsapply(pkgs, require, character.only = TRUE)\n\n        sf  tidyverse       tmap data.table    stats19 \n      TRUE       TRUE       TRUE       TRUE       TRUE",
-    "crumbs": [
-      "Examples",
-      "Road traffic collisions"
-    ]
-  },
-  {
-    "objectID": "collisions.html#results-presented-in-the-consultation",
-    "href": "collisions.html#results-presented-in-the-consultation",
-    "title": "STATS19",
-    "section": "Results presented in the consultation",
-    "text": "Results presented in the consultation\nStep 4 of the consultation contains the map presented in Figure 2.\n\n\n\n\n\n\nFigure 2: Map of collisions in the study area. Credit: Leeds City Council\n\n\n\nLet’s try to reproduce the map.",
-    "crumbs": [
-      "Examples",
-      "Road traffic collisions"
-    ]
-  },
-  {
-    "objectID": "collisions.html#defining-study-area",
-    "href": "collisions.html#defining-study-area",
-    "title": "STATS19",
-    "section": "Defining study area",
-    "text": "Defining study area\nThere are different ways to define the study area. We could manually look it up but geocoding may be a better approach. Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area:\n\n\n\nstudy_coords = stplanr::geo_code(\"Cross Roseville Road, Leeds\")\n\nThat gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:\n\nstudy_coords = c(-1.5243862, 53.8109931)\n\nConvert the coordinates to an sf object as follows, remembering to add the coordinate reference system (CRS):\n\nstudy_point &lt;- study_coords |&gt;\n  st_point() |&gt;\n  sf::st_sfc() |&gt;\n  sf::st_sf(geometry = _, crs = \"EPSG:4326\") \nstudy_point\n\nSimple feature collection with 1 feature and 0 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -1.524386 ymin: 53.81099 xmax: -1.524386 ymax: 53.81099\nGeodetic CRS:  WGS 84\n                    geometry\n1 POINT (-1.524386 53.81099)\n\n\nNote: the |&gt; symbol above is R’s ‘native pipe’ which passes the result of the left-hand side expression to the right-hand side expression as the first argument, allowing for more readable and concise code. The _ symbol refers to the current object being processed in the pipeline.\nLet’s define a buffer around our point. There isn’t a scale bar in the original map, so it’s hard to know the exact distance to use for the buffer. However, we can start with a 500 meter buffer.\n\nstudy_buffer &lt;- study_point |&gt;\n  st_buffer(dist = 500)\n\ntm_shape(study_buffer)+\n  tm_fill(\"gray80\",fill_alpha = 0.8)+\n  tm_shape(study_point)+\n  tm_dots()\n\n\n\n\n\n\n\n\n\ncollision_data &lt;- lapply(2019:2024,\n                         get_stats19,\n                         type = \"collision\",\n                         silent = TRUE,\n                         output_format = \"sf\") |&gt; \n  bind_rows()\n\ndate and time columns present, creating formatted datetime column\n\n\n28 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n14 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n17 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n22 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n12 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n84 rows removed with no coordinates\n\n\nAn inspection of the data\n\nnames(collision_data)\n\n [1] \"accident_index\"                              \n [2] \"accident_year\"                               \n [3] \"accident_reference\"                          \n [4] \"longitude\"                                   \n [5] \"latitude\"                                    \n [6] \"police_force\"                                \n [7] \"accident_severity\"                           \n [8] \"number_of_vehicles\"                          \n [9] \"number_of_casualties\"                        \n[10] \"date\"                                        \n[11] \"day_of_week\"                                 \n[12] \"time\"                                        \n[13] \"local_authority_district\"                    \n[14] \"local_authority_ons_district\"                \n[15] \"local_authority_highway\"                     \n[16] \"first_road_class\"                            \n[17] \"first_road_number\"                           \n[18] \"road_type\"                                   \n[19] \"speed_limit\"                                 \n[20] \"junction_detail\"                             \n[21] \"junction_control\"                            \n[22] \"second_road_class\"                           \n[23] \"second_road_number\"                          \n[24] \"pedestrian_crossing_human_control\"           \n[25] \"pedestrian_crossing_physical_facilities\"     \n[26] \"light_conditions\"                            \n[27] \"weather_conditions\"                          \n[28] \"road_surface_conditions\"                     \n[29] \"special_conditions_at_site\"                  \n[30] \"carriageway_hazards\"                         \n[31] \"urban_or_rural_area\"                         \n[32] \"did_police_officer_attend_scene_of_accident\" \n[33] \"trunk_road_flag\"                             \n[34] \"lsoa_of_accident_location\"                   \n[35] \"enhanced_severity_collision\"                 \n[36] \"datetime\"                                    \n[37] \"geometry\"                                    \n[38] \"status\"                                      \n[39] \"collision_index\"                             \n[40] \"collision_year\"                              \n[41] \"collision_reference\"                         \n[42] \"legacy_collision_severity\"                   \n[43] \"did_police_officer_attend_scene_of_collision\"\n[44] \"lsoa_of_collision_location\"                  \n\n\nLet’s reconcile some data to match the appropriate convention\n\ncollision_data &lt;- collision_data |&gt; \n  mutate(collision_year = coalesce(collision_year,accident_year),\n         legacy_collision_severity = coalesce(legacy_collision_severity,accident_severity))\n\nLet’s visualise all the data we extracted\n\ncollision_data |&gt;\n  slice_sample(n = 5000) |&gt;\n  st_geometry() |&gt; \n  tm_shape()+\n  tm_dots()\n\n\n\n\n\n\n\n\nCreating a subset of the collisions within our study area\n\nst_crs(collision_data,)\n\nCoordinate Reference System:\n  User input: EPSG:27700 \n  wkt:\nPROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]\n\nst_crs(study_buffer)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n\nLet’s transform the buffer to match the British Grid\n\nstudy_buffer_BNG &lt;- study_buffer |&gt; st_transform(st_crs(collision_data))\n\n\nstudy_collisions &lt;- collision_data[study_buffer_BNG,]\n\nA quick exploration of the amount\n\nstudy_collisions |&gt;\n  count(legacy_collision_severity)\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: MULTIPOINT\nDimension:     XY\nBounding box:  xmin: 430986 ymin: 434604 xmax: 431916 ymax: 435550\nProjected CRS: OSGB36 / British National Grid\n# A tibble: 2 × 3\n  legacy_collision_severity     n                                       geometry\n* &lt;chr&gt;                     &lt;int&gt;                               &lt;MULTIPOINT [m]&gt;\n1 Serious                      32 ((431178 435174), (431239 434801), (431262 43…\n2 Slight                      109 ((430986 434873), (431028 434897), (431110 43…\n\n\nA quick visualisation\n\nstudy_collisions |&gt;\ntm_shape()+\n  tm_dots(fill = \"legacy_collision_severity\",\n          size = 1,\n          fill_alpha = 0.7,\n          fill.scale = tm_scale_categorical(\n            labels = c(\"Slight\",\"Serious\"),\n            values = c(\"orange\",\"dodgerblue\")))\n\n\n\n\n\n\n\n\nA better version\n\nstudy_collisions |&gt;\n  mutate(legacy_collision_severity = factor(legacy_collision_severity,\n                                            c(\"Slight\",\"Serious\",\"Fatal\"),\n                                            ordered = T)) |&gt;\n  arrange(legacy_collision_severity) |&gt; \n  mutate(X = st_coordinates(geometry)[,1],\n         Y = st_coordinates(geometry)[,2]) |&gt; \n  ggplot(aes(x = X,y = Y,col = legacy_collision_severity))+\n  geom_jitter(alpha = 0.8,\n              size = 2,\n              position = position_jitter(width = 5, height = 5))+\n  theme_void()+\n  scale_color_manual(values = c(\"dodgerblue\",\"orange\",\"red\"))+\n  theme(plot.background = element_rect(fill = \"gray20\"))",
-    "crumbs": [
-      "Examples",
-      "Road traffic collisions"
-    ]
-  },
-  {
-    "objectID": "Day2_session6.html",
-    "href": "Day2_session6.html",
-    "title": "Generating reproducible publication-quality visualisations",
-    "section": "",
-    "text": "An introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper"
-  },
-  {
-    "objectID": "Day1_session2.html",
-    "href": "Day1_session2.html",
-    "title": "Sharing code and data",
-    "section": "",
-    "text": "Navigating GitHub\nYour profile and repositories\nCreating and managing repositories\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\nCollaboration with GitHub\nBranches and pull requests\nMerging changes\nResolving conflicts\nAutomated workflows with GitHub Actions\nBest practices for collaboration, sharing code and data\nPractical: creating a repository and making changes"
-  },
-  {
-    "objectID": "Day1_session1.html",
-    "href": "Day1_session1.html",
-    "title": "Development environments, system commands, and version control",
-    "section": "",
-    "text": "Introduction to RStudio and VS Code\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\nPractical: setting up your development environment and using the gh command-line tool\nWorked example starting with:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#day-1",
-    "href": "schedule.html#day-1",
-    "title": "Schedule",
-    "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#day-2",
-    "href": "schedule.html#day-2",
-    "title": "Schedule",
-    "section": "Day 2",
-    "text": "Day 2\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:30\nDrafting a reproducible paper\n\n\n\n\n10:30 - 10:45\nBreak\n\n\n\n\n10:45 - 12:30\nGenerating reproducible publication-quality visualisations\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 14:30\nEditing other people’s work\n\n\n\n\n14:30 - 14:45\nBreak\n\n\n\n\n14:45 - 16:00\nWorking on papers\n\n\n\n\n16:00 - 17:00\nPresentations and wrap-up",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "Day2_session7.html",
-    "href": "Day2_session7.html",
-    "title": "Editing other people’s work",
-    "section": "",
-    "text": "Reviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#prerequisites",
-    "href": "index.html#prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#software-prerequisites",
-    "href": "index.html#software-prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Software prerequisites",
-    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#alignment-with-overarching-learning-outcomes",
-    "href": "index.html#alignment-with-overarching-learning-outcomes",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Alignment with Overarching Learning Outcomes",
-    "text": "Alignment with Overarching Learning Outcomes\n\nThe course will contribute to the development of the following skills and competencies:\n\nEntrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.\nInnovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.\nCreativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.\nLeadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "Day1_session4.html",
-    "href": "Day1_session4.html",
-    "title": "Cross-references and citations with Quarto",
-    "section": "",
-    "text": "Cross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper"
-  },
-  {
-    "objectID": "tp_schedule.html",
-    "href": "tp_schedule.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
-  },
-  {
-    "objectID": "tp_schedule.html#learning-objectives",
-    "href": "tp_schedule.html#learning-objectives",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
-  },
-  {
-    "objectID": "tp_schedule.html#prerequisites",
-    "href": "tp_schedule.html#prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
-  },
-  {
-    "objectID": "tp_schedule.html#software-prerequisites",
-    "href": "tp_schedule.html#software-prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Software prerequisites",
-    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)\n\nIdeas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use"
-  },
-  {
-    "objectID": "tp_schedule.html#day-1",
-    "href": "tp_schedule.html#day-1",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Day 1",
-    "text": "Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to VS Code, RStudio, and Jupyter\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\n\n12:30-13:30 Lunch\n13:30-15:00 Data visualisation\n\nUnivariate plots\nBivariate plots\nMultivariate plots and facets\nInteractive visualisations\nInteractive maps\n\n15:00-15:15 Break\n15:15-17:00 Transport Planning Challenge 1\n\nIntroduction to challenge datasets\nDeciding on a topic and questions\nPractical: working on the challenge"
-  },
-  {
-    "objectID": "tp_schedule.html#day-2",
-    "href": "tp_schedule.html#day-2",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Day 2",
-    "text": "Day 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nJoins: inner, left, right, full\nSpatial data operations\n\nSpatial subsetting\nSpatial joins\nSpatial aggregation\n\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n\nStatic vs dynamic web applications\nPractical introduction to Shiny for R and Python\n(Optional): Front-end development\n\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n\nDiscussion of datasets from Challenge 1\nDeciding on a topic and questions\nPractical: working on the challenge\n\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n\nPractical: working on the challenge\n\n16:30-17:00 Presentations and wrap-up"
-  },
-  {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Course Materials",
-    "section": "",
-    "text": "Datasets\nSlides",
-    "crumbs": [
-      "Materials"
-    ]
-  },
-  {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Pitch slides"
   }
 ]
