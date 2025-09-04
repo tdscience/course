@@ -18,6 +18,7 @@ Imports:
     data.table,
     stats19,
     quarto,
-    stplanr
+    stplanr,
+    osmextract
 Suggests:
     remotes
