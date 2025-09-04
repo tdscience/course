@@ -30,8 +30,8 @@ You should bring a laptop with the following software installed and tested to ch
 
 Students should take these short but very useful online courses to prepare:
 
--   [Intro to GitHub](https://github.com/skills/introduction-to-github)
--   [Communicate using Markdown](https://github.com/skills/communicate-using-markdown)
+-   [Intro to GitHub](https://github.com/skills/introduction-to-github) (should take less than an hour)
+-   [Communicate using Markdown](https://github.com/skills/communicate-using-markdown) (should take around 30 minutes or less)
 
 ## Testing your setup
 
