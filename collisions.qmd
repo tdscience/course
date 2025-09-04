@@ -35,6 +35,8 @@ remotes::install_cran(pkgs)
 sapply(pkgs, require, character.only = TRUE)
 ```
 
+See the [prerequisites](prerequisites) page for details and to test your setup.
+
 ## Results presented in the consultation
 
 [Step 4 of the consultation](https://a58improvements.commonplace.is/en-GB/proposals/v3/proposals-and-survey?step=step4) contains the map presented in @fig-collisions-consultation.
