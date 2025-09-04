@@ -30,3 +30,105 @@ Students should take these short but very useful online courses to prepare:
 
 - [Intro to GitHub](https://github.com/skills/introduction-to-github)
 - [Communicate using Markdown](https://github.com/skills/communicate-using-markdown)
+
+## Testing your setup
+
+You can test your setup by running the following code in R or Python.
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| label: r-test
+#| message: false
+#| results: hide
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+if (!require("remotes")) install.packages("remotes")
+pkgs = c(
+    "sf",
+    "tidyverse",
+    "tmap",
+    "data.table",
+    "stats19",
+    "quarto",
+    "stplanr",
+    "osmextract",
+    "zonebuilder"
+)
+remotes::install_cran(pkgs)
+```
+
+
+```{r}
+#| label: r-test-lisbon
+library(tidyverse)
+zones = zonebuilder::zb_zone("Lisbon", n_circles = 2)
+study_area = zones |>
+  sf::st_union()
+extra_tags = c(
+  "maxspeed",
+  "lit",
+  "cycleway"
+)
+osm_network = osmextract::oe_get_network(
+  place = "Lisbon, Portugal",
+  boundary = study_area,
+  boundary_type = "clipsrc",
+  extra_tags = extra_tags
+)
+osm_network |>
+  select(maxspeed) |>
+  plot()
+```
+
+```{r}
+#| echo: false
+#| eval: false
+# Install python reqs with reticulate:
+reticulate::py_install(c("osmnx", "geopandas", "matplotlib"), pip = TRUE)
+```
+
+## Python
+
+```{python}
+#| eval: false
+#| label: python-test
+import osmnx as ox
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+place = "Lisbon, Portugal"
+tags = {"highway": True, "maxspeed": True, "lit": True, "cycleway": True}
+gdf = ox.geometries_from_place(place, tags)
+gdf = gdf[gdf.geom_type.isin(["LineString", "MultiLineString"])]
+gdf = gdf.to_crs(epsg=3857)
+gdf.plot(column="maxspeed", figsize=(10, 10), legend=True)
+plt.show()
+```
+
+## Testing your Python setup
+
+You can test your Python installation by running the following code. It uses the `osmnx`, `geopandas`, and `matplotlib` libraries to download and plot street data for Lisbon, Portugal. If this script runs without errors, your environment is likely configured correctly for the course.
+
+```python
+import osmnx as ox
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+# Download street network data for Lisbon
+place = "Lisbon, Portugal"
+tags = {"highway": True, "maxspeed": True, "lit": True, "cycleway": True}
+gdf = ox.geometries_from_place(place, tags)
+
+# Filter for line geometries (streets)
+gdf = gdf[gdf.geom_type.isin(["LineString", "MultiLineString"])]
+
+# Reproject to a projected CRS for accurate plotting
+gdf = gdf.to_crs(epsg=3857)
+
+# Plot the data, with streets colored by max speed
+gdf.plot(column="maxspeed", figsize=(10, 10), legend=True)
+plt.title("Streets in Lisbon by Max Speed")
+plt.show()
+```
