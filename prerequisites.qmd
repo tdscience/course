@@ -80,6 +80,7 @@ osm_network = osmextract::oe_get_network(
 osm_network |>
   select(maxspeed) |>
   plot()
+sf::write_sf(study_area, "lisbon_study_area.geojson")
 ```
 
 ```{r}
@@ -99,8 +100,9 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 
 place = "Lisbon, Portugal"
+place_geo = gpd.read_file("lisbon_study_area.geojson")
 tags = {"highway": True, "maxspeed": True, "lit": True, "cycleway": True}
-gdf = ox.geometries_from_place(place, tags)
+gdf = ox.features_from_polygon(place, tags)
 gdf = gdf[gdf.geom_type.isin(["LineString", "MultiLineString"])]
 gdf = gdf.to_crs(epsg=3857)
 gdf.plot(column="maxspeed", figsize=(10, 10), legend=True)
