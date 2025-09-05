@@ -117,7 +117,7 @@ Any Data Science project will benefit from having a clear file structure. The st
 
 You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful [cheat sheet](https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf).
 
-There are two main ways of working with GitHub repositories: the `gh` command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs' extensions, but they generally have fewer features available. We will explore the different actions in the next session.
+There are two main ways of working with GitHub repositories in your machine: the `gh` command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs' extensions, but they generally have fewer features available. We will explore the different actions in the next session.
 
 ## Practical:
 
