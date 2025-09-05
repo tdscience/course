@@ -1,7 +1,6 @@
 ---
 title: "Editing other people's work"
 description-meta: "Learn to review, comment on, and edit papers, including submitting pull requests and resolving conflicts."
-keywords: "peer review, pull requests, collaboration, GitHub, editing papers"
 pagetitle: "Session 7: Peer Review and Collaboration"
 format: html
 ---

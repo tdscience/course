@@ -1,7 +1,6 @@
 ---
 title: "Reproducible papers and documentation with Quarto"
 description-meta: "Learn to create reproducible papers and documentation using Quarto, including Markdown, LaTeX, and publishing."
-keywords: "Quarto, reproducible papers, documentation, Markdown, LaTeX, publishing"
 pagetitle: "Session 3: Reproducible Papers with Quarto"
 format: html
 ---

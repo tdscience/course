@@ -1,7 +1,6 @@
 ---
 title: "Development environments, system commands, and version control"
 description-meta: "Introduction to development environments, system commands, and version control for data science and transport planning."
-keywords: "development environments, system commands, version control, Git, GitHub, RStudio, VS Code"
 pagetitle: "Session 1: Development Environments"
 format: html
 ---

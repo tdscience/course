@@ -1,7 +1,6 @@
 ---
 title: "Generating reproducible publication-quality visualisations"
 description-meta: "Create reproducible, publication-quality visualizations for transport planning using ggplot2 and other tools."
-keywords: "visualizations, ggplot2, reproducible graphics, transport planning, data visualization"
 pagetitle: "Session 6: Data Visualization"
 format: html
 ---

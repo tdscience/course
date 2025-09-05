@@ -1,7 +1,6 @@
 ---
 title: "Prerequisites"
 description-meta: "Software and knowledge prerequisites for the Data Science and Digital Tools for Transport Planning course, including setup instructions and testing code."
-keywords: "prerequisites, software setup, R, Python, Quarto, Git, GitHub"
 pagetitle: "Course Prerequisites"
 ---
 
