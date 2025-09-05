@@ -1,5 +1,7 @@
 ---
 title: "STATS19"
+description-meta: "Practical workbook on importing, processing, and visualizing STATS19 road traffic collision data using R, with a case study on the A58 in Leeds."
+pagetitle: "STATS19 Data Analysis"
 ---
 
 <!-- https://a58improvements.commonplace.is/ -->

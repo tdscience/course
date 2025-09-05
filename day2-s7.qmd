@@ -1,5 +1,7 @@
 ---
 title: "Editing other people's work"
+description-meta: "Learn to review, comment on, and edit papers, including submitting pull requests and resolving conflicts."
+pagetitle: "Session 7: Peer Review and Collaboration"
 format: html
 ---
 

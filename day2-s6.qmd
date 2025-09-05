@@ -1,0 +1,10 @@
+---
+title: "Generating reproducible publication-quality visualisations"
+description-meta: "Create reproducible, publication-quality visualizations for transport planning using ggplot2 and other tools."
+pagetitle: "Session 6: Data Visualization"
+format: html
+---
+
+-   An introduction to visualisation and web application development for transport planning
+-   A deep dive into ggplot2
+-   Practical: creating a visualisation for your paper

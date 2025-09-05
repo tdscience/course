@@ -1,5 +1,7 @@
 ---
 title: "Sharing code and data"
+description-meta: "Learn how to share code and data using GitHub, including repositories, collaboration, and best practices."
+pagetitle: "Session 2: Sharing Code and Data"
 format: html
 ---
 

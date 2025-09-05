@@ -1,0 +1,10 @@
+---
+title: "Drafting a reproducible paper"
+description-meta: "Learn to draft reproducible papers, including topic selection and individual work on paper drafts."
+pagetitle: "Session 5: Drafting Papers"
+format: html
+---
+
+-   Recap of Day 1
+-   Topic selection
+-   Individual work on paper drafts

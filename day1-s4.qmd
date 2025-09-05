@@ -1,5 +1,7 @@
 ---
 title: "Cross-references and citations with Quarto"
+description-meta: "Master cross-references, citations, bibliographies, and tables/figures in Quarto for academic publishing."
+pagetitle: "Session 4: Citations and References"
 format: html
 ---
 

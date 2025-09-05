@@ -1,5 +1,7 @@
 ---
 title: "Data Science and Digital Tools for Transport Planning"
+description-meta: "Comprehensive course on data science and digital tools for transport planning, covering reproducible research and collaboration."
+pagetitle: "Course Overview and Schedule"
 ---
 
 ## Learning objectives
