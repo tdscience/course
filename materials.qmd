@@ -1,7 +1,8 @@
 ---
 title: "Course Materials"
-description: "Access course materials including datasets and slides for the Data Science and Digital Tools for Transport Planning course."
+description-meta: "Access course materials including datasets and slides for the Data Science and Digital Tools for Transport Planning course."
 keywords: "course materials, datasets, slides, transport planning"
+pagetitle: "Course Materials"
 ---
 
 [Datasets](data/)

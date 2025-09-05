@@ -42,6 +42,11 @@ format:
     theme: lux
     # css: styles.css
     toc: true
+    title-prefix: "Data Science Course - "
+    author-meta: "Robin Lovelace"
+    date-meta: "2025"
+    copyright: "© 2025 Robin Lovelace"
+    license: "CC BY-SA"
 
 execute:
   freeze: auto

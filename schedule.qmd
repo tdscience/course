@@ -1,7 +1,8 @@
 ---
 title: "Schedule"
-description: "Detailed schedule for the Data Science and Digital Tools for Transport Planning course, including session timings and topics."
+description-meta: "Detailed schedule for the Data Science and Digital Tools for Transport Planning course, including session timings and topics."
 keywords: "course schedule, transport planning, data science, sessions"
+pagetitle: "Course Schedule"
 ---
 
 ## Day 1

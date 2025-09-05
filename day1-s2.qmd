@@ -1,7 +1,8 @@
 ---
 title: "Sharing code and data"
-description: "Learn how to share code and data using GitHub, including repositories, collaboration, and best practices."
+description-meta: "Learn how to share code and data using GitHub, including repositories, collaboration, and best practices."
 keywords: "GitHub, code sharing, data sharing, collaboration, version control, pull requests"
+pagetitle: "Session 2: Sharing Code and Data"
 format: html
 ---
 

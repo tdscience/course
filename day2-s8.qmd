@@ -1,7 +1,8 @@
 ---
 title: "Working on papers"
-description: "Practical session applying course elements to work on papers and projects."
+description-meta: "Practical session applying course elements to work on papers and projects."
 keywords: "practical session, working on papers, course application, projects"
+pagetitle: "Session 8: Final Projects"
 format: html
 ---
 

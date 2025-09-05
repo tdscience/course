@@ -1,7 +1,8 @@
 ---
 title: "Drafting a reproducible paper"
-description: "Learn to draft reproducible papers, including topic selection and individual work on paper drafts."
+description-meta: "Learn to draft reproducible papers, including topic selection and individual work on paper drafts."
 keywords: "reproducible papers, drafting, topic selection, academic writing"
+pagetitle: "Session 5: Drafting Papers"
 format: html
 ---
 
