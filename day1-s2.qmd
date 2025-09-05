@@ -19,7 +19,7 @@ You can explore other people's profiles and repositories (the public ones) using
 
 When you access any public repository, you will tipically see the same information in the same layout:
 
-![](images/repo_layout.png) {#fig-repo-layout .lightbox fig-align="center"}
+![](images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
 
 GitHub organizes a repository's content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project's status and activity.
 
@@ -134,7 +134,11 @@ To work on a project from GitHub, you first need to clone the repository to your
 
 ## Making changes and committing
 
-A key part of version control is *recording* the changes in the repository. Once you have created or deleted files, or made any changes, you need to **commit** them to save a snapshot of your work. First, you will need to stage them. In the command line, you can stage a file with the following code:
+A key part of version control is *recording* the changes in the repository. Once you have created or deleted files, or made any changes, you need to **commit** them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes. 
+
+![Git Workflow. From: [Git for Data Science](https://valohai.com/blog/git-for-data-science/) by Juha Kiili](images/git-branches.png){fig-align="center"}
+
+ To commit the changes, you will need to stage them first. In the command line, you can stage a file with the following code:
 
   ```
   git add <filename>
@@ -145,7 +149,7 @@ Alternatively, if you want to stage all files you can use
   git add .
   ```
 
-Then to commit changes, you use the following code:
+Then to finally commit changes, you use the following code:
   ```
   git commit -m "Describe your changes"
   ```
