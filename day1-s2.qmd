@@ -17,7 +17,7 @@ You can explore other people's profiles and repositories (the public ones) using
 
 ![](images/search_bar.png)
 
-When you access any public repository, you will tipically see the same information in the same layout:
+When you access any public repository, you will typically see the same information in the same layout:
 
 ![](images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
 
