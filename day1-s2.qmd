@@ -200,7 +200,7 @@ gh pr create
 ```
 In GitHub Desktop, everytime you commit a change on a different branch to the main, it will ask you if you want to create a pull request.
 
-After creating the pull request, you can aks someone in the team to review your work. This will ensure that the changes are correct.
+After creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct.
 
 ## Merging changes
 
