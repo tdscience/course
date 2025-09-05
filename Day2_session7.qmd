@@ -1,8 +1,0 @@
----
-title: "Editing other people's work"
-format: html
----
-
--   Reviewing and commenting on papers
--   Making changes and submitting Pull Requests
--   Controlled chaos: choose a paper and make some changes!

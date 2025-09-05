@@ -1,0 +1,8 @@
+---
+title: "Working on papers"
+description: "Practical session applying course elements to work on papers and projects."
+keywords: "practical session, working on papers, course application, projects"
+format: html
+---
+
+-   Practical session bringing together elements from the course

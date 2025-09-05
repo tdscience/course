@@ -1,0 +1,10 @@
+---
+title: "Editing other people's work"
+description: "Learn to review, comment on, and edit papers, including submitting pull requests and resolving conflicts."
+keywords: "peer review, pull requests, collaboration, GitHub, editing papers"
+format: html
+---
+
+-   Reviewing and commenting on papers
+-   Making changes and submitting Pull Requests
+-   Controlled chaos: choose a paper and make some changes!

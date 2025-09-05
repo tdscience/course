@@ -1,0 +1,10 @@
+---
+title: "Drafting a reproducible paper"
+description: "Learn to draft reproducible papers, including topic selection and individual work on paper drafts."
+keywords: "reproducible papers, drafting, topic selection, academic writing"
+format: html
+---
+
+-   Recap of Day 1
+-   Topic selection
+-   Individual work on paper drafts

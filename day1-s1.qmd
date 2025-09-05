@@ -1,0 +1,18 @@
+---
+title: "Development environments, system commands, and version control"
+description: "Introduction to development environments, system commands, and version control for data science and transport planning."
+keywords: "development environments, system commands, version control, Git, GitHub, RStudio, VS Code"
+format: html
+---
+
+- Introduction to RStudio and VS Code 
+- Key features and extensions of VS Code 
+- The system shell and basic commands 
+- Introduction to Git and GitHub 
+- The `gh` command-line tool 
+- Practical: setting up your development environment and using the `gh` command-line tool 
+- Worked example starting with: 
+  - `gh repo clone tdscience/course` 
+  - `cd course` 
+  - `gh issue list` 
+  - `gh issue create`

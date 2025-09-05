@@ -24,7 +24,7 @@ website:
         text: Home
       - href: schedule.qmd
         text: Schedule
-      # - href: tp_schedule.qmd
+      # - href: tp-schedule.qmd
       #   text: Data Science and Digital Tools for Transport Planning
       - href: materials.qmd
         text: Materials
@@ -45,5 +45,5 @@ format:
 
 execute:
   freeze: auto
-  # cache: true
+  cache: true
 

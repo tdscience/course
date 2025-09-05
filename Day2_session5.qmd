@@ -1,8 +1,0 @@
----
-title: "Drafting a reproducible paper"
-format: html
----
-
--   Recap of Day 1
--   Topic selection
--   Individual work on paper drafts
