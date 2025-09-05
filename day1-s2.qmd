@@ -76,7 +76,7 @@ You can choose now if your repository will be private or public. This can also b
   Private
 ```
 
-The next steps will aks if you want to add `README` , `.gitignore`, and license files to your repository. A `README` file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A `.gitignore` file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick `R` in this case. Finally, the license file, if created, clearly states the legal terms under which the project's code is distributed.
+The next steps will ask if you want to add `README` , `.gitignore`, and license files to your repository. A `README` file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A `.gitignore` file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick `R` in this case. Finally, the license file, if created, clearly states the legal terms under which the project's code is distributed.
 
 After all questions, the interactive assistant will confirm if you want to create the repository.
 
