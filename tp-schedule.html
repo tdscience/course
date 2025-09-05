@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Robin Lovelace">
+<meta name="dcterms.date" content="2025">
+<meta name="description" content="Comprehensive course on data science and digital tools for transport planning, covering reproducible research and collaboration.">
 
-<title>Cross-references and citations with Quarto – Data Science and Digital Tools for Transport Planning</title>
+<title>Course Overview and Schedule – Data Science Course - </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Cross-references and citations with Quarto</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Science and Digital Tools for Transport Planning</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,15 +162,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#software-prerequisites" id="toc-software-prerequisites" class="nav-link" data-scroll-target="#software-prerequisites">Software prerequisites</a></li>
+  <li><a href="#day-1" id="toc-day-1" class="nav-link" data-scroll-target="#day-1">Day 1</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2">Day 2</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cross-references and citations with Quarto</h1>
+<h1 class="title">Data Science and Digital Tools for Transport Planning</h1>
 </div>
 
 
@@ -184,17 +197,141 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
-<li>Cross-references</li>
-<li>Citations</li>
-<li>Bibliographies</li>
-<li>Tables and figures</li>
-<li>Practical: adding citations and references to your paper</li>
+<li>Be able to share reproducible code for more scientific and transparent transport research</li>
+<li>To be confident reproducing your own work and that of others</li>
+<li>To become skilled at using Git and GitHub to manage versions of your code and collaborate with others</li>
+<li>To be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing</li>
+<li>To understand how Quarto extensions can be used as a basis for creating publication-ready papers</li>
+<li>To be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time</li>
+<li>Understanding of best practices around code sharing and collaboration for reproducible research in transport planning</li>
+</ul>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>This course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.</p>
+<p>Familiarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.</p>
+</section>
+<section id="software-prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="software-prerequisites">Software prerequisites</h2>
+<p>You should bring a laptop with the following software installed and tested to check it works:</p>
+<ul>
+<li>Quarto (minimum version: 1.5.45)</li>
+<li>R or Python or both</li>
+<li>RStudio (recommended for most people) or VS Code
+<ul>
+<li>If you will use VS Code for the course, you need the following extensions:
+<ul>
+<li>The R extension <code>reditorsupport.r</code> if using R</li>
+<li>The Python extension <code>ms-python.python</code> if using Python</li>
+<li>The quarto extention <code>quarto.quarto</code></li>
+</ul></li>
+</ul></li>
+<li>Git, installed with one of the following packages:
+<ul>
+<li>GitHub Desktop (see <a href="https://desktop.github.com/">desktop.github.com</a>)</li>
+<li>Git for the command line (see <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git-scm.com</a>)</li>
+</ul></li>
+<li>The <code>gh</code> command-line tool (see <a href="https://cli.github.com/">cli.github.com</a> for installation and set-up instructions)</li>
+</ul>
+<p>See the <a href="prerequisites">prerequisites</a> page for details and to test your setup.</p>
+<p>Ideas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use</p>
+</section>
+<section id="day-1" class="level2">
+<h2 class="anchored" data-anchor-id="day-1">Day 1</h2>
+<ul>
+<li>09:30-10:00 Introduction
+<ul>
+<li>Welcome and introductions (participatory)</li>
+<li>Definitions and motivations</li>
+<li>Course structure and objectives</li>
+</ul></li>
+<li>10:00-11:00 Development environments, system commands, and version control
+<ul>
+<li>Introduction to VS Code, RStudio, and Jupyter</li>
+<li>Key features and extensions of VS Code</li>
+<li>The system shell and basic commands</li>
+<li>Introduction to Git and GitHub</li>
+<li>The <code>gh</code> command-line tool</li>
+</ul></li>
+<li>11:00-11:15 Break</li>
+<li>11:15-12:30 Sharing code and data
+<ul>
+<li>Navigating GitHub</li>
+<li>Your profile and repositories</li>
+<li>Creating and managing repositories
+<ul>
+<li>Cloning repositories</li>
+<li>Making changes and committing</li>
+<li>Pushing changes to GitHub</li>
+</ul></li>
+<li>Collaboration with GitHub
+<ul>
+<li>Branches and pull requests</li>
+<li>Merging changes</li>
+<li>Resolving conflicts</li>
+</ul></li>
+</ul></li>
+<li>12:30-13:30 Lunch</li>
+<li>13:30-15:00 Data visualisation
+<ul>
+<li>Univariate plots</li>
+<li>Bivariate plots</li>
+<li>Multivariate plots and facets</li>
+<li>Interactive visualisations</li>
+<li>Interactive maps</li>
+</ul></li>
+<li>15:00-15:15 Break</li>
+<li>15:15-17:00 Transport Planning Challenge 1
+<ul>
+<li>Introduction to challenge datasets</li>
+<li>Deciding on a topic and questions</li>
+<li>Practical: working on the challenge</li>
+</ul></li>
+</ul>
+</section>
+<section id="day-2" class="level2">
+<h2 class="anchored" data-anchor-id="day-2">Day 2</h2>
+<ul>
+<li>09:00-10:30 Data manipulation
+<ul>
+<li>Key verbs: filter, select, mutate, summarise</li>
+<li>Joins: inner, left, right, full</li>
+<li>Spatial data operations
+<ul>
+<li>Spatial subsetting</li>
+<li>Spatial joins</li>
+<li>Spatial aggregation</li>
+</ul></li>
+</ul></li>
+<li>10:30-10:45 Break</li>
+<li>10:45-12:00 Web application development
+<ul>
+<li>Static vs dynamic web applications</li>
+<li>Practical introduction to Shiny for R and Python</li>
+<li>(Optional): Front-end development</li>
+</ul></li>
+<li>12:00-13:00 Lunch</li>
+<li>13:00-14:30 Transport Planning Challenge 2
+<ul>
+<li>Discussion of datasets from Challenge 1</li>
+<li>Deciding on a topic and questions</li>
+<li>Practical: working on the challenge</li>
+</ul></li>
+<li>14:30-14:45 Break</li>
+<li>14:45-16:30 Transport Planning Challenge 2: continued
+<ul>
+<li>Practical: working on the challenge</li>
+</ul></li>
+<li>16:30-17:00 Presentations and wrap-up</li>
 </ul>
 
 
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -602,7 +739,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
