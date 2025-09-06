@@ -13,7 +13,7 @@ format:
 
 ## Navigating GitHub
 
-You can explore other people's profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a person you know.
+After you've logged into [github.com](https://github.com), you can use the web application to explore the world of open source software. You can, for example, search for people's profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a researcher or developer whose work interests you.
 
 ![](images/search_bar.png)
 
@@ -33,6 +33,14 @@ GitHub organizes a repository's content and collaboration tools into several key
 ## Creating and managing repositories
 
 You can create a repository from scratch or using an existing folder. The following instructions will show you the basic process for creating a new repository, this will create a Git repository in your machine and upload it to GitHub.
+
+::: {.callout-tip}
+You can use the `gh` command line interface (CLI) or a graphical user interface (GUI) like GitHub Desktop to create and manage repositories. 
+
+While both approaches work, we recommend using the `gh` CLI because, after you have learned the commands, it is faster, more flexible, and easier to automate repetitive tasks.
+
+If you want to create a repository using an existing folder, make sure to navigate to that folder in your terminal before running the `gh repo create` command.
+:::
 
 ::: panel-tabset
 ### `gh` cli
@@ -108,7 +116,11 @@ This process will create the repository locally. In other to publish it on GitHu
 ![](images/publish_new.png)
 :::
 
-Once your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page.
+Once your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page and select the repository you just created.
+You can see a list of repositories in your profile page by clicking on the `Repositories` tab, or typing `github.com/username?tab=repositories` in your browser, replacing `username` with your GitHub username.
+To see robinlovelace's repositories, for example, you can type the following into your browser: [`github.com/Robinlovelace?tab=repositories`](https://github.com/Robinlovelace?tab=repositories).
+
+<!-- https://github.com/Robinlovelace?tab=repositories -->
 
 ![](images/nav_bar_repos.png)
 
