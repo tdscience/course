@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-3f85d3ece1fb055ea7ca4fd7d48dc3e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -162,8 +166,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-ides" id="toc-introduction-to-ides" class="nav-link active" data-scroll-target="#introduction-to-ides">Introduction to IDEs</a>
+  <ul class="collapse">
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
+  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron">Positron</a></li>
+  </ul></li>
+  <li><a href="#key-features-and-extensions-of-vs-code" id="toc-key-features-and-extensions-of-vs-code" class="nav-link" data-scroll-target="#key-features-and-extensions-of-vs-code">Key features and extensions of VS Code</a>
+  <ul class="collapse">
+  <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features">Core Features</a></li>
+  </ul></li>
+  <li><a href="#the-system-shell-and-basic-commands" id="toc-the-system-shell-and-basic-commands" class="nav-link" data-scroll-target="#the-system-shell-and-basic-commands">The system shell and basic commands</a></li>
+  <li><a href="#introduction-to-version-control" id="toc-introduction-to-version-control" class="nav-link" data-scroll-target="#introduction-to-version-control">Introduction to Version control</a>
+  <ul class="collapse">
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#working-with-github" id="toc-working-with-github" class="nav-link" data-scroll-target="#working-with-github">Working with GitHub</a></li>
+  </ul></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical">Practical:</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise:</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://docs.posit.co/ide/user/"><i class="bi bi-link-45deg"></i>RStudio User Guide</a></li><li><a href="https://code.visualstudio.com/docs"><i class="bi bi-link-45deg"></i>VS Code documentation</a></li><li><a href="https://positron.posit.co/welcome.html"><i class="bi bi-link-45deg"></i>Positron documentation</a></li><li><a href="https://git-scm.com/book/en/v2"><i class="bi bi-link-45deg"></i>Pro Git</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -187,23 +217,183 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-ides" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-ides">Introduction to IDEs</h2>
+<p>There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.</p>
+<section id="rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
+<p>RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see <a href="#fig-rstudio-layout" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<div id="fig-rstudio-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Rstudio_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Rstudio layout"><img src="images/Rstudio_layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Rstudio layout
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="vs-code">VS Code</h3>
+<p>Visual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (<a href="#fig-vscode-layout" class="quarto-xref">Figure&nbsp;2</a>)</p>
+<div id="fig-vscode-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vscode-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/vscode_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: VScode layout"><img src="images/vscode_layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vscode-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: VScode layout
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="positron" class="level3">
+<h3 class="anchored" data-anchor-id="positron">Positron</h3>
+<p>Positron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.</p>
+<div id="fig-positron-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positron-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/positron_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Positron layout"><img src="images/positron_layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positron-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Positron layout
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="key-features-and-extensions-of-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="key-features-and-extensions-of-vs-code">Key features and extensions of VS Code</h2>
+<p>VS Code’s power lies in its lightweight core and its vast, extensible ecosystem. On the other hand, VS Code extensions add language support, interactive tools, and specialised features. Here are some of the most relevant</p>
+<section id="core-features" class="level3">
+<h3 class="anchored" data-anchor-id="core-features">Core Features</h3>
 <ul>
-<li>Introduction to RStudio and VS Code</li>
-<li>Key features and extensions of VS Code</li>
-<li>The system shell and basic commands</li>
-<li>Introduction to Git and GitHub</li>
-<li>The <code>gh</code> command-line tool</li>
-<li>Practical: setting up your development environment and using the <code>gh</code> command-line tool</li>
-<li>Worked example starting with:
+<li><p><em>IntelliSense</em>: A code completion engine that provides intelligent, context-aware suggestions for variables, functions, and modules, along with helpful pop-up documentation.</p></li>
+<li><p><em>Integrated Git</em>: VS Code has built-in support for Git, allowing developers to manage version control directly within the editor.</p></li>
+<li><p><em>Built-in Terminal</em>: An integrated command-line terminal allows you to run shell commands, execute scripts, and manage your environment without switching applications.</p></li>
+<li><p><em>Debugging</em>: VS Code includes an interactive debugger that enables you to set breakpoints, inspect variables, and step through code to identify and fix bugs.</p></li>
+</ul>
+<p>We will use only the basic extensions as described in the <a href="./prerequisites.html">prerequisites</a>. But it is worth exploring the extensions available on <a href="https://marketplace.visualstudio.com/vscode">VS Code Marketplace</a>.</p>
+</section>
+</section>
+<section id="the-system-shell-and-basic-commands" class="level2">
+<h2 class="anchored" data-anchor-id="the-system-shell-and-basic-commands">The system shell and basic commands</h2>
+<p>A system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system’s kernel. The shell is where you can run scripts, manage files, and execute programs.</p>
+<p>The commands will depend on the operative system you have in your computer. Windows use the <em>Windows Command Prompt</em> or <em>PowerShell</em>, while macOS and Linux use <em>Bash/Zsh</em>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS/Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="navigation" class="level4">
+<h4 class="anchored" data-anchor-id="navigation">Navigation</h4>
 <ul>
+<li>Change directory: <code>cd &lt;directory_name&gt;</code></li>
+<li>List directory contents: <code>dir</code></li>
+<li>Print working directory: <code>cd</code></li>
+</ul>
+</section>
+<section id="file-directory-management" class="level4">
+<h4 class="anchored" data-anchor-id="file-directory-management">File &amp; Directory Management</h4>
+<ul>
+<li>Create a directory: <code>mkdir &lt;directory_name&gt;</code></li>
+<li>Copy a file: <code>copy &lt;source_file&gt; &lt;destination&gt;</code></li>
+<li>Move a file: <code>move &lt;source_file&gt; &lt;destination&gt;</code></li>
+<li>Delete a file: <code>del &lt;file_name&gt;</code></li>
+<li>Display file content: <code>type &lt;file_name&gt;</code></li>
+</ul>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="navigation-1" class="level4">
+<h4 class="anchored" data-anchor-id="navigation-1">Navigation</h4>
+<ul>
+<li>Change directory: <code>cd &lt;directory_name&gt;</code></li>
+<li>List directory contents: <code>ls</code></li>
+<li>Print working directory: <code>pwd</code></li>
+</ul>
+</section>
+<section id="file-directory-management-1" class="level4">
+<h4 class="anchored" data-anchor-id="file-directory-management-1">File &amp; Directory Management</h4>
+<ul>
+<li>Create a directory: <code>mkdir &lt;directory_name&gt;</code></li>
+<li>Copy a file: <code>cp &lt;source_file&gt; &lt;destination&gt;</code></li>
+<li>Move a file: <code>mv &lt;source_file&gt; &lt;destination&gt;</code></li>
+<li>Delete a file: <code>rm &lt;file_name&gt;</code></li>
+<li>Display file content: <code>cat &lt;file_name&gt;</code></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction-to-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-version-control">Introduction to Version control</h2>
+<section id="git" class="level3">
+<h3 class="anchored" data-anchor-id="git">Git</h3>
+<p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;4</a>?</p>
+<div id="fig-no-version-control" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/version_control_humour.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Version control. From: <a href="https://programmerhumor.io/">programmerhumor.io</a>
+</figcaption>
+</figure>
+</div>
+<p>Git is a great tool that tracks changes to files over time, especially in text-base files such as scripts, allowing multiple people to work on the same project without overwriting each other’s work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e.&nbsp;repository, without the need for independent files or folders for each version.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git-branches.png" class="img-fluid figure-img"></p>
+<figcaption>Git Workflow. From: <a href="https://valohai.com/blog/git-for-data-science/">Git for Data Science</a> by Juha Kiili</figcaption>
+</figure>
+</div>
+</section>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p>GitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a <em>Hub</em> for storing, sharing and collaborating with others. Some tools in GitHub, like <strong>pull requests</strong> for proposing changes, <strong>reviews</strong> for asking others to check your work, and <strong>issue tracking</strong> for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.</p>
+<p>To learn more about the different elements in GitHub, you can start exploring the <a href="https://skills.github.com/">GitHub skills courses</a>.</p>
+</section>
+<section id="working-with-github" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-github">Working with GitHub</h3>
+<p>Any Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.</p>
+<p>You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful <a href="https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf">cheat sheet</a>.</p>
+<p>There are two main ways of working with GitHub repositories in your machine: the <code>gh</code> command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session.</p>
+</section>
+</section>
+<section id="practical" class="level2">
+<h2 class="anchored" data-anchor-id="practical">Practical:</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the <a href="prerequisites">prerequisites</a> for more information.</p>
+</div>
+</div>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise:</h3>
+<ol type="1">
+<li>Open the shell</li>
+<li>Create a folder called <code>reproducible-research</code></li>
+<li>if you have the <code>gh</code> command-line tool installed, try:
+<ol type="1">
 <li><code>gh repo clone tdscience/course</code></li>
 <li><code>cd course</code></li>
 <li><code>gh issue list</code></li>
 <li><code>gh issue create</code></li>
-</ul></li>
-</ul>
+</ol></li>
+</ol>
 
 
+</section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -613,12 +803,44 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

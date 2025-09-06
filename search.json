@@ -133,7 +133,42 @@
     "href": "day1-s1.html",
     "title": "Development environments, system commands, and version control",
     "section": "",
-    "text": "Introduction to RStudio and VS Code\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\nPractical: setting up your development environment and using the gh command-line tool\nWorked example starting with:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create\n\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
+  },
+  {
+    "objectID": "day1-s1.html#introduction-to-ides",
+    "href": "day1-s1.html#introduction-to-ides",
+    "title": "Development environments, system commands, and version control",
+    "section": "",
+    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
+  },
+  {
+    "objectID": "day1-s1.html#key-features-and-extensions-of-vs-code",
+    "href": "day1-s1.html#key-features-and-extensions-of-vs-code",
+    "title": "Development environments, system commands, and version control",
+    "section": "Key features and extensions of VS Code",
+    "text": "Key features and extensions of VS Code\nVS Code’s power lies in its lightweight core and its vast, extensible ecosystem. On the other hand, VS Code extensions add language support, interactive tools, and specialised features. Here are some of the most relevant\n\nCore Features\n\nIntelliSense: A code completion engine that provides intelligent, context-aware suggestions for variables, functions, and modules, along with helpful pop-up documentation.\nIntegrated Git: VS Code has built-in support for Git, allowing developers to manage version control directly within the editor.\nBuilt-in Terminal: An integrated command-line terminal allows you to run shell commands, execute scripts, and manage your environment without switching applications.\nDebugging: VS Code includes an interactive debugger that enables you to set breakpoints, inspect variables, and step through code to identify and fix bugs.\n\nWe will use only the basic extensions as described in the prerequisites. But it is worth exploring the extensions available on VS Code Marketplace."
+  },
+  {
+    "objectID": "day1-s1.html#the-system-shell-and-basic-commands",
+    "href": "day1-s1.html#the-system-shell-and-basic-commands",
+    "title": "Development environments, system commands, and version control",
+    "section": "The system shell and basic commands",
+    "text": "The system shell and basic commands\nA system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system’s kernel. The shell is where you can run scripts, manage files, and execute programs.\nThe commands will depend on the operative system you have in your computer. Windows use the Windows Command Prompt or PowerShell, while macOS and Linux use Bash/Zsh.\n\nWindowsmacOS/Linux\n\n\n\nNavigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: dir\nPrint working directory: cd\n\n\n\nFile & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: copy &lt;source_file&gt; &lt;destination&gt;\nMove a file: move &lt;source_file&gt; &lt;destination&gt;\nDelete a file: del &lt;file_name&gt;\nDisplay file content: type &lt;file_name&gt;\n\n\n\n\n\nNavigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: ls\nPrint working directory: pwd\n\n\n\nFile & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: cp &lt;source_file&gt; &lt;destination&gt;\nMove a file: mv &lt;source_file&gt; &lt;destination&gt;\nDelete a file: rm &lt;file_name&gt;\nDisplay file content: cat &lt;file_name&gt;"
+  },
+  {
+    "objectID": "day1-s1.html#introduction-to-version-control",
+    "href": "day1-s1.html#introduction-to-version-control",
+    "title": "Development environments, system commands, and version control",
+    "section": "Introduction to Version control",
+    "text": "Introduction to Version control\n\nGit\nWorking with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with Figure 4?\n\n\n\n\n\n\nFigure 4: Version control. From: programmerhumor.io\n\n\n\nGit is a great tool that tracks changes to files over time, especially in text-base files such as scripts, allowing multiple people to work on the same project without overwriting each other’s work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\n\n\nGitHub\nGitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a Hub for storing, sharing and collaborating with others. Some tools in GitHub, like pull requests for proposing changes, reviews for asking others to check your work, and issue tracking for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.\nTo learn more about the different elements in GitHub, you can start exploring the GitHub skills courses.\n\n\nWorking with GitHub\nAny Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.\nYou might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful cheat sheet.\nThere are two main ways of working with GitHub repositories in your machine: the gh command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session."
+  },
+  {
+    "objectID": "day1-s1.html#practical",
+    "href": "day1-s1.html#practical",
+    "title": "Development environments, system commands, and version control",
+    "section": "Practical:",
+    "text": "Practical:\n\n\n\n\n\n\nNote\n\n\n\nYou should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the prerequisites for more information.\n\n\n\nExercise:\n\nOpen the shell\nCreate a folder called reproducible-research\nif you have the gh command-line tool installed, try:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
   },
   {
     "objectID": "day2-s8.html",
@@ -231,7 +266,91 @@
     "href": "day1-s2.html",
     "title": "Sharing code and data",
     "section": "",
-    "text": "Navigating GitHub\nYour profile and repositories\nCreating and managing repositories\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\nCollaboration with GitHub\nBranches and pull requests\nMerging changes\nResolving conflicts\nAutomated workflows with GitHub Actions\nBest practices for collaboration, sharing code and data\nPractical: creating a repository and making changes\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "You can explore other people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a person you know.\n\nWhen you access any public repository, you will typically see the same information in the same layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
+  },
+  {
+    "objectID": "day1-s2.html#navigating-github",
+    "href": "day1-s2.html#navigating-github",
+    "title": "Sharing code and data",
+    "section": "",
+    "text": "You can explore other people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a person you know.\n\nWhen you access any public repository, you will typically see the same information in the same layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
+  },
+  {
+    "objectID": "day1-s2.html#creating-and-managing-repositories",
+    "href": "day1-s2.html#creating-and-managing-repositories",
+    "title": "Sharing code and data",
+    "section": "Creating and managing repositories",
+    "text": "Creating and managing repositories\nYou can create a repository from scratch or using an existing folder. The following instructions will show you the basic process for creating a new repository, this will create a Git repository in your machine and upload it to GitHub.\n\ngh cliGitHub Desktop\n\n\nTo create a repository from scratch, go to the location where you want to create your project using the shell, then run gh repo create to access the interactive mode.\nWe will select the first option\n? What would you like to do?  [Use arrows to move, type to filter]\n&gt; Create a new repository on github.com from scratch\n  Create a new repository on github.com from a template repository\n  Push an existing local repository to github.com\nWe will need to assign a name. Remember that this will create a new folder with that name. We will call it myrepository\n? Repository name\nNow select the owner of the repository, in this case, your username on GitHub\n? Repository owner  [Use arrows to move, type to filter]\n&gt; yourGHname\nYou can provide a description for the repository. This can be edited afterwards.\n? Repository owner yourGHname\n? Description\nYou can choose now if your repository will be private or public. This can also be changed afterwards.\n? Visibility  [Use arrows to move, type to filter]\n&gt; Public\n  Private\nThe next steps will ask if you want to add README , .gitignore, and license files to your repository. A README file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nAfter all questions, the interactive assistant will confirm if you want to create the repository.\n? Would you like to add a README file? Yes\n? Would you like to add a .gitignore? Yes\n? Choose a .gitignore template R\n? Would you like to add a license? Yes\n? Choose a license GNU Affero General Public License v3.0\n? This will create \"myrepository\" as a public repository on github.com. Continue? (Y/n)\nConfirm your repository and explore the contents of it!\n\n\nOpen the GitHub desktop app. An click on the File menu and select New repository...\n\nA window asking for the details of your repository will show.\n\nA .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nThis process will create the repository locally. In other to publish it on GitHub, you have to click on Publish repository.\n\n\n\n\nOnce your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page.\n\nIf you want to create a repository from an existing project, you will need to initialise your repository. For this, go to the folder where you have your project with cd &lt;folder path&gt;, and run git init. This will create a local repository.\n\nExercise:\nCan you create a repository from an existing folder using either gh CLI or GitHub Desktop."
+  },
+  {
+    "objectID": "day1-s2.html#cloning-repositories",
+    "href": "day1-s2.html#cloning-repositories",
+    "title": "Sharing code and data",
+    "section": "Cloning repositories",
+    "text": "Cloning repositories\nTo work on a project from GitHub, you first need to clone the repository to your local machine. Cloning creates a local copy of all the files and history.\n\nUsing the command line, go to the location where you want to store the repository and run:\ngh repo clone username/repositoryname\nReplace username/repositoryname with the actual repository path on GitHub. For example, tdscience/course.\nWith GitHub Desktop, click File &gt; Clone repository, search the repository, and choose a local path."
+  },
+  {
+    "objectID": "day1-s2.html#making-changes-and-committing",
+    "href": "day1-s2.html#making-changes-and-committing",
+    "title": "Sharing code and data",
+    "section": "Making changes and committing",
+    "text": "Making changes and committing\nA key part of version control is recording the changes in the repository. Once you have created or deleted files, or made any changes, you need to commit them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\nTo commit the changes, you will need to stage them first. In the command line, you can stage a file with the following code:\ngit add &lt;filename&gt;\nAlternatively, if you want to stage all files you can use\ngit add .\nThen to finally commit changes, you use the following code: git commit -m \"Describe your changes\" It is good practice to use concise but clear messages to describe what the change was.\nIn GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click “Commit to main”."
+  },
+  {
+    "objectID": "day1-s2.html#pushing-changes-to-github",
+    "href": "day1-s2.html#pushing-changes-to-github",
+    "title": "Sharing code and data",
+    "section": "Pushing changes to GitHub",
+    "text": "Pushing changes to GitHub\nTo update the repository on GitHub with your local commits, push your changes:\n\nCommand line:\ngit push\nIn GitHub Desktop, click “Push origin”."
+  },
+  {
+    "objectID": "day1-s2.html#collaboration-with-github",
+    "href": "day1-s2.html#collaboration-with-github",
+    "title": "Sharing code and data",
+    "section": "Collaboration with GitHub",
+    "text": "Collaboration with GitHub\nGitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.\nUsing the command line, you can create an issue by running\ngh issue create\nAlternatively, you can use the Issues tab online, and create it there."
+  },
+  {
+    "objectID": "day1-s2.html#branches-and-pull-requests",
+    "href": "day1-s2.html#branches-and-pull-requests",
+    "title": "Sharing code and data",
+    "section": "Branches and pull requests",
+    "text": "Branches and pull requests\nBranches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectivelly create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.\nTo create a branch from an issue e.g. #3, you can run: gh issue develop 3 --checkout\nUsing --checkout will move you from the main version to the project to the version where you are going to do the work to implement the solution to the issue. You can now start working, and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run git checkout main.\nOnce you have finished working with your branch, you can create a pull request, so the changes are incorporated to the main version. To do this, run the following code:\ngh pr create\nIn GitHub Desktop, everytime you commit a change on a different branch to the main, it will ask you if you want to create a pull request.\nAfter creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct."
+  },
+  {
+    "objectID": "day1-s2.html#merging-changes",
+    "href": "day1-s2.html#merging-changes",
+    "title": "Sharing code and data",
+    "section": "Merging changes",
+    "text": "Merging changes\nOnce a pull request is reviewed and approved, you can merge it into the main branch.\n\nOn GitHub, click “Merge pull request”.\nLocally, use:\ngh pr merge 1"
+  },
+  {
+    "objectID": "day1-s2.html#resolving-conflicts",
+    "href": "day1-s2.html#resolving-conflicts",
+    "title": "Sharing code and data",
+    "section": "Resolving conflicts",
+    "text": "Resolving conflicts\nConflicts occur when changes in different branches overlap. Git will mark the conflicting files.\n\nOpen the file, look for conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;), and edit to resolve.\nAfter resolving, add and commit the file:\ngit add &lt;filename&gt;\ngit commit"
+  },
+  {
+    "objectID": "day1-s2.html#automated-workflows-with-github-actions",
+    "href": "day1-s2.html#automated-workflows-with-github-actions",
+    "title": "Sharing code and data",
+    "section": "Automated workflows with GitHub Actions",
+    "text": "Automated workflows with GitHub Actions\nGitHub Actions lets you automate tasks like testing or deployment.\n\nAdd workflow files in .github/workflows/.\nExample: Run tests on every push."
+  },
+  {
+    "objectID": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
+    "href": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
+    "title": "Sharing code and data",
+    "section": "Best practices for collaboration, sharing code and data",
+    "text": "Best practices for collaboration, sharing code and data\n\nWrite clear commit messages.\nUse branches for features and fixes.\nKeep your repository organized with README, .gitignore, and license files.\nCommunicate using Issues and Discussions.\nReview code via pull requests.\nProtect sensitive data by not uploading secrets."
+  },
+  {
+    "objectID": "day1-s2.html#practical-creating-a-repository-and-making-changes",
+    "href": "day1-s2.html#practical-creating-a-repository-and-making-changes",
+    "title": "Sharing code and data",
+    "section": "Practical: creating a repository and making changes",
+    "text": "Practical: creating a repository and making changes"
   },
   {
     "objectID": "day1-s4.html",

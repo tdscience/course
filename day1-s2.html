@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-3f85d3ece1fb055ea7ca4fd7d48dc3e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -162,8 +166,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#navigating-github" id="toc-navigating-github" class="nav-link active" data-scroll-target="#navigating-github">Navigating GitHub</a>
+  <ul class="collapse">
+  <li><a href="#the-main-tabs" id="toc-the-main-tabs" class="nav-link" data-scroll-target="#the-main-tabs">The Main Tabs</a></li>
+  </ul></li>
+  <li><a href="#creating-and-managing-repositories" id="toc-creating-and-managing-repositories" class="nav-link" data-scroll-target="#creating-and-managing-repositories">Creating and managing repositories</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise:</a></li>
+  </ul></li>
+  <li><a href="#cloning-repositories" id="toc-cloning-repositories" class="nav-link" data-scroll-target="#cloning-repositories">Cloning repositories</a></li>
+  <li><a href="#making-changes-and-committing" id="toc-making-changes-and-committing" class="nav-link" data-scroll-target="#making-changes-and-committing">Making changes and committing</a></li>
+  <li><a href="#pushing-changes-to-github" id="toc-pushing-changes-to-github" class="nav-link" data-scroll-target="#pushing-changes-to-github">Pushing changes to GitHub</a></li>
+  <li><a href="#collaboration-with-github" id="toc-collaboration-with-github" class="nav-link" data-scroll-target="#collaboration-with-github">Collaboration with GitHub</a></li>
+  <li><a href="#branches-and-pull-requests" id="toc-branches-and-pull-requests" class="nav-link" data-scroll-target="#branches-and-pull-requests">Branches and pull requests</a></li>
+  <li><a href="#merging-changes" id="toc-merging-changes" class="nav-link" data-scroll-target="#merging-changes">Merging changes</a></li>
+  <li><a href="#resolving-conflicts" id="toc-resolving-conflicts" class="nav-link" data-scroll-target="#resolving-conflicts">Resolving conflicts</a></li>
+  <li><a href="#automated-workflows-with-github-actions" id="toc-automated-workflows-with-github-actions" class="nav-link" data-scroll-target="#automated-workflows-with-github-actions">Automated workflows with GitHub Actions</a></li>
+  <li><a href="#best-practices-for-collaboration-sharing-code-and-data" id="toc-best-practices-for-collaboration-sharing-code-and-data" class="nav-link" data-scroll-target="#best-practices-for-collaboration-sharing-code-and-data">Best practices for collaboration, sharing code and data</a></li>
+  <li><a href="#practical-creating-a-repository-and-making-changes" id="toc-practical-creating-a-repository-and-making-changes" class="nav-link" data-scroll-target="#practical-creating-a-repository-and-making-changes">Practical: creating a repository and making changes</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://cli.github.com/manual/"><i class="bi bi-link-45deg"></i>gh CLI manual</a></li><li><a href="https://docs.github.com/en/desktop"><i class="bi bi-link-45deg"></i>GitHub Desktop documentation</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -187,23 +214,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="navigating-github" class="level2">
+<h2 class="anchored" data-anchor-id="navigating-github">Navigating GitHub</h2>
+<p>You can explore other people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a person you know.</p>
+<p><img src="images/search_bar.png" class="img-fluid"></p>
+<p>When you access any public repository, you will typically see the same information in the same layout:</p>
+<div id="fig-repo-layout" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/repo_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: "><img src="images/repo_layout.png" id="fig-repo-layout" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<p>GitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.</p>
+<section id="the-main-tabs" class="level3">
+<h3 class="anchored" data-anchor-id="the-main-tabs">The Main Tabs</h3>
 <ul>
-<li>Navigating GitHub</li>
-<li>Your profile and repositories</li>
-<li>Creating and managing repositories</li>
-<li>Cloning repositories</li>
-<li>Making changes and committing</li>
-<li>Pushing changes to GitHub</li>
-<li>Collaboration with GitHub</li>
-<li>Branches and pull requests</li>
-<li>Merging changes</li>
-<li>Resolving conflicts</li>
-<li>Automated workflows with GitHub Actions</li>
-<li>Best practices for collaboration, sharing code and data</li>
-<li>Practical: creating a repository and making changes</li>
+<li><strong>Code</strong>: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.</li>
+<li><strong>Issues</strong>: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.</li>
+<li><strong>Pull requests</strong>: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.</li>
+<li><strong>Discussions</strong>: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations.</li>
 </ul>
+</section>
+</section>
+<section id="creating-and-managing-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="creating-and-managing-repositories">Creating and managing repositories</h2>
+<p>You can create a repository from scratch or using an existing folder. The following instructions will show you the basic process for creating a new repository, this will create a Git repository in your machine and upload it to GitHub.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><code>gh</code> cli</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">GitHub Desktop</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>To create a repository from scratch, go to the location where you want to create your project using the shell, then run <code>gh repo create</code> to access the interactive mode.</p>
+<p>We will select the first option</p>
+<pre><code>? What would you like to do?  [Use arrows to move, type to filter]
+&gt; Create a new repository on github.com from scratch
+  Create a new repository on github.com from a template repository
+  Push an existing local repository to github.com</code></pre>
+<p>We will need to assign a name. Remember that this will create a new folder with that name. We will call it <code>myrepository</code></p>
+<pre><code>? Repository name</code></pre>
+<p>Now select the owner of the repository, in this case, your username on GitHub</p>
+<pre><code>? Repository owner  [Use arrows to move, type to filter]
+&gt; yourGHname</code></pre>
+<p>You can provide a description for the repository. This can be edited afterwards.</p>
+<pre><code>? Repository owner yourGHname
+? Description</code></pre>
+<p>You can choose now if your repository will be private or public. This can also be changed afterwards.</p>
+<pre><code>? Visibility  [Use arrows to move, type to filter]
+&gt; Public
+  Private</code></pre>
+<p>The next steps will ask if you want to add <code>README</code> , <code>.gitignore</code>, and license files to your repository. A <code>README</code> file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
+<p>After all questions, the interactive assistant will confirm if you want to create the repository.</p>
+<pre><code>? Would you like to add a README file? Yes
+? Would you like to add a .gitignore? Yes
+? Choose a .gitignore template R
+? Would you like to add a license? Yes
+? Choose a license GNU Affero General Public License v3.0
+? This will create "myrepository" as a public repository on github.com. Continue? (Y/n)</code></pre>
+<p>Confirm your repository and explore the contents of it!</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Open the GitHub desktop app. An click on the <code>File</code> menu and select <code>New repository...</code></p>
+<p><img src="images/menu_new.png" class="img-fluid"></p>
+<p>A window asking for the details of your repository will show.</p>
+<p><img src="images/window_new.png" class="img-fluid"></p>
+<p>A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
+<p>This process will create the repository locally. In other to publish it on GitHub, you have to click on <code>Publish repository</code>.</p>
+<p><img src="images/publish_new.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>Once your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page.</p>
+<p><img src="images/nav_bar_repos.png" class="img-fluid"></p>
+<p>If you want to create a repository from an existing project, you will need to initialise your repository. For this, go to the folder where you have your project with <code>cd &lt;folder path&gt;</code>, and run <code>git init</code>. This will create a local repository.</p>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise:</h3>
+<p>Can you create a repository from an existing folder using either <code>gh</code> CLI or GitHub Desktop.</p>
+</section>
+</section>
+<section id="cloning-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-repositories">Cloning repositories</h2>
+<p>To work on a project from GitHub, you first need to clone the repository to your local machine. Cloning creates a local copy of all the files and history.</p>
+<ul>
+<li><p>Using the command line, go to the location where you want to store the repository and run:</p>
+<pre><code>gh repo clone username/repositoryname</code></pre>
+<p>Replace <code>username/repositoryname</code> with the actual repository path on GitHub. For example, <code>tdscience/course</code>.</p></li>
+<li><p>With GitHub Desktop, click <code>File</code> &gt; <code>Clone repository</code>, search the repository, and choose a local path.</p></li>
+</ul>
+<p><img src="images/clone_repo.png" class="img-fluid"></p>
+</section>
+<section id="making-changes-and-committing" class="level2">
+<h2 class="anchored" data-anchor-id="making-changes-and-committing">Making changes and committing</h2>
+<p>A key part of version control is <em>recording</em> the changes in the repository. Once you have created or deleted files, or made any changes, you need to <strong>commit</strong> them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git-branches.png" class="img-fluid figure-img"></p>
+<figcaption>Git Workflow. From: <a href="https://valohai.com/blog/git-for-data-science/">Git for Data Science</a> by Juha Kiili</figcaption>
+</figure>
+</div>
+<p>To commit the changes, you will need to stage them first. In the command line, you can stage a file with the following code:</p>
+<pre><code>git add &lt;filename&gt;</code></pre>
+<p>Alternatively, if you want to stage all files you can use</p>
+<pre><code>git add .</code></pre>
+<p>Then to finally commit changes, you use the following code: <code>git commit -m "Describe your changes"</code> It is good practice to use concise but clear messages to describe what the change was.</p>
+<p>In GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click “Commit to main”.</p>
+<p><img src="images/commit_changes.png" class="img-fluid"></p>
+</section>
+<section id="pushing-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="pushing-changes-to-github">Pushing changes to GitHub</h2>
+<p>To update the repository on GitHub with your local commits, push your changes:</p>
+<ul>
+<li><p>Command line:</p>
+<pre><code>git push</code></pre></li>
+<li><p>In GitHub Desktop, click “Push origin”.</p></li>
+</ul>
+<p><img src="images/push_commit.png" class="img-fluid"></p>
+</section>
+<section id="collaboration-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="collaboration-with-github">Collaboration with GitHub</h2>
+<p>GitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.</p>
+<p>Using the command line, you can create an issue by running</p>
+<pre><code>gh issue create</code></pre>
+<p>Alternatively, you can use the Issues tab online, and create it there.</p>
+</section>
+<section id="branches-and-pull-requests" class="level2">
+<h2 class="anchored" data-anchor-id="branches-and-pull-requests">Branches and pull requests</h2>
+<p>Branches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectivelly create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.</p>
+<p>To create a branch from an issue e.g.&nbsp;#3, you can run: <code>gh issue develop 3 --checkout</code></p>
+<p>Using <code>--checkout</code> will move you from the main version to the project to the version where you are going to do the work to implement the solution to the issue. You can now start working, and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run <code>git checkout main</code>.</p>
+<p>Once you have finished working with your branch, you can create a pull request, so the changes are incorporated to the main version. To do this, run the following code:</p>
+<pre><code>gh pr create</code></pre>
+<p>In GitHub Desktop, everytime you commit a change on a different branch to the main, it will ask you if you want to create a pull request.</p>
+<p>After creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct.</p>
+</section>
+<section id="merging-changes" class="level2">
+<h2 class="anchored" data-anchor-id="merging-changes">Merging changes</h2>
+<p>Once a pull request is reviewed and approved, you can merge it into the main branch.</p>
+<ul>
+<li><p>On GitHub, click “Merge pull request”.</p></li>
+<li><p>Locally, use:</p>
+<pre><code>gh pr merge 1</code></pre></li>
+</ul>
+</section>
+<section id="resolving-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="resolving-conflicts">Resolving conflicts</h2>
+<p>Conflicts occur when changes in different branches overlap. Git will mark the conflicting files.</p>
+<ul>
+<li><p>Open the file, look for conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>), and edit to resolve.</p></li>
+<li><p>After resolving, add and commit the file:</p>
+<pre><code>git add &lt;filename&gt;
+git commit</code></pre></li>
+</ul>
+</section>
+<section id="automated-workflows-with-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="automated-workflows-with-github-actions">Automated workflows with GitHub Actions</h2>
+<p>GitHub Actions lets you automate tasks like testing or deployment.</p>
+<ul>
+<li>Add workflow files in <code>.github/workflows/</code>.</li>
+<li>Example: Run tests on every push.</li>
+</ul>
+</section>
+<section id="best-practices-for-collaboration-sharing-code-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices-for-collaboration-sharing-code-and-data">Best practices for collaboration, sharing code and data</h2>
+<ul>
+<li>Write clear commit messages.</li>
+<li>Use branches for features and fixes.</li>
+<li>Keep your repository organized with README, .gitignore, and license files.</li>
+<li>Communicate using Issues and Discussions.</li>
+<li>Review code via pull requests.</li>
+<li>Protect sensitive data by not uploading secrets.</li>
+</ul>
+</section>
+<section id="practical-creating-a-repository-and-making-changes" class="level2">
+<h2 class="anchored" data-anchor-id="practical-creating-a-repository-and-making-changes">Practical: creating a repository and making changes</h2>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -613,12 +801,44 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
