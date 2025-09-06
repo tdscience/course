@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#creating-and-managing-repositories" id="toc-creating-and-managing-repositories" class="nav-link" data-scroll-target="#creating-and-managing-repositories">Creating and managing repositories</a>
   <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise:</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul></li>
   <li><a href="#cloning-repositories" id="toc-cloning-repositories" class="nav-link" data-scroll-target="#cloning-repositories">Cloning repositories</a></li>
   <li><a href="#making-changes-and-committing" id="toc-making-changes-and-committing" class="nav-link" data-scroll-target="#making-changes-and-committing">Making changes and committing</a></li>
@@ -216,9 +216,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="navigating-github" class="level2">
 <h2 class="anchored" data-anchor-id="navigating-github">Navigating GitHub</h2>
-<p>After you’ve logged into <a href="https://github.com">github.com</a>, you can use the web application to explore the world of open source software. You can, for example, search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a researcher or developer whose work interests you.</p>
-<p><img src="images/search_bar.png" class="img-fluid"></p>
-<p>When you access any public repository, you will typically see the same information in the same layout:</p>
+<p>After you’ve logged into <a href="https://github.com">github.com</a>, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/search_bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>When you access any public repository, you will typically see the same information in a similar layout:</p>
 <div id="fig-repo-layout" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -242,7 +246,7 @@ Figure&nbsp;1
 </section>
 <section id="creating-and-managing-repositories" class="level2">
 <h2 class="anchored" data-anchor-id="creating-and-managing-repositories">Creating and managing repositories</h2>
-<p>You can create a repository from scratch or using an existing folder. The following instructions will show you the basic process for creating a new repository, this will create a Git repository in your machine and upload it to GitHub.</p>
+<p>You can create a repository from scratch or using an existing folder. The following instructions show the basic process for creating a new repository, which will create a Git repository on your machine and upload it to GitHub.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -259,28 +263,28 @@ Tip
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><code>gh</code> cli</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">GitHub Desktop</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><code>gh</code> CLI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">GitHub Desktop</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>To create a repository from scratch, go to the location where you want to create your project using the shell, then run <code>gh repo create</code> to access the interactive mode.</p>
-<p>We will select the first option</p>
+<p>We will select the first option:</p>
 <pre><code>? What would you like to do?  [Use arrows to move, type to filter]
 &gt; Create a new repository on github.com from scratch
   Create a new repository on github.com from a template repository
   Push an existing local repository to github.com</code></pre>
-<p>We will need to assign a name. Remember that this will create a new folder with that name. We will call it <code>myrepository</code></p>
+<p>Assign a name. Remember that this will create a new folder with that name. We will call it <code>myrepository</code>.</p>
 <pre><code>? Repository name</code></pre>
-<p>Now select the owner of the repository, in this case, your username on GitHub</p>
+<p>Now select the owner of the repository, in this case, your username on GitHub.</p>
 <pre><code>? Repository owner  [Use arrows to move, type to filter]
 &gt; yourGHname</code></pre>
 <p>You can provide a description for the repository. This can be edited afterwards.</p>
 <pre><code>? Repository owner yourGHname
 ? Description</code></pre>
-<p>You can choose now if your repository will be private or public. This can also be changed afterwards.</p>
+<p>You can choose whether your repository will be private or public. This can also be changed afterwards.</p>
 <pre><code>? Visibility  [Use arrows to move, type to filter]
 &gt; Public
   Private</code></pre>
-<p>The next steps will ask if you want to add <code>README</code> , <code>.gitignore</code>, and license files to your repository. A <code>README</code> file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
+<p>The next steps will ask if you want to add <code>README</code>, <code>.gitignore</code>, and license files to your repository. A <code>README</code> file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
 <p>After all questions, the interactive assistant will confirm if you want to create the repository.</p>
 <pre><code>? Would you like to add a README file? Yes
 ? Would you like to add a .gitignore? Yes
@@ -288,15 +292,15 @@ Tip
 ? Would you like to add a license? Yes
 ? Choose a license GNU Affero General Public License v3.0
 ? This will create "myrepository" as a public repository on github.com. Continue? (Y/n)</code></pre>
-<p>Confirm your repository and explore the contents of it!</p>
+<p>Confirm your repository and explore its contents!</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Open the GitHub desktop app. An click on the <code>File</code> menu and select <code>New repository...</code></p>
+<p>Open the GitHub Desktop app. Click on the <code>File</code> menu and select <code>New repository...</code></p>
 <p><img src="images/menu_new.png" class="img-fluid"></p>
-<p>A window asking for the details of your repository will show.</p>
+<p>A window asking for the details of your repository will appear.</p>
 <p><img src="images/window_new.png" class="img-fluid"></p>
-<p>A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
-<p>This process will create the repository locally. In other to publish it on GitHub, you have to click on <code>Publish repository</code>.</p>
+<p>A <code>.gitignore</code> file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick <code>R</code> in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.</p>
+<p>This process will create the repository locally. In order to publish it on GitHub, you have to click on <code>Publish repository</code>.</p>
 <p><img src="images/publish_new.png" class="img-fluid"></p>
 </div>
 </div>
@@ -304,10 +308,10 @@ Tip
 <p>Once your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page and select the repository you just created. You can see a list of repositories in your profile page by clicking on the <code>Repositories</code> tab, or typing <code>github.com/username?tab=repositories</code> in your browser, replacing <code>username</code> with your GitHub username. To see robinlovelace’s repositories, for example, you can type the following into your browser: <a href="https://github.com/Robinlovelace?tab=repositories"><code>github.com/Robinlovelace?tab=repositories</code></a>.</p>
 <!-- https://github.com/Robinlovelace?tab=repositories -->
 <p><img src="images/nav_bar_repos.png" class="img-fluid"></p>
-<p>If you want to create a repository from an existing project, you will need to initialise your repository. For this, go to the folder where you have your project with <code>cd &lt;folder path&gt;</code>, and run <code>git init</code>. This will create a local repository.</p>
+<p>If you want to create a repository from an existing project, you will need to initialize your repository. For this, go to the folder where you have your project with <code>cd &lt;folder path&gt;</code>, and run <code>git init</code>. This will create a local repository.</p>
 <section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise:</h3>
-<p>Can you create a repository from an existing folder using either <code>gh</code> CLI or GitHub Desktop.</p>
+<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<p>Can you create a repository from an existing folder using either <code>gh</code> CLI or GitHub Desktop?</p>
 </section>
 </section>
 <section id="cloning-repositories" class="level2">
@@ -317,7 +321,7 @@ Tip
 <li><p>Using the command line, go to the location where you want to store the repository and run:</p>
 <pre><code>gh repo clone username/repositoryname</code></pre>
 <p>Replace <code>username/repositoryname</code> with the actual repository path on GitHub. For example, <code>tdscience/course</code>.</p></li>
-<li><p>With GitHub Desktop, click <code>File</code> &gt; <code>Clone repository</code>, search the repository, and choose a local path.</p></li>
+<li><p>With GitHub Desktop, click <code>File</code> &gt; <code>Clone repository</code>, search for the repository, and choose a local path.</p></li>
 </ul>
 <p><img src="images/clone_repo.png" class="img-fluid"></p>
 </section>
@@ -330,11 +334,13 @@ Tip
 <figcaption>Git Workflow. From: <a href="https://valohai.com/blog/git-for-data-science/">Git for Data Science</a> by Juha Kiili</figcaption>
 </figure>
 </div>
-<p>To commit the changes, you will need to stage them first. In the command line, you can stage a file with the following code:</p>
+<p>To commit changes, you will need to stage them first. In the command line, you can stage a file with the following code:</p>
 <pre><code>git add &lt;filename&gt;</code></pre>
 <p>Alternatively, if you want to stage all files you can use</p>
 <pre><code>git add .</code></pre>
-<p>Then to finally commit changes, you use the following code: <code>git commit -m "Describe your changes"</code> It is good practice to use concise but clear messages to describe what the change was.</p>
+<p>Then, to finally commit changes, use the following code:</p>
+<pre><code>git commit -m "Describe your changes"</code></pre>
+<p>It is good practice to use concise but clear messages to describe what the change was.</p>
 <p>In GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click “Commit to main”.</p>
 <p><img src="images/commit_changes.png" class="img-fluid"></p>
 </section>
@@ -351,18 +357,19 @@ Tip
 <section id="collaboration-with-github" class="level2">
 <h2 class="anchored" data-anchor-id="collaboration-with-github">Collaboration with GitHub</h2>
 <p>GitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.</p>
-<p>Using the command line, you can create an issue by running</p>
+<p>Using the command line, you can create an issue by running:</p>
 <pre><code>gh issue create</code></pre>
-<p>Alternatively, you can use the Issues tab online, and create it there.</p>
+<p>Alternatively, you can use the Issues tab online and create it there.</p>
 </section>
 <section id="branches-and-pull-requests" class="level2">
 <h2 class="anchored" data-anchor-id="branches-and-pull-requests">Branches and pull requests</h2>
-<p>Branches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectivelly create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.</p>
-<p>To create a branch from an issue e.g.&nbsp;#3, you can run: <code>gh issue develop 3 --checkout</code></p>
-<p>Using <code>--checkout</code> will move you from the main version to the project to the version where you are going to do the work to implement the solution to the issue. You can now start working, and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run <code>git checkout main</code>.</p>
-<p>Once you have finished working with your branch, you can create a pull request, so the changes are incorporated to the main version. To do this, run the following code:</p>
+<p>Branches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectively create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.</p>
+<p>To create a branch from an issue, e.g.&nbsp;#3, you can run:</p>
+<pre><code>gh issue develop 3 --checkout</code></pre>
+<p>Using <code>--checkout</code> will move you from the main version of the project to the version where you are going to do the work to implement the solution to the issue. You can now start working and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run <code>git checkout main</code>.</p>
+<p>Once you have finished working with your branch, you can create a pull request so the changes are incorporated into the main version. To do this, run the following code:</p>
 <pre><code>gh pr create</code></pre>
-<p>In GitHub Desktop, everytime you commit a change on a different branch to the main, it will ask you if you want to create a pull request.</p>
+<p>In GitHub Desktop, every time you commit a change on a different branch to main, it will ask you if you want to create a pull request.</p>
 <p>After creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct.</p>
 </section>
 <section id="merging-changes" class="level2">
