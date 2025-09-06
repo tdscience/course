@@ -2,19 +2,244 @@
 title: "Sharing code and data"
 description-meta: "Learn how to share code and data using GitHub, including repositories, collaboration, and best practices."
 pagetitle: "Session 2: Sharing Code and Data"
-format: html
+format:
+  html:
+    other-links:
+      - text: gh CLI manual
+        href: https://cli.github.com/manual/
+      - text: GitHub Desktop documentation
+        href: https://docs.github.com/en/desktop
 ---
 
--   Navigating GitHub
--   Your profile and repositories
--   Creating and managing repositories
--   Cloning repositories
--   Making changes and committing
--   Pushing changes to GitHub
--   Collaboration with GitHub
--   Branches and pull requests
--   Merging changes
--   Resolving conflicts
--   Automated workflows with GitHub Actions
--   Best practices for collaboration, sharing code and data
--   Practical: creating a repository and making changes
+## Navigating GitHub
+
+You can explore other people's profiles and repositories (the public ones) using the search bar. Try looking for a topic, a package or a person you know.
+
+![](images/search_bar.png)
+
+When you access any public repository, you will typically see the same information in the same layout:
+
+![](images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
+
+GitHub organizes a repository's content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project's status and activity.
+
+### The Main Tabs
+
+-   **Code**: This is the repository's home page. It displays the project's file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project's current state.
+-   **Issues**: This tab is a central hub for tracking tasks, bugs, and feature requests. It's a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.
+-   **Pull requests**: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.
+-   **Discussions**: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations.
+
+## Creating and managing repositories
+
+You can create a repository from scratch or using an existing folder. The following instructions will show you the basic process for creating a new repository, this will create a Git repository in your machine and upload it to GitHub.
+
+::: panel-tabset
+### `gh` cli
+
+To create a repository from scratch, go to the location where you want to create your project using the shell, then run `gh repo create` to access the interactive mode.
+
+We will select the first option
+
+```         
+? What would you like to do?  [Use arrows to move, type to filter]
+> Create a new repository on github.com from scratch
+  Create a new repository on github.com from a template repository
+  Push an existing local repository to github.com
+```
+
+We will need to assign a name. Remember that this will create a new folder with that name. We will call it `myrepository`
+
+```         
+? Repository name
+```
+
+Now select the owner of the repository, in this case, your username on GitHub
+
+```         
+? Repository owner  [Use arrows to move, type to filter]
+> yourGHname
+```
+
+You can provide a description for the repository. This can be edited afterwards.
+
+```         
+? Repository owner yourGHname
+? Description
+```
+
+You can choose now if your repository will be private or public. This can also be changed afterwards.
+
+```         
+? Visibility  [Use arrows to move, type to filter]
+> Public
+  Private
+```
+
+The next steps will ask if you want to add `README` , `.gitignore`, and license files to your repository. A `README` file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A `.gitignore` file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick `R` in this case. Finally, the license file, if created, clearly states the legal terms under which the project's code is distributed.
+
+After all questions, the interactive assistant will confirm if you want to create the repository.
+
+```         
+? Would you like to add a README file? Yes
+? Would you like to add a .gitignore? Yes
+? Choose a .gitignore template R
+? Would you like to add a license? Yes
+? Choose a license GNU Affero General Public License v3.0
+? This will create "myrepository" as a public repository on github.com. Continue? (Y/n)
+```
+
+Confirm your repository and explore the contents of it!
+
+### GitHub Desktop
+
+Open the GitHub desktop app. An click on the `File` menu and select `New repository...`
+
+![](images/menu_new.png)
+
+A window asking for the details of your repository will show.
+
+![](images/window_new.png)
+
+A `.gitignore` file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages, you can pick `R` in this case. Finally, the license file, if created, clearly states the legal terms under which the project's code is distributed.
+
+This process will create the repository locally. In other to publish it on GitHub, you have to click on `Publish repository`.
+
+![](images/publish_new.png)
+:::
+
+Once your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page.
+
+![](images/nav_bar_repos.png)
+
+If you want to create a repository from an existing project, you will need to initialise your repository. For this, go to the folder where you have your project with `cd <folder path>`, and run `git init`. This will create a local repository.
+
+### Exercise:
+
+Can you create a repository from an existing folder using either `gh` CLI or GitHub Desktop.
+
+## Cloning repositories
+
+To work on a project from GitHub, you first need to clone the repository to your local machine. Cloning creates a local copy of all the files and history.
+
+- Using the command line, go to the location where you want to store the repository and run:
+  ```
+  gh repo clone username/repositoryname
+  ```
+  Replace `username/repositoryname` with the actual repository path on GitHub. For example, `tdscience/course`.
+
+- With GitHub Desktop, click `File` > `Clone repository`, search the repository, and choose a local path.
+
+![](images/clone_repo.png)
+
+## Making changes and committing
+
+A key part of version control is *recording* the changes in the repository. Once you have created or deleted files, or made any changes, you need to **commit** them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes. 
+
+![Git Workflow. From: [Git for Data Science](https://valohai.com/blog/git-for-data-science/) by Juha Kiili](images/git-branches.png){fig-align="center"}
+
+ To commit the changes, you will need to stage them first. In the command line, you can stage a file with the following code:
+
+  ```
+  git add <filename>
+  ```
+Alternatively, if you want to stage all files you can use
+
+  ```
+  git add .
+  ```
+
+Then to finally commit changes, you use the following code:
+  ```
+  git commit -m "Describe your changes"
+  ```
+It is good practice to use concise but clear messages to describe what the change was.
+
+
+In GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click "Commit to main".
+
+![](images/commit_changes.png)
+
+## Pushing changes to GitHub
+
+To update the repository on GitHub with your local commits, push your changes:
+
+- Command line:
+  ```
+  git push
+  ```
+- In GitHub Desktop, click "Push origin".
+
+![](images/push_commit.png)
+
+## Collaboration with GitHub
+
+GitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.
+
+Using the command line, you can create an issue by running
+```
+gh issue create
+```
+Alternatively, you can use the Issues tab online, and create it there.
+
+## Branches and pull requests
+
+Branches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectivelly create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.
+
+To create a branch from an issue e.g. #3, you can run:
+  ```
+  gh issue develop 3 --checkout
+  ```
+
+Using `--checkout` will move you from the main version to the project to the version where you are going to do the work to implement the solution to the issue. You can now start working, and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run `git checkout main`.
+
+Once you have finished working with your branch, you can create a pull request, so the changes are incorporated to the main version. To do this, run the following code:
+
+```
+gh pr create
+```
+In GitHub Desktop, everytime you commit a change on a different branch to the main, it will ask you if you want to create a pull request.
+
+After creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct.
+
+## Merging changes
+
+Once a pull request is reviewed and approved, you can merge it into the main branch.
+
+- On GitHub, click "Merge pull request".
+
+- Locally, use:
+  ```
+  gh pr merge 1
+  ```
+
+
+## Resolving conflicts
+
+Conflicts occur when changes in different branches overlap. Git will mark the conflicting files.
+
+- Open the file, look for conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), and edit to resolve.
+- After resolving, add and commit the file:
+  ```
+  git add <filename>
+  git commit
+  ```
+
+## Automated workflows with GitHub Actions
+
+GitHub Actions lets you automate tasks like testing or deployment.
+
+- Add workflow files in `.github/workflows/`.
+- Example: Run tests on every push.
+
+
+## Best practices for collaboration, sharing code and data
+
+- Write clear commit messages.
+- Use branches for features and fixes.
+- Keep your repository organized with README, .gitignore, and license files.
+- Communicate using Issues and Discussions.
+- Review code via pull requests.
+- Protect sensitive data by not uploading secrets.
+
+## Practical: creating a repository and making changes

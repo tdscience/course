@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Data Science and Digital Tools for Transport Planning"
+  favicon: images/icon.png
   repo-url: "https://github.com/tdscience/course"
   repo-actions: [issue]
   page-footer:
