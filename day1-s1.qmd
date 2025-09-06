@@ -101,7 +101,7 @@ Working with any type of digital file usually involves preparing it, revising an
 
 ![Version control. From: [programmerhumor.io](https://programmerhumor.io/)](images/version_control_humour.jpg){#fig-no-version-control fig-align="center" width="50%"}
 
-Git is a great tool that tracks changes to files over time, especially in text-base files such as scripts, allowing multiple people to work on the same project without overwriting each other's work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.
+Git is a great tool that tracks changes to files over time, especially in text-based files such as scripts, allowing multiple people to work on the same project without overwriting each other's work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.
 
 ![Git Workflow. From: [Git for Data Science](https://valohai.com/blog/git-for-data-science/) by Juha Kiili](images/git-branches.png){fig-align="center"}
 
