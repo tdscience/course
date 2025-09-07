@@ -477,6 +477,31 @@ git commit</code></pre></li>
 </div>
 </div>
 </div>
+<section id="open-an-issue" class="level4" data-number="12.1.1">
+<h4 data-number="12.1.1" class="anchored" data-anchor-id="open-an-issue"><span class="header-section-number">12.1.1</span> Open an issue</h4>
+<p>From the IDE with the course repo open, open a terminal (e.g.&nbsp;with Ctrl+’ on Windows or F1 and then type “focus terminal”) and run the following command to create a new issue:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can toggle the terminal view with Ctrl+J in VS Code. In RStudio, VS Code, and Positron, Ctrl+1 focusses on the source editor pane.</p>
+</div>
+</div>
+</section>
+<section id="create-a-branch" class="level4" data-number="12.1.2">
+<h4 data-number="12.1.2" class="anchored" data-anchor-id="create-a-branch"><span class="header-section-number">12.1.2</span> Create a branch</h4>
+<p>You can also use the <code>gh</code> CLI to efficiently create a branch from the issue you just created. Assuming the issue number is 1, run:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue develop 1 <span class="at">--checkout</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="make-changes" class="level4" data-number="12.1.3">
+<h4 data-number="12.1.3" class="anchored" data-anchor-id="make-changes"><span class="header-section-number">12.1.3</span> Make changes</h4>
 <ul>
 <li>Add your name, GitHub username, favourite animal and where you’re from to the people.csv file in the course repo at <a href="https://github.com/tdscience/course/blob/main/data/people.csv">github.com/tdscience/course/data/people.csv</a></li>
 </ul>
@@ -493,6 +518,7 @@ Note
 <p>To reduce conflicts, edit a specific line number. This number should be assigned to you by the instructor, but if not, pick a random line number to edit between 3 and 100.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="create-a-repository-and-make-changes" class="level3" data-number="12.2">
 <h3 data-number="12.2" class="anchored" data-anchor-id="create-a-repository-and-make-changes"><span class="header-section-number">12.2</span> Create a repository and make changes</h3>
