@@ -564,31 +564,61 @@ Note
 <section id="exercise" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5</span> Exercise</h2>
 <ol type="1">
-<li>Open the shell and move around and explore your file system with the following commands:
+<li><p>Open the shell and move around and explore your file system with the following commands:</p>
 <ul>
 <li><code>cd &lt;directory_name&gt;</code> to change directory</li>
 <li><code>ls</code> (macOS/Linux) or <code>dir</code> (Windows) to list directory contents</li>
 <li><code>pwd</code> (macOS/Linux) or <code>cd</code> (Windows) to print working directory</li>
 </ul></li>
-<li>Create a folder called <code>reproducible-research</code> at a place of your choosing and open it with your IDE.</li>
-<li></li>
+<li><p>Create a folder called <code>reproducible-research</code> at a place of your choosing and open it with your IDE.</p></li>
+<li><p>Create a folder called <code>github</code> in your home directory if it does not already exist, add a subfolder called <code>tdscience</code>, and clone the course repository from GitHub to that location.</p></li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a folder in your home directory for github repos:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make another folder inside that directory:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github/tdscience</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/tdscience</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone tdscience/course</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> course <span class="co"># open the course folder with VS Code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>if you have the <code>gh</code> command-line tool installed, try:
-<ol type="1">
-<li><code>gh repo clone tdscience/course</code></li>
-<li><code>cd course</code></li>
-<li><code>gh issue list</code></li>
-<li><code>gh issue create</code></li>
-</ol></li>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installing the <code>gh</code> command-line tool
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you do not have the <code>gh</code> command-line tool installed, you can follow the installation instructions for your operating system on the official website: <a href="https://cli.github.com/">cli.github.com</a>.</p>
+<p>The first time you install the tool you should run the following command to authenticate with your GitHub account:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a folder in your home directory for github repos:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make another folder inside that directory:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github/tdscience</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/tdscience</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone tdscience/course</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> course <span class="co"># open the course folder with VS Code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Create a new repo in your GitHub account called <code>eitcourse</code> with the command <code>gh repo create</code>.</li>
 </ol>
+<p>That repo can be where you will save your work during the course.</p>
+<ol start="5" type="1">
+<li><p>Open this newly created repo in your IDE and create a new file called <code>basic-example.qmd</code>. Add any content you like and try to render it.</p></li>
+<li><p>Render or preview the file in your IDE, using a shortcut <code>Ctrl+Shift+K</code> or from the terminal with the following commands:</p></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render basic-example.qmd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview basic-example.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To stop the preview server, press <code>Ctrl+C</code> in the terminal where you ran the <code>quarto preview</code> command.</p>
+</div>
+</div>
 
 
 </section>
