@@ -644,7 +644,7 @@
     "href": "slides/day1.html#which-to-use-open-to-debate",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Which to use? Open to debate!",
-    "text": "Which to use? Open to debate!\n\n\nSource: Robin Lovelace on Mastodon\n\n\n\nSource: Reddit"
+    "text": "Which to use? Open to debate!\n\n\nSource: Fosstodon\n\n\n\nSource: Reddit"
   },
   {
     "objectID": "slides/day1.html#bonus-live-demo-of-vs-code-time-permitting",
@@ -672,6 +672,55 @@
     "href": "slides/day1.html#key-github-concepts-and-workflows",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Key GitHub concepts and workflows",
-    "text": "Key GitHub concepts and workflows\nFinding repositories on GitHub\nUse the search bar to discover projects and developers:\n\n\n\n\n\nOr with the gh CLI tool 😎\n\n\n\n\n\n\nFigure 1: Search results for transport data science repositories on GitHub using the gh CLI\n\n\n\nRepository structure\nEvery GitHub repo follows a similar layout with tabs for Code, Issues, Pull requests, etc.:\n\n\n\n\n\n\nFigure 2\n\n\n\nCreating repositories\nYou can create repos from scratch or existing folders:\n\nThe repository creation window lets you set name, description, and visibility:\n\nCloning and working locally\nClone repos to work on them locally:\n\nGit workflow basics\nVersion control with commits, branches, and merges:\n\n\n\nGit Workflow diagram\n\n\nMaking and committing changes\nStage and commit your work:\n\nPushing to GitHub\nShare your changes with the world:"
+    "text": "Key GitHub concepts and workflows\nFinding repositories on GitHub\nUse the search bar to discover projects and developers:\n\n\n\n\n\nOr with the gh CLI tool 😎\n\n\n\n\n\n\nFigure 1: Search results for transport data science repositories on GitHub using the gh CLI"
+  },
+  {
+    "objectID": "slides/day1.html#repository-structure",
+    "href": "slides/day1.html#repository-structure",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Repository structure",
+    "text": "Repository structure\nEvery GitHub repo follows a similar layout with tabs for Code, Issues, Pull requests, etc.:\n\n\n\n\n\n\nFigure 2"
+  },
+  {
+    "objectID": "slides/day1.html#creating-repositories",
+    "href": "slides/day1.html#creating-repositories",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Creating repositories",
+    "text": "Creating repositories\nYou can create repos from scratch or existing folders:\n\nThe repository creation window lets you set name, description, and visibility:"
+  },
+  {
+    "objectID": "slides/day1.html#cloning-and-working-locally",
+    "href": "slides/day1.html#cloning-and-working-locally",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Cloning and working locally",
+    "text": "Cloning and working locally\nClone repos to work on them locally:"
+  },
+  {
+    "objectID": "slides/day1.html#git-workflow-basics",
+    "href": "slides/day1.html#git-workflow-basics",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Git workflow basics",
+    "text": "Git workflow basics\nVersion control with commits, branches, and merges:\n\nGit Workflow diagram"
+  },
+  {
+    "objectID": "slides/day1.html#making-and-committing-changes",
+    "href": "slides/day1.html#making-and-committing-changes",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Making and committing changes",
+    "text": "Making and committing changes\nStage and commit your work:"
+  },
+  {
+    "objectID": "slides/day1.html#pushing-to-github",
+    "href": "slides/day1.html#pushing-to-github",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Pushing to GitHub",
+    "text": "Pushing to GitHub\nShare your changes with the world:"
+  },
+  {
+    "objectID": "slides/day1.html#exercises-solo-working-through-the-practical-until-1230",
+    "href": "slides/day1.html#exercises-solo-working-through-the-practical-until-1230",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Exercises: Solo working through the practical (until ~12:30)",
+    "text": "Exercises: Solo working through the practical (until ~12:30)"
   }
 ]
