@@ -169,7 +169,7 @@ knitr::kable(ides, caption = "Comparison of IDEs for Data Science")
 ::::: columns
 ::: column
 
-Source: [Robin Lovelace on Mastodon](https://fosstodon.org/@robinlovelace/115164201737081008)
+Source: [Fosstodon](https://fosstodon.org/@robinlovelace/115164201737081008)
 
 ![](images/paste-1.png)
 
@@ -226,13 +226,13 @@ Or with the `gh` CLI tool 😎
 ![Search results for transport data science repositories on GitHub using the gh CLI](../images/search-repos-gh-cli.png){#fig-search-repos-gh-cli .lightbox fig-align="center"}
 
 
-### Repository structure
+## Repository structure
 
 Every GitHub repo follows a similar layout with tabs for Code, Issues, Pull requests, etc.:
 
 ![](../images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
 
-### Creating repositories
+## Creating repositories
 
 You can create repos from scratch or existing folders:
 
@@ -242,26 +242,28 @@ The repository creation window lets you set name, description, and visibility:
 
 ![](../images/window_new.png)
 
-### Cloning and working locally
+## Cloning and working locally
 
 Clone repos to work on them locally:
 
 ![](../images/clone_repo.png)
 
-### Git workflow basics
+## Git workflow basics
 
 Version control with commits, branches, and merges:
 
 ![Git Workflow diagram](../images/git-branches.png){fig-align="center"}
 
-### Making and committing changes
+## Making and committing changes
 
 Stage and commit your work:
 
 ![](../images/commit_changes.png)
 
-### Pushing to GitHub
+## Pushing to GitHub
 
 Share your changes with the world:
 
 ![](../images/push_commit.png)
+
+## Exercises: Solo working through the practical (until \~12:30)
