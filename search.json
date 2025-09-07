@@ -23,8 +23,8 @@
     "objectID": "prerequisites.html#software-prerequisites",
     "href": "prerequisites.html#software-prerequisites",
     "title": "Prerequisites",
-    "section": "Software Prerequisites",
-    "text": "Software Prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nA tested R or Python installation or both (note: if you have Docker installed you should be able to run R and Python inside a devcontainer, works best with VS Code)\nRStudio or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
+    "section": "2 Software Prerequisites",
+    "text": "2 Software Prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nA tested R or Python installation or both (note: if you have Docker installed you should be able to run R and Python inside a devcontainer, works best with VS Code)\nRStudio or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)",
     "crumbs": [
       "Prerequisites"
     ]
@@ -33,8 +33,8 @@
     "objectID": "prerequisites.html#recommended-online-courses",
     "href": "prerequisites.html#recommended-online-courses",
     "title": "Prerequisites",
-    "section": "Recommended Online Courses",
-    "text": "Recommended Online Courses\nStudents should take these short but very useful online courses to prepare:\n\nIntro to GitHub (should take less than an hour)\nCommunicate using Markdown (should take around 30 minutes or less)",
+    "section": "3 Recommended Online Courses",
+    "text": "3 Recommended Online Courses\nStudents should take these short but very useful online courses to prepare:\n\nIntro to GitHub (should take less than an hour)\nCommunicate using Markdown (should take around 30 minutes or less)",
     "crumbs": [
       "Prerequisites"
     ]
@@ -43,28 +43,480 @@
     "objectID": "prerequisites.html#testing-your-setup",
     "href": "prerequisites.html#testing-your-setup",
     "title": "Prerequisites",
-    "section": "Testing your setup",
-    "text": "Testing your setup\nYou can test your setup by running the following code in R or Python.\n\nRPython\n\n\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\",\n    \"quarto\",\n    \"stplanr\",\n    \"osmextract\",\n    \"zonebuilder\"\n)\npkgs_to_install = pkgs[!pkgs %in% installed.packages()[, \"Package\"]]\nif (length(pkgs_to_install) &gt; 0) {\n  install.packages(pkgs_to_install)\n}\nlibrary(tidyverse)\nzones = zonebuilder::zb_zone(\"Lisbon\", n_circles = 3)\nstudy_area = zones |&gt;\n  sf::st_union()\nextra_tags = c(\n  \"maxspeed\",\n  \"lit\",\n  \"cycleway\"\n)\nosm_network = osmextract::oe_get(\n  place = \"Lisbon, Portugal\",\n  boundary = study_area,\n  boundary_type = \"clipsrc\",\n  extra_tags = extra_tags\n)\n\n\nosm_network |&gt;\n  select(maxspeed) |&gt;\n  plot()\n\n\n\n\n\n\n\nsf::write_sf(study_area, \"lisbon_study_area.geojson\")\n\n\n\n\nimport osmnx as ox\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport shapely\n\nstudy_point = shapely.Point(-9.1393, 38.7223)  # Latitude and Longitude for Lisbon\nstudy_geom = gpd.GeoSeries([study_point], crs=4326)\nstudy_polygon = study_geom.to_crs(epsg=3857).buffer(6000).to_crs(epsg=4326).unary_union\nstudy_polygon_gpd = gpd.GeoDataFrame(geometry=[study_polygon], crs=\"EPSG:4326\")\n# Read-in geosjon already saved from R\nstudy_polygon = gpd.read_file(\"lisbon_study_area.geojson\")\n# study_polygon_gpd.explore()\ntags = {\"highway\": True, \"maxspeed\": True, \"lit\": True, \"cycleway\": True}\ngdf = ox.features_from_polygon(study_polygon, tags)\ngdf = gdf[gdf.geom_type.isin([\"LineString\", \"MultiLineString\"])]\ngdf = gdf.to_crs(epsg=3857)\ngdf.plot(column=\"maxspeed\", figsize=(10, 10), legend=True)\nplt.show()\n\n\n\n\nOutput of the Python setup test showing a visualization of road network data from Lisbon\n\n\n\n\n\nLet us know how you get on and let us know if you have any issues getting set up, either by email, or (preferably) via the Discussion forum on GitHub associated with this course repository at github.com/tdscience/course/discussions.",
+    "section": "4 Testing your setup",
+    "text": "4 Testing your setup\nYou can test your setup by running the following code in R or Python.\n\nRPython\n\n\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\",\n    \"quarto\",\n    \"stplanr\",\n    \"osmextract\",\n    \"zonebuilder\"\n)\npkgs_to_install = pkgs[!pkgs %in% installed.packages()[, \"Package\"]]\nif (length(pkgs_to_install) &gt; 0) {\n  install.packages(pkgs_to_install)\n}\nlibrary(tidyverse)\nzones = zonebuilder::zb_zone(\"Lisbon\", n_circles = 3)\nstudy_area = zones |&gt;\n  sf::st_union()\nextra_tags = c(\n  \"maxspeed\",\n  \"lit\",\n  \"cycleway\"\n)\nosm_network = osmextract::oe_get(\n  place = \"Lisbon, Portugal\",\n  boundary = study_area,\n  boundary_type = \"clipsrc\",\n  extra_tags = extra_tags\n)\n\n\nosm_network |&gt;\n  select(maxspeed) |&gt;\n  plot()\n\n\n\n\n\n\n\nsf::write_sf(study_area, \"lisbon_study_area.geojson\")\n\n\n\n\nimport osmnx as ox\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport shapely\n\nstudy_point = shapely.Point(-9.1393, 38.7223)  # Latitude and Longitude for Lisbon\nstudy_geom = gpd.GeoSeries([study_point], crs=4326)\nstudy_polygon = study_geom.to_crs(epsg=3857).buffer(6000).to_crs(epsg=4326).unary_union\nstudy_polygon_gpd = gpd.GeoDataFrame(geometry=[study_polygon], crs=\"EPSG:4326\")\n# Read-in geosjon already saved from R\nstudy_polygon = gpd.read_file(\"lisbon_study_area.geojson\")\n# study_polygon_gpd.explore()\ntags = {\"highway\": True, \"maxspeed\": True, \"lit\": True, \"cycleway\": True}\ngdf = ox.features_from_polygon(study_polygon, tags)\ngdf = gdf[gdf.geom_type.isin([\"LineString\", \"MultiLineString\"])]\ngdf = gdf.to_crs(epsg=3857)\ngdf.plot(column=\"maxspeed\", figsize=(10, 10), legend=True)\nplt.show()\n\n\n\n\nOutput of the Python setup test showing a visualization of road network data from Lisbon\n\n\n\n\n\nLet us know how you get on and let us know if you have any issues getting set up, either by email, or (preferably) via the Discussion forum on GitHub associated with this course repository at github.com/tdscience/course/discussions.",
     "crumbs": [
       "Prerequisites"
     ]
   },
   {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Pitch slides\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "objectID": "slides/pitch.html#about-me-and-my-work",
+    "href": "slides/pitch.html#about-me-and-my-work",
+    "title": "Schedule",
+    "section": "About me and my work",
+    "text": "About me and my work\n\n\n\nProfessor of Transport Data Science\nWork with government\nFocus on impact\nR package developer and data scientist\nNew methods for more reproducible, data-driven and participatory transport planning"
   },
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Course Materials",
+    "objectID": "slides/pitch.html#learning-objectives",
+    "href": "slides/pitch.html#learning-objectives",
+    "title": "Schedule",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nBe able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "slides/pitch.html#prerequisites",
+    "href": "slides/pitch.html#prerequisites",
+    "title": "Schedule",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nSee the prerequisites page for details and to test your setup."
+  },
+  {
+    "objectID": "slides/pitch.html#questions-for-students-pre-course",
+    "href": "slides/pitch.html#questions-for-students-pre-course",
+    "title": "Schedule",
+    "section": "Questions for students (pre-course)",
+    "text": "Questions for students (pre-course)\n\nWhat language would you prefer a course on reproducible research to be taught in?\n\nR\nPython\nBoth\n\nWhich interactive development environment would you prefer to be used as the main editor used and taught during the course?\n\nRStudio\nVSCode\nPositron (new data science-focussed IDE by Posit)"
+  },
+  {
+    "objectID": "slides/pitch.html#day-1",
+    "href": "slides/pitch.html#day-1",
+    "title": "Schedule",
+    "section": "Day 1",
+    "text": "Day 1\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto"
+  },
+  {
+    "objectID": "slides/pitch.html#day-2",
+    "href": "slides/pitch.html#day-2",
+    "title": "Schedule",
+    "section": "Day 2",
+    "text": "Day 2\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:30\nDrafting a reproducible paper\n\n\n\n\n10:30 - 10:45\nBreak\n\n\n\n\n10:45 - 12:30\nGenerating reproducible publication-quality visualisations\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 14:30\nEditing other people’s work\n\n\n\n\n14:30 - 14:45\nBreak\n\n\n\n\n14:45 - 16:00\nWorking on papers\n\n\n\n\n16:00 - 17:00\nPresentations and wrap-up"
+  },
+  {
+    "objectID": "slides/pitch.html#practicalities",
+    "href": "slides/pitch.html#practicalities",
+    "title": "Schedule",
+    "section": "Practicalities",
+    "text": "Practicalities\n\nCourse website and open, reproducible code: tdscience.github.io/course/\nIn person or online?\nTeaching assistants\nNumber of participants\nIncorportating feedback\nCosts"
+  },
+  {
+    "objectID": "day2-s6.html",
+    "href": "day2-s6.html",
+    "title": "Generating reproducible publication-quality visualisations",
     "section": "",
-    "text": "Datasets\nSlides\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace",
+    "text": "An introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+  },
+  {
+    "objectID": "day2-s5.html",
+    "href": "day2-s5.html",
+    "title": "Drafting a reproducible paper",
+    "section": "",
+    "text": "Recap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
     "crumbs": [
-      "Materials"
+      "Home"
     ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "2 Prerequisites",
+    "text": "2 Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nYou also need to have some software installed:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nAn IDE for data science that you have some familiarity with, e.g. RStudio, VS Code or Positron.\n\nSee the prerequisites page for details and to test your setup.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#alignment-with-overarching-learning-outcomes",
+    "href": "index.html#alignment-with-overarching-learning-outcomes",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "3 Alignment with Overarching Learning Outcomes",
+    "text": "3 Alignment with Overarching Learning Outcomes\nThe course will contribute to the development of the following skills and competencies:\n\nEntrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.\nInnovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.\nCreativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.\nLeadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "day2-s7.html",
+    "href": "day2-s7.html",
+    "title": "Editing other people’s work",
+    "section": "",
+    "text": "Reviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-1",
+    "href": "schedule.html#day-1",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "schedule.html#day-2",
+    "href": "schedule.html#day-2",
+    "title": "Schedule",
+    "section": "2 Day 2",
+    "text": "2 Day 2\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:30\nDrafting a reproducible paper\n\n\n\n\n10:30 - 10:45\nBreak\n\n\n\n\n10:45 - 12:30\nGenerating reproducible publication-quality visualisations\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 14:30\nEditing other people’s work\n\n\n\n\n14:30 - 14:45\nBreak\n\n\n\n\n14:45 - 16:00\nWorking on papers\n\n\n\n\n16:00 - 17:00\nPresentations and wrap-up",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "day1-s4.html",
+    "href": "day1-s4.html",
+    "title": "Cross-references and citations with Quarto",
+    "section": "",
+    "text": "Cross-referencing allows you to refer to sections, figures, tables, and code blocks within your document. This is essential for academic writing. To cross-reference content in your document, you need to give it a label first, which will be used for referencing."
+  },
+  {
+    "objectID": "day1-s4.html#cross-references",
+    "href": "day1-s4.html#cross-references",
+    "title": "Cross-references and citations with Quarto",
+    "section": "",
+    "text": "Cross-referencing allows you to refer to sections, figures, tables, and code blocks within your document. This is essential for academic writing. To cross-reference content in your document, you need to give it a label first, which will be used for referencing."
+  },
+  {
+    "objectID": "day1-s4.html#sections",
+    "href": "day1-s4.html#sections",
+    "title": "Cross-references and citations with Quarto",
+    "section": "2 Sections",
+    "text": "2 Sections\nFor sections, you can label a particular section using the {#sec-yourlabel} syntax. For example, in this h2 heading for the results section:\n## Results {#sec-results}\nThen, to reference it elsewhere in your text, use @sec-yourlabel, like this:\nAs shown in @sec-results, ...\n\n2.1 Tables and figures\nTables and figures are among the most common elements for presenting data and results. For them, you will use tbl- and fig- instead of sec-.\nThere are two main methods to cross-reference them. If the table or figure is generated by a code chunk, you can use the label: option in your chunk to identify them. For example, the table produced by the code below will be referenced with @tbl-planets.\n```{python}\n#| label: tbl-planets\n#| tbl-cap: Astronomical object\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\ntable = [[\"Sun\",\"696,000\",1.989e30],\n         [\"Earth\",\"6,371\",5.972e24],\n         [\"Moon\",\"1,737\",7.34e22],\n         [\"Mars\",\"3,390\",6.39e23]]\nMarkdown(tabulate(\n  table, \n  headers=[\"Astronomical object\",\"R (km)\", \"mass (kg)\"]\n))\n```\nThe other case is when tables and figures are created directly using Markdown. You will have to include a similar tag as for the sections, in this case {#tbl-mylabel}. Then, in your text you can use the same method to reference them: @tbl-letters.\n| Name  | Value |\n|-------|-------|\n| A     | 10    |\n| B     | 20    |\n\n: Caption {#tbl-letters}\nOr in the case of a figure:\n![An Elephant](elephant.png){#fig-elephant}\n\n\n\n\n\n\nTip\n\n\n\nTo add captions to your code-generated tables and figures, use fig-cap or tbl-cap in the chunk headers."
+  },
+  {
+    "objectID": "day1-s4.html#citations",
+    "href": "day1-s4.html#citations",
+    "title": "Cross-references and citations with Quarto",
+    "section": "3 Citations",
+    "text": "3 Citations\nCitations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating Zotero into your workflow. This integration is already set up in RStudio and Positron in the visual editor. For VS Code, you can install an extension to use citations from your Zotero library, e.g. Citation Picker for Zotero.\nIt is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The Better BibTeX plug-in can help with that.\nOnce you have Zotero and your IDE integrated, the process should be smooth following these steps:\n\nAdd a bibliography file (e.g., references.bib) to your project.\nIn your YAML header, include:\nbibliography: references.bib\nTo cite a source, use [@key] in your text:\nRecent studies show... [@smith2020]."
+  },
+  {
+    "objectID": "day1-s4.html#bibliographies",
+    "href": "day1-s4.html#bibliographies",
+    "title": "Cross-references and citations with Quarto",
+    "section": "4 Bibliographies",
+    "text": "4 Bibliographies\nBy default, bibliographies list all cited sources at the end of your document. The bibliography will be rendered automatically based on your citations.\nIf you want to include it in a different place in your document (not at the end), you can include ::: {#refs} ::: in the location where you want to render the list of references.\nOne last important element is the format of the references and citations. Different institutions require different styles; you can easily change the style of referencing by including a CSL (Citation Style Language) file to configure Quarto to render citations and references with that particular style. You should include a line similar to this in your YAML file:\ncsl: mycsl.csl"
+  },
+  {
+    "objectID": "day1-s4.html#practical-adding-citations-and-references-to-your-paper",
+    "href": "day1-s4.html#practical-adding-citations-and-references-to-your-paper",
+    "title": "Cross-references and citations with Quarto",
+    "section": "5 Practical: adding citations and references to your paper",
+    "text": "5 Practical: adding citations and references to your paper\nTry the following steps:\n\nAdd a bibliography file to your project.\nCite at least one source in your document.\nCreate a figure and a table, each with a label and caption.\nReference your figure and table in the text using cross-references.\nRender your document and check that citations, references, and cross-references are formatted correctly."
+  },
+  {
+    "objectID": "day1-s2.html",
+    "href": "day1-s2.html",
+    "title": "Sharing code and data",
+    "section": "",
+    "text": "After you’ve logged into github.com, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.\n\n\n\n\n\nWhen you access any public repository, you will typically see the same information in a similar layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
+  },
+  {
+    "objectID": "day1-s2.html#navigating-github",
+    "href": "day1-s2.html#navigating-github",
+    "title": "Sharing code and data",
+    "section": "",
+    "text": "After you’ve logged into github.com, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.\n\n\n\n\n\nWhen you access any public repository, you will typically see the same information in a similar layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
+  },
+  {
+    "objectID": "day1-s2.html#creating-and-managing-repositories",
+    "href": "day1-s2.html#creating-and-managing-repositories",
+    "title": "Sharing code and data",
+    "section": "2 Creating and managing repositories",
+    "text": "2 Creating and managing repositories\nYou can create a repository from scratch or using an existing folder. The following instructions show the basic process for creating a new repository, which will create a Git repository on your machine and upload it to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nYou can use the gh command line interface (CLI) or a graphical user interface (GUI) like GitHub Desktop to create and manage repositories.\nWhile both approaches work, we recommend using the gh CLI because, after you have learned the commands, it is faster, more flexible, and easier to automate repetitive tasks.\nIf you want to create a repository using an existing folder, make sure to navigate to that folder in your terminal before running the gh repo create command.\n\n\n\ngh CLIGitHub Desktop\n\n\nTo create a repository from scratch, go to the location where you want to create your project using the shell, then run gh repo create to access the interactive mode.\nWe will select the first option:\n? What would you like to do?  [Use arrows to move, type to filter]\n&gt; Create a new repository on github.com from scratch\n  Create a new repository on github.com from a template repository\n  Push an existing local repository to github.com\nAssign a name. Remember that this will create a new folder with that name. We will call it myrepository.\n? Repository name\nNow select the owner of the repository, in this case, your username on GitHub.\n? Repository owner  [Use arrows to move, type to filter]\n&gt; yourGHname\nYou can provide a description for the repository. This can be edited afterwards.\n? Repository owner yourGHname\n? Description\nYou can choose whether your repository will be private or public. This can also be changed afterwards.\n? Visibility  [Use arrows to move, type to filter]\n&gt; Public\n  Private\nThe next steps will ask if you want to add README, .gitignore, and license files to your repository. A README file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nAfter all questions, the interactive assistant will confirm if you want to create the repository.\n? Would you like to add a README file? Yes\n? Would you like to add a .gitignore? Yes\n? Choose a .gitignore template R\n? Would you like to add a license? Yes\n? Choose a license GNU Affero General Public License v3.0\n? This will create \"myrepository\" as a public repository on github.com. Continue? (Y/n)\nConfirm your repository and explore its contents!\n\n\nOpen the GitHub Desktop app. Click on the File menu and select New repository...\n\nA window asking for the details of your repository will appear.\n\nA .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nThis process will create the repository locally. In order to publish it on GitHub, you have to click on Publish repository.\n\n\n\n\nOnce your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page and select the repository you just created. You can see a list of repositories in your profile page by clicking on the Repositories tab, or typing github.com/username?tab=repositories in your browser, replacing username with your GitHub username. To see robinlovelace’s repositories, for example, you can type the following into your browser: github.com/Robinlovelace?tab=repositories.\n\n\nIf you want to create a repository from an existing project, you will need to initialize your repository. For this, go to the folder where you have your project with cd &lt;folder path&gt;, and run git init. This will create a local repository.\n\n2.1 Exercise\nCan you create a repository from an existing folder using either gh CLI or GitHub Desktop?"
+  },
+  {
+    "objectID": "day1-s2.html#cloning-repositories",
+    "href": "day1-s2.html#cloning-repositories",
+    "title": "Sharing code and data",
+    "section": "3 Cloning repositories",
+    "text": "3 Cloning repositories\nTo work on a project from GitHub, you first need to clone the repository to your local machine. Cloning creates a local copy of all the files and history.\n\nUsing the command line, go to the location where you want to store the repository and run:\ngh repo clone username/repositoryname\nReplace username/repositoryname with the actual repository path on GitHub. For example, tdscience/course.\nWith GitHub Desktop, click File &gt; Clone repository, search for the repository, and choose a local path."
+  },
+  {
+    "objectID": "day1-s2.html#making-changes-and-committing",
+    "href": "day1-s2.html#making-changes-and-committing",
+    "title": "Sharing code and data",
+    "section": "4 Making changes and committing",
+    "text": "4 Making changes and committing\nA key part of version control is recording the changes in the repository. Once you have created or deleted files, or made any changes, you need to commit them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\nTo commit changes, you will need to stage them first. In the command line, you can stage a file with the following code:\ngit add &lt;filename&gt;\nAlternatively, if you want to stage all files you can use\ngit add .\nThen, to finally commit changes, use the following code:\ngit commit -m \"Describe your changes\"\nIt is good practice to use concise but clear messages to describe what the change was.\nIn GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click “Commit to main”."
+  },
+  {
+    "objectID": "day1-s2.html#pushing-changes-to-github",
+    "href": "day1-s2.html#pushing-changes-to-github",
+    "title": "Sharing code and data",
+    "section": "5 Pushing changes to GitHub",
+    "text": "5 Pushing changes to GitHub\nTo update the repository on GitHub with your local commits, push your changes:\n\nCommand line:\ngit push\nIn GitHub Desktop, click “Push origin”."
+  },
+  {
+    "objectID": "day1-s2.html#collaboration-with-github",
+    "href": "day1-s2.html#collaboration-with-github",
+    "title": "Sharing code and data",
+    "section": "6 Collaboration with GitHub",
+    "text": "6 Collaboration with GitHub\nGitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.\nUsing the command line, you can create an issue by running:\ngh issue create\nAlternatively, you can use the Issues tab online and create it there."
+  },
+  {
+    "objectID": "day1-s2.html#branches-and-pull-requests",
+    "href": "day1-s2.html#branches-and-pull-requests",
+    "title": "Sharing code and data",
+    "section": "7 Branches and pull requests",
+    "text": "7 Branches and pull requests\nBranches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectively create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.\nTo create a branch from an issue, e.g. #3, you can run:\ngh issue develop 3 --checkout\nUsing --checkout will move you from the main version of the project to the version where you are going to do the work to implement the solution to the issue. You can now start working and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run git checkout main.\nOnce you have finished working with your branch, you can create a pull request so the changes are incorporated into the main version. To do this, run the following code:\ngh pr create\nIn GitHub Desktop, every time you commit a change on a different branch to main, it will ask you if you want to create a pull request.\nAfter creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct."
+  },
+  {
+    "objectID": "day1-s2.html#merging-changes",
+    "href": "day1-s2.html#merging-changes",
+    "title": "Sharing code and data",
+    "section": "8 Merging changes",
+    "text": "8 Merging changes\nOnce a pull request is reviewed and approved, you can merge it into the main branch.\n\nOn GitHub, click “Merge pull request”.\nLocally, use:\ngh pr merge 1"
+  },
+  {
+    "objectID": "day1-s2.html#resolving-conflicts",
+    "href": "day1-s2.html#resolving-conflicts",
+    "title": "Sharing code and data",
+    "section": "9 Resolving conflicts",
+    "text": "9 Resolving conflicts\nConflicts occur when changes in different branches overlap. Git will mark the conflicting files.\n\nOpen the file, look for conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;), and edit to resolve.\nAfter resolving, add and commit the file:\ngit add &lt;filename&gt;\ngit commit"
+  },
+  {
+    "objectID": "day1-s2.html#automated-workflows-with-github-actions",
+    "href": "day1-s2.html#automated-workflows-with-github-actions",
+    "title": "Sharing code and data",
+    "section": "10 Automated workflows with GitHub Actions",
+    "text": "10 Automated workflows with GitHub Actions\nGitHub Actions lets you automate tasks like testing or deployment.\n\nAdd workflow files in .github/workflows/.\nExample: Run tests on every push."
+  },
+  {
+    "objectID": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
+    "href": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
+    "title": "Sharing code and data",
+    "section": "11 Best practices for collaboration, sharing code and data",
+    "text": "11 Best practices for collaboration, sharing code and data\n\nWrite clear commit messages.\nUse branches for features and fixes.\nKeep your repository organized with README, .gitignore, and license files.\nCommunicate using Issues and Discussions.\nReview code via pull requests.\nProtect sensitive data by not uploading secrets."
+  },
+  {
+    "objectID": "day1-s2.html#exercises",
+    "href": "day1-s2.html#exercises",
+    "title": "Sharing code and data",
+    "section": "12 Exercises",
+    "text": "12 Exercises\n\n12.1 Contribute to the course repo\n\nClone the course repo if you have not already with the gh CLI tool in the github folder on your computer that you will create if it does not already exist (or another location of your choosing):\n\n# Make a folder in your home directory for github repos:\nmkdir ~/github\n# Make another folder inside that directory:\nmkdir ~/github/tdscience\ncd ~/github/tdscience\ngh repo clone tdscience/course\ncode course # open the course folder with VS Code\n\nAdd your name, favourite animal and where you’re from to the people.csv file in the course repo at github.com/tdscience/course/data/people.csv\n\n\n\n12.2 Create a repository and make changes"
+  },
+  {
+    "objectID": "plan.html",
+    "href": "plan.html",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; day1-s1.qmd\nDay1_session2.qmd -&gt; day1-s2.qmd\nDay1_session3.qmd -&gt; day1-s3.qmd\nDay1_session4.qmd -&gt; day1-s4.qmd\nDay2_session5.qmd -&gt; day2-s5.qmd\nDay2_session6.qmd -&gt; day2-s6.qmd\nDay2_session7.qmd -&gt; day2-s7.qmd\nDay2_session8.qmd -&gt; day2-s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd\n\n\n\n\nAfter renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames.\n\n\n\nI will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images.\n\n\n\nI will improve the code blocks in prerequisites.qmd to be more user-friendly.\n\n\n\nI will remove commented-out code from _quarto.yml and index.qmd."
+  },
+  {
+    "objectID": "plan.html#refactor-file-and-directory-names",
+    "href": "plan.html#refactor-file-and-directory-names",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; day1-s1.qmd\nDay1_session2.qmd -&gt; day1-s2.qmd\nDay1_session3.qmd -&gt; day1-s3.qmd\nDay1_session4.qmd -&gt; day1-s4.qmd\nDay2_session5.qmd -&gt; day2-s5.qmd\nDay2_session6.qmd -&gt; day2-s6.qmd\nDay2_session7.qmd -&gt; day2-s7.qmd\nDay2_session8.qmd -&gt; day2-s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd"
+  },
+  {
+    "objectID": "plan.html#update-configuration-and-content",
+    "href": "plan.html#update-configuration-and-content",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "After renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames."
+  },
+  {
+    "objectID": "plan.html#enhance-seo",
+    "href": "plan.html#enhance-seo",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "I will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images."
+  },
+  {
+    "objectID": "plan.html#improve-code-blocks",
+    "href": "plan.html#improve-code-blocks",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "I will improve the code blocks in prerequisites.qmd to be more user-friendly."
+  },
+  {
+    "objectID": "plan.html#clean-up-commented-out-code",
+    "href": "plan.html#clean-up-commented-out-code",
+    "title": "1 Project Improvement Plan",
+    "section": "",
+    "text": "I will remove commented-out code from _quarto.yml and index.qmd."
+  },
+  {
+    "objectID": "tp-schedule.html",
+    "href": "tp-schedule.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "tp-schedule.html#learning-objectives",
+    "href": "tp-schedule.html#learning-objectives",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+  },
+  {
+    "objectID": "tp-schedule.html#prerequisites",
+    "href": "tp-schedule.html#prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "2 Prerequisites",
+    "text": "2 Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
+  },
+  {
+    "objectID": "tp-schedule.html#software-prerequisites",
+    "href": "tp-schedule.html#software-prerequisites",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "3 Software prerequisites",
+    "text": "3 Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)\n\nSee the prerequisites page for details and to test your setup.\nIdeas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use"
+  },
+  {
+    "objectID": "tp-schedule.html#day-1",
+    "href": "tp-schedule.html#day-1",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "4 Day 1",
+    "text": "4 Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to VS Code, RStudio, and Jupyter\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\n\n12:30-13:30 Lunch\n13:30-15:00 Data visualisation\n\nUnivariate plots\nBivariate plots\nMultivariate plots and facets\nInteractive visualisations\nInteractive maps\n\n15:00-15:15 Break\n15:15-17:00 Transport Planning Challenge 1\n\nIntroduction to challenge datasets\nDeciding on a topic and questions\nPractical: working on the challenge"
+  },
+  {
+    "objectID": "tp-schedule.html#day-2",
+    "href": "tp-schedule.html#day-2",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "5 Day 2",
+    "text": "5 Day 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nJoins: inner, left, right, full\nSpatial data operations\n\nSpatial subsetting\nSpatial joins\nSpatial aggregation\n\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n\nStatic vs dynamic web applications\nPractical introduction to Shiny for R and Python\n(Optional): Front-end development\n\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n\nDiscussion of datasets from Challenge 1\nDeciding on a topic and questions\nPractical: working on the challenge\n\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n\nPractical: working on the challenge\n\n16:30-17:00 Presentations and wrap-up"
+  },
+  {
+    "objectID": "day2-s8.html",
+    "href": "day2-s8.html",
+    "title": "Working on papers",
+    "section": "",
+    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+  },
+  {
+    "objectID": "day1-s1.html",
+    "href": "day1-s1.html",
+    "title": "Development environments, system commands, and version control",
+    "section": "",
+    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
+  },
+  {
+    "objectID": "day1-s1.html#introduction-to-ides",
+    "href": "day1-s1.html#introduction-to-ides",
+    "title": "Development environments, system commands, and version control",
+    "section": "",
+    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
+  },
+  {
+    "objectID": "day1-s1.html#key-features-and-extensions-of-vs-code-based-ides",
+    "href": "day1-s1.html#key-features-and-extensions-of-vs-code-based-ides",
+    "title": "Development environments, system commands, and version control",
+    "section": "2 Key features and extensions of VS Code-based IDEs",
+    "text": "2 Key features and extensions of VS Code-based IDEs\nVS Code’s power lies in its lightweight core and its extensible ecosystem. VS Code extensions support a wide range of languages and frameworks. Here are some of the most relevant\n\n2.1 Core Features\n\nIntelliSense: A code completion engine that provides intelligent, context-aware suggestions for variables, functions, and modules, along with helpful pop-up documentation.\nIntegrated Git: VS Code has built-in support for Git, allowing developers to manage version control directly within the editor.\nBuilt-in Terminal: An integrated command-line terminal allows you to run shell commands, execute scripts, and manage your environment without switching applications.\nDebugging: VS Code includes an interactive debugger that enables you to set breakpoints, inspect variables, and step through code to identify and fix bugs.\n\nWe will use only the basic extensions as described in the prerequisites. But it is worth exploring the extensions available on VS Code Marketplace.\n\n\n2.2 Python interpreter\nVS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (Figure 4).\n\n\n\n\n\n\nFigure 4: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"
+  },
+  {
+    "objectID": "day1-s1.html#the-system-shell-and-basic-commands",
+    "href": "day1-s1.html#the-system-shell-and-basic-commands",
+    "title": "Development environments, system commands, and version control",
+    "section": "3 The system shell and basic commands",
+    "text": "3 The system shell and basic commands\nA system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system’s kernel. The shell is where you can run scripts, manage files, and execute programs.\nThe commands will depend on the operative system you have in your computer. Windows use the Windows Command Prompt or PowerShell, while macOS and Linux use Bash/Zsh.\n\nWindowsmacOS/Linux\n\n\n\n3.0.1 Navigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: dir\nPrint working directory: cd\n\n\n\n3.0.2 File & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: copy &lt;source_file&gt; &lt;destination&gt;\nMove a file: move &lt;source_file&gt; &lt;destination&gt;\nDelete a file: del &lt;file_name&gt;\nDisplay file content: type &lt;file_name&gt;\n\n\n\n\n\n3.0.3 Navigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: ls\nPrint working directory: pwd\n\n\n\n3.0.4 File & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: cp &lt;source_file&gt; &lt;destination&gt;\nMove a file: mv &lt;source_file&gt; &lt;destination&gt;\nDelete a file: rm &lt;file_name&gt;\nDisplay file content: cat &lt;file_name&gt;"
+  },
+  {
+    "objectID": "day1-s1.html#introduction-to-version-control",
+    "href": "day1-s1.html#introduction-to-version-control",
+    "title": "Development environments, system commands, and version control",
+    "section": "4 Introduction to Version control",
+    "text": "4 Introduction to Version control\n\n4.1 Git\nWorking with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with Figure 5?\n\n\n\n\n\n\nFigure 5: Version control. From: programmerhumor.io\n\n\n\nGit is a great tool that tracks changes to files over time, especially in text-based files such as scripts, allowing multiple people to work on the same project without overwriting each other’s work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\n\n\n4.2 GitHub\nGitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a Hub for storing, sharing and collaborating with others. Some tools in GitHub, like pull requests for proposing changes, reviews for asking others to check your work, and issue tracking for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.\nTo learn more about the different elements in GitHub, you can start exploring the GitHub skills courses.\n\n\n4.3 Working with GitHub\nAny Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.\nYou might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful cheat sheet.\nThere are two main ways of working with GitHub repositories in your machine: the gh command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session."
+  },
+  {
+    "objectID": "day1-s1.html#practical",
+    "href": "day1-s1.html#practical",
+    "title": "Development environments, system commands, and version control",
+    "section": "5 Practical:",
+    "text": "5 Practical:\n\n\n\n\n\n\nNote\n\n\n\nYou should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the prerequisites for more information.\n\n\n\n5.1 Exercise:\n\nOpen the shell\nCreate a folder called reproducible-research\nif you have the gh command-line tool installed, try:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
+  },
+  {
+    "objectID": "day1-s3.html",
+    "href": "day1-s3.html",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "",
+    "text": "Quarto is a next-generation open-source publishing system that allows you to combine text, code, and the output of that code into a single document. It is designed for technical and scientific communication, enabling the creation of reproducible documents that can be published in a wide variety of formats. You can use Quarto to produce reports, journal articles, presentation slides, books, and dashboards."
+  },
+  {
+    "objectID": "day1-s3.html#introduction-to-quarto",
+    "href": "day1-s3.html#introduction-to-quarto",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "",
+    "text": "Quarto is a next-generation open-source publishing system that allows you to combine text, code, and the output of that code into a single document. It is designed for technical and scientific communication, enabling the creation of reproducible documents that can be published in a wide variety of formats. You can use Quarto to produce reports, journal articles, presentation slides, books, and dashboards."
+  },
+  {
+    "objectID": "day1-s3.html#quarto-projects",
+    "href": "day1-s3.html#quarto-projects",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "2 Quarto projects",
+    "text": "2 Quarto projects\nQuarto documents are authored in a plain text format, using a markup language called Markdown. A markup language is a system for annotating a document using a set of tags or symbols to define the structure, formatting, and other properties of the text within a digital document. You might be familiar with commonly used markup languages like HTML or LaTeX. These languages make the text readable by both humans and machines. Since Quarto documents are based on plain text files, you can use Git and GitHub for version control.\n\n\n\n\n\n\nTip\n\n\n\nIf you are not familiar with using Markdown, take a look at the short course Communicate using Markdown on GitHub Skills.\n\n\nA Quarto project has two key parts:\n\nSource files: These are the individual documents written in Quarto Markdown, typically with a .qmd extension. They contain the narrative text, code chunks, other blocks, and a header for document-specific options.\n\n\n\n\nA qmd file of this website\n\n\n\nProject File (_quarto.yml): It’s a YAML (YAML Ain’t Markup Language) configuration file that lives in the project’s root directory. It defines global settings for all the documents in the project, such as the project type, metadata, output directories, and project-wide configuration for execution, style, and format. The contents of this file will depend on the type of project you are working on. Here is a sneak peek of the project file for this website:\n\n\n\n\nThe project file of this web"
+  },
+  {
+    "objectID": "day1-s3.html#creating-a-quarto-project",
+    "href": "day1-s3.html#creating-a-quarto-project",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "3 Creating a Quarto project",
+    "text": "3 Creating a Quarto project\nYou can create a Quarto project from scratch in an existing repository. First, let’s check that you can use quarto in your command line, and the version you have installed. If you run quarto -v in your shell, you should get the version of Quarto you have installed.\nPS C:\\temp\\tdscience&gt; quarto -v\n1.7.34\nTo create a new project in an existing directory, follow these steps:\n\nGo to your repository with cd &lt;path to repo&gt;\nRun quarto create\nChoose the name and type of project\nOpen the project in your preferred IDE.\n\nAs you see in the following code, Quarto will automatically create a source file and the project file.\nPS C:\\temp&gt; quarto create\n? Create » project\n? Type » default\n? Directory » my-first-quarto-project\n? Title (my-first-quarto-project) » My first quarto project\nCreating project at C:\\temp\\my-first-quarto-project:\n  - Created _quarto.yml\n  - Created My first quarto project.qmd\n? Open With\n❯ positron\n  vscode\n  (don't open)\nYou can also create Quarto projects interactively from the IDE. If you are interested, explore the documentation for RStudio, VSCode, or Positron."
+  },
+  {
+    "objectID": "day1-s3.html#blockschunks",
+    "href": "day1-s3.html#blockschunks",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "4 Blocks/Chunks",
+    "text": "4 Blocks/Chunks\nBlocks in the qmd files are sections that are processed and formatted in a specific way. Blocks can contain code that can be processed in different ways. Chunks are delimited with ``` at the top and bottom, like this:\n```\nThis is a block\n```\nBlocks allow you to include content in HTML or LaTeX in the qmd files as raw code. Specifically for equations, you can use $$ as a delimiter. You can find more useful information on how to use Markdown in Quarto in the Quarto documentation."
+  },
+  {
+    "objectID": "day1-s3.html#code-chunks-and-settings",
+    "href": "day1-s3.html#code-chunks-and-settings",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "5 Code chunks and settings",
+    "text": "5 Code chunks and settings\nCode chunks that have the language name between braces at the start are executed as if you run the code in the console. For example:\n\nRPython\n\n\n```{r}\n# this is a code chunk/block that executes R code\na &lt;- 1 + 3\na\n```\n\n\n```{python}\n# this is a code chunk/block that executes python code\na = 1 + 3\nprint(a)\n```\n\n\n\nThere are several execution options that are useful, for example, to identify each code chunk, or to hide the code, the output, or both. These options are set in the code chunk header and allow you to precisely manage what is visible to the reader. As an example, the following code will hide the source code and only the output Hello World! will be visible in the rendered document.\n\nRPython\n\n\n```{r}\n#| label: hello-block-r\n#| echo: false\n\nprint(\"Hello World!\")\n```\n\n\n```{python}\n#| label: hello-block-python\n#| echo: false\n\nprint(\"Hello World!\")\n```\n\n\n\nSee the full details on execution options here. Other options allow you to reference the output of the block. For example, if your code is producing a figure, you can use the label for cross-referencing (more about this will be detailed in the next session), or to set the caption."
+  },
+  {
+    "objectID": "day1-s3.html#publishing-your-work",
+    "href": "day1-s3.html#publishing-your-work",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "6 Publishing your work",
+    "text": "6 Publishing your work\nQuarto enables you to generate a wide range of output formats from your project, whether you need an HTML report, a PDF article, a slideshow, or an entire website (like this one). From the command line, you can run quarto render to produce the rendered version of your project, or quarto preview to inspect your edits interactively.\nCombining Quarto and GitHub helps you make your research transparent, collaborative, and easy to share, ensuring that your work is not just published, but also verifiable and ready for future use."
+  },
+  {
+    "objectID": "day1-s3.html#demonstration-of-reproducible-papers",
+    "href": "day1-s3.html#demonstration-of-reproducible-papers",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "7 Demonstration of reproducible papers",
+    "text": "7 Demonstration of reproducible papers\nA good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available here.\n\n7.1 Exercise\nCan you clone the repository and render the final version of the paper?"
+  },
+  {
+    "objectID": "day1-s3.html#practical-creating-a-minimal-reproducible-paper",
+    "href": "day1-s3.html#practical-creating-a-minimal-reproducible-paper",
+    "title": "Reproducible papers and documentation with Quarto",
+    "section": "8 Practical: creating a minimal reproducible paper",
+    "text": "8 Practical: creating a minimal reproducible paper\nCan you create a short paper that produces a PDF or HTML file? The rendered document should include:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output"
   },
   {
     "objectID": "collisions.html",
@@ -92,8 +544,8 @@
     "objectID": "collisions.html#setup-and-prerequisites",
     "href": "collisions.html#setup-and-prerequisites",
     "title": "STATS19",
-    "section": "Setup and prerequisites",
-    "text": "Setup and prerequisites\nWe will use packages listed in the following code chunk to reproduce the analysis. Run the code chunk below to install and load the required packages.\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\"\n)\n\nremotes::install_cran(pkgs)\nsapply(pkgs, require, character.only = TRUE)\n\n        sf  tidyverse       tmap data.table    stats19 \n      TRUE       TRUE       TRUE       TRUE       TRUE \n\n\nSee the prerequisites page for details and to test your setup.",
+    "section": "2 Setup and prerequisites",
+    "text": "2 Setup and prerequisites\nWe will use packages listed in the following code chunk to reproduce the analysis. Run the code chunk below to install and load the required packages.\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\nif (!require(\"remotes\")) install.packages(\"remotes\")\npkgs = c(\n    \"sf\",\n    \"tidyverse\",\n    \"tmap\",\n    \"data.table\",\n    \"stats19\"\n)\n\nremotes::install_cran(pkgs)\nsapply(pkgs, require, character.only = TRUE)\n\n        sf  tidyverse       tmap data.table    stats19 \n      TRUE       TRUE       TRUE       TRUE       TRUE \n\n\nSee the prerequisites page for details and to test your setup.",
     "crumbs": [
       "Examples",
       "Road traffic collisions"
@@ -103,8 +555,8 @@
     "objectID": "collisions.html#results-presented-in-the-consultation",
     "href": "collisions.html#results-presented-in-the-consultation",
     "title": "STATS19",
-    "section": "Results presented in the consultation",
-    "text": "Results presented in the consultation\nStep 4 of the consultation contains the map presented in Figure 2.\n\n\n\n\n\n\nFigure 2: Map of collisions in the study area. Credit: Leeds City Council\n\n\n\nLet’s try to reproduce the map.",
+    "section": "3 Results presented in the consultation",
+    "text": "3 Results presented in the consultation\nStep 4 of the consultation contains the map presented in Figure 2.\n\n\n\n\n\n\nFigure 2: Map of collisions in the study area. Credit: Leeds City Council\n\n\n\nLet’s try to reproduce the map.",
     "crumbs": [
       "Examples",
       "Road traffic collisions"
@@ -114,494 +566,140 @@
     "objectID": "collisions.html#defining-study-area",
     "href": "collisions.html#defining-study-area",
     "title": "STATS19",
-    "section": "Defining study area",
-    "text": "Defining study area\nThere are different ways to define the study area. We could manually look it up but geocoding may be a better approach. Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area:\n\n\n\nstudy_coords = stplanr::geo_code(\"Cross Roseville Road, Leeds\")\n\nThat gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:\n\nstudy_coords = c(-1.5243862, 53.8109931)\n\nConvert the coordinates to an sf object as follows, remembering to add the coordinate reference system (CRS):\n\nstudy_point &lt;- study_coords |&gt;\n  st_point() |&gt;\n  sf::st_sfc() |&gt;\n  sf::st_sf(geometry = _, crs = \"EPSG:4326\") \nstudy_point\n\nSimple feature collection with 1 feature and 0 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -1.524386 ymin: 53.81099 xmax: -1.524386 ymax: 53.81099\nGeodetic CRS:  WGS 84\n                    geometry\n1 POINT (-1.524386 53.81099)\n\n\nNote: the |&gt; symbol above is R’s ‘native pipe’ which passes the result of the left-hand side expression to the right-hand side expression as the first argument, allowing for more readable and concise code. The _ symbol refers to the current object being processed in the pipeline.\nLet’s define a buffer around our point. There isn’t a scale bar in the original map, so it’s hard to know the exact distance to use for the buffer. However, we can start with a 500 meter buffer.\n\nstudy_buffer &lt;- study_point |&gt;\n  st_buffer(dist = 500)\n\ntm_shape(study_buffer)+\n  tm_fill(\"gray80\",fill_alpha = 0.8)+\n  tm_shape(study_point)+\n  tm_dots()\n\n\n\n\n\n\n\n\n\ncollision_data &lt;- lapply(2019:2024,\n                         get_stats19,\n                         type = \"collision\",\n                         silent = TRUE,\n                         output_format = \"sf\") |&gt; \n  bind_rows()\n\ndate and time columns present, creating formatted datetime column\n\n\n28 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n14 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n17 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n22 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n12 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n84 rows removed with no coordinates\n\n\nAn inspection of the data\n\nnames(collision_data)\n\n [1] \"accident_index\"                              \n [2] \"accident_year\"                               \n [3] \"accident_reference\"                          \n [4] \"longitude\"                                   \n [5] \"latitude\"                                    \n [6] \"police_force\"                                \n [7] \"accident_severity\"                           \n [8] \"number_of_vehicles\"                          \n [9] \"number_of_casualties\"                        \n[10] \"date\"                                        \n[11] \"day_of_week\"                                 \n[12] \"time\"                                        \n[13] \"local_authority_district\"                    \n[14] \"local_authority_ons_district\"                \n[15] \"local_authority_highway\"                     \n[16] \"first_road_class\"                            \n[17] \"first_road_number\"                           \n[18] \"road_type\"                                   \n[19] \"speed_limit\"                                 \n[20] \"junction_detail\"                             \n[21] \"junction_control\"                            \n[22] \"second_road_class\"                           \n[23] \"second_road_number\"                          \n[24] \"pedestrian_crossing_human_control\"           \n[25] \"pedestrian_crossing_physical_facilities\"     \n[26] \"light_conditions\"                            \n[27] \"weather_conditions\"                          \n[28] \"road_surface_conditions\"                     \n[29] \"special_conditions_at_site\"                  \n[30] \"carriageway_hazards\"                         \n[31] \"urban_or_rural_area\"                         \n[32] \"did_police_officer_attend_scene_of_accident\" \n[33] \"trunk_road_flag\"                             \n[34] \"lsoa_of_accident_location\"                   \n[35] \"enhanced_severity_collision\"                 \n[36] \"datetime\"                                    \n[37] \"geometry\"                                    \n[38] \"status\"                                      \n[39] \"collision_index\"                             \n[40] \"collision_year\"                              \n[41] \"collision_reference\"                         \n[42] \"legacy_collision_severity\"                   \n[43] \"did_police_officer_attend_scene_of_collision\"\n[44] \"lsoa_of_collision_location\"                  \n\n\nLet’s reconcile some data to match the appropriate convention\n\ncollision_data &lt;- collision_data |&gt; \n  mutate(collision_year = coalesce(collision_year,accident_year),\n         legacy_collision_severity = coalesce(legacy_collision_severity,accident_severity))\n\nLet’s visualise all the data we extracted\n\ncollision_data |&gt;\n  slice_sample(n = 5000) |&gt;\n  st_geometry() |&gt; \n  tm_shape()+\n  tm_dots()\n\n\n\n\n\n\n\n\nCreating a subset of the collisions within our study area\n\nst_crs(collision_data,)\n\nCoordinate Reference System:\n  User input: EPSG:27700 \n  wkt:\nPROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]\n\nst_crs(study_buffer)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n\nLet’s transform the buffer to match the British Grid\n\nstudy_buffer_BNG &lt;- study_buffer |&gt; st_transform(st_crs(collision_data))\n\n\nstudy_collisions &lt;- collision_data[study_buffer_BNG,]\n\nA quick exploration of the amount\n\nstudy_collisions |&gt;\n  count(legacy_collision_severity)\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: MULTIPOINT\nDimension:     XY\nBounding box:  xmin: 430986 ymin: 434604 xmax: 431916 ymax: 435550\nProjected CRS: OSGB36 / British National Grid\n# A tibble: 2 × 3\n  legacy_collision_severity     n                                       geometry\n* &lt;chr&gt;                     &lt;int&gt;                               &lt;MULTIPOINT [m]&gt;\n1 Serious                      32 ((431178 435174), (431239 434801), (431262 43…\n2 Slight                      109 ((430986 434873), (431028 434897), (431110 43…\n\n\nA quick visualisation\n\nstudy_collisions |&gt;\ntm_shape()+\n  tm_dots(fill = \"legacy_collision_severity\",\n          size = 1,\n          fill_alpha = 0.7,\n          fill.scale = tm_scale_categorical(\n            labels = c(\"Slight\",\"Serious\"),\n            values = c(\"orange\",\"dodgerblue\")))\n\n\n\n\n\n\n\n\nA better version\n\nstudy_collisions |&gt;\n  mutate(legacy_collision_severity = factor(legacy_collision_severity,\n                                            c(\"Slight\",\"Serious\",\"Fatal\"),\n                                            ordered = T)) |&gt;\n  arrange(legacy_collision_severity) |&gt; \n  mutate(X = st_coordinates(geometry)[,1],\n         Y = st_coordinates(geometry)[,2]) |&gt; \n  ggplot(aes(x = X,y = Y,col = legacy_collision_severity))+\n  geom_jitter(alpha = 0.8,\n              size = 2,\n              position = position_jitter(width = 5, height = 5))+\n  theme_void()+\n  scale_color_manual(values = c(\"dodgerblue\",\"orange\",\"red\"))+\n  theme(plot.background = element_rect(fill = \"gray20\"))",
+    "section": "4 Defining study area",
+    "text": "4 Defining study area\nThere are different ways to define the study area. We could manually look it up but geocoding may be a better approach. Looking at the area on Google Maps shows that Cross Roseville Road is roughly in the centre of the study area:\n\n\n\nstudy_coords = stplanr::geo_code(\"Cross Roseville Road, Leeds\")\n\nThat gives us the coordinates we need, which could also be obtained using other geocoding services or added manually as follows:\n\nstudy_coords = c(-1.5243862, 53.8109931)\n\nConvert the coordinates to an sf object as follows, remembering to add the coordinate reference system (CRS):\n\nstudy_point &lt;- study_coords |&gt;\n  st_point() |&gt;\n  sf::st_sfc() |&gt;\n  sf::st_sf(geometry = _, crs = \"EPSG:4326\") \nstudy_point\n\nSimple feature collection with 1 feature and 0 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -1.524386 ymin: 53.81099 xmax: -1.524386 ymax: 53.81099\nGeodetic CRS:  WGS 84\n                    geometry\n1 POINT (-1.524386 53.81099)\n\n\nNote: the |&gt; symbol above is R’s ‘native pipe’ which passes the result of the left-hand side expression to the right-hand side expression as the first argument, allowing for more readable and concise code. The _ symbol refers to the current object being processed in the pipeline.\nLet’s define a buffer around our point. There isn’t a scale bar in the original map, so it’s hard to know the exact distance to use for the buffer. However, we can start with a 500 meter buffer.\n\nstudy_buffer &lt;- study_point |&gt;\n  st_buffer(dist = 500)\n\ntm_shape(study_buffer)+\n  tm_fill(\"gray80\",fill_alpha = 0.8)+\n  tm_shape(study_point)+\n  tm_dots()\n\n\n\n\n\n\n\n\n\ncollision_data &lt;- lapply(2019:2024,\n                         get_stats19,\n                         type = \"collision\",\n                         silent = TRUE,\n                         output_format = \"sf\") |&gt; \n  bind_rows()\n\ndate and time columns present, creating formatted datetime column\n\n\n28 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n14 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n17 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n22 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n12 rows removed with no coordinates\n\n\ndate and time columns present, creating formatted datetime column\n\n\n84 rows removed with no coordinates\n\n\nAn inspection of the data\n\nnames(collision_data)\n\n [1] \"accident_index\"                              \n [2] \"accident_year\"                               \n [3] \"accident_reference\"                          \n [4] \"longitude\"                                   \n [5] \"latitude\"                                    \n [6] \"police_force\"                                \n [7] \"accident_severity\"                           \n [8] \"number_of_vehicles\"                          \n [9] \"number_of_casualties\"                        \n[10] \"date\"                                        \n[11] \"day_of_week\"                                 \n[12] \"time\"                                        \n[13] \"local_authority_district\"                    \n[14] \"local_authority_ons_district\"                \n[15] \"local_authority_highway\"                     \n[16] \"first_road_class\"                            \n[17] \"first_road_number\"                           \n[18] \"road_type\"                                   \n[19] \"speed_limit\"                                 \n[20] \"junction_detail\"                             \n[21] \"junction_control\"                            \n[22] \"second_road_class\"                           \n[23] \"second_road_number\"                          \n[24] \"pedestrian_crossing_human_control\"           \n[25] \"pedestrian_crossing_physical_facilities\"     \n[26] \"light_conditions\"                            \n[27] \"weather_conditions\"                          \n[28] \"road_surface_conditions\"                     \n[29] \"special_conditions_at_site\"                  \n[30] \"carriageway_hazards\"                         \n[31] \"urban_or_rural_area\"                         \n[32] \"did_police_officer_attend_scene_of_accident\" \n[33] \"trunk_road_flag\"                             \n[34] \"lsoa_of_accident_location\"                   \n[35] \"enhanced_severity_collision\"                 \n[36] \"datetime\"                                    \n[37] \"geometry\"                                    \n[38] \"status\"                                      \n[39] \"collision_index\"                             \n[40] \"collision_year\"                              \n[41] \"collision_reference\"                         \n[42] \"legacy_collision_severity\"                   \n[43] \"did_police_officer_attend_scene_of_collision\"\n[44] \"lsoa_of_collision_location\"                  \n\n\nLet’s reconcile some data to match the appropriate convention\n\ncollision_data &lt;- collision_data |&gt; \n  mutate(collision_year = coalesce(collision_year,accident_year),\n         legacy_collision_severity = coalesce(legacy_collision_severity,accident_severity))\n\nLet’s visualise all the data we extracted\n\ncollision_data |&gt;\n  slice_sample(n = 5000) |&gt;\n  st_geometry() |&gt; \n  tm_shape()+\n  tm_dots()\n\n\n\n\n\n\n\n\nCreating a subset of the collisions within our study area\n\nst_crs(collision_data,)\n\nCoordinate Reference System:\n  User input: EPSG:27700 \n  wkt:\nPROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]\n\nst_crs(study_buffer)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n\nLet’s transform the buffer to match the British Grid\n\nstudy_buffer_BNG &lt;- study_buffer |&gt; st_transform(st_crs(collision_data))\n\n\nstudy_collisions &lt;- collision_data[study_buffer_BNG,]\n\nA quick exploration of the amount\n\nstudy_collisions |&gt;\n  count(legacy_collision_severity)\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: MULTIPOINT\nDimension:     XY\nBounding box:  xmin: 430986 ymin: 434604 xmax: 431916 ymax: 435550\nProjected CRS: OSGB36 / British National Grid\n# A tibble: 2 × 3\n  legacy_collision_severity     n                                       geometry\n* &lt;chr&gt;                     &lt;int&gt;                               &lt;MULTIPOINT [m]&gt;\n1 Serious                      32 ((431178 435174), (431239 434801), (431262 43…\n2 Slight                      109 ((430986 434873), (431028 434897), (431110 43…\n\n\nA quick visualisation\n\nstudy_collisions |&gt;\ntm_shape()+\n  tm_dots(fill = \"legacy_collision_severity\",\n          size = 1,\n          fill_alpha = 0.7,\n          fill.scale = tm_scale_categorical(\n            labels = c(\"Slight\",\"Serious\"),\n            values = c(\"orange\",\"dodgerblue\")))\n\n\n\n\n\n\n\n\nA better version\n\nstudy_collisions |&gt;\n  mutate(legacy_collision_severity = factor(legacy_collision_severity,\n                                            c(\"Slight\",\"Serious\",\"Fatal\"),\n                                            ordered = T)) |&gt;\n  arrange(legacy_collision_severity) |&gt; \n  mutate(X = st_coordinates(geometry)[,1],\n         Y = st_coordinates(geometry)[,2]) |&gt; \n  ggplot(aes(x = X,y = Y,col = legacy_collision_severity))+\n  geom_jitter(alpha = 0.8,\n              size = 2,\n              position = position_jitter(width = 5, height = 5))+\n  theme_void()+\n  scale_color_manual(values = c(\"dodgerblue\",\"orange\",\"red\"))+\n  theme(plot.background = element_rect(fill = \"gray20\"))",
     "crumbs": [
       "Examples",
       "Road traffic collisions"
     ]
   },
   {
-    "objectID": "day1-s3.html",
-    "href": "day1-s3.html",
-    "title": "Reproducible papers and documentation with Quarto",
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Course Materials",
     "section": "",
-    "text": "Quarto is a next-generation open-source publishing system that allows you to combine text, code, and the output of that code into a single document. It is designed for technical and scientific communication, enabling the creation of reproducible documents that can be published in a wide variety of formats. You can use Quarto to produce reports, journal articles, presentation slides, books, and dashboards."
-  },
-  {
-    "objectID": "day1-s3.html#introduction-to-quarto",
-    "href": "day1-s3.html#introduction-to-quarto",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "",
-    "text": "Quarto is a next-generation open-source publishing system that allows you to combine text, code, and the output of that code into a single document. It is designed for technical and scientific communication, enabling the creation of reproducible documents that can be published in a wide variety of formats. You can use Quarto to produce reports, journal articles, presentation slides, books, and dashboards."
-  },
-  {
-    "objectID": "day1-s3.html#quarto-projects",
-    "href": "day1-s3.html#quarto-projects",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Quarto projects",
-    "text": "Quarto projects\nQuarto documents are authored in a plain text format, using a markup language called Markdown. A markup language is a system for annotating a document using a set of tags or symbols to define the structure, formatting, and other properties of the text within a digital document. You might be familiar with commonly used markup languages like HTML or LaTeX. These languages make the text readable by both humans and machines. Since Quarto documents are based on plain text files, you can use Git and GitHub for version control.\n\n\n\n\n\n\nTip\n\n\n\nIf you are not familiar with using Markdown, take a look at the short course Communicate using Markdown on GitHub Skills.\n\n\nA Quarto project has two key parts:\n\nSource files: These are the individual documents written in Quarto Markdown, typically with a .qmd extension. They contain the narrative text, code chunks, other blocks, and a header for document-specific options.\n\n\n\n\nA qmd file of this website\n\n\n\nProject File (_quarto.yml): It’s a YAML (YAML Ain’t Markup Language) configuration file that lives in the project’s root directory. It defines global settings for all the documents in the project, such as the project type, metadata, output directories, and project-wide configuration for execution, style, and format. The contents of this file will depend on the type of project you are working on. Here is a sneak peek of the project file for this website:\n\n\n\n\nThe project file of this web"
-  },
-  {
-    "objectID": "day1-s3.html#creating-a-quarto-project",
-    "href": "day1-s3.html#creating-a-quarto-project",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Creating a Quarto project",
-    "text": "Creating a Quarto project\nYou can create a Quarto project from scratch in an existing repository. First, let’s check that you can use quarto in your command line, and the version you have installed. If you run quarto -v in your shell, you should get the version of Quarto you have installed.\nPS C:\\temp\\tdscience&gt; quarto -v\n1.7.34\nTo create a new project in an existing directory, follow these steps:\n\nGo to your repository with cd &lt;path to repo&gt;\nRun quarto create\nChoose the name and type of project\nOpen the project in your preferred IDE.\n\nAs you see in the following code, Quarto will automatically create a source file and the project file.\nPS C:\\temp&gt; quarto create\n? Create » project\n? Type » default\n? Directory » my-first-quarto-project\n? Title (my-first-quarto-project) » My first quarto project\nCreating project at C:\\temp\\my-first-quarto-project:\n  - Created _quarto.yml\n  - Created My first quarto project.qmd\n? Open With\n❯ positron\n  vscode\n  (don't open)\nYou can also create Quarto projects interactively from the IDE. If you are interested, explore the documentation for RStudio, VSCode, or Positron."
-  },
-  {
-    "objectID": "day1-s3.html#blockschunks",
-    "href": "day1-s3.html#blockschunks",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Blocks/Chunks",
-    "text": "Blocks/Chunks\nBlocks in the qmd files are sections that are processed and formatted in a specific way. Blocks can contain code that can be processed in different ways. Chunks are delimited with ``` at the top and bottom, like this:\n```\nThis is a block\n```\nBlocks allow you to include content in HTML or LaTeX in the qmd files as raw code. Specifically for equations, you can use $$ as a delimiter. You can find more useful information on how to use Markdown in Quarto in the Quarto documentation."
-  },
-  {
-    "objectID": "day1-s3.html#code-chunks-and-settings",
-    "href": "day1-s3.html#code-chunks-and-settings",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Code chunks and settings",
-    "text": "Code chunks and settings\nCode chunks that have the language name between braces at the start are executed as if you run the code in the console. For example:\n\nRPython\n\n\n```{r}\n# this is a code chunk/block that executes R code\na &lt;- 1 + 3\na\n```\n\n\n```{python}\n# this is a code chunk/block that executes python code\na = 1 + 3\nprint(a)\n```\n\n\n\nThere are several execution options that are useful, for example, to identify each code chunk, or to hide the code, the output, or both. These options are set in the code chunk header and allow you to precisely manage what is visible to the reader. As an example, the following code will hide the source code and only the output Hello World! will be visible in the rendered document.\n\nRPython\n\n\n```{r}\n#| label: hello-block-r\n#| echo: false\n\nprint(\"Hello World!\")\n```\n\n\n```{python}\n#| label: hello-block-python\n#| echo: false\n\nprint(\"Hello World!\")\n```\n\n\n\nSee the full details on execution options here. Other options allow you to reference the output of the block. For example, if your code is producing a figure, you can use the label for cross-referencing (more about this will be detailed in the next session), or to set the caption."
-  },
-  {
-    "objectID": "day1-s3.html#publishing-your-work",
-    "href": "day1-s3.html#publishing-your-work",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Publishing your work",
-    "text": "Publishing your work\nQuarto enables you to generate a wide range of output formats from your project, whether you need an HTML report, a PDF article, a slideshow, or an entire website (like this one). From the command line, you can run quarto render to produce the rendered version of your project, or quarto preview to inspect your edits interactively.\nCombining Quarto and GitHub helps you make your research transparent, collaborative, and easy to share, ensuring that your work is not just published, but also verifiable and ready for future use."
-  },
-  {
-    "objectID": "day1-s3.html#demonstration-of-reproducible-papers",
-    "href": "day1-s3.html#demonstration-of-reproducible-papers",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Demonstration of reproducible papers",
-    "text": "Demonstration of reproducible papers\nA good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available here.\n\nExercise\nCan you clone the repository and render the final version of the paper?"
-  },
-  {
-    "objectID": "day1-s3.html#practical-creating-a-minimal-reproducible-paper",
-    "href": "day1-s3.html#practical-creating-a-minimal-reproducible-paper",
-    "title": "Reproducible papers and documentation with Quarto",
-    "section": "Practical: creating a minimal reproducible paper",
-    "text": "Practical: creating a minimal reproducible paper\nCan you create a short paper that produces a PDF or HTML file? The rendered document should include:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output"
-  },
-  {
-    "objectID": "day1-s1.html",
-    "href": "day1-s1.html",
-    "title": "Development environments, system commands, and version control",
-    "section": "",
-    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
-  },
-  {
-    "objectID": "day1-s1.html#introduction-to-ides",
-    "href": "day1-s1.html#introduction-to-ides",
-    "title": "Development environments, system commands, and version control",
-    "section": "",
-    "text": "There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.\n\n\nRStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see Figure 1).\n\n\n\n\n\n\nFigure 1: Rstudio layout\n\n\n\n\n\n\nVisual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (Figure 2)\n\n\n\n\n\n\nFigure 2: VScode layout\n\n\n\n\n\n\nPositron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.\n\n\n\n\n\n\nFigure 3: Positron layout"
-  },
-  {
-    "objectID": "day1-s1.html#key-features-and-extensions-of-vs-code-based-ides",
-    "href": "day1-s1.html#key-features-and-extensions-of-vs-code-based-ides",
-    "title": "Development environments, system commands, and version control",
-    "section": "Key features and extensions of VS Code-based IDEs",
-    "text": "Key features and extensions of VS Code-based IDEs\nVS Code’s power lies in its lightweight core and its extensible ecosystem. VS Code extensions support a wide range of languages and frameworks. Here are some of the most relevant\n\nCore Features\n\nIntelliSense: A code completion engine that provides intelligent, context-aware suggestions for variables, functions, and modules, along with helpful pop-up documentation.\nIntegrated Git: VS Code has built-in support for Git, allowing developers to manage version control directly within the editor.\nBuilt-in Terminal: An integrated command-line terminal allows you to run shell commands, execute scripts, and manage your environment without switching applications.\nDebugging: VS Code includes an interactive debugger that enables you to set breakpoints, inspect variables, and step through code to identify and fix bugs.\n\nWe will use only the basic extensions as described in the prerequisites. But it is worth exploring the extensions available on VS Code Marketplace.\n\n\nPython interpreter\nVS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (Figure 4).\n\n\n\n\n\n\nFigure 4: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"
-  },
-  {
-    "objectID": "day1-s1.html#the-system-shell-and-basic-commands",
-    "href": "day1-s1.html#the-system-shell-and-basic-commands",
-    "title": "Development environments, system commands, and version control",
-    "section": "The system shell and basic commands",
-    "text": "The system shell and basic commands\nA system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system’s kernel. The shell is where you can run scripts, manage files, and execute programs.\nThe commands will depend on the operative system you have in your computer. Windows use the Windows Command Prompt or PowerShell, while macOS and Linux use Bash/Zsh.\n\nWindowsmacOS/Linux\n\n\n\nNavigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: dir\nPrint working directory: cd\n\n\n\nFile & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: copy &lt;source_file&gt; &lt;destination&gt;\nMove a file: move &lt;source_file&gt; &lt;destination&gt;\nDelete a file: del &lt;file_name&gt;\nDisplay file content: type &lt;file_name&gt;\n\n\n\n\n\nNavigation\n\nChange directory: cd &lt;directory_name&gt;\nList directory contents: ls\nPrint working directory: pwd\n\n\n\nFile & Directory Management\n\nCreate a directory: mkdir &lt;directory_name&gt;\nCopy a file: cp &lt;source_file&gt; &lt;destination&gt;\nMove a file: mv &lt;source_file&gt; &lt;destination&gt;\nDelete a file: rm &lt;file_name&gt;\nDisplay file content: cat &lt;file_name&gt;"
-  },
-  {
-    "objectID": "day1-s1.html#introduction-to-version-control",
-    "href": "day1-s1.html#introduction-to-version-control",
-    "title": "Development environments, system commands, and version control",
-    "section": "Introduction to Version control",
-    "text": "Introduction to Version control\n\nGit\nWorking with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with Figure 5?\n\n\n\n\n\n\nFigure 5: Version control. From: programmerhumor.io\n\n\n\nGit is a great tool that tracks changes to files over time, especially in text-based files such as scripts, allowing multiple people to work on the same project without overwriting each other’s work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\n\n\nGitHub\nGitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a Hub for storing, sharing and collaborating with others. Some tools in GitHub, like pull requests for proposing changes, reviews for asking others to check your work, and issue tracking for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.\nTo learn more about the different elements in GitHub, you can start exploring the GitHub skills courses.\n\n\nWorking with GitHub\nAny Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.\nYou might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful cheat sheet.\nThere are two main ways of working with GitHub repositories in your machine: the gh command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session."
-  },
-  {
-    "objectID": "day1-s1.html#practical",
-    "href": "day1-s1.html#practical",
-    "title": "Development environments, system commands, and version control",
-    "section": "Practical:",
-    "text": "Practical:\n\n\n\n\n\n\nNote\n\n\n\nYou should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the prerequisites for more information.\n\n\n\nExercise:\n\nOpen the shell\nCreate a folder called reproducible-research\nif you have the gh command-line tool installed, try:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
-  },
-  {
-    "objectID": "day2-s8.html",
-    "href": "day2-s8.html",
-    "title": "Working on papers",
-    "section": "",
-    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
-  },
-  {
-    "objectID": "tp-schedule.html",
-    "href": "tp-schedule.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
-  },
-  {
-    "objectID": "tp-schedule.html#learning-objectives",
-    "href": "tp-schedule.html#learning-objectives",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
-  },
-  {
-    "objectID": "tp-schedule.html#prerequisites",
-    "href": "tp-schedule.html#prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential."
-  },
-  {
-    "objectID": "tp-schedule.html#software-prerequisites",
-    "href": "tp-schedule.html#software-prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Software prerequisites",
-    "text": "Software prerequisites\nYou should bring a laptop with the following software installed and tested to check it works:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nRStudio (recommended for most people) or VS Code\n\nIf you will use VS Code for the course, you need the following extensions:\n\nThe R extension reditorsupport.r if using R\nThe Python extension ms-python.python if using Python\nThe quarto extention quarto.quarto\n\n\nGit, installed with one of the following packages:\n\nGitHub Desktop (see desktop.github.com)\nGit for the command line (see git-scm.com)\n\nThe gh command-line tool (see cli.github.com for installation and set-up instructions)\n\nSee the prerequisites page for details and to test your setup.\nIdeas: - Web app development - Visualisation - Getting your work out there - Deciding which tools to use"
-  },
-  {
-    "objectID": "tp-schedule.html#day-1",
-    "href": "tp-schedule.html#day-1",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Day 1",
-    "text": "Day 1\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n\nIntroduction to VS Code, RStudio, and Jupyter\nKey features and extensions of VS Code\nThe system shell and basic commands\nIntroduction to Git and GitHub\nThe gh command-line tool\n\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n\nNavigating GitHub\nYour profile and repositories\nCreating and managing repositories\n\nCloning repositories\nMaking changes and committing\nPushing changes to GitHub\n\nCollaboration with GitHub\n\nBranches and pull requests\nMerging changes\nResolving conflicts\n\n\n12:30-13:30 Lunch\n13:30-15:00 Data visualisation\n\nUnivariate plots\nBivariate plots\nMultivariate plots and facets\nInteractive visualisations\nInteractive maps\n\n15:00-15:15 Break\n15:15-17:00 Transport Planning Challenge 1\n\nIntroduction to challenge datasets\nDeciding on a topic and questions\nPractical: working on the challenge"
-  },
-  {
-    "objectID": "tp-schedule.html#day-2",
-    "href": "tp-schedule.html#day-2",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Day 2",
-    "text": "Day 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nJoins: inner, left, right, full\nSpatial data operations\n\nSpatial subsetting\nSpatial joins\nSpatial aggregation\n\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n\nStatic vs dynamic web applications\nPractical introduction to Shiny for R and Python\n(Optional): Front-end development\n\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n\nDiscussion of datasets from Challenge 1\nDeciding on a topic and questions\nPractical: working on the challenge\n\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n\nPractical: working on the challenge\n\n16:30-17:00 Presentations and wrap-up"
-  },
-  {
-    "objectID": "plan.html",
-    "href": "plan.html",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; day1-s1.qmd\nDay1_session2.qmd -&gt; day1-s2.qmd\nDay1_session3.qmd -&gt; day1-s3.qmd\nDay1_session4.qmd -&gt; day1-s4.qmd\nDay2_session5.qmd -&gt; day2-s5.qmd\nDay2_session6.qmd -&gt; day2-s6.qmd\nDay2_session7.qmd -&gt; day2-s7.qmd\nDay2_session8.qmd -&gt; day2-s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd\n\n\n\n\nAfter renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames.\n\n\n\nI will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images.\n\n\n\nI will improve the code blocks in prerequisites.qmd to be more user-friendly.\n\n\n\nI will remove commented-out code from _quarto.yml and index.qmd."
-  },
-  {
-    "objectID": "plan.html#refactor-file-and-directory-names",
-    "href": "plan.html#refactor-file-and-directory-names",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; day1-s1.qmd\nDay1_session2.qmd -&gt; day1-s2.qmd\nDay1_session3.qmd -&gt; day1-s3.qmd\nDay1_session4.qmd -&gt; day1-s4.qmd\nDay2_session5.qmd -&gt; day2-s5.qmd\nDay2_session6.qmd -&gt; day2-s6.qmd\nDay2_session7.qmd -&gt; day2-s7.qmd\nDay2_session8.qmd -&gt; day2-s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd"
-  },
-  {
-    "objectID": "plan.html#update-configuration-and-content",
-    "href": "plan.html#update-configuration-and-content",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "After renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames."
-  },
-  {
-    "objectID": "plan.html#enhance-seo",
-    "href": "plan.html#enhance-seo",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "I will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images."
-  },
-  {
-    "objectID": "plan.html#improve-code-blocks",
-    "href": "plan.html#improve-code-blocks",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "I will improve the code blocks in prerequisites.qmd to be more user-friendly."
-  },
-  {
-    "objectID": "plan.html#clean-up-commented-out-code",
-    "href": "plan.html#clean-up-commented-out-code",
-    "title": "Project Improvement Plan",
-    "section": "",
-    "text": "I will remove commented-out code from _quarto.yml and index.qmd."
-  },
-  {
-    "objectID": "day1-s2.html",
-    "href": "day1-s2.html",
-    "title": "Sharing code and data",
-    "section": "",
-    "text": "After you’ve logged into github.com, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.\n\n\n\n\n\nWhen you access any public repository, you will typically see the same information in a similar layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
-  },
-  {
-    "objectID": "day1-s2.html#navigating-github",
-    "href": "day1-s2.html#navigating-github",
-    "title": "Sharing code and data",
-    "section": "",
-    "text": "After you’ve logged into github.com, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.\n\n\n\n\n\nWhen you access any public repository, you will typically see the same information in a similar layout:\n\n\n\n\n\n\nFigure 1\n\n\n\nGitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.\n\n\n\nCode: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.\nIssues: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.\nPull requests: When a contributor wants to merge their changes from one branch into another, they create a pull request. This tab lists all open, closed, and merged pull requests. Pull requests are where code review happens; collaborators can discuss the proposed changes, add comments, and approve the code before it is integrated into the main project.\nDiscussions: This tab is a more free-form space for conversations that are not tied to a specific bug or feature. It is a place for general questions, project announcements, or sharing ideas with the community. Think of it as a forum built right into the repository, allowing for broader, non-code-related conversations."
-  },
-  {
-    "objectID": "day1-s2.html#creating-and-managing-repositories",
-    "href": "day1-s2.html#creating-and-managing-repositories",
-    "title": "Sharing code and data",
-    "section": "Creating and managing repositories",
-    "text": "Creating and managing repositories\nYou can create a repository from scratch or using an existing folder. The following instructions show the basic process for creating a new repository, which will create a Git repository on your machine and upload it to GitHub.\n\n\n\n\n\n\nTip\n\n\n\nYou can use the gh command line interface (CLI) or a graphical user interface (GUI) like GitHub Desktop to create and manage repositories.\nWhile both approaches work, we recommend using the gh CLI because, after you have learned the commands, it is faster, more flexible, and easier to automate repetitive tasks.\nIf you want to create a repository using an existing folder, make sure to navigate to that folder in your terminal before running the gh repo create command.\n\n\n\ngh CLIGitHub Desktop\n\n\nTo create a repository from scratch, go to the location where you want to create your project using the shell, then run gh repo create to access the interactive mode.\nWe will select the first option:\n? What would you like to do?  [Use arrows to move, type to filter]\n&gt; Create a new repository on github.com from scratch\n  Create a new repository on github.com from a template repository\n  Push an existing local repository to github.com\nAssign a name. Remember that this will create a new folder with that name. We will call it myrepository.\n? Repository name\nNow select the owner of the repository, in this case, your username on GitHub.\n? Repository owner  [Use arrows to move, type to filter]\n&gt; yourGHname\nYou can provide a description for the repository. This can be edited afterwards.\n? Repository owner yourGHname\n? Description\nYou can choose whether your repository will be private or public. This can also be changed afterwards.\n? Visibility  [Use arrows to move, type to filter]\n&gt; Public\n  Private\nThe next steps will ask if you want to add README, .gitignore, and license files to your repository. A README file typically explains what the project is, why it is useful, and how others can get started using or contributing to it. A .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nAfter all questions, the interactive assistant will confirm if you want to create the repository.\n? Would you like to add a README file? Yes\n? Would you like to add a .gitignore? Yes\n? Choose a .gitignore template R\n? Would you like to add a license? Yes\n? Choose a license GNU Affero General Public License v3.0\n? This will create \"myrepository\" as a public repository on github.com. Continue? (Y/n)\nConfirm your repository and explore its contents!\n\n\nOpen the GitHub Desktop app. Click on the File menu and select New repository...\n\nA window asking for the details of your repository will appear.\n\nA .gitignore file is a plain text file that tells Git which files or directories to intentionally ignore and not track. This is crucial for keeping a repository clean and secure. There are readily available templates based on programming languages; you can pick R in this case. Finally, the license file, if created, clearly states the legal terms under which the project’s code is distributed.\nThis process will create the repository locally. In order to publish it on GitHub, you have to click on Publish repository.\n\n\n\n\nOnce your repository is created, you should be able to see it online. To access it, click on the Repositories tab in your profile page and select the repository you just created. You can see a list of repositories in your profile page by clicking on the Repositories tab, or typing github.com/username?tab=repositories in your browser, replacing username with your GitHub username. To see robinlovelace’s repositories, for example, you can type the following into your browser: github.com/Robinlovelace?tab=repositories.\n\n\nIf you want to create a repository from an existing project, you will need to initialize your repository. For this, go to the folder where you have your project with cd &lt;folder path&gt;, and run git init. This will create a local repository.\n\nExercise\nCan you create a repository from an existing folder using either gh CLI or GitHub Desktop?"
-  },
-  {
-    "objectID": "day1-s2.html#cloning-repositories",
-    "href": "day1-s2.html#cloning-repositories",
-    "title": "Sharing code and data",
-    "section": "Cloning repositories",
-    "text": "Cloning repositories\nTo work on a project from GitHub, you first need to clone the repository to your local machine. Cloning creates a local copy of all the files and history.\n\nUsing the command line, go to the location where you want to store the repository and run:\ngh repo clone username/repositoryname\nReplace username/repositoryname with the actual repository path on GitHub. For example, tdscience/course.\nWith GitHub Desktop, click File &gt; Clone repository, search for the repository, and choose a local path."
-  },
-  {
-    "objectID": "day1-s2.html#making-changes-and-committing",
-    "href": "day1-s2.html#making-changes-and-committing",
-    "title": "Sharing code and data",
-    "section": "Making changes and committing",
-    "text": "Making changes and committing\nA key part of version control is recording the changes in the repository. Once you have created or deleted files, or made any changes, you need to commit them to save a snapshot of your work. In the diagram below, each dot is a commit with a set of changes.\n\n\n\nGit Workflow. From: Git for Data Science by Juha Kiili\n\n\nTo commit changes, you will need to stage them first. In the command line, you can stage a file with the following code:\ngit add &lt;filename&gt;\nAlternatively, if you want to stage all files you can use\ngit add .\nThen, to finally commit changes, use the following code:\ngit commit -m \"Describe your changes\"\nIt is good practice to use concise but clear messages to describe what the change was.\nIn GitHub Desktop, changes are shown automatically. You may select the files that you want to include in the commit. Add a summary and click “Commit to main”."
-  },
-  {
-    "objectID": "day1-s2.html#pushing-changes-to-github",
-    "href": "day1-s2.html#pushing-changes-to-github",
-    "title": "Sharing code and data",
-    "section": "Pushing changes to GitHub",
-    "text": "Pushing changes to GitHub\nTo update the repository on GitHub with your local commits, push your changes:\n\nCommand line:\ngit push\nIn GitHub Desktop, click “Push origin”."
-  },
-  {
-    "objectID": "day1-s2.html#collaboration-with-github",
-    "href": "day1-s2.html#collaboration-with-github",
-    "title": "Sharing code and data",
-    "section": "Collaboration with GitHub",
-    "text": "Collaboration with GitHub\nGitHub enables collaboration by allowing multiple people to work on the same repository. You can use Issues and Discussions to communicate. Imagine that you are working on some analysis in a team. One person in the team identifies a problem with the analysis. That person can open an issue to inform the rest of the team about this problem.\nUsing the command line, you can create an issue by running:\ngh issue create\nAlternatively, you can use the Issues tab online and create it there."
-  },
-  {
-    "objectID": "day1-s2.html#branches-and-pull-requests",
-    "href": "day1-s2.html#branches-and-pull-requests",
-    "title": "Sharing code and data",
-    "section": "Branches and pull requests",
-    "text": "Branches and pull requests\nBranches let you work on new features or fixes without affecting the main codebase. When you create a branch, you effectively create a snapshot of the project at that point and use it as a starting point. It is recommended that you create a branch based on an existing issue, so there is some traceability of why there is a new variation of the project.\nTo create a branch from an issue, e.g. #3, you can run:\ngh issue develop 3 --checkout\nUsing --checkout will move you from the main version of the project to the version where you are going to do the work to implement the solution to the issue. You can now start working and committing all necessary changes without affecting the main project. If you need to return to the main branch, you can run git checkout main.\nOnce you have finished working with your branch, you can create a pull request so the changes are incorporated into the main version. To do this, run the following code:\ngh pr create\nIn GitHub Desktop, every time you commit a change on a different branch to main, it will ask you if you want to create a pull request.\nAfter creating the pull request, you can ask someone in the team to review your work. This will ensure that the changes are correct."
-  },
-  {
-    "objectID": "day1-s2.html#merging-changes",
-    "href": "day1-s2.html#merging-changes",
-    "title": "Sharing code and data",
-    "section": "Merging changes",
-    "text": "Merging changes\nOnce a pull request is reviewed and approved, you can merge it into the main branch.\n\nOn GitHub, click “Merge pull request”.\nLocally, use:\ngh pr merge 1"
-  },
-  {
-    "objectID": "day1-s2.html#resolving-conflicts",
-    "href": "day1-s2.html#resolving-conflicts",
-    "title": "Sharing code and data",
-    "section": "Resolving conflicts",
-    "text": "Resolving conflicts\nConflicts occur when changes in different branches overlap. Git will mark the conflicting files.\n\nOpen the file, look for conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;), and edit to resolve.\nAfter resolving, add and commit the file:\ngit add &lt;filename&gt;\ngit commit"
-  },
-  {
-    "objectID": "day1-s2.html#automated-workflows-with-github-actions",
-    "href": "day1-s2.html#automated-workflows-with-github-actions",
-    "title": "Sharing code and data",
-    "section": "Automated workflows with GitHub Actions",
-    "text": "Automated workflows with GitHub Actions\nGitHub Actions lets you automate tasks like testing or deployment.\n\nAdd workflow files in .github/workflows/.\nExample: Run tests on every push."
-  },
-  {
-    "objectID": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
-    "href": "day1-s2.html#best-practices-for-collaboration-sharing-code-and-data",
-    "title": "Sharing code and data",
-    "section": "Best practices for collaboration, sharing code and data",
-    "text": "Best practices for collaboration, sharing code and data\n\nWrite clear commit messages.\nUse branches for features and fixes.\nKeep your repository organized with README, .gitignore, and license files.\nCommunicate using Issues and Discussions.\nReview code via pull requests.\nProtect sensitive data by not uploading secrets."
-  },
-  {
-    "objectID": "day1-s2.html#practical-creating-a-repository-and-making-changes",
-    "href": "day1-s2.html#practical-creating-a-repository-and-making-changes",
-    "title": "Sharing code and data",
-    "section": "Practical: creating a repository and making changes",
-    "text": "Practical: creating a repository and making changes"
-  },
-  {
-    "objectID": "day1-s4.html",
-    "href": "day1-s4.html",
-    "title": "Cross-references and citations with Quarto",
-    "section": "",
-    "text": "Cross-referencing allows you to refer to sections, figures, tables, and code blocks within your document. This is essential for academic writing. To cross-reference content in your document, you need to give it a label first, which will be used for referencing."
-  },
-  {
-    "objectID": "day1-s4.html#cross-references",
-    "href": "day1-s4.html#cross-references",
-    "title": "Cross-references and citations with Quarto",
-    "section": "",
-    "text": "Cross-referencing allows you to refer to sections, figures, tables, and code blocks within your document. This is essential for academic writing. To cross-reference content in your document, you need to give it a label first, which will be used for referencing."
-  },
-  {
-    "objectID": "day1-s4.html#sections",
-    "href": "day1-s4.html#sections",
-    "title": "Cross-references and citations with Quarto",
-    "section": "Sections",
-    "text": "Sections\nFor sections, you can label a particular section using the {#sec-yourlabel} syntax. For example, in this h2 heading for the results section:\n## Results {#sec-results}\nThen, to reference it elsewhere in your text, use @sec-yourlabel, like this:\nAs shown in @sec-results, ...\n\nTables and figures\nTables and figures are among the most common elements for presenting data and results. For them, you will use tbl- and fig- instead of sec-.\nThere are two main methods to cross-reference them. If the table or figure is generated by a code chunk, you can use the label: option in your chunk to identify them. For example, the table produced by the code below will be referenced with @tbl-planets.\n```{python}\n#| label: tbl-planets\n#| tbl-cap: Astronomical object\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\ntable = [[\"Sun\",\"696,000\",1.989e30],\n         [\"Earth\",\"6,371\",5.972e24],\n         [\"Moon\",\"1,737\",7.34e22],\n         [\"Mars\",\"3,390\",6.39e23]]\nMarkdown(tabulate(\n  table, \n  headers=[\"Astronomical object\",\"R (km)\", \"mass (kg)\"]\n))\n```\nThe other case is when tables and figures are created directly using Markdown. You will have to include a similar tag as for the sections, in this case {#tbl-mylabel}. Then, in your text you can use the same method to reference them: @tbl-letters.\n| Name  | Value |\n|-------|-------|\n| A     | 10    |\n| B     | 20    |\n\n: Caption {#tbl-letters}\nOr in the case of a figure:\n![An Elephant](elephant.png){#fig-elephant}\n\n\n\n\n\n\nTip\n\n\n\nTo add captions to your code-generated tables and figures, use fig-cap or tbl-cap in the chunk headers."
-  },
-  {
-    "objectID": "day1-s4.html#citations",
-    "href": "day1-s4.html#citations",
-    "title": "Cross-references and citations with Quarto",
-    "section": "Citations",
-    "text": "Citations\nCitations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating Zotero into your workflow. This integration is already set up in RStudio and Positron in the visual editor. For VS Code, you can install an extension to use citations from your Zotero library, e.g. Citation Picker for Zotero.\nIt is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The Better BibTeX plug-in can help with that.\nOnce you have Zotero and your IDE integrated, the process should be smooth following these steps:\n\nAdd a bibliography file (e.g., references.bib) to your project.\nIn your YAML header, include:\nbibliography: references.bib\nTo cite a source, use [@key] in your text:\nRecent studies show... [@smith2020]."
-  },
-  {
-    "objectID": "day1-s4.html#bibliographies",
-    "href": "day1-s4.html#bibliographies",
-    "title": "Cross-references and citations with Quarto",
-    "section": "Bibliographies",
-    "text": "Bibliographies\nBy default, bibliographies list all cited sources at the end of your document. The bibliography will be rendered automatically based on your citations.\nIf you want to include it in a different place in your document (not at the end), you can include ::: {#refs} ::: in the location where you want to render the list of references.\nOne last important element is the format of the references and citations. Different institutions require different styles; you can easily change the style of referencing by including a CSL (Citation Style Language) file to configure Quarto to render citations and references with that particular style. You should include a line similar to this in your YAML file:\ncsl: mycsl.csl"
-  },
-  {
-    "objectID": "day1-s4.html#practical-adding-citations-and-references-to-your-paper",
-    "href": "day1-s4.html#practical-adding-citations-and-references-to-your-paper",
-    "title": "Cross-references and citations with Quarto",
-    "section": "Practical: adding citations and references to your paper",
-    "text": "Practical: adding citations and references to your paper\nTry the following steps:\n\nAdd a bibliography file to your project.\nCite at least one source in your document.\nCreate a figure and a table, each with a label and caption.\nReference your figure and table in the text using cross-references.\nRender your document and check that citations, references, and cross-references are formatted correctly."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "text": "Datasets\nSlides\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace",
     "crumbs": [
-      "Schedule"
+      "Materials"
     ]
   },
   {
-    "objectID": "schedule.html#day-1",
-    "href": "schedule.html#day-1",
-    "title": "Schedule",
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
     "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
-    "crumbs": [
-      "Schedule"
-    ]
+    "text": "Pitch slides\nDay 1\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
-    "objectID": "schedule.html#day-2",
-    "href": "schedule.html#day-2",
-    "title": "Schedule",
-    "section": "Day 2",
-    "text": "Day 2\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:30\nDrafting a reproducible paper\n\n\n\n\n10:30 - 10:45\nBreak\n\n\n\n\n10:45 - 12:30\nGenerating reproducible publication-quality visualisations\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 14:30\nEditing other people’s work\n\n\n\n\n14:30 - 14:45\nBreak\n\n\n\n\n14:45 - 16:00\nWorking on papers\n\n\n\n\n16:00 - 17:00\nPresentations and wrap-up",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "day2-s7.html",
-    "href": "day2-s7.html",
-    "title": "Editing other people’s work",
-    "section": "",
-    "text": "Reviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "",
-    "text": "Be able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#prerequisites",
-    "href": "index.html#prerequisites",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nYou also need to have some software installed:\n\nQuarto (minimum version: 1.5.45)\nR or Python or both\nAn IDE for data science that you have some familiarity with, e.g. RStudio, VS Code or Positron.\n\nSee the prerequisites page for details and to test your setup.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#alignment-with-overarching-learning-outcomes",
-    "href": "index.html#alignment-with-overarching-learning-outcomes",
-    "title": "Data Science and Digital Tools for Transport Planning",
-    "section": "Alignment with Overarching Learning Outcomes",
-    "text": "Alignment with Overarching Learning Outcomes\nThe course will contribute to the development of the following skills and competencies:\n\nEntrepreneurship skills and competencies (OLO 1): The course will prepare researchers for working on real-world projects, up-skill their CVs to contain improved data science competencies, which are in high and growing demand in the job sector, and provide vital website development skills which are key to setting-up and running businesses in the digital age. The course will also provide insight into how academic research and papers can be implemented in practice, with reference to case studies such as the Propensity to Cycle Tool in which academic research was deployed in a national policy context, resulting in a tool that is now used by local authorities across England and Wales.\nInnovation skills and competencies (OLO 2): The course will provide participants test new products and tools, with a focus on new tools for data science, reproducible and scalable research, and a taster of web application development, that could be a game changer in the career path of students who have innovative ideas but currently lack the confidence or skills to implement them. There will be a focus on system innovation and contributing to broader positive societal change, with reference to the potential of open data and open source software to democratize access to data and tools for transport planning.\nCreativity skills and competencies (OLO 3): The course will encourage students to think outside the box, by providing opportunities on day 2 to apply the new tools taught in day 1 to a real-world problem of their choosing. The ‘controlled chaos’ session will provide a safe space for students to experiment with new tools and ideas, with the support of the course team and other participants.\nLeadership skills and competencies (OLO 6): The course will empower students with new tools and ideas that will enable them to take their research in new directions, for example by converting research methods into a new digital product. The ‘can do’ attitude advocated in the course will give students the confidence to take on new challenges and lead in their field, within and particularly outside of academia.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "day2-s5.html",
-    "href": "day2-s5.html",
-    "title": "Drafting a reproducible paper",
-    "section": "",
-    "text": "Recap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
-  },
-  {
-    "objectID": "day2-s6.html",
-    "href": "day2-s6.html",
-    "title": "Generating reproducible publication-quality visualisations",
-    "section": "",
-    "text": "An introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
-  },
-  {
-    "objectID": "slides/pitch.html#about-me-and-my-work",
-    "href": "slides/pitch.html#about-me-and-my-work",
+    "objectID": "slides/day1.html#course-overview-see-schedule-housekeeping",
+    "href": "slides/day1.html#course-overview-see-schedule-housekeeping",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "About me and my work",
-    "text": "About me and my work\n\n\n\nProfessor of Transport Data Science\nWork with government\nFocus on impact\nR package developer and data scientist\nNew methods for more reproducible, data-driven and participatory transport planning"
+    "section": "Course overview (see schedule) + ‘housekeeping’",
+    "text": "Course overview (see schedule) + ‘housekeeping’\nDay 1\n\n09:30-10:00 Introduction\n10:00-11:00 Development environments, system commands, and version control\n\n11:15-12:30 Sharing code and data\n\n13:30-15:00 Reproducible papers and documentation with Quarto\n\n15:15-16:30 Cross-references and citations with Quarto\n\nDay 2\n\n09:30-10:30 Drafting a reproducible paper\n\n10:45-12:30 Generating reproducible publication-quality visualisations\n\n13:30-14:30 Editing other people’s work\n\n14:45-16:00 Working on papers -&gt; Presentations and wrap-up"
   },
   {
-    "objectID": "slides/pitch.html#learning-objectives",
-    "href": "slides/pitch.html#learning-objectives",
+    "objectID": "slides/day1.html#about-us",
+    "href": "slides/day1.html#about-us",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nBe able to share reproducible code for more scientific and transparent transport research\nTo be confident reproducing your own work and that of others\nTo become skilled at using Git and GitHub to manage versions of your code and collaborate with others\nTo be able to write reproducible content that can be exported to a variety of formats with the Quarto system for scientific publishing\nTo understand how Quarto extensions can be used as a basis for creating publication-ready papers\nTo be aware of ‘continuous integration’ and ‘GitHub Actions’ and how they can be used to ensure reproducibility, share your work, and save time\nUnderstanding of best practices around code sharing and collaboration for reproducible research in transport planning"
+    "section": "About us",
+    "text": "About us\nRobin Lovelace\n\nProfessor of Transport Data Science\nFocus: influencing decision-making, to make it more evidence-based  \nR package developer and data scientist\nNew methods for more reproducible, data-driven and participatory transport planning \n\nJuan Fonseca\n\nPhD student at the University of Leeds\nFocus: fast and flexible models for estimating traffic\nDeveloper of {Telraamr} and {azuremapsr} R packages, the latter of which was recently published on CRAN"
   },
   {
-    "objectID": "slides/pitch.html#prerequisites",
-    "href": "slides/pitch.html#prerequisites",
+    "objectID": "slides/day1.html#about-you",
+    "href": "slides/day1.html#about-you",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course assumes working knowledge with R or Python for research. We assume that you are already comfortable with an integrated development environment (IDE), such as RStudio or VS Code. You must have a GitHub account and it will be beneficial to be familiar with the concepts of version control, although we will cover these in the course.\nFamiliarity with referencing software such as Zotero (recommended) and bibliography file formats such as BibTeX will be beneficial, but not essential.\nSee the prerequisites page for details and to test your setup."
+    "section": "About you",
+    "text": "About you\n\nName\nWhat tools you currently use for research\nWhere you’re from\nWhat’s your favourite animal\nA random fact about you\n\nMe\n\nCurrently using VS Code, Quarto, R, Google Gemini etc, Devcontainers\nFrom Herefordshire, UK\nFavourite animal: Red kite\nRandom fact: I run 5 km every Saturday with double buggy\n\nOver to you"
   },
   {
-    "objectID": "slides/pitch.html#questions-for-students-pre-course",
-    "href": "slides/pitch.html#questions-for-students-pre-course",
+    "objectID": "slides/day1.html#the-origins-of-the-course",
+    "href": "slides/day1.html#the-origins-of-the-course",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Questions for students (pre-course)",
-    "text": "Questions for students (pre-course)\n\nWhat language would you prefer a course on reproducible research to be taught in?\n\nR\nPython\nBoth\n\nWhich interactive development environment would you prefer to be used as the main editor used and taught during the course?\n\nRStudio\nVSCode\nPositron (new data science-focussed IDE by Posit)"
+    "section": "The origins of the course",
+    "text": "The origins of the course\n“If only I was told this ealier in my career”\nImagine a workflow that enabled:\n\nFewer context switches\nMore focus on the content and not style of the work\nIntegration of code into your research manuscript\nAutomatic generation of results, including figures and tables…\n\nThat change seamlessly when input datasets or code changes\n\nControl over how you export and publish your work\n\nIncluding publication-quality PDFs, website, blogs, slides\n\nFull reproducibility\nYou to share your work for maximum benefit to others"
   },
   {
-    "objectID": "slides/pitch.html#day-1-morning",
-    "href": "slides/pitch.html#day-1-morning",
+    "objectID": "slides/day1.html#reproducible-research",
+    "href": "slides/day1.html#reproducible-research",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 1 (morning)",
-    "text": "Day 1 (morning)\n\n09:30-10:00 Introduction\n\nWelcome and introductions (participatory)\nDefinitions and motivations\nCourse structure and objectives\n\n10:00-11:00 Development environments, system commands, and version control\n11:00-11:15 Break\n11:15-12:30 Sharing code and data\n12:30-13:30 Lunch"
+    "section": "Reproducible research",
+    "text": "Reproducible research"
   },
   {
-    "objectID": "slides/pitch.html#day-1-afternoon",
-    "href": "slides/pitch.html#day-1-afternoon",
+    "objectID": "slides/day1.html#example-of-reproducible-research-networkmerge",
+    "href": "slides/day1.html#example-of-reproducible-research-networkmerge",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 1 (afternoon)",
-    "text": "Day 1 (afternoon)\n\n13:30-15:00 Reproducible papers and documentation with Quarto\n\nIntroduction to Quarto …\nPractical: creating a minimal reproducible paper\n\n15:00-15:15 Break\n15:15-16:30 Cross-references and citations with Quarto\n\nCross-references\nCitations\nBibliographies\nTables and figures\nPractical: adding citations and references to your paper"
+    "section": "Example of reproducible research: networkmerge",
+    "text": "Example of reproducible research: networkmerge\nSee paper website: https://nptscot.github.io/networkmerge/"
   },
   {
-    "objectID": "slides/pitch.html#day-2-morning",
-    "href": "slides/pitch.html#day-2-morning",
+    "objectID": "slides/day1.html#example-rs5c-conference-slides",
+    "href": "slides/day1.html#example-rs5c-conference-slides",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 2 (morning)",
-    "text": "Day 2 (morning)\n\n09:30-10:30 Drafting a reproducible paper\n\nRecap of Day 1\nTopic selection\nIndividual work on paper drafts\n\n10:30-10:45 Break\n10:45-12:00 Generating reproducible publication-quality visualisations\n\nAn introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper \n\n12:00-13:00 Lunch"
+    "section": "Example: rs5c conference slides",
+    "text": "Example: rs5c conference slides\nSee slides website: https://robinlovelace.github.io/rs5c/"
   },
   {
-    "objectID": "slides/pitch.html#day-2-afternoon",
-    "href": "slides/pitch.html#day-2-afternoon",
+    "objectID": "slides/day1.html#example-biclar",
+    "href": "slides/day1.html#example-biclar",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Day 2 (afternoon)",
-    "text": "Day 2 (afternoon)\n\n13:00-14:30 Editing other people’s work\n\nReviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n14:30-14:45 Break\n14:45-16:00 Working on papers\n\nPractical session bringing together elements from the course\n\n16:00-17:00 Presentations and wrap-up"
+    "section": "Example: biclaR",
+    "text": "Example: biclaR\nSee https://github.com/U-Shift/biclar"
   },
   {
-    "objectID": "slides/pitch.html#practicalities",
-    "href": "slides/pitch.html#practicalities",
+    "objectID": "slides/day1.html#course-principles",
+    "href": "slides/day1.html#course-principles",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Practicalities",
-    "text": "Practicalities\n\nCourse website and open, reproducible code: tdscience.github.io/course/\nIn person or online?\nTeaching assistants\nNumber of participants\nIncorportating feedback\nCosts"
+    "section": "Course principles",
+    "text": "Course principles\n\n“Learn by doing”\n“Learn by teaching”\n“Learn from each other”\n“We’re all learning”\n“Growth mindset”\n“Can-do” and “Go for It” attitude\n“Every error is a learning opportunity”\n“No such thing as a bad question”\n“Fail fast”\nBalance between focused work and comms\nBring you own principles (BYOP)"
+  },
+  {
+    "objectID": "slides/day1.html#the-practical-sessions",
+    "href": "slides/day1.html#the-practical-sessions",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "The practical sessions",
+    "text": "The practical sessions\n\nTime of in-depth work\nUse the course website as a reference point but spend most of the time in your own environment\nJuan and I will support people 1-2-1 and do ‘live demos’ now and then\n\n\n\n\n\n\n\nTip\n\n\nPress Ctrl+Tab to switch from IDE to browser with course content and other things for an efficient workflow"
+  },
+  {
+    "objectID": "slides/day1.html#any-questions-before-we-move-to-the-first-practical",
+    "href": "slides/day1.html#any-questions-before-we-move-to-the-first-practical",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Any questions before we move to the first practical?",
+    "text": "Any questions before we move to the first practical?"
+  },
+  {
+    "objectID": "slides/day1.html#session-1-introduction-see-session-1-workbook",
+    "href": "slides/day1.html#session-1-introduction-see-session-1-workbook",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Session 1 introduction (see Session 1 workbook)",
+    "text": "Session 1 introduction (see Session 1 workbook)\n\n09:30-10:00 Introduction\n10:00-11:00 Development environments, system commands, and version control\n\n11:15-12:30 Sharing code and data\n\n13:30-15:00 Reproducible papers and documentation with Quarto\n\n15:15-16:30 Cross-references and citations with Quarto\n\nDay 2\n\n09:30-10:30 Drafting a reproducible paper\n\n10:45-12:30 Generating reproducible publication-quality visualisations\n\n13:30-14:30 Editing other people’s work\n\n14:45-16:00 Working on papers -&gt; Presentations and wrap-up"
+  },
+  {
+    "objectID": "slides/day1.html#live-demo-of-vs-code",
+    "href": "slides/day1.html#live-demo-of-vs-code",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Live demo of VS Code",
+    "text": "Live demo of VS Code"
+  },
+  {
+    "objectID": "slides/day1.html#git-and-the-github-cli",
+    "href": "slides/day1.html#git-and-the-github-cli",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Git and the GitHub CLI",
+    "text": "Git and the GitHub CLI\nPrinciple: the command-line is better than the graphical user interface (CLI &gt; GUI)\n\nUsing a GUI may allowing you to do something quicker the first time but will slow you down in the long-run\nCLI: hard first time1 but will save time in long term\nThe relationship between git and gh tools\n\ngit is a long-established version-control system with many commands\ngh is a high-level interfact to git and the GitHub platform\n\n\n Although less so with AI-generated code"
+  },
+  {
+    "objectID": "slides/day1.html#live-demo-cloning-repos-opening-issues-pull-requests-from-cli",
+    "href": "slides/day1.html#live-demo-cloning-repos-opening-issues-pull-requests-from-cli",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Live demo: cloning repos, opening issues, Pull Requests from CLI",
+    "text": "Live demo: cloning repos, opening issues, Pull Requests from CLI\n```bash"
+  },
+  {
+    "objectID": "slides/day1.html#solo-working-through-the-practical-until-1100",
+    "href": "slides/day1.html#solo-working-through-the-practical-until-1100",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Solo working through the practical (until ~11:00)",
+    "text": "Solo working through the practical (until ~11:00)"
   }
 ]

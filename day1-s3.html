@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Robin Lovelace">
+<meta name="author" content="Robin Lovelace &amp; contributors">
 <meta name="dcterms.date" content="2025">
 <meta name="description" content="Learn to create reproducible papers and documentation using Quarto, including Markdown, LaTeX, and publishing.">
 
@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/DSDT4TP.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/tsrtr.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/tdscience/course" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -203,17 +203,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link active" data-scroll-target="#introduction-to-quarto">Introduction to Quarto</a></li>
-  <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects">Quarto projects</a></li>
-  <li><a href="#creating-a-quarto-project" id="toc-creating-a-quarto-project" class="nav-link" data-scroll-target="#creating-a-quarto-project">Creating a Quarto project</a></li>
-  <li><a href="#blockschunks" id="toc-blockschunks" class="nav-link" data-scroll-target="#blockschunks">Blocks/Chunks</a></li>
-  <li><a href="#code-chunks-and-settings" id="toc-code-chunks-and-settings" class="nav-link" data-scroll-target="#code-chunks-and-settings">Code chunks and settings</a></li>
-  <li><a href="#publishing-your-work" id="toc-publishing-your-work" class="nav-link" data-scroll-target="#publishing-your-work">Publishing your work</a></li>
-  <li><a href="#demonstration-of-reproducible-papers" id="toc-demonstration-of-reproducible-papers" class="nav-link" data-scroll-target="#demonstration-of-reproducible-papers">Demonstration of reproducible papers</a>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link active" data-scroll-target="#introduction-to-quarto"><span class="header-section-number">1</span> Introduction to Quarto</a></li>
+  <li><a href="#quarto-projects" id="toc-quarto-projects" class="nav-link" data-scroll-target="#quarto-projects"><span class="header-section-number">2</span> Quarto projects</a></li>
+  <li><a href="#creating-a-quarto-project" id="toc-creating-a-quarto-project" class="nav-link" data-scroll-target="#creating-a-quarto-project"><span class="header-section-number">3</span> Creating a Quarto project</a></li>
+  <li><a href="#blockschunks" id="toc-blockschunks" class="nav-link" data-scroll-target="#blockschunks"><span class="header-section-number">4</span> Blocks/Chunks</a></li>
+  <li><a href="#code-chunks-and-settings" id="toc-code-chunks-and-settings" class="nav-link" data-scroll-target="#code-chunks-and-settings"><span class="header-section-number">5</span> Code chunks and settings</a></li>
+  <li><a href="#publishing-your-work" id="toc-publishing-your-work" class="nav-link" data-scroll-target="#publishing-your-work"><span class="header-section-number">6</span> Publishing your work</a></li>
+  <li><a href="#demonstration-of-reproducible-papers" id="toc-demonstration-of-reproducible-papers" class="nav-link" data-scroll-target="#demonstration-of-reproducible-papers"><span class="header-section-number">7</span> Demonstration of reproducible papers</a>
   <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">7.1</span> Exercise</a></li>
   </ul></li>
-  <li><a href="#practical-creating-a-minimal-reproducible-paper" id="toc-practical-creating-a-minimal-reproducible-paper" class="nav-link" data-scroll-target="#practical-creating-a-minimal-reproducible-paper">Practical: creating a minimal reproducible paper</a></li>
+  <li><a href="#practical-creating-a-minimal-reproducible-paper" id="toc-practical-creating-a-minimal-reproducible-paper" class="nav-link" data-scroll-target="#practical-creating-a-minimal-reproducible-paper"><span class="header-section-number">8</span> Practical: creating a minimal reproducible paper</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://book.the-turing-way.org/reproducible-research/reproducible-research"><i class="bi bi-link-45deg"></i>Guide for Reproducible Research</a></li></ul></div></nav>
     </div>
@@ -239,12 +239,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-quarto">Introduction to Quarto</h2>
+<section id="introduction-to-quarto" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-to-quarto"><span class="header-section-number">1</span> Introduction to Quarto</h2>
 <p>Quarto is a next-generation open-source publishing system that allows you to combine text, code, and the output of that code into a single document. It is designed for technical and scientific communication, enabling the creation of reproducible documents that can be published in a wide variety of formats. You can use Quarto to produce reports, journal articles, presentation slides, books, and dashboards.</p>
 </section>
-<section id="quarto-projects" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-projects">Quarto projects</h2>
+<section id="quarto-projects" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="quarto-projects"><span class="header-section-number">2</span> Quarto projects</h2>
 <p>Quarto documents are authored in a plain text format, using a markup language called Markdown. A markup language is a system for annotating a document using a set of tags or symbols to define the structure, formatting, and other properties of the text within a digital document. You might be familiar with commonly used markup languages like HTML or LaTeX. These languages make the text readable by both humans and machines. Since Quarto documents are based on plain text files, you can use Git and GitHub for version control.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -279,8 +279,8 @@ Tip
 </figure>
 </div>
 </section>
-<section id="creating-a-quarto-project" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-quarto-project">Creating a Quarto project</h2>
+<section id="creating-a-quarto-project" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="creating-a-quarto-project"><span class="header-section-number">3</span> Creating a Quarto project</h2>
 <p>You can create a Quarto project from scratch in an existing repository. First, let’s check that you can use <code>quarto</code> in your command line, and the version you have installed. If you run <code>quarto -v</code> in your shell, you should get the version of Quarto you have installed.</p>
 <pre><code>PS C:\temp\tdscience&gt; quarto -v
 1.7.34</code></pre>
@@ -306,16 +306,16 @@ Creating project at C:\temp\my-first-quarto-project:
   (don't open)</code></pre>
 <p>You can also create Quarto projects interactively from the IDE. If you are interested, explore the documentation for <a href="https://quarto.org/docs/tools/rstudio.html">RStudio</a>, <a href="https://quarto.org/docs/tools/vscode/index.html">VSCode</a>, or <a href="https://quarto.org/docs/tools/positron/">Positron</a>.</p>
 </section>
-<section id="blockschunks" class="level2">
-<h2 class="anchored" data-anchor-id="blockschunks">Blocks/Chunks</h2>
+<section id="blockschunks" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="blockschunks"><span class="header-section-number">4</span> Blocks/Chunks</h2>
 <p>Blocks in the <code>qmd</code> files are sections that are processed and formatted in a specific way. Blocks can contain code that can be processed in different ways. Chunks are delimited with <code>```</code> at the top and bottom, like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">This is a block</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Blocks allow you to include content in HTML or LaTeX in the <code>qmd</code> files as raw code. Specifically for equations, you can use <code>$$</code> as a delimiter. You can find more useful information on how to use Markdown in Quarto in the <a href="https://quarto.org/docs/authoring/markdown-basics.html#raw-content">Quarto documentation</a>.</p>
 </section>
-<section id="code-chunks-and-settings" class="level2">
-<h2 class="anchored" data-anchor-id="code-chunks-and-settings">Code chunks and settings</h2>
+<section id="code-chunks-and-settings" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="code-chunks-and-settings"><span class="header-section-number">5</span> Code chunks and settings</h2>
 <p>Code chunks that have the language name between braces at the start are executed as if you run the code in the console. For example:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
@@ -360,21 +360,21 @@ Creating project at C:\temp\my-first-quarto-project:
 </div>
 <p>See the full details on execution options <a href="https://quarto.org/docs/computations/execution-options.html">here</a>. Other options allow you to reference the output of the block. For example, if your code is producing a figure, you can use the <code>label</code> for cross-referencing (more about this will be detailed in the next session), or to set the caption.</p>
 </section>
-<section id="publishing-your-work" class="level2">
-<h2 class="anchored" data-anchor-id="publishing-your-work">Publishing your work</h2>
+<section id="publishing-your-work" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="publishing-your-work"><span class="header-section-number">6</span> Publishing your work</h2>
 <p>Quarto enables you to generate a wide range of output formats from your project, whether you need an HTML report, a PDF article, a slideshow, or an entire website (like this one). From the command line, you can run <code>quarto render</code> to produce the rendered version of your project, or <code>quarto preview</code> to inspect your edits interactively.</p>
 <p>Combining Quarto and GitHub helps you make your research transparent, collaborative, and easy to share, ensuring that your work is not just published, but also verifiable and ready for future use.</p>
 </section>
-<section id="demonstration-of-reproducible-papers" class="level2">
-<h2 class="anchored" data-anchor-id="demonstration-of-reproducible-papers">Demonstration of reproducible papers</h2>
+<section id="demonstration-of-reproducible-papers" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="demonstration-of-reproducible-papers"><span class="header-section-number">7</span> Demonstration of reproducible papers</h2>
 <p>A good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available <a href="https://github.com/nptscot/networkmerge">here</a>.</p>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<section id="exercise" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">7.1</span> Exercise</h3>
 <p>Can you clone the repository and render the final version of the paper?</p>
 </section>
 </section>
-<section id="practical-creating-a-minimal-reproducible-paper" class="level2">
-<h2 class="anchored" data-anchor-id="practical-creating-a-minimal-reproducible-paper">Practical: creating a minimal reproducible paper</h2>
+<section id="practical-creating-a-minimal-reproducible-paper" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="practical-creating-a-minimal-reproducible-paper"><span class="header-section-number">8</span> Practical: creating a minimal reproducible paper</h2>
 <p>Can you create a short paper that produces a PDF or HTML file? The rendered document should include:</p>
 <ul>
 <li>At least two types of headings (e.g.&nbsp;h1, h2, etc.)</li>

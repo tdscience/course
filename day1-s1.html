@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Robin Lovelace">
+<meta name="author" content="Robin Lovelace &amp; contributors">
 <meta name="dcterms.date" content="2025">
 <meta name="description" content="Introduction to development environments, system commands, and version control for data science and transport planning.">
 
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/DSDT4TP.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/tsrtr.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/tdscience/course" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -171,27 +171,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-ides" id="toc-introduction-to-ides" class="nav-link active" data-scroll-target="#introduction-to-ides">Introduction to IDEs</a>
+  <li><a href="#introduction-to-ides" id="toc-introduction-to-ides" class="nav-link active" data-scroll-target="#introduction-to-ides"><span class="header-section-number">1</span> Introduction to IDEs</a>
   <ul class="collapse">
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
-  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron">Positron</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">1.1</span> RStudio</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code"><span class="header-section-number">1.2</span> VS Code</a></li>
+  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron"><span class="header-section-number">1.3</span> Positron</a></li>
   </ul></li>
-  <li><a href="#key-features-and-extensions-of-vs-code-based-ides" id="toc-key-features-and-extensions-of-vs-code-based-ides" class="nav-link" data-scroll-target="#key-features-and-extensions-of-vs-code-based-ides">Key features and extensions of VS Code-based IDEs</a>
+  <li><a href="#key-features-and-extensions-of-vs-code-based-ides" id="toc-key-features-and-extensions-of-vs-code-based-ides" class="nav-link" data-scroll-target="#key-features-and-extensions-of-vs-code-based-ides"><span class="header-section-number">2</span> Key features and extensions of VS Code-based IDEs</a>
   <ul class="collapse">
-  <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features">Core Features</a></li>
-  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter">Python interpreter</a></li>
+  <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features"><span class="header-section-number">2.1</span> Core Features</a></li>
+  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter"><span class="header-section-number">2.2</span> Python interpreter</a></li>
   </ul></li>
-  <li><a href="#the-system-shell-and-basic-commands" id="toc-the-system-shell-and-basic-commands" class="nav-link" data-scroll-target="#the-system-shell-and-basic-commands">The system shell and basic commands</a></li>
-  <li><a href="#introduction-to-version-control" id="toc-introduction-to-version-control" class="nav-link" data-scroll-target="#introduction-to-version-control">Introduction to Version control</a>
+  <li><a href="#the-system-shell-and-basic-commands" id="toc-the-system-shell-and-basic-commands" class="nav-link" data-scroll-target="#the-system-shell-and-basic-commands"><span class="header-section-number">3</span> The system shell and basic commands</a></li>
+  <li><a href="#introduction-to-version-control" id="toc-introduction-to-version-control" class="nav-link" data-scroll-target="#introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</a>
   <ul class="collapse">
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
-  <li><a href="#working-with-github" id="toc-working-with-github" class="nav-link" data-scroll-target="#working-with-github">Working with GitHub</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="header-section-number">4.1</span> Git</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="header-section-number">4.2</span> GitHub</a></li>
+  <li><a href="#working-with-github" id="toc-working-with-github" class="nav-link" data-scroll-target="#working-with-github"><span class="header-section-number">4.3</span> Working with GitHub</a></li>
   </ul></li>
-  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical">Practical:</a>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">5</span> Practical:</a>
   <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise:</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5.1</span> Exercise:</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://docs.posit.co/ide/user/"><i class="bi bi-link-45deg"></i>RStudio User Guide</a></li><li><a href="https://code.visualstudio.com/docs"><i class="bi bi-link-45deg"></i>VS Code documentation</a></li><li><a href="https://positron.posit.co/welcome.html"><i class="bi bi-link-45deg"></i>Positron documentation</a></li><li><a href="https://git-scm.com/book/en/v2"><i class="bi bi-link-45deg"></i>Pro Git</a></li></ul></div></nav>
@@ -218,11 +218,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-ides" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-ides">Introduction to IDEs</h2>
+<section id="introduction-to-ides" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ides"><span class="header-section-number">1</span> Introduction to IDEs</h2>
 <p>There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.</p>
-<section id="rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
+<section id="rstudio" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">1.1</span> RStudio</h3>
 <p>RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see <a href="#fig-rstudio-layout" class="quarto-xref">Figure&nbsp;1</a>).</p>
 <div id="fig-rstudio-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -235,8 +235,8 @@ Figure&nbsp;1: Rstudio layout
 </figure>
 </div>
 </section>
-<section id="vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code">VS Code</h3>
+<section id="vs-code" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="vs-code"><span class="header-section-number">1.2</span> VS Code</h3>
 <p>Visual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (<a href="#fig-vscode-layout" class="quarto-xref">Figure&nbsp;2</a>)</p>
 <div id="fig-vscode-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -249,8 +249,8 @@ Figure&nbsp;2: VScode layout
 </figure>
 </div>
 </section>
-<section id="positron" class="level3">
-<h3 class="anchored" data-anchor-id="positron">Positron</h3>
+<section id="positron" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="positron"><span class="header-section-number">1.3</span> Positron</h3>
 <p>Positron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.</p>
 <div id="fig-positron-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -264,11 +264,11 @@ Figure&nbsp;3: Positron layout
 </div>
 </section>
 </section>
-<section id="key-features-and-extensions-of-vs-code-based-ides" class="level2">
-<h2 class="anchored" data-anchor-id="key-features-and-extensions-of-vs-code-based-ides">Key features and extensions of VS Code-based IDEs</h2>
+<section id="key-features-and-extensions-of-vs-code-based-ides" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="key-features-and-extensions-of-vs-code-based-ides"><span class="header-section-number">2</span> Key features and extensions of VS Code-based IDEs</h2>
 <p>VS Code’s power lies in its lightweight core and its extensible ecosystem. VS Code extensions support a wide range of languages and frameworks. Here are some of the most relevant</p>
-<section id="core-features" class="level3">
-<h3 class="anchored" data-anchor-id="core-features">Core Features</h3>
+<section id="core-features" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="core-features"><span class="header-section-number">2.1</span> Core Features</h3>
 <ul>
 <li><p><em>IntelliSense</em>: A code completion engine that provides intelligent, context-aware suggestions for variables, functions, and modules, along with helpful pop-up documentation.</p></li>
 <li><p><em>Integrated Git</em>: VS Code has built-in support for Git, allowing developers to manage version control directly within the editor.</p></li>
@@ -277,8 +277,8 @@ Figure&nbsp;3: Positron layout
 </ul>
 <p>We will use only the basic extensions as described in the <a href="./prerequisites.html">prerequisites</a>. But it is worth exploring the extensions available on <a href="https://marketplace.visualstudio.com/vscode">VS Code Marketplace</a>.</p>
 </section>
-<section id="python-interpreter" class="level3">
-<h3 class="anchored" data-anchor-id="python-interpreter">Python interpreter</h3>
+<section id="python-interpreter" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="python-interpreter"><span class="header-section-number">2.2</span> Python interpreter</h3>
 <p>VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (<a href="#fig-python-interpreter" class="quarto-xref">Figure&nbsp;4</a>).</p>
 <div id="fig-python-interpreter" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -292,24 +292,24 @@ Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after run
 </div>
 </section>
 </section>
-<section id="the-system-shell-and-basic-commands" class="level2">
-<h2 class="anchored" data-anchor-id="the-system-shell-and-basic-commands">The system shell and basic commands</h2>
+<section id="the-system-shell-and-basic-commands" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-system-shell-and-basic-commands"><span class="header-section-number">3</span> The system shell and basic commands</h2>
 <p>A system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system’s kernel. The shell is where you can run scripts, manage files, and execute programs.</p>
 <p>The commands will depend on the operative system you have in your computer. Windows use the <em>Windows Command Prompt</em> or <em>PowerShell</em>, while macOS and Linux use <em>Bash/Zsh</em>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS/Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="navigation" class="level4">
-<h4 class="anchored" data-anchor-id="navigation">Navigation</h4>
+<section id="navigation" class="level4" data-number="3.0.1">
+<h4 data-number="3.0.1" class="anchored" data-anchor-id="navigation"><span class="header-section-number">3.0.1</span> Navigation</h4>
 <ul>
 <li>Change directory: <code>cd &lt;directory_name&gt;</code></li>
 <li>List directory contents: <code>dir</code></li>
 <li>Print working directory: <code>cd</code></li>
 </ul>
 </section>
-<section id="file-directory-management" class="level4">
-<h4 class="anchored" data-anchor-id="file-directory-management">File &amp; Directory Management</h4>
+<section id="file-directory-management" class="level4" data-number="3.0.2">
+<h4 data-number="3.0.2" class="anchored" data-anchor-id="file-directory-management"><span class="header-section-number">3.0.2</span> File &amp; Directory Management</h4>
 <ul>
 <li>Create a directory: <code>mkdir &lt;directory_name&gt;</code></li>
 <li>Copy a file: <code>copy &lt;source_file&gt; &lt;destination&gt;</code></li>
@@ -320,16 +320,16 @@ Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after run
 </section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="navigation-1" class="level4">
-<h4 class="anchored" data-anchor-id="navigation-1">Navigation</h4>
+<section id="navigation-1" class="level4" data-number="3.0.3">
+<h4 data-number="3.0.3" class="anchored" data-anchor-id="navigation-1"><span class="header-section-number">3.0.3</span> Navigation</h4>
 <ul>
 <li>Change directory: <code>cd &lt;directory_name&gt;</code></li>
 <li>List directory contents: <code>ls</code></li>
 <li>Print working directory: <code>pwd</code></li>
 </ul>
 </section>
-<section id="file-directory-management-1" class="level4">
-<h4 class="anchored" data-anchor-id="file-directory-management-1">File &amp; Directory Management</h4>
+<section id="file-directory-management-1" class="level4" data-number="3.0.4">
+<h4 data-number="3.0.4" class="anchored" data-anchor-id="file-directory-management-1"><span class="header-section-number">3.0.4</span> File &amp; Directory Management</h4>
 <ul>
 <li>Create a directory: <code>mkdir &lt;directory_name&gt;</code></li>
 <li>Copy a file: <code>cp &lt;source_file&gt; &lt;destination&gt;</code></li>
@@ -342,10 +342,10 @@ Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after run
 </div>
 </div>
 </section>
-<section id="introduction-to-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-version-control">Introduction to Version control</h2>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
+<section id="introduction-to-version-control" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</h2>
+<section id="git" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="git"><span class="header-section-number">4.1</span> Git</h3>
 <p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;5</a>?</p>
 <div id="fig-no-version-control" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -365,20 +365,20 @@ Figure&nbsp;5: Version control. From: <a href="https://programmerhumor.io/">prog
 </figure>
 </div>
 </section>
-<section id="github" class="level3">
-<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<section id="github" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="github"><span class="header-section-number">4.2</span> GitHub</h3>
 <p>GitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a <em>Hub</em> for storing, sharing and collaborating with others. Some tools in GitHub, like <strong>pull requests</strong> for proposing changes, <strong>reviews</strong> for asking others to check your work, and <strong>issue tracking</strong> for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.</p>
 <p>To learn more about the different elements in GitHub, you can start exploring the <a href="https://skills.github.com/">GitHub skills courses</a>.</p>
 </section>
-<section id="working-with-github" class="level3">
-<h3 class="anchored" data-anchor-id="working-with-github">Working with GitHub</h3>
+<section id="working-with-github" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="working-with-github"><span class="header-section-number">4.3</span> Working with GitHub</h3>
 <p>Any Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.</p>
 <p>You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful <a href="https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf">cheat sheet</a>.</p>
 <p>There are two main ways of working with GitHub repositories in your machine: the <code>gh</code> command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session.</p>
 </section>
 </section>
-<section id="practical" class="level2">
-<h2 class="anchored" data-anchor-id="practical">Practical:</h2>
+<section id="practical" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="practical"><span class="header-section-number">5</span> Practical:</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -392,8 +392,8 @@ Note
 <p>You should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the <a href="prerequisites">prerequisites</a> for more information.</p>
 </div>
 </div>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise:</h3>
+<section id="exercise" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5.1</span> Exercise:</h3>
 <ol type="1">
 <li>Open the shell</li>
 <li>Create a folder called <code>reproducible-research</code></li>

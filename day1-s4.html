@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Robin Lovelace">
+<meta name="author" content="Robin Lovelace &amp; contributors">
 <meta name="dcterms.date" content="2025">
 <meta name="description" content="Master cross-references, citations, bibliographies, and tables/figures in Quarto for academic publishing.">
 
@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/DSDT4TP.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/tsrtr.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/tdscience/course" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -203,14 +203,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cross-references" id="toc-cross-references" class="nav-link active" data-scroll-target="#cross-references">Cross-references</a></li>
-  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link active" data-scroll-target="#cross-references"><span class="header-section-number">1</span> Cross-references</a></li>
+  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections"><span class="header-section-number">2</span> Sections</a>
   <ul class="collapse">
-  <li><a href="#tables-and-figures" id="toc-tables-and-figures" class="nav-link" data-scroll-target="#tables-and-figures">Tables and figures</a></li>
+  <li><a href="#tables-and-figures" id="toc-tables-and-figures" class="nav-link" data-scroll-target="#tables-and-figures"><span class="header-section-number">2.1</span> Tables and figures</a></li>
   </ul></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
-  <li><a href="#bibliographies" id="toc-bibliographies" class="nav-link" data-scroll-target="#bibliographies">Bibliographies</a></li>
-  <li><a href="#practical-adding-citations-and-references-to-your-paper" id="toc-practical-adding-citations-and-references-to-your-paper" class="nav-link" data-scroll-target="#practical-adding-citations-and-references-to-your-paper">Practical: adding citations and references to your paper</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">3</span> Citations</a></li>
+  <li><a href="#bibliographies" id="toc-bibliographies" class="nav-link" data-scroll-target="#bibliographies"><span class="header-section-number">4</span> Bibliographies</a></li>
+  <li><a href="#practical-adding-citations-and-references-to-your-paper" id="toc-practical-adding-citations-and-references-to-your-paper" class="nav-link" data-scroll-target="#practical-adding-citations-and-references-to-your-paper"><span class="header-section-number">5</span> Practical: adding citations and references to your paper</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -236,18 +236,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="cross-references" class="level2">
-<h2 class="anchored" data-anchor-id="cross-references">Cross-references</h2>
+<section id="cross-references" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">1</span> Cross-references</h2>
 <p>Cross-referencing allows you to refer to sections, figures, tables, and code blocks within your document. This is essential for academic writing. To cross-reference content in your document, you need to give it a label first, which will be used for referencing.</p>
 </section>
-<section id="sections" class="level2">
-<h2 class="anchored" data-anchor-id="sections">Sections</h2>
+<section id="sections" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sections"><span class="header-section-number">2</span> Sections</h2>
 <p>For sections, you can label a particular section using the <code>{#sec-yourlabel}</code> syntax. For example, in this <code>h2</code> heading for the results section:</p>
 <pre><code>## Results {#sec-results}</code></pre>
 <p>Then, to reference it elsewhere in your text, use <code>@sec-yourlabel</code>, like this:</p>
 <pre><code>As shown in @sec-results, ...</code></pre>
-<section id="tables-and-figures" class="level3">
-<h3 class="anchored" data-anchor-id="tables-and-figures">Tables and figures</h3>
+<section id="tables-and-figures" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="tables-and-figures"><span class="header-section-number">2.1</span> Tables and figures</h3>
 <p>Tables and figures are among the most common elements for presenting data and results. For them, you will use <code>tbl-</code> and <code>fig-</code> instead of <code>sec-</code>.</p>
 <p>There are two main methods to cross-reference them. If the table or figure is generated by a code chunk, you can use the <code>label:</code> option in your chunk to identify them. For example, the table produced by the code below will be referenced with <code>@tbl-planets</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
@@ -289,8 +289,8 @@ Tip
 </div>
 </section>
 </section>
-<section id="citations" class="level2">
-<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<section id="citations" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="citations"><span class="header-section-number">3</span> Citations</h2>
 <p>Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating <a href="https://www.zotero.org/">Zotero</a> into your workflow. This integration is already set up in RStudio and Positron in the visual editor. For VS Code, you can install an extension to use citations from your Zotero library, e.g.&nbsp;<a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero">Citation Picker for Zotero</a>.</p>
 <p>It is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX plug-in</a> can help with that.</p>
 <p>Once you have Zotero and your IDE integrated, the process should be smooth following these steps:</p>
@@ -302,15 +302,15 @@ Tip
 <pre><code>Recent studies show... [@smith2020].</code></pre></li>
 </ul>
 </section>
-<section id="bibliographies" class="level2">
-<h2 class="anchored" data-anchor-id="bibliographies">Bibliographies</h2>
+<section id="bibliographies" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="bibliographies"><span class="header-section-number">4</span> Bibliographies</h2>
 <p>By default, bibliographies list all cited sources at the end of your document. The bibliography will be rendered automatically based on your citations.</p>
 <p>If you want to include it in a different place in your document (not at the end), you can include <code>::: {#refs} :::</code> in the location where you want to render the list of references.</p>
 <p>One last important element is the format of the references and citations. Different institutions require different styles; you can easily change the style of referencing by including a CSL (Citation Style Language) file to configure Quarto to render citations and references with that particular style. You should include a line similar to this in your YAML file:</p>
 <pre><code>csl: mycsl.csl</code></pre>
 </section>
-<section id="practical-adding-citations-and-references-to-your-paper" class="level2">
-<h2 class="anchored" data-anchor-id="practical-adding-citations-and-references-to-your-paper">Practical: adding citations and references to your paper</h2>
+<section id="practical-adding-citations-and-references-to-your-paper" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="practical-adding-citations-and-references-to-your-paper"><span class="header-section-number">5</span> Practical: adding citations and references to your paper</h2>
 <p>Try the following steps:</p>
 <ul>
 <li>Add a bibliography file to your project.</li>
