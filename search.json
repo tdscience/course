@@ -364,11 +364,11 @@
     "text": "5 Day 2\n\n09:00-10:30 Data manipulation\n\nKey verbs: filter, select, mutate, summarise\nJoins: inner, left, right, full\nSpatial data operations\n\nSpatial subsetting\nSpatial joins\nSpatial aggregation\n\n\n10:30-10:45 Break\n10:45-12:00 Web application development\n\nStatic vs dynamic web applications\nPractical introduction to Shiny for R and Python\n(Optional): Front-end development\n\n12:00-13:00 Lunch\n13:00-14:30 Transport Planning Challenge 2\n\nDiscussion of datasets from Challenge 1\nDeciding on a topic and questions\nPractical: working on the challenge\n\n14:30-14:45 Break\n14:45-16:30 Transport Planning Challenge 2: continued\n\nPractical: working on the challenge\n\n16:30-17:00 Presentations and wrap-up"
   },
   {
-    "objectID": "s8.html",
-    "href": "s8.html",
-    "title": "Working on papers",
+    "objectID": "basic-example.html",
+    "href": "basic-example.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
     "section": "",
-    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "x = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\nimport geopandas as gpd\nimport shapely\n\n# Create a shapely Point geometry for IGOT\n# 38.7493402,-9.155268\n# Note: (longitude, latitude)\nigot_point = shapely.Point(-9.155268, 38.7493402)  \n\n# Create a GeoSeries from the point\nigot_geom = gpd.GeoSeries([igot_point], crs=\"EPSG:4326\")\n\n# Combine geometry with attributes in a dictionary\nigot_data = {\n    'name': ['IGOT-ULisboa'],\n    'geometry': igot_geom\n}\n\n# Create a GeoDataFrame\nigot_layer = gpd.GeoDataFrame(igot_data)\nigot_layer\nigot_layer.explore()\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "s1.html",
@@ -413,53 +413,11 @@
     "text": "5 Practical:\n\n\n\n\n\n\nNote\n\n\n\nYou should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the prerequisites for more information.\n\n\n\n5.1 Exercise:\n\nOpen the shell\nCreate a folder called reproducible-research\nif you have the gh command-line tool installed, try:\n\ngh repo clone tdscience/course\ncd course\ngh issue list\ngh issue create"
   },
   {
-    "objectID": "basic-example.html",
-    "href": "basic-example.html",
-    "title": "Tools and Skills for Reproducible Transport Research",
+    "objectID": "s8.html",
+    "href": "s8.html",
+    "title": "Working on papers",
     "section": "",
-    "text": "x = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\nimport geopandas as gpd\nimport shapely\n\n# Create a shapely Point geometry for IGOT\n# 38.7493402,-9.155268\n# Note: (longitude, latitude)\nigot_point = shapely.Point(-9.155268, 38.7493402)  \n\n# Create a GeoSeries from the point\nigot_geom = gpd.GeoSeries([igot_point], crs=\"EPSG:4326\")\n\n# Combine geometry with attributes in a dictionary\nigot_data = {\n    'name': ['IGOT-ULisboa'],\n    'geometry': igot_geom\n}\n\n# Create a GeoDataFrame\nigot_layer = gpd.GeoDataFrame(igot_data)\nigot_layer\nigot_layer.explore()\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
-  },
-  {
-    "objectID": "plan.html",
-    "href": "plan.html",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; s1.qmd\nDay1_session2.qmd -&gt; s2.qmd\nDay1_session3.qmd -&gt; s3.qmd\nDay1_session4.qmd -&gt; s4.qmd\nDay2_session5.qmd -&gt; s5.qmd\nDay2_session6.qmd -&gt; s6.qmd\nDay2_session7.qmd -&gt; s7.qmd\nDay2_session8.qmd -&gt; s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd\n\n\n\n\nAfter renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames.\n\n\n\nI will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images.\n\n\n\nI will improve the code blocks in prerequisites.qmd to be more user-friendly.\n\n\n\nI will remove commented-out code from _quarto.yml and index.qmd."
-  },
-  {
-    "objectID": "plan.html#refactor-file-and-directory-names",
-    "href": "plan.html#refactor-file-and-directory-names",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):\n\nDay1_session1.qmd -&gt; s1.qmd\nDay1_session2.qmd -&gt; s2.qmd\nDay1_session3.qmd -&gt; s3.qmd\nDay1_session4.qmd -&gt; s4.qmd\nDay2_session5.qmd -&gt; s5.qmd\nDay2_session6.qmd -&gt; s6.qmd\nDay2_session7.qmd -&gt; s7.qmd\nDay2_session8.qmd -&gt; s8.qmd\ntp_schedule.qmd -&gt; tp-schedule.qmd"
-  },
-  {
-    "objectID": "plan.html#update-configuration-and-content",
-    "href": "plan.html#update-configuration-and-content",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "After renaming the files, I will update the _quarto.yml file and any other files that reference the old filenames."
-  },
-  {
-    "objectID": "plan.html#enhance-seo",
-    "href": "plan.html#enhance-seo",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "I will add metadata (description and keywords) to the YAML front matter of all .qmd files. I will also add alt text to all images."
-  },
-  {
-    "objectID": "plan.html#improve-code-blocks",
-    "href": "plan.html#improve-code-blocks",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "I will improve the code blocks in prerequisites.qmd to be more user-friendly."
-  },
-  {
-    "objectID": "plan.html#clean-up-commented-out-code",
-    "href": "plan.html#clean-up-commented-out-code",
-    "title": "1 Project Improvement Plan",
-    "section": "",
-    "text": "I will remove commented-out code from _quarto.yml and index.qmd."
+    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "schedule.html",
