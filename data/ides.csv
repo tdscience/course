@@ -7,4 +7,4 @@ Devcontainers,Minimal,Minimal,✅
 Live Share,❌,❌,✅
 Plugins,"Limited (Addins)","High (OpenVSX)","High (Marketplace)"
 Codespaces,Limited,Limited,✅
-License,AGPL,"Not open source (Elastic)","Open core (binaries closed)"
+License,AGPL,"Source-available (Elastic)","Open core (binaries closed)"

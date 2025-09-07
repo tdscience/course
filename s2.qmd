@@ -13,6 +13,39 @@ format:
 
 ## Navigating GitHub
 
+### Using the `gh` command line interface (CLI)
+
+You can search repos, commits, issues, pull requests, and code with the `gh` CLI tool. For example, to search for repositories related to "transport" sorted by the number of stars, you can run:
+
+```sh
+gh search repos --topic transport --sort stars --limit 5
+```
+
+That outputs the following:
+
+```
+Showing 5 of 1081 repositories
+
+NAME                    DESCRIPTION                                                                                   VISIBILITY  UPDATED             
+gboeing/osmnx           Download, model, analyze, and visualize street networks and other geospatial features fro...  public      about 10 hours ago
+eclipse-sumo/sumo       Eclipse SUMO is an open source, highly portable, microscopic and continuous traffic simul...  public      about 19 minutes ago
+Haivision/srt           Secure, Reliable, Transport                                                                   public      about 6 hours ago
+enisdenjo/graphql-ws    Coherent, zero-dependency, lazy, simple, GraphQL over WebSocket Protocol compliant server...  public      about 6 hours ago
+gboeing/osmnx-examples  Gallery of OSMnx tutorials, usage examples, and feature demonstrations.                       public      about 16 hours ago
+```
+
+You can search for repos related to transport data science with the following and similar commands, as shown in @fig-search-repos-gh-cli.
+
+```sh
+gh search repos "transport data science" --sort stars --limit 5
+```
+
+![Search results for transport data science repositories on GitHub using the gh CLI](images/search-repos-gh-cli.png){#fig-search-repos-gh-cli .lightbox fig-align="center"}
+
+See the [gh CLI manual](https://cli.github.com/manual/) for more details.
+
+### Exploring GitHub's web interface
+
 After you've logged into [github.com](https://github.com), you can use the web application to explore open source software. You can search for people's profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.
 
 ![](images/search_bar.png){fig-align="center"}
@@ -22,6 +55,16 @@ When you access any public repository, you will typically see the same informati
 ![](images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
 
 GitHub organizes a repository's content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project's status and activity.
+
+<!-- https://cli.github.com/manual/gh_search -->
+
+<!-- gh search code
+gh search commits
+gh search issues
+gh search prs
+gh search repos -->
+
+
 
 ### The Main Tabs
 
