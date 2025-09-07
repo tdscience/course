@@ -58,7 +58,27 @@ date: 2025-09-08
 - Focus: fast and flexible models for estimating traffic
 - Developer of {Telraamr} and {[azuremapsr](https://github.com/juanfonsecaLS1/azuremapsr)} R packages, the latter of which was recently published on CRAN
 
-### You
+## About you
+
+::: incremental
+
+- Name
+- What tools you currently use for research
+- Where you're from
+- What's your favourite animal
+- A random fact about you
+
+### Me
+
+- Currently using VS Code, Quarto, R, Google Gemini etc, Devcontainers
+- From Herefordshire, UK
+- Favourite animal: Red kite
+- Random fact: I run 5 km every Saturday with double buggy
+
+:::
+
+
+### Over to you
 
 ## The origins of the course
 
@@ -163,6 +183,8 @@ but will *save time in long term*
   - `gh` is a high-level interfact to `git` and the GitHub platform
 
 ## Live demo: cloning repos, opening issues, Pull Requests from CLI
+
+```bash
 
 ## Solo working through the practical (until ~11:00)
 

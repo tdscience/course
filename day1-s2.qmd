@@ -250,4 +250,22 @@ GitHub Actions lets you automate tasks like testing or deployment.
 - Review code via pull requests.
 - Protect sensitive data by not uploading secrets.
 
-## Practical: creating a repository and making changes
+## Exercises
+
+### Contribute to the course repo
+
+- Clone the course repo if you have not already with the `gh` CLI tool in the github folder on your computer that you will create if it does not already exist (or another location of your choosing):
+
+```sh
+# Make a folder in your home directory for github repos:
+mkdir ~/github
+# Make another folder inside that directory:
+mkdir ~/github/tdscience
+cd ~/github/tdscience
+gh repo clone tdscience/course
+code course # open the course folder with VS Code
+```
+
+- Add your name, favourite animal and where you're from to the people.csv file in the course repo at [github.com/tdscience/course/data/people.csv](https://github.com/tdscience/course/blob/main/data/people.csv)
+
+### Create a repository and make changes
