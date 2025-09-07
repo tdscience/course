@@ -1,6 +1,8 @@
 
 
-# Quarto course website template
+
+
+<!-- # How it was build
 
 A template for course websites developed with
 [Quarto](https://quarto.org) and hosted on GitHub.
@@ -36,4 +38,4 @@ git checkout --orphan gh-pages
 git reset --hard # make sure all changes are committed before running this!
 git commit --allow-empty -m "Initialising gh-pages branch"
 git push origin gh-pages
-```
+``` -->

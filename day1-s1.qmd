@@ -65,6 +65,26 @@ Here are some of the most relevant
 We will use only the basic extensions as described in the [prerequisites](prerequisites.qmd).
 But it is worth exploring the extensions available on [VS Code Marketplace](https://marketplace.visualstudio.com/vscode).
 
+### Devcontainers
+
+A development container (devcontainer) is a Docker container that includes all the necessary tools, libraries, and dependencies for a specific development environment.
+In many ways, it represents best practices for setting up a consistent and reproducible environment for a project, with the only downside of requiring Docker to be installed in your machine.
+
+Devcontainers are ideal for use 'in production' in teams that have access to Docker, as they ensure that all team members are working in the same environment, regardless of their local setup.
+
+Another advantage of using devcontainers is that they can be used in cloud-based IDEs, such as GitHub Codespaces.
+See @fig-local-devcontainer for an example of running a .qmd file inside a local devcontainer.
+
+Bonus exercise: Try running the code in `basic-example.qmd` in GitHub Codespaces.
+
+![Running the code in basic-example.qmd inside a local devcontainer](images/local-devcontainer.png){#fig-local-devcontainer .lightbox fig-align="center"}
+
+Links to learn more about devcontainers:
+
+-   [Devcontainers documentation](https://containers.dev/)
+-   [VS Code Devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+-   [Discussion of limited support for devcontainers in Positron](https://github.com/posit-dev/positron/issues/4691)
+
 ### Python interpreter
 
 VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project.
