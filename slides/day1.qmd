@@ -213,8 +213,6 @@ Put your hands up, ask another participant, or use the [github.com/tdscience/cou
 
 # Session 2: Sharing code and data (see [Session 2 workbook](../s2.qmd))
 
-## Live demo: cloning repos, opening issues, Pull Requests from CLI
-
 ## Key GitHub concepts and workflows
 
 ### Finding repositories on GitHub
@@ -222,6 +220,11 @@ Put your hands up, ask another participant, or use the [github.com/tdscience/cou
 Use the search bar to discover projects and developers:
 
 ![](../images/search_bar.png){fig-align="center"}
+
+Or with the `gh` CLI tool 😎
+
+![Search results for transport data science repositories on GitHub using the gh CLI](../images/search-repos-gh-cli.png){#fig-search-repos-gh-cli .lightbox fig-align="center"}
+
 
 ### Repository structure
 
