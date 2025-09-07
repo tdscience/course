@@ -39,7 +39,7 @@ Positron is a next-generation, free IDE for data science developed by Posit, the
 
 ## Key features and extensions of VS Code
 
-VS Code's power lies in its lightweight core and its vast, extensible ecosystem. On the other hand, VS Code extensions add language support, interactive tools, and specialised features. Here are some of the most relevant
+VS Code's power lies in its lightweight core and its extensible ecosystem. VS Code extensions support a wide range of languages and frameworks. Here are some of the most relevant
 
 ### Core Features
 
