@@ -222,10 +222,80 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction-to-ides" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ides"><span class="header-section-number">1</span> Introduction to IDEs</h2>
-<p>There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.</p>
+<p>There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron. As shown in <a href="#tbl-ide-comparison" class="quarto-xref">Table&nbsp;1</a>, each IDE has its own strengths and weaknesses.</p>
+<div id="tbl-ide-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ide-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Comparison of IDEs for Data Science
+</figcaption>
+<div aria-describedby="tbl-ide-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>RStudio</th>
+<th>Positron</th>
+<th>VS Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Development status</td>
+<td>Mature ✅</td>
+<td>Under active development 🏗️</td>
+<td>Mature ✅</td>
+</tr>
+<tr class="even">
+<td>Set-up time for data science</td>
+<td>Minimal</td>
+<td>Minimal</td>
+<td>Extensions needed</td>
+</tr>
+<tr class="odd">
+<td>Primary Language(s)</td>
+<td>R</td>
+<td>R and Python out-of-the-box, others (with extensions)</td>
+<td>Language-agnostic, any language (with extensions)</td>
+</tr>
+<tr class="even">
+<td>Quarto Support</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent (via extension)</td>
+</tr>
+<tr class="odd">
+<td>Devcontainers support</td>
+<td>Minimal</td>
+<td>Minimal</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Live Share support</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Plugin ecosystem</td>
+<td>Limited (Addins)</td>
+<td>High (open source VS Code extensions from <a href="https://open-vsx.org/">OpenVSX</a>)</td>
+<td>High (<a href="https://marketplace.visualstudio.com/">VS Code Marketplace</a>)</td>
+</tr>
+<tr class="even">
+<td>GitHub Codespaces support</td>
+<td>Limited</td>
+<td>Limited</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The attributes of RStudio make it a great choice for R users who want a straightforward setup that works out of the box. On the other hand, VS Code and Positron are more flexible and extensible, making them well-suited for people who need to work with multiple programming languages, want to use multiple languages and extensions, or (in the case of VS Code) want to use devcontainers for a consistent and reproducible environment.</p>
 <section id="rstudio" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">1.1</span> RStudio</h3>
-<p>RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see <a href="#fig-rstudio-layout" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<p>RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management, as shown in <a href="#fig-rstudio-layout" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="fig-rstudio-layout" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
