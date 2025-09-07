@@ -26,56 +26,50 @@ date: 2025-09-08
 
 ### Day 1
 
-- **09:30-10:00 Introduction**
-- 10:00-11:00 Development environments, system commands, and version control		
-- 11:15-12:30	Sharing code and data		
-- 13:30-15:00	Reproducible papers and documentation with Quarto		
-- 15:15-16:30	Cross-references and citations with Quarto
+-   **09:30-10:00 Introduction**
+-   10:00-11:00 Development environments, system commands, and version control\
+-   11:15-12:30 Sharing code and data\
+-   13:30-15:00 Reproducible papers and documentation with Quarto\
+-   15:15-16:30 Cross-references and citations with Quarto
 
 ### Day 2
 
-- 09:30-10:30	Drafting a reproducible paper		
-- 10:45-12:30	Generating reproducible publication-quality visualisations		
-- 13:30-14:30	Editing other people’s work		
-- 14:45-16:00	Working on papers -> Presentations and wrap-up
+-   09:30-10:30 Drafting a reproducible paper\
+-   10:45-12:30 Generating reproducible publication-quality visualisations\
+-   13:30-14:30 Editing other people’s work\
+-   14:45-16:00 Working on papers -\> Presentations and wrap-up
 
 ## About us
 
 ### Robin Lovelace
 
 -   Professor of Transport Data Science
--   Focus: influencing decision-making, to make it more evidence-based
-<!-- -   Large part of research has been in or for government -->
-<!-- -   In other words: my focus is on impact -->
+-   Focus: influencing decision-making, to make it more evidence-based <!-- -   Large part of research has been in or for government --> <!-- -   In other words: my focus is on impact -->
 -   R package developer and data scientist
--   New methods for more reproducible, data-driven and participatory transport planning
-<!-- -   Developer of tools used by hundreds of people leading to ~£1 billion pounds of investment being better spent than it would otherwise have been -->
+-   New methods for more reproducible, data-driven and participatory transport planning <!-- -   Developer of tools used by hundreds of people leading to ~£1 billion pounds of investment being better spent than it would otherwise have been -->
 
 ### Juan Fonseca
 
-- PhD student at the University of Leeds
-- Focus: fast and flexible models for estimating traffic
-- Developer of {Telraamr} and {[azuremapsr](https://github.com/juanfonsecaLS1/azuremapsr)} R packages, the latter of which was recently published on CRAN
+-   PhD student at the University of Leeds
+-   Focus: fast and flexible models for estimating traffic
+-   Developer of {Telraamr} and {[azuremapsr](https://github.com/juanfonsecaLS1/azuremapsr)} R packages, the latter of which was recently published on CRAN
 
 ## About you
 
 ::: incremental
-
-- Name
-- What tools you currently use for research
-- Where you're from
-- What's your favourite animal
-- A random fact about you
+-   Name
+-   What tools you currently use for research
+-   Where you're from
+-   What's your favourite animal
+-   A random fact about you
 
 ### Me
 
-- Currently using VS Code, Quarto, R, Google Gemini etc, Devcontainers
-- From Herefordshire, UK
-- Favourite animal: Red kite
-- Random fact: I run 5 km every Saturday with double buggy
-
+-   Currently using VS Code, Quarto, R, Google Gemini etc, Devcontainers
+-   From Herefordshire, UK
+-   Favourite animal: Red kite
+-   Random fact: I run 5 km every Saturday with double buggy
 :::
-
 
 ### Over to you
 
@@ -85,15 +79,15 @@ date: 2025-09-08
 
 Imagine a workflow that enabled:
 
-- Fewer context switches
-- More focus on *the content* and not style of the work
-- Integration of code into your research manuscript
-- Automatic generation of results, including figures and tables...
-  - That change seamlessly when input datasets or code changes
-- Control over how you export and publish your work
-  - Including publication-quality PDFs, website, blogs, slides
-- Full reproducibility
-- You to share your work for maximum benefit to others
+-   Fewer context switches
+-   More focus on *the content* and not style of the work
+-   Integration of code into your research manuscript
+-   Automatic generation of results, including figures and tables...
+    -   That change seamlessly when input datasets or code changes
+-   Control over how you export and publish your work
+    -   Including publication-quality PDFs, website, blogs, slides
+-   Full reproducibility
+-   You to share your work for maximum benefit to others
 
 ## Reproducible research
 
@@ -114,55 +108,52 @@ See https://github.com/U-Shift/biclar
 ## Course principles
 
 ::: incremental
-
-- "Learn by doing"
-- "Learn by teaching"
-- "Learn from each other"
-- "We're all learning"
-- "Growth mindset"
-- "Can-do" and "Go for It" attitude
-- "Every error is a learning opportunity"
-- "No such thing as a bad question"
-- "Fail fast"
-- Balance between focused work and comms
-- Bring you own principles (BYOP)
-
+-   "Learn by doing"
+-   "Learn by teaching"
+-   "Learn from each other"
+-   "We're all learning"
+-   "Growth mindset"
+-   "Can-do" and "Go for It" attitude
+-   "Every error is a learning opportunity"
+-   "No such thing as a bad question"
+-   "Fail fast"
+-   Balance between focused work and comms
+-   Bring you own principles (BYOP)
 :::
 
 ## The practical sessions
 
-- Time of in-depth work
-- Use the course website as a reference point but spend most of the time in your own environment
-- Juan and I will support people 1-2-1 and do 'live demos' now and then
+-   Time of in-depth work
+-   Use the course website as a reference point but spend most of the time in your own environment
+-   Juan and I will support people 1-2-1 and do 'live demos' now and then
 
 ::: callout-tip
-
 Press Ctrl+Tab to switch from IDE to browser with course content and other things for an efficient workflow
-
 :::
 
 <!-- TODO: add content here -->
 
-## Any questions before we move to the first practical?
+## Any questions before we move to the first practical session?
 
-# Session 1 ~10:00-11:00
+# Session 1 introduction (see [Session 1 workbook](../s1.qmd))
 
-## Session 1 introduction (see [Session 1 workbook](../s1.qmd))
+## Session 1 in context
 
-- 09:30-10:00 Introduction
-- **10:00-11:00 Development environments, system commands, and version control**		
-- 11:15-12:30	Sharing code and data		
-- 13:30-15:00	Reproducible papers and documentation with Quarto		
-- 15:15-16:30	Cross-references and citations with Quarto
+-   09:30-10:00 Introduction
+-   **10:00-11:00 Development environments, system commands, and version control**\
+-   11:15-12:30 Sharing code and data\
+-   13:30-15:00 Reproducible papers and documentation with Quarto\
+-   15:15-16:30 Cross-references and citations with Quarto
 
 ### Day 2
 
-- 09:30-10:30	Drafting a reproducible paper		
-- 10:45-12:30	Generating reproducible publication-quality visualisations		
-- 13:30-14:30	Editing other people’s work		
-- 14:45-16:00	Working on papers -> Presentations and wrap-up
+-   09:30-10:30 Drafting a reproducible paper
 
-## Which IDE to use?
+...
+
+Which IDE?
+
+------------------------------------------------------------------------
 
 ```{r}
 #| label: tbl-ide-comparison
@@ -171,32 +162,103 @@ ides = readr::read_csv("../data/ides.csv")
 knitr::kable(ides, caption = "Comparison of IDEs for Data Science")
 ```
 
-## Which IDE to use? Open to debate!
+------------------------------------------------------------------------
 
-<blockquote class="mastodon-embed" data-embed-url="https://fosstodon.org/@robinlovelace/115164201737081008/embed" style="background: #FCF8FF; border-radius: 8px; border: 1px solid #C9C4DA; margin: 0; max-width: 540px; min-width: 270px; overflow: hidden; padding: 0;"> <a href="https://fosstodon.org/@robinlovelace/115164201737081008" target="_blank" style="align-items: center; color: #1C1A25; display: flex; flex-direction: column; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Roboto, sans-serif; font-size: 14px; justify-content: center; letter-spacing: 0.25px; line-height: 20px; padding: 24px; text-decoration: none;"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 79 75"><path d="M63 45.3v-20c0-4.1-1-7.3-3.2-9.7-2.1-2.4-5-3.7-8.5-3.7-4.1 0-7.2 1.6-9.3 4.7l-2 3.3-2-3.3c-2-3.1-5.1-4.7-9.2-4.7-3.5 0-6.4 1.3-8.6 3.7-2.1 2.4-3.1 5.6-3.1 9.7v20h8V25.9c0-4.1 1.7-6.2 5.2-6.2 3.8 0 5.8 2.5 5.8 7.4V37.7H44V27.1c0-4.9 1.9-7.4 5.8-7.4 3.5 0 5.2 2.1 5.2 6.2V45.3h8ZM74.7 16.6c.6 6 .1 15.7.1 17.3 0 .5-.1 4.8-.1 5.3-.7 11.5-8 16-15.6 17.5-.1 0-.2 0-.3 0-4.9 1-10 1.2-14.9 1.4-1.2 0-2.4 0-3.6 0-4.8 0-9.7-.6-14.4-1.7-.1 0-.1 0-.1 0s-.1 0-.1 0 0 .1 0 .1 0 0 0 0c.1 1.6.4 3.1 1 4.5.6 1.7 2.9 5.7 11.4 5.7 5 0 9.9-.6 14.8-1.7 0 0 0 0 0 0 .1 0 .1 0 .1 0 0 .1 0 .1 0 .1.1 0 .1 0 .1.1v5.6s0 .1-.1.1c0 0 0 0 0 .1-1.6 1.1-3.7 1.7-5.6 2.3-.8.3-1.6.5-2.4.7-7.5 1.7-15.4 1.3-22.7-1.2-6.8-2.4-13.8-8.2-15.5-15.2-.9-3.8-1.6-7.6-1.9-11.5-.6-5.8-.6-11.7-.8-17.5C3.9 24.5 4 20 4.9 16 6.7 7.9 14.1 2.2 22.3 1c1.4-.2 4.1-1 16.5-1h.1C51.4 0 56.7.8 58.1 1c8.4 1.2 15.5 7.5 16.6 15.6Z" fill="currentColor"/></svg> <div style="color: #787588; margin-top: 16px;">Post by @robinlovelace@fosstodon.org</div> <div style="font-weight: 500;">View on Mastodon</div> </a> </blockquote> <script data-allowed-prefixes="https://fosstodon.org/" async src="https://fosstodon.org/embed.js"></script>
+## Which to use? Open to debate!
 
-## Live demo of VS Code
+::::: columns
+::: column
+
+Source: [Robin Lovelace on Mastodon](https://fosstodon.org/@robinlovelace/115164201737081008)
+
+![](images/paste-1.png)
+
+<!-- https://fosstodon.org/@robinlovelace/115164201737081008 -->
+
+:::
+
+::: column
+
+Source: [Reddit](https://www.reddit.com/r/RStudio/comments/1msbm1o/positron_vs_rstudio/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+![](images/paste-2.png)
+
+:::
+:::::
+
+## Bonus: Live demo of VS Code (time permitting)
 
 ![](../images/vscode_layout.png)
 
 ## Git and the GitHub CLI
 
-Principle: the command-line is better than the graphical user interface (CLI > GUI)
+Principle: the command-line is better than the graphical user interface (CLI \> GUI)
 
-- Using a GUI may allowing you to do something quicker the first time but will slow you down in the long-run
+-   Using a GUI may allowing you to do something quicker the first time but will slow you down in the long-run
 
-- CLI: hard first time^[
-    Although less so with AI-generated code
-]
-but will *save time in long term*
+-   CLI: hard first time[^1] but will *save time in long term*
 
-- The relationship between `git` and `gh` tools
-  - `git` is a long-established version-control system with many commands
-  - `gh` is a high-level interfact to `git` and the GitHub platform
+-   The relationship between `git` and `gh` tools
+
+    -   `git` is a long-established version-control system with many commands
+    -   `gh` is a high-level interface to `git` and the GitHub platform
+
+[^1]: Although less so with AI-generated code
+
+## Solo working through the practical (until \~11:00)
+
+Any questions before the coffee break (11:00-11:15)?
+
+Put your hands up, ask another participant, or use the [github.com/tdscience/course/discussions](https://github.com/tdscience/course/discussions)
+
+# Session 2: Sharing code and data (see [Session 2 workbook](../s2.qmd))
 
 ## Live demo: cloning repos, opening issues, Pull Requests from CLI
 
-```bash
+## Key GitHub concepts and workflows
 
-## Solo working through the practical (until ~11:00)
+### Finding repositories on GitHub
 
+Use the search bar to discover projects and developers:
+
+![](../images/search_bar.png){fig-align="center"}
+
+### Repository structure
+
+Every GitHub repo follows a similar layout with tabs for Code, Issues, Pull requests, etc.:
+
+![](../images/repo_layout.png){#fig-repo-layout .lightbox fig-align="center"}
+
+### Creating repositories
+
+You can create repos from scratch or existing folders:
+
+![](../images/menu_new.png)
+
+The repository creation window lets you set name, description, and visibility:
+
+![](../images/window_new.png)
+
+### Cloning and working locally
+
+Clone repos to work on them locally:
+
+![](../images/clone_repo.png)
+
+### Git workflow basics
+
+Version control with commits, branches, and merges:
+
+![Git Workflow diagram](../images/git-branches.png){fig-align="center"}
+
+### Making and committing changes
+
+Stage and commit your work:
+
+![](../images/commit_changes.png)
+
+### Pushing to GitHub
+
+Share your changes with the world:
+
+![](../images/push_commit.png)

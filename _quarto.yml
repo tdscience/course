@@ -51,6 +51,7 @@ format:
     license: "CC BY-SA"
 
 execute:
-  freeze: auto
-  cache: true
+  freeze: false
+  cache: refresh
+
 
