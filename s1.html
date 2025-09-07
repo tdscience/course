@@ -226,10 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="header-section-number">4.2</span> GitHub</a></li>
   <li><a href="#working-with-github" id="toc-working-with-github" class="nav-link" data-scroll-target="#working-with-github"><span class="header-section-number">4.3</span> Working with GitHub</a></li>
   </ul></li>
-  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">5</span> Practical:</a>
-  <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5.1</span> Exercise:</a></li>
-  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5</span> Exercise</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://docs.posit.co/ide/user/"><i class="bi bi-link-45deg"></i>RStudio User Guide</a></li><li><a href="https://code.visualstudio.com/docs"><i class="bi bi-link-45deg"></i>VS Code documentation</a></li><li><a href="https://positron.posit.co/welcome.html"><i class="bi bi-link-45deg"></i>Positron documentation</a></li><li><a href="https://git-scm.com/book/en/v2"><i class="bi bi-link-45deg"></i>Pro Git</a></li></ul></div></nav>
     </div>
@@ -549,10 +546,6 @@ Figure&nbsp;7: Version control. From: <a href="https://programmerhumor.io/">prog
 <p>Any Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.</p>
 <p>You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful <a href="https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf">cheat sheet</a>.</p>
 <p>There are two main ways of working with GitHub repositories in your machine: the <code>gh</code> command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs’ extensions, but they generally have fewer features available. We will explore the different actions in the next session.</p>
-</section>
-</section>
-<section id="practical" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="practical"><span class="header-section-number">5</span> Practical:</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -566,11 +559,28 @@ Note
 <p>You should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the <a href="prerequisites">prerequisites</a> for more information.</p>
 </div>
 </div>
-<section id="exercise" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5.1</span> Exercise:</h3>
+</section>
+</section>
+<section id="exercise" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5</span> Exercise</h2>
 <ol type="1">
-<li>Open the shell</li>
-<li>Create a folder called <code>reproducible-research</code></li>
+<li>Open the shell and move around and explore your file system with the following commands:
+<ul>
+<li><code>cd &lt;directory_name&gt;</code> to change directory</li>
+<li><code>ls</code> (macOS/Linux) or <code>dir</code> (Windows) to list directory contents</li>
+<li><code>pwd</code> (macOS/Linux) or <code>cd</code> (Windows) to print working directory</li>
+</ul></li>
+<li>Create a folder called <code>reproducible-research</code> at a place of your choosing and open it with your IDE.</li>
+<li></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a folder in your home directory for github repos:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make another folder inside that directory:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/github/tdscience</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/tdscience</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone tdscience/course</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> course <span class="co"># open the course folder with VS Code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
 <li>if you have the <code>gh</code> command-line tool installed, try:
 <ol type="1">
 <li><code>gh repo clone tdscience/course</code></li>
@@ -581,7 +591,6 @@ Note
 </ol>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
