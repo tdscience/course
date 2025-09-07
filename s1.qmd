@@ -210,7 +210,21 @@ If you still need to install them, check the [prerequisites](prerequisites) for 
     -   `ls` (macOS/Linux) or `dir` (Windows) to list directory contents
     -   `pwd` (macOS/Linux) or `cd` (Windows) to print working directory
 2.  Create a folder called `reproducible-research` at a place of your choosing and open it with your IDE.
-3. 
+
+3. Create a folder called `github` in your home directory if it does not already exist, add a subfolder called `tdscience`, and clone the course repository from GitHub to that location.
+
+::: callout-note
+## Installing the `gh` command-line tool
+
+If you do not have the `gh` command-line tool installed, you can follow the installation instructions for your operating system on the official website: [cli.github.com](https://cli.github.com/).
+
+The first time you install the tool you should run the following command to authenticate with your GitHub account:
+
+```sh
+gh auth login
+```
+
+:::
 
 ```sh
 # Make a folder in your home directory for github repos:
@@ -222,10 +236,20 @@ gh repo clone tdscience/course
 code course # open the course folder with VS Code
 ```
 
+4. Create a new repo in your GitHub account called `eitcourse` with the command `gh repo create`.
 
+That repo can be where you will save your work during the course.
 
-3.  if you have the `gh` command-line tool installed, try:
-    1.  `gh repo clone tdscience/course`
-    2.  `cd course`
-    3.  `gh issue list`
-    4.  `gh issue create`
+5. Open this newly created repo in your IDE and create a new file called `basic-example.qmd`. Add any content you like and try to render it.
+
+6. Render or preview the file in your IDE, using a shortcut `Ctrl+Shift+K` or from the terminal with the following commands:
+
+```sh
+quarto render basic-example.qmd
+# or
+quarto preview basic-example.qmd
+```
+
+::: callout-note
+To stop the preview server, press `Ctrl+C` in the terminal where you ran the `quarto preview` command.
+:::
