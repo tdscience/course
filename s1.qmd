@@ -21,6 +21,22 @@ There are several integrated development environments (IDEs) that provide a comp
 IDEs facilitate coding, data processing and analysis, visualisation, and version control.
 They also help in producing files to share your work, whether you're using scripts or notebook-style documents.
 We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.
+As shown in @tbl-ide-comparison, each IDE has its own strengths and weaknesses.
+
+| Attribute                      | RStudio          | Positron                     | VS Code                      |
+|--------------------------------|------------------|------------------------------|------------------------------|
+| Development status             | Mature ✅        | Under active development 🏗️ | Mature ✅                    |
+| Set-up time for data science   | Minimal          | Minimal                      | Extensions needed            |
+| Primary Language(s)            | R                | R and Python out-of-the-box, others (with extensions)            | Language-agnostic, any language (with extensions)            |
+| Quarto Support                 | Excellent        | Excellent                    | Excellent (via extension)    |
+| Devcontainers support          | Minimal          | Minimal                      | ✅                           |
+| Live Share support             | ❌               | ❌                           | ✅                           |
+| Plugin ecosystem              | Limited (Addins) | High (open source VS Code extensions from [OpenVSX](https://open-vsx.org/)) | High ([VS Code Marketplace](https://marketplace.visualstudio.com/)) |
+| GitHub Codespaces support      | Limited               | Limited                      | ✅                           |
+: Comparison of IDEs for Data Science {#tbl-ide-comparison}
+
+The attributes of RStudio make it a great choice for R users who want a straightforward setup that works out of the box.
+On the other hand, VS Code and Positron are more flexible and extensible, making them well-suited for people who need to work with multiple programming languages, want to use multiple languages and extensions, or (in the case of VS Code) want to use devcontainers for a consistent and reproducible environment.
 
 ### RStudio
 
