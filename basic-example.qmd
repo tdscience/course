@@ -4,8 +4,25 @@
 x = 1
 x
 # IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa
-# Latitude, Longitude of IGOT
-igot_lon_lat = [(-9.142685, 38.736946)]
-# Create a square of 0.01 degrees around the point
 import geopandas as gpd
+import shapely
+
+# Create a shapely Point geometry for IGOT
+# 38.7493402,-9.155268
+# Note: (longitude, latitude)
+igot_point = shapely.Point(-9.155268, 38.7493402)  
+
+# Create a GeoSeries from the point
+igot_geom = gpd.GeoSeries([igot_point], crs="EPSG:4326")
+
+# Combine geometry with attributes in a dictionary
+igot_data = {
+    'name': ['IGOT-ULisboa'],
+    'geometry': igot_geom
+}
+
+# Create a GeoDataFrame
+igot_layer = gpd.GeoDataFrame(igot_data)
+igot_layer
+igot_layer.explore()
 ```
