@@ -1,0 +1,11 @@
+
+```{python}
+#| eval: false
+x = 1
+x
+# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa
+# Latitude, Longitude of IGOT
+igot_lon_lat = [(-9.142685, 38.736946)]
+# Create a square of 0.01 degrees around the point
+import geopandas as gpd
+```
