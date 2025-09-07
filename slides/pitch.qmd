@@ -3,8 +3,7 @@ title: Tools and Skills for Reproducible Transport Research
 subtitle: EIT course proposal
 format: 
   # Install plugin with quarto install extension grantmcdermott/quarto-revealjs-clean
-  clean-revealjs:
-    self-contained: true
+  clean-revealjs
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
