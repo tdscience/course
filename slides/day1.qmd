@@ -1,0 +1,31 @@
+---
+title: Tools and Skills for Reproducible Transport Research
+subtitle: Day 1
+format: 
+  # Install plugin with quarto install extension grantmcdermott/quarto-revealjs-clean
+  clean-revealjs:
+    self-contained: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Robin Lovelace
+    orcid: 0000-0001-5679-6536
+    email: r.lovelace@leeds.ac.uk
+    affiliations: University of Leeds
+    role: Course leader
+  - name: Juan Fonseca
+    orcid: TBC
+    affiliations: University of Leeds
+    role: Course co-leader
+date: 2025-09-08
+---
+
+# Introduction
+
+## The origins of the course
+
+### "If only I was told this ealier in my career"
+
+
+
