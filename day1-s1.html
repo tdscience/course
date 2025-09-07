@@ -180,7 +180,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-features-and-extensions-of-vs-code-based-ides" id="toc-key-features-and-extensions-of-vs-code-based-ides" class="nav-link" data-scroll-target="#key-features-and-extensions-of-vs-code-based-ides"><span class="header-section-number">2</span> Key features and extensions of VS Code-based IDEs</a>
   <ul class="collapse">
   <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features"><span class="header-section-number">2.1</span> Core Features</a></li>
-  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter"><span class="header-section-number">2.2</span> Python interpreter</a></li>
+  <li><a href="#devcontainers" id="toc-devcontainers" class="nav-link" data-scroll-target="#devcontainers"><span class="header-section-number">2.2</span> Devcontainers</a></li>
+  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter"><span class="header-section-number">2.3</span> Python interpreter</a></li>
   </ul></li>
   <li><a href="#the-system-shell-and-basic-commands" id="toc-the-system-shell-and-basic-commands" class="nav-link" data-scroll-target="#the-system-shell-and-basic-commands"><span class="header-section-number">3</span> The system shell and basic commands</a></li>
   <li><a href="#introduction-to-version-control" id="toc-introduction-to-version-control" class="nav-link" data-scroll-target="#introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</a>
@@ -277,16 +278,39 @@ Figure&nbsp;3: Positron layout
 </ul>
 <p>We will use only the basic extensions as described in the <a href="./prerequisites.html">prerequisites</a>. But it is worth exploring the extensions available on <a href="https://marketplace.visualstudio.com/vscode">VS Code Marketplace</a>.</p>
 </section>
-<section id="python-interpreter" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="python-interpreter"><span class="header-section-number">2.2</span> Python interpreter</h3>
-<p>VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (<a href="#fig-python-interpreter" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<section id="devcontainers" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="devcontainers"><span class="header-section-number">2.2</span> Devcontainers</h3>
+<p>A development container (devcontainer) is a Docker container that includes all the necessary tools, libraries, and dependencies for a specific development environment. In many ways, it represents best practices for setting up a consistent and reproducible environment for a project, with the only downside of requiring Docker to be installed in your machine.</p>
+<p>Devcontainers are ideal for use ‘in production’ in teams that have access to Docker, as they ensure that all team members are working in the same environment, regardless of their local setup.</p>
+<p>Another advantage of using devcontainers is that they can be used in cloud-based IDEs, such as GitHub Codespaces. See <a href="#fig-local-devcontainer" class="quarto-xref">Figure&nbsp;4</a> for an example of running a .qmd file inside a local devcontainer.</p>
+<p>Bonus exercise: Try running the code in <code>basic-example.qmd</code> in GitHub Codespaces.</p>
+<div id="fig-local-devcontainer" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-local-devcontainer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/local-devcontainer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Running the code in basic-example.qmd inside a local devcontainer"><img src="images/local-devcontainer.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-local-devcontainer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Running the code in basic-example.qmd inside a local devcontainer
+</figcaption>
+</figure>
+</div>
+<p>Links to learn more about devcontainers:</p>
+<ul>
+<li><a href="https://containers.dev/">Devcontainers documentation</a></li>
+<li><a href="https://code.visualstudio.com/docs/devcontainers/containers">VS Code Devcontainers</a></li>
+<li><a href="https://github.com/posit-dev/positron/issues/4691">Discussion of limited support for devcontainers in Positron</a></li>
+</ul>
+</section>
+<section id="python-interpreter" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="python-interpreter"><span class="header-section-number">2.3</span> Python interpreter</h3>
+<p>VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (<a href="#fig-python-interpreter" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <div id="fig-python-interpreter" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-python-interpreter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/python_interpreter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"><img src="images/python_interpreter.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="images/python_interpreter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"><img src="images/python_interpreter.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-python-interpreter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file
+Figure&nbsp;5: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file
 </figcaption>
 </figure>
 </div>
@@ -346,14 +370,14 @@ Figure&nbsp;4: Select Python interpreter menu in VS Code which appears after run
 <h2 data-number="4" class="anchored" data-anchor-id="introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</h2>
 <section id="git" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="git"><span class="header-section-number">4.1</span> Git</h3>
-<p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;5</a>?</p>
+<p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;6</a>?</p>
 <div id="fig-no-version-control" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/version_control_humour.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Version control. From: <a href="https://programmerhumor.io/">programmerhumor.io</a>
+Figure&nbsp;6: Version control. From: <a href="https://programmerhumor.io/">programmerhumor.io</a>
 </figcaption>
 </figure>
 </div>
