@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,74 +258,95 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction-to-ides" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ides"><span class="header-section-number">1</span> Introduction to IDEs</h2>
 <p>There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you’re using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron. As shown in <a href="#tbl-ide-comparison" class="quarto-xref">Table&nbsp;1</a>, each IDE has its own strengths and weaknesses.</p>
-<div id="tbl-ide-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ides <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/ides.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 8 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (4): Attribute, RStudio, Positron, VS Code
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(ides, <span class="at">caption =</span> <span class="st">"Comparison of IDEs for Data Science"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-ide-comparison" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ide-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Comparison of IDEs for Data Science
 </figcaption>
 <div aria-describedby="tbl-ide-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 11%">
+<col style="width: 36%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Attribute</th>
-<th>RStudio</th>
-<th>Positron</th>
-<th>VS Code</th>
+<th style="text-align: left;">Attribute</th>
+<th style="text-align: left;">RStudio</th>
+<th style="text-align: left;">Positron</th>
+<th style="text-align: left;">VS Code</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Development status</td>
-<td>Mature ✅</td>
-<td>Under active development 🏗️</td>
-<td>Mature ✅</td>
+<td style="text-align: left;">Development status</td>
+<td style="text-align: left;">Mature ✅</td>
+<td style="text-align: left;">Under active development 🏗️</td>
+<td style="text-align: left;">Mature ✅</td>
 </tr>
 <tr class="even">
-<td>Set-up time for data science</td>
-<td>Minimal</td>
-<td>Minimal</td>
-<td>Extensions needed</td>
+<td style="text-align: left;">Set-up time for data science</td>
+<td style="text-align: left;">Minimal</td>
+<td style="text-align: left;">Minimal</td>
+<td style="text-align: left;">Extensions needed</td>
 </tr>
 <tr class="odd">
-<td>Primary Language(s)</td>
-<td>R</td>
-<td>R and Python out-of-the-box, others (with extensions)</td>
-<td>Language-agnostic, any language (with extensions)</td>
+<td style="text-align: left;">Primary Language(s)</td>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">R and Python out-of-the-box, others (with extensions)</td>
+<td style="text-align: left;">Language-agnostic, any language (with extensions)</td>
 </tr>
 <tr class="even">
-<td>Quarto Support</td>
-<td>Excellent</td>
-<td>Excellent</td>
-<td>Excellent (via extension)</td>
+<td style="text-align: left;">Quarto Support</td>
+<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Excellent</td>
+<td style="text-align: left;">Excellent (via extension)</td>
 </tr>
 <tr class="odd">
-<td>Devcontainers support</td>
-<td>Minimal</td>
-<td>Minimal</td>
-<td>✅</td>
+<td style="text-align: left;">Devcontainers support</td>
+<td style="text-align: left;">Minimal</td>
+<td style="text-align: left;">Minimal</td>
+<td style="text-align: left;">✅</td>
 </tr>
 <tr class="even">
-<td>Live Share support</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
+<td style="text-align: left;">Live Share support</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">✅</td>
 </tr>
 <tr class="odd">
-<td>Plugin ecosystem</td>
-<td>Limited (Addins)</td>
-<td>High (open source VS Code extensions from <a href="https://open-vsx.org/">OpenVSX</a>)</td>
-<td>High (<a href="https://marketplace.visualstudio.com/">VS Code Marketplace</a>)</td>
+<td style="text-align: left;">Plugin ecosystem</td>
+<td style="text-align: left;">Limited (Addins)</td>
+<td style="text-align: left;">High (open source VS Code extensions from OpenVSX)</td>
+<td style="text-align: left;">High (VS Code Marketplace)</td>
 </tr>
 <tr class="even">
-<td>GitHub Codespaces support</td>
-<td>Limited</td>
-<td>Limited</td>
-<td>✅</td>
+<td style="text-align: left;">GitHub Codespaces support</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">✅</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 </figure>
+</div>
 </div>
 <p>The attributes of RStudio make it a great choice for R users who want a straightforward setup that works out of the box. On the other hand, VS Code and Positron are more flexible and extensible, making them well-suited for people who need to work with multiple programming languages, want to use multiple languages and extensions, or (in the case of VS Code) want to use devcontainers for a consistent and reproducible environment.</p>
 <section id="rstudio" class="level3" data-number="1.1">
