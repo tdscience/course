@@ -23,7 +23,7 @@ date: 2025-09-08
 
 # Introduction
 
-## Course overview (see [schedule](../schedule.qmd) for details)
+## Course overview (see [schedule](../schedule.qmd)) + 'housekeeping'
 
 ### Day 1
 
@@ -46,7 +46,7 @@ date: 2025-09-08
 
 -   Professor of Transport Data Science
 -   Focus: influencing decision-making, to make it more evidence-based
--   Large part of research has been in or for government
+<!-- -   Large part of research has been in or for government -->
 <!-- -   In other words: my focus is on impact -->
 -   R package developer and data scientist
 -   New methods for more reproducible, data-driven and participatory transport planning
@@ -60,7 +60,6 @@ date: 2025-09-08
 
 ### You
 
-
 ## The origins of the course
 
 ### "If only I was told this ealier in my career"
@@ -71,9 +70,99 @@ Imagine a workflow that enabled:
 - More focus on *the content* and not style of the work
 - Integration of code into your research manuscript
 - Automatic generation of results, including figures and tables...
-  - That can be changed seamlessly when input datasets or code changes
+  - That change seamlessly when input datasets or code changes
 - Control over how you export and publish your work
-  - Including publication-quality PDFs, your own website, blogs, slidesj
+  - Including publication-quality PDFs, website, blogs, slides
 - Full reproducibility
 - You to share your work for maximum benefit to others
+
+## Reproducible research
+
+<!-- TODO: copy slides across from tartu/road safety conferences -->
+
+## Example of reproducible research: networkmerge
+
+See paper website: https://nptscot.github.io/networkmerge/
+
+## Example: rs5c conference slides
+
+See slides website: https://robinlovelace.github.io/rs5c/
+
+## Example: biclaR
+
+See https://github.com/U-Shift/biclar
+
+## Course principles
+
+::: incremental
+
+- "Learn by doing"
+- "Learn by teaching"
+- "Learn from each other"
+- "We're all learning"
+- "Growth mindset"
+- "Can-do" and "Go for It" attitude
+- "Every error is a learning opportunity"
+- "No such thing as a bad question"
+- "Fail fast"
+- Balance between focused work and comms
+- Bring you own principles (BYOP)
+
+:::
+
+## The practical sessions
+
+- Time of in-depth work
+- Use the course website as a reference point but spend most of the time in your own environment
+- Juan and I will support people 1-2-1 and do 'live demos' now and then
+
+::: callout-tip
+
+Press Ctrl+Tab to switch from IDE to browser with course content and other things for an efficient workflow
+
+:::
+
+<!-- TODO: add content here -->
+
+## Any questions before we move to the first practical?
+
+# Session 1 ~10:00-11:00
+
+## Session 1 introduction (see [Session 1 workbook](../day1-s1.qmd))
+
+- 09:30-10:00 Introduction
+- **10:00-11:00 Development environments, system commands, and version control**		
+- 11:15-12:30	Sharing code and data		
+- 13:30-15:00	Reproducible papers and documentation with Quarto		
+- 15:15-16:30	Cross-references and citations with Quarto
+
+### Day 2
+
+- 09:30-10:30	Drafting a reproducible paper		
+- 10:45-12:30	Generating reproducible publication-quality visualisations		
+- 13:30-14:30	Editing other people’s work		
+- 14:45-16:00	Working on papers -> Presentations and wrap-up
+
+## Live demo of VS Code
+
+![](../images/vscode_layout.png)
+
+## Git and the GitHub CLI
+
+Principle: the command-line is better than the graphical user interface (CLI > GUI)
+
+- Using a GUI may allowing you to do something quicker the first time but will slow you down in the long-run
+
+- CLI: hard first time^[
+    Although less so with AI-generated code
+]
+but will *save time in long term*
+
+- The relationship between `git` and `gh` tools
+  - `git` is a long-established version-control system with many commands
+  - `gh` is a high-level interfact to `git` and the GitHub platform
+
+## Live demo: cloning repos, opening issues, Pull Requests from CLI
+
+## Solo working through the practical (until ~11:00)
 
