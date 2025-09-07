@@ -148,7 +148,7 @@ Press Ctrl+Tab to switch from IDE to browser with course content and other thing
 
 # Session 1 ~10:00-11:00
 
-## Session 1 introduction (see [Session 1 workbook](../day1-s1.qmd))
+## Session 1 introduction (see [Session 1 workbook](../s1.qmd))
 
 - 09:30-10:00 Introduction
 - **10:00-11:00 Development environments, system commands, and version control**		

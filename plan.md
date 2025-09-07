@@ -4,14 +4,14 @@
 
 The following files will be renamed to follow best practices for web development and SEO (lowercase, hyphenated filenames):
 
--   `Day1_session1.qmd` -> `day1-s1.qmd`
--   `Day1_session2.qmd` -> `day1-s2.qmd`
--   `Day1_session3.qmd` -> `day1-s3.qmd`
--   `Day1_session4.qmd` -> `day1-s4.qmd`
--   `Day2_session5.qmd` -> `day2-s5.qmd`
--   `Day2_session6.qmd` -> `day2-s6.qmd`
--   `Day2_session7.qmd` -> `day2-s7.qmd`
--   `Day2_session8.qmd` -> `day2-s8.qmd`
+-   `Day1_session1.qmd` -> `s1.qmd`
+-   `Day1_session2.qmd` -> `s2.qmd`
+-   `Day1_session3.qmd` -> `s3.qmd`
+-   `Day1_session4.qmd` -> `s4.qmd`
+-   `Day2_session5.qmd` -> `s5.qmd`
+-   `Day2_session6.qmd` -> `s6.qmd`
+-   `Day2_session7.qmd` -> `s7.qmd`
+-   `Day2_session8.qmd` -> `s8.qmd`
 -   `tp_schedule.qmd` -> `tp-schedule.qmd`
 
 ## 2. Update configuration and content

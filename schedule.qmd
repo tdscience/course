@@ -9,13 +9,13 @@ pagetitle: "Course Schedule"
 | Time | Session  |   |   |
 |-----------------|-----------------------|:---------------:|-----------------|
 | 09:30 - 10:00 | Introduction |  | [{{< bi easel size=1.5em >}}](slides/day1.qmd) |
-| 10:00 - 11:00 | Development environments, system commands, and version control | [{{< bi file-earmark-code size=1.5em >}}](day1-s1.qmd) |  |
+| 10:00 - 11:00 | Development environments, system commands, and version control | [{{< bi file-earmark-code size=1.5em >}}](s1.qmd) |  |
 | 11:00 - 11:15 | Break |  |  |
-| 11:15 - 12:30 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](day1-s2.qmd) |  |
+| 11:15 - 12:30 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](s2.qmd) |  |
 | 12:30 - 13:30 | Lunch |  |  |
-| 13:30 - 15:00 | Reproducible papers and documentation with Quarto | [{{< bi file-earmark-code size=1.5em >}}](day1-s3.qmd) |  |
+| 13:30 - 15:00 | Reproducible papers and documentation with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s3.qmd) |  |
 | 15:00 - 15:15 | Break |  |  |
-| 15:15 - 16:30 | Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](day1-s4.qmd) |  |
+| 15:15 - 16:30 | Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s4.qmd) |  |
 
 : {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
@@ -23,13 +23,13 @@ pagetitle: "Course Schedule"
 
 | Time | Session  |   |   |
 |-----------------|-----------------------|:---------------:|-----------------|
-| 09:30 - 10:30 | Drafting a reproducible paper | [{{< bi file-earmark-code size=1.5em >}}](day2-s5.qmd) | | |
+| 09:30 - 10:30 | Drafting a reproducible paper | [{{< bi file-earmark-code size=1.5em >}}](s5.qmd) | | |
 | 10:30 - 10:45 | Break | | | 
-| 10:45 - 12:30 | Generating reproducible publication-quality visualisations | [{{< bi file-earmark-code size=1.5em >}}](day2-s6.qmd) | |
+| 10:45 - 12:30 | Generating reproducible publication-quality visualisations | [{{< bi file-earmark-code size=1.5em >}}](s6.qmd) | |
 | 12:30 - 13:30 | Lunch | | | 
-| 13:30 - 14:30 | Editing other people's work | [{{< bi file-earmark-code size=1.5em >}}](day2-s7.qmd) | |
+| 13:30 - 14:30 | Editing other people’s work | [{{< bi file-earmark-code size=1.5em >}}](s7.qmd) | |
 | 14:30 - 14:45 | Break | | | 
-| 14:45 - 16:00 | Working on papers | [{{< bi file-earmark-code size=1.5em >}}](day2-s8.qmd) | |
+| 14:45 - 16:00 | Working on papers | [{{< bi file-earmark-code size=1.5em >}}](s8.qmd) | |
 | 16:00 - 17:00 | Presentations and wrap-up | | | 
 
 : {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
