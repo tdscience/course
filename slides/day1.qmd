@@ -25,7 +25,21 @@ date: 2025-09-08
 
 ## The origins of the course
 
+::: {.fragment}
+
 ### "If only I was told this ealier in my career"
 
+Imagine a workflow that enabled:
+
+- Fewer context switches
+- More focus on *the content* and not style of the work
+- Integration of code into your research manuscript
+- Automatic generation of results, including figures and tables...
+  - That can be changed seamlessly when input datasets or code changes
+- Control over how you export and publish your work
+  - Including publication-quality PDFs, your own website, blogs, slides
+- Full reproducibility
+- You to share your work for maximum benefit to others
 
 
+:::
