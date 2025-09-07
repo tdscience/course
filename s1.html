@@ -258,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ides <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/ides.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 8 Columns: 4
+<pre><code>Rows: 9 Columns: 4
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr (4): Attribute, RStudio, Positron, VS Code
@@ -276,10 +276,10 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <div class="cell-output-display">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
+<col style="width: 16%">
 <col style="width: 19%">
-<col style="width: 11%">
-<col style="width: 36%">
-<col style="width: 33%">
+<col style="width: 31%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -291,52 +291,58 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Development status</td>
+<td style="text-align: left;">Status</td>
 <td style="text-align: left;">Mature ✅</td>
-<td style="text-align: left;">Under active development 🏗️</td>
+<td style="text-align: left;">Under development 🏗️</td>
 <td style="text-align: left;">Mature ✅</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set-up time for data science</td>
+<td style="text-align: left;">Setup time</td>
 <td style="text-align: left;">Minimal</td>
 <td style="text-align: left;">Minimal</td>
 <td style="text-align: left;">Extensions needed</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Primary Language(s)</td>
+<td style="text-align: left;">Languages</td>
 <td style="text-align: left;">R</td>
-<td style="text-align: left;">R and Python out-of-the-box, others (with extensions)</td>
-<td style="text-align: left;">Language-agnostic, any language (with extensions)</td>
+<td style="text-align: left;">R + Python out-of-the-box</td>
+<td style="text-align: left;">Any (with extensions)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Quarto Support</td>
+<td style="text-align: left;">Quarto</td>
 <td style="text-align: left;">Excellent</td>
 <td style="text-align: left;">Excellent</td>
-<td style="text-align: left;">Excellent (via extension)</td>
+<td style="text-align: left;">Excellent (extension)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Devcontainers support</td>
+<td style="text-align: left;">Devcontainers</td>
 <td style="text-align: left;">Minimal</td>
 <td style="text-align: left;">Minimal</td>
 <td style="text-align: left;">✅</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Live Share support</td>
+<td style="text-align: left;">Live Share</td>
 <td style="text-align: left;">❌</td>
 <td style="text-align: left;">❌</td>
 <td style="text-align: left;">✅</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plugin ecosystem</td>
+<td style="text-align: left;">Plugins</td>
 <td style="text-align: left;">Limited (Addins)</td>
-<td style="text-align: left;">High (open source VS Code extensions from OpenVSX)</td>
-<td style="text-align: left;">High (VS Code Marketplace)</td>
+<td style="text-align: left;">High (OpenVSX)</td>
+<td style="text-align: left;">High (Marketplace)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">GitHub Codespaces support</td>
+<td style="text-align: left;">Codespaces</td>
 <td style="text-align: left;">Limited</td>
 <td style="text-align: left;">Limited</td>
 <td style="text-align: left;">✅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">License</td>
+<td style="text-align: left;">AGPL</td>
+<td style="text-align: left;">Source-available (Elastic)</td>
+<td style="text-align: left;">Open core (binaries closed)</td>
 </tr>
 </tbody>
 </table>

@@ -208,7 +208,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#navigating-github" id="toc-navigating-github" class="nav-link active" data-scroll-target="#navigating-github"><span class="header-section-number">1</span> Navigating GitHub</a>
   <ul class="collapse">
-  <li><a href="#the-main-tabs" id="toc-the-main-tabs" class="nav-link" data-scroll-target="#the-main-tabs"><span class="header-section-number">1.1</span> The Main Tabs</a></li>
+  <li><a href="#using-the-gh-command-line-interface-cli" id="toc-using-the-gh-command-line-interface-cli" class="nav-link" data-scroll-target="#using-the-gh-command-line-interface-cli"><span class="header-section-number">1.1</span> Using the <code>gh</code> command line interface (CLI)</a></li>
+  <li><a href="#exploring-githubs-web-interface" id="toc-exploring-githubs-web-interface" class="nav-link" data-scroll-target="#exploring-githubs-web-interface"><span class="header-section-number">1.2</span> Exploring GitHub’s web interface</a></li>
+  <li><a href="#the-main-tabs" id="toc-the-main-tabs" class="nav-link" data-scroll-target="#the-main-tabs"><span class="header-section-number">1.3</span> The Main Tabs</a></li>
   </ul></li>
   <li><a href="#creating-and-managing-repositories" id="toc-creating-and-managing-repositories" class="nav-link" data-scroll-target="#creating-and-managing-repositories"><span class="header-section-number">2</span> Creating and managing repositories</a>
   <ul class="collapse">
@@ -255,6 +257,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="navigating-github" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="navigating-github"><span class="header-section-number">1</span> Navigating GitHub</h2>
+<section id="using-the-gh-command-line-interface-cli" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="using-the-gh-command-line-interface-cli"><span class="header-section-number">1.1</span> Using the <code>gh</code> command line interface (CLI)</h3>
+<p>You can search repos, commits, issues, pull requests, and code with the <code>gh</code> CLI tool. For example, to search for repositories related to “transport” sorted by the number of stars, you can run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> search repos <span class="at">--topic</span> transport <span class="at">--sort</span> stars <span class="at">--limit</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That outputs the following:</p>
+<pre><code>Showing 5 of 1081 repositories
+
+NAME                    DESCRIPTION                                                                                   VISIBILITY  UPDATED             
+gboeing/osmnx           Download, model, analyze, and visualize street networks and other geospatial features fro...  public      about 10 hours ago
+eclipse-sumo/sumo       Eclipse SUMO is an open source, highly portable, microscopic and continuous traffic simul...  public      about 19 minutes ago
+Haivision/srt           Secure, Reliable, Transport                                                                   public      about 6 hours ago
+enisdenjo/graphql-ws    Coherent, zero-dependency, lazy, simple, GraphQL over WebSocket Protocol compliant server...  public      about 6 hours ago
+gboeing/osmnx-examples  Gallery of OSMnx tutorials, usage examples, and feature demonstrations.                       public      about 16 hours ago</code></pre>
+<p>You can search for repos related to transport data science with the following and similar commands, as shown in <a href="#fig-search-repos-gh-cli" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> search repos <span class="st">"transport data science"</span> <span class="at">--sort</span> stars <span class="at">--limit</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-search-repos-gh-cli" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-search-repos-gh-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/search-repos-gh-cli.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Search results for transport data science repositories on GitHub using the gh CLI"><img src="images/search-repos-gh-cli.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-search-repos-gh-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Search results for transport data science repositories on GitHub using the gh CLI
+</figcaption>
+</figure>
+</div>
+<p>See the <a href="https://cli.github.com/manual/">gh CLI manual</a> for more details.</p>
+</section>
+<section id="exploring-githubs-web-interface" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="exploring-githubs-web-interface"><span class="header-section-number">1.2</span> Exploring GitHub’s web interface</h3>
 <p>After you’ve logged into <a href="https://github.com">github.com</a>, you can use the web application to explore open source software. You can search for people’s profiles and repositories (the public ones) using the search bar. Try looking for a topic, package, or researcher/developer whose work interests you.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -265,16 +296,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-repo-layout" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/repo_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: "><img src="images/repo_layout.png" id="fig-repo-layout" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></a>
+<a href="images/repo_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: "><img src="images/repo_layout.png" id="fig-repo-layout" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+Figure&nbsp;2
 </figcaption>
 </figure>
 </div>
 <p>GitHub organizes a repository’s content and collaboration tools into several key tabs. These tabs act as a dashboard, each providing a different view of the project’s status and activity.</p>
-<section id="the-main-tabs" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="the-main-tabs"><span class="header-section-number">1.1</span> The Main Tabs</h3>
+<!-- https://cli.github.com/manual/gh_search -->
+<!-- gh search code
+gh search commits
+gh search issues
+gh search prs
+gh search repos -->
+</section>
+<section id="the-main-tabs" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="the-main-tabs"><span class="header-section-number">1.3</span> The Main Tabs</h3>
 <ul>
 <li><strong>Code</strong>: This is the repository’s home page. It displays the project’s file and folder structure as it currently exists on the main branch. You can browse and view all the code, read the README file, and see the latest commits, providing a snapshot of the project’s current state.</li>
 <li><strong>Issues</strong>: This tab is a central hub for tracking tasks, bugs, and feature requests. It’s a key collaboration tool where developers can open new issues to report problems, ask questions, or propose new ideas. The discussion around an issue is contained in a single thread, keeping conversations organized and searchable.</li>
@@ -461,26 +499,26 @@ git commit</code></pre></li>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">VS Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Positron</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Any folder in terminal</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/github/tdscience/course</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/github/tdscience/course</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: you need to include the .Rproj file</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> ~/github/tdscience/course/course.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: you need to include the .Rproj file</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> ~/github/tdscience/course/course.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> ~/github/tdscience/course</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> ~/github/tdscience/course</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/tdscience/course</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Then open your preferred editor/IDE</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/tdscience/course</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Then open your preferred editor/IDE</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <section id="open-an-issue" class="level4" data-number="12.1.1">
 <h4 data-number="12.1.1" class="anchored" data-anchor-id="open-an-issue"><span class="header-section-number">12.1.1</span> Open an issue</h4>
 <p>From the IDE with the course repo open, open a terminal (e.g.&nbsp;with Ctrl+’ on Windows or F1 and then type “focus terminal”) and run the following command to create a new issue:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -498,7 +536,7 @@ Note
 <section id="create-a-branch" class="level4" data-number="12.1.2">
 <h4 data-number="12.1.2" class="anchored" data-anchor-id="create-a-branch"><span class="header-section-number">12.1.2</span> Create a branch</h4>
 <p>You can also use the <code>gh</code> CLI to efficiently create a branch from the issue you just created. Assuming the issue number is 1, run:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue develop 1 <span class="at">--checkout</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue develop 1 <span class="at">--checkout</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="make-changes" class="level4" data-number="12.1.3">
 <h4 data-number="12.1.3" class="anchored" data-anchor-id="make-changes"><span class="header-section-number">12.1.3</span> Make changes</h4>
