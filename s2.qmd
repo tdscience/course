@@ -42,7 +42,7 @@ gh search repos "transport data science" --sort stars --limit 5
 
 ![Search results for transport data science repositories on GitHub using the gh CLI](images/search-repos-gh-cli.png){#fig-search-repos-gh-cli .lightbox fig-align="center"}
 
-See the [gh CLI manual](https://cli.github.com/manual/) for more details.
+See the [gh CLI manual](https://cli.github.com/manual/gh_search) for more details.
 
 ### Exploring GitHub's web interface
 
@@ -360,4 +360,23 @@ gh issue develop 1 --checkout
 To reduce conflicts, edit a specific line number. This number should be assigned to you by the instructor, but if not, pick a random line number to edit between 3 and 100.
 :::
 
-### Create a repository and make changes
+### Adding content to your course repo
+
+<!-- http://localhost:4766/s1.html#exercise -->
+Building on the exercise to create a repository called `eitcourse` in [Session 1](s1.qmd#exercise), start adding contents to your repository.
+
+### Bonus: Create a repo from a template
+
+<!-- https://github.com/Robinlovelace/reproducible-project-template -->
+If you're feeling ambitious, you can try creating a repo with GitHub actions and other things for building a website.
+You could do this as follows, for example, starting with the repo at [github.com/Robinlovelace/reproducible-project-template](https://github.com/Robinlovelace/reproducible-project-template).
+
+
+```sh
+# rename eitcourse to eitcourse-old:
+gh repo rename eitcourse-old --repo robinlovelace/eitcourse
+# Or delete as follows or from website:
+gh repo delete eitcourse-old --yes
+# Create new repo from template:
+gh repo create eitcourse --template robinlovelace/reproducible-project-template --public
+```
