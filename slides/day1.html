@@ -337,9 +337,9 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <table class="do-not-create-environment cell caption-top">
 <colgroup>
 <col style="width: 14%">
-<col style="width: 27%">
+<col style="width: 26%">
 <col style="width: 28%">
-<col style="width: 30%">
+<col style="width: 29%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -351,22 +351,22 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Languages</td>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">R + Python out-of-the-box</td>
+<td style="text-align: left;">Any (with extensions)</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Status</td>
 <td style="text-align: left;">Mature ✅</td>
 <td style="text-align: left;">Under development 🏗️</td>
 <td style="text-align: left;">Mature ✅</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Setup time</td>
 <td style="text-align: left;">Minimal ✅</td>
 <td style="text-align: left;">Minimal ✅</td>
 <td style="text-align: left;">Extensions needed ⚠️</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Languages</td>
-<td style="text-align: left;">R ✅</td>
-<td style="text-align: left;">R + Python out-of-the-box ✅</td>
-<td style="text-align: left;">Any (with extensions) ⚠️</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Quarto</td>
@@ -376,8 +376,8 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Devcontainers</td>
-<td style="text-align: left;">Minimal ✅</td>
-<td style="text-align: left;">Minimal ✅</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
 <td style="text-align: left;">✅</td>
 </tr>
 <tr class="even">
@@ -387,8 +387,8 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <td style="text-align: left;">✅</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plugins</td>
-<td style="text-align: left;">Limited (Addins) ⚠️</td>
+<td style="text-align: left;">Extensions</td>
+<td style="text-align: left;">Limited (via Addins) ⚠️</td>
 <td style="text-align: left;">High (OpenVSX) ✅</td>
 <td style="text-align: left;">High (Marketplace) ✅</td>
 </tr>
@@ -403,6 +403,12 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <td style="text-align: left;">Restrictive open (AGPL) ✅</td>
 <td style="text-align: left;">Source-available (Elastic) ⚠️</td>
 <td style="text-align: left;">Open core (binaries closed) ⚠️</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AI integration</td>
+<td style="text-align: left;">Limited ⚠️</td>
+<td style="text-align: left;">High (various extensions) ✅</td>
+<td style="text-align: left;">High (various extensions) ✅</td>
 </tr>
 </tbody>
 </table>
@@ -451,9 +457,6 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <h1>Session 2: Sharing code and data (see <a href="../s2.html">Session 2 workbook</a>)</h1>
 
 </section>
-<section id="live-demo-cloning-repos-opening-issues-pull-requests-from-cli" class="slide level2">
-<h2>Live demo: cloning repos, opening issues, Pull Requests from CLI</h2>
-</section>
 <section id="key-github-concepts-and-workflows" class="slide level2">
 <h2>Key GitHub concepts and workflows</h2>
 <h3 id="finding-repositories-on-github">Finding repositories on GitHub</h3>
@@ -463,15 +466,26 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <p><img data-src="../images/search_bar.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<p>Or with the <code>gh</code> CLI tool 😎</p>
+<div id="fig-search-repos-gh-cli" class="lightbox quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-search-repos-gh-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/search-repos-gh-cli.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Search results for transport data science repositories on GitHub using the gh CLI"><img data-src="../images/search-repos-gh-cli.png" class="quarto-figure quarto-figure-center"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-search-repos-gh-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Search results for transport data science repositories on GitHub using the gh CLI
+</figcaption>
+</figure>
+</div>
 <h3 id="repository-structure">Repository structure</h3>
 <p>Every GitHub repo follows a similar layout with tabs for Code, Issues, Pull requests, etc.:</p>
 <div id="fig-repo-layout" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/repo_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: "><img data-src="../images/repo_layout.png" id="fig-repo-layout" class="quarto-figure quarto-figure-center"></a>
+<a href="../images/repo_layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: "><img data-src="../images/repo_layout.png" id="fig-repo-layout" class="quarto-figure quarto-figure-center"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-repo-layout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+Figure&nbsp;2
 </figcaption>
 </figure>
 </div>
