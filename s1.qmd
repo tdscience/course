@@ -198,17 +198,32 @@ There are two main ways of working with GitHub repositories in your machine: the
 It is also possible to use the built-in IDEs' extensions, but they generally have fewer features available.
 We will explore the different actions in the next session.
 
-## Practical:
-
 ::: callout-note
 You should have at least an IDE and a tool for using GitHub installed in your computer now.
 If you still need to install them, check the [prerequisites](prerequisites) for more information.
 :::
 
-### Exercise:
+## Exercise
 
-1.  Open the shell
-2.  Create a folder called `reproducible-research`
+1.  Open the shell and move around and explore your file system with the following commands:
+    -   `cd <directory_name>` to change directory
+    -   `ls` (macOS/Linux) or `dir` (Windows) to list directory contents
+    -   `pwd` (macOS/Linux) or `cd` (Windows) to print working directory
+2.  Create a folder called `reproducible-research` at a place of your choosing and open it with your IDE.
+3. 
+
+```sh
+# Make a folder in your home directory for github repos:
+mkdir ~/github
+# Make another folder inside that directory:
+mkdir ~/github/tdscience
+cd ~/github/tdscience
+gh repo clone tdscience/course
+code course # open the course folder with VS Code
+```
+
+
+
 3.  if you have the `gh` command-line tool installed, try:
     1.  `gh repo clone tdscience/course`
     2.  `cd course`

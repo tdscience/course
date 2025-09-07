@@ -254,17 +254,41 @@ GitHub Actions lets you automate tasks like testing or deployment.
 
 ### Contribute to the course repo
 
-- Clone the course repo if you have not already with the `gh` CLI tool in the github folder on your computer that you will create if it does not already exist (or another location of your choosing):
+- In PowerShell or a unix terminal, clone the course repo if you have not already with the `gh` CLI tool in the github folder on your computer that you will create if it does not already exist (or another location of your choosing). See [Session 1 exercise](s1.qmd#exercise) for instructions.
+<!-- s1.html#exercise -->
+
+Assuming you have saved the repo locally to `~/github/tdscience/course`, open it in an IDE of your choice from the command line.
+
+::: panel-tabset
+### VS Code
 
 ```sh
-# Make a folder in your home directory for github repos:
-mkdir ~/github
-# Make another folder inside that directory:
-mkdir ~/github/tdscience
-cd ~/github/tdscience
-gh repo clone tdscience/course
-code course # open the course folder with VS Code
+code ~/github/tdscience/course
 ```
+
+### RStudio
+
+```sh
+# Note: you need to include the .Rproj file
+rstudio ~/github/tdscience/course/course.Rproj
+```
+
+### Positron
+
+```sh
+positron ~/github/tdscience/course
+```
+
+### Any folder in terminal
+
+```sh
+cd ~/github/tdscience/course
+# Then open your preferred editor/IDE
+code .
+```
+
+:::
+
 
 - Add your name, GitHub username, favourite animal and where you're from to the people.csv file in the course repo at [github.com/tdscience/course/data/people.csv](https://github.com/tdscience/course/blob/main/data/people.csv)
 
