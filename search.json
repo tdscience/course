@@ -323,6 +323,13 @@
     "text": "12 Exercises\n\n12.1 Contribute to the course repo\n\nClone the course repo if you have not already with the gh CLI tool in the github folder on your computer that you will create if it does not already exist (or another location of your choosing):\n\n# Make a folder in your home directory for github repos:\nmkdir ~/github\n# Make another folder inside that directory:\nmkdir ~/github/tdscience\ncd ~/github/tdscience\ngh repo clone tdscience/course\ncode course # open the course folder with VS Code\n\nAdd your name, GitHub username, favourite animal and where you’re from to the people.csv file in the course repo at github.com/tdscience/course/data/people.csv\n\n\n\n\n\n\n\nNote\n\n\n\nTo reduce conflicts, edit a specific line number. This number should be assigned to you by the instructor, but if not, pick a random line number to edit between 3 and 100.\n\n\n\n\n12.2 Create a repository and make changes"
   },
   {
+    "objectID": "basic-example.html",
+    "href": "basic-example.html",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "x = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\n# Latitude, Longitude of IGOT\nigot_lon_lat = [(-9.142685, 38.736946)]\n# Create a square of 0.01 degrees around the point\nimport geopandas as gpd\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+  },
+  {
     "objectID": "plan.html",
     "href": "plan.html",
     "title": "1 Project Improvement Plan",
