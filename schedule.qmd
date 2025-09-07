@@ -8,7 +8,7 @@ pagetitle: "Course Schedule"
 
 | Time | Session  |   |   |
 |-----------------|-----------------------|:---------------:|-----------------|
-| 09:30 - 10:00 | Introduction |  | [{{< bi easel size=1.5em >}}](schedule.qmd) |
+| 09:30 - 10:00 | Introduction |  | [{{< bi easel size=1.5em >}}](slides/day1.qmd) |
 | 10:00 - 11:00 | Development environments, system commands, and version control | [{{< bi file-earmark-code size=1.5em >}}](day1-s1.qmd) |  |
 | 11:00 - 11:15 | Break |  |  |
 | 11:15 - 12:30 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](day1-s2.qmd) |  |
