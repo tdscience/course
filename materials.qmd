@@ -4,7 +4,11 @@ description-meta: "Access course materials including datasets and slides for the
 pagetitle: "Course Materials"
 ---
 
+All materials for each session are listed and can be accessed through the [schedule](schedule.qmd).
+
 [Datasets](data/)
 
 [Slides](slides/)
+
+
 
