@@ -17,15 +17,51 @@ author:
   - name: Juan Fonseca
     orcid: TBC
     affiliations: University of Leeds
-    role: Course co-leader
+    role: Demonstrator
 date: 2025-09-08
 ---
 
 # Introduction
 
-## The origins of the course
+## Course overview (see [schedule](../schedule.qmd) for details)
 
-::: {.fragment}
+### Day 1
+
+- **09:30-10:00 Introduction**
+- 10:00-11:00 Development environments, system commands, and version control		
+- 11:15-12:30	Sharing code and data		
+- 13:30-15:00	Reproducible papers and documentation with Quarto		
+- 15:15-16:30	Cross-references and citations with Quarto
+
+### Day 2
+
+- 09:30-10:30	Drafting a reproducible paper		
+- 10:45-12:30	Generating reproducible publication-quality visualisations		
+- 13:30-14:30	Editing other people’s work		
+- 14:45-16:00	Working on papers -> Presentations and wrap-up
+
+## About us
+
+### Robin Lovelace
+
+-   Professor of Transport Data Science
+-   Focus: influencing decision-making, to make it more evidence-based
+-   Large part of research has been in or for government
+<!-- -   In other words: my focus is on impact -->
+-   R package developer and data scientist
+-   New methods for more reproducible, data-driven and participatory transport planning
+<!-- -   Developer of tools used by hundreds of people leading to ~£1 billion pounds of investment being better spent than it would otherwise have been -->
+
+### Juan Fonseca
+
+- PhD student at the University of Leeds
+- Focus: fast and flexible models for estimating traffic
+- Developer of {Telraamr} and {[azuremapsr](https://github.com/juanfonsecaLS1/azuremapsr)} R packages, the latter of which was recently published on CRAN
+
+### You
+
+
+## The origins of the course
 
 ### "If only I was told this ealier in my career"
 
@@ -37,9 +73,7 @@ Imagine a workflow that enabled:
 - Automatic generation of results, including figures and tables...
   - That can be changed seamlessly when input datasets or code changes
 - Control over how you export and publish your work
-  - Including publication-quality PDFs, your own website, blogs, slides
+  - Including publication-quality PDFs, your own website, blogs, slidesj
 - Full reproducibility
 - You to share your work for maximum benefit to others
 
-
-:::
