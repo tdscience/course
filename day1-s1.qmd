@@ -17,29 +17,40 @@ format:
 
 ## Introduction to IDEs
 
-There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science. IDEs facilitate coding, data processing and analysis, visualisation, and version control. They also help in producing files to share your work, whether you're using scripts or notebook-style documents. We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.
+There are several integrated development environments (IDEs) that provide a comprehensive set of tools and features for data science.
+IDEs facilitate coding, data processing and analysis, visualisation, and version control.
+They also help in producing files to share your work, whether you're using scripts or notebook-style documents.
+We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, and Positron.
 
 ### RStudio
 
-RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics. It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management. (see @fig-rstudio-layout).
+RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics.
+It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management.
+(see @fig-rstudio-layout).
 
 ![Rstudio layout](images/Rstudio_layout.png){#fig-rstudio-layout .lightbox fig-align="center"}
 
 ### VS Code
 
-Visual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python. In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project. See (@fig-vscode-layout)
+Visual Studio Code (VS Code) is a code editor developed by Microsoft that can be used with a wide range of programming languages, including R and Python.
+In contrast to RStudio, it is not a full-fledged IDE out of the box, but its rich ecosystem of extensions makes it very flexible for any data science project.
+See (@fig-vscode-layout)
 
 ![VScode layout](images/vscode_layout.png){#fig-vscode-layout .lightbox fig-align="center"}
 
 ### Positron
 
-Positron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio. Built on the same foundation as VS Code, it is designed to support both R and Python. The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.
+Positron is a next-generation, free IDE for data science developed by Posit, the same company that makes RStudio.
+Built on the same foundation as VS Code, it is designed to support both R and Python.
+The interface of Positron integrates elements familiar from RStudio with the flexibility of VS Code.
 
 ![Positron layout](images/positron_layout.png){#fig-positron-layout .lightbox fig-align="center"}
 
-## Key features and extensions of VS Code
+## Key features and extensions of VS Code-based IDEs
 
-VS Code's power lies in its lightweight core and its extensible ecosystem. VS Code extensions support a wide range of languages and frameworks. Here are some of the most relevant
+VS Code's power lies in its lightweight core and its extensible ecosystem.
+VS Code extensions support a wide range of languages and frameworks.
+Here are some of the most relevant
 
 ### Core Features
 
@@ -51,13 +62,24 @@ VS Code's power lies in its lightweight core and its extensible ecosystem. VS Co
 
 -   *Debugging*: VS Code includes an interactive debugger that enables you to set breakpoints, inspect variables, and step through code to identify and fix bugs.
 
-We will use only the basic extensions as described in the [prerequisites](prerequisites.qmd). But it is worth exploring the extensions available on [VS Code Marketplace](https://marketplace.visualstudio.com/vscode).
+We will use only the basic extensions as described in the [prerequisites](prerequisites.qmd).
+But it is worth exploring the extensions available on [VS Code Marketplace](https://marketplace.visualstudio.com/vscode).
+
+### Python interpreter
+
+VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project.
+You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (@fig-python-interpreter).
+
+![Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file](images/python_interpreter.png){#fig-python-interpreter .lightbox fig-align="center"}
 
 ## The system shell and basic commands
 
-A system shell is a program that acts as a command-line interface (CLI) to an operating system. It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system's kernel. The shell is where you can run scripts, manage files, and execute programs.
+A system shell is a program that acts as a command-line interface (CLI) to an operating system.
+It allows you to interact with the computer by typing text commands and executes them by passing them to the operating system's kernel.
+The shell is where you can run scripts, manage files, and execute programs.
 
-The commands will depend on the operative system you have in your computer. Windows use the *Windows Command Prompt* or *PowerShell*, while macOS and Linux use *Bash/Zsh*.
+The commands will depend on the operative system you have in your computer.
+Windows use the *Windows Command Prompt* or *PowerShell*, while macOS and Linux use *Bash/Zsh*.
 
 ::: panel-tabset
 ### Windows
@@ -97,32 +119,45 @@ The commands will depend on the operative system you have in your computer. Wind
 
 ### Git
 
-Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with @fig-no-version-control?
+Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback.
+After completing at least one round of this process you can end up with several different versions of the same file.
+Are you familiar with @fig-no-version-control?
 
 ![Version control. From: [programmerhumor.io](https://programmerhumor.io/)](images/version_control_humour.jpg){#fig-no-version-control fig-align="center" width="50%"}
 
-Git is a great tool that tracks changes to files over time, especially in text-based files such as scripts, allowing multiple people to work on the same project without overwriting each other's work. When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes. By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.
+Git is a great tool that tracks changes to files over time, especially in text-based files such as scripts, allowing multiple people to work on the same project without overwriting each other's work.
+When Git is used as a version control system, a full copy of the entire project history is stored, making it easy to keep track of any changes, and even revert any changes.
+By using Git, it is possible to have different alternative versions of the same project, i.e. repository, without the need for independent files or folders for each version.
 
 ![Git Workflow. From: [Git for Data Science](https://valohai.com/blog/git-for-data-science/) by Juha Kiili](images/git-branches.png){fig-align="center"}
 
 ### GitHub
 
-GitHub is a platform that provides hosting for Git repositories. As a cloud-based service GitHub works as a *Hub* for storing, sharing and collaborating with others. Some tools in GitHub, like **pull requests** for proposing changes, **reviews** for asking others to check your work, and **issue tracking** for monitoring things to be corrected or improved, ease the collaborative work in different projects. Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.
+GitHub is a platform that provides hosting for Git repositories.
+As a cloud-based service GitHub works as a *Hub* for storing, sharing and collaborating with others.
+Some tools in GitHub, like **pull requests** for proposing changes, **reviews** for asking others to check your work, and **issue tracking** for monitoring things to be corrected or improved, ease the collaborative work in different projects.
+Other features (GitHub Actions) allow the automation of different processes, for example, building a web, and testing and deploying code.
 
 To learn more about the different elements in GitHub, you can start exploring the [GitHub skills courses](https://skills.github.com/).
 
 ### Working with GitHub
 
-Any Data Science project will benefit from having a clear file structure. The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files. We are going to use both Git and GitHub for keeping track of all changes.
+Any Data Science project will benefit from having a clear file structure.
+The starting point will be a folder (a.k.a. repository) in which we will store the code, data and other relevant files.
+We are going to use both Git and GitHub for keeping track of all changes.
 
-You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch. Here is a useful [cheat sheet](https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf).
+You might already be familiar with some key terms in a typical Git workflow: clone, commit, push, pull, or branch.
+Here is a useful [cheat sheet](https://www.jrebel.com/system/files?file=2025-06/git-cheat-sheet.pdf).
 
-There are two main ways of working with GitHub repositories in your machine: the `gh` command-line tool from the shell and the GitHub desktop graphical user interface. It is also possible to use the built-in IDEs' extensions, but they generally have fewer features available. We will explore the different actions in the next session.
+There are two main ways of working with GitHub repositories in your machine: the `gh` command-line tool from the shell and the GitHub desktop graphical user interface.
+It is also possible to use the built-in IDEs' extensions, but they generally have fewer features available.
+We will explore the different actions in the next session.
 
 ## Practical:
 
 ::: callout-note
-You should have at least an IDE and a tool for using GitHub installed in your computer now. If you still need to install them, check the [prerequisites](prerequisites) for more information.
+You should have at least an IDE and a tool for using GitHub installed in your computer now.
+If you still need to install them, check the [prerequisites](prerequisites) for more information.
 :::
 
 ### Exercise:
