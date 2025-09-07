@@ -25,8 +25,7 @@ We are going to focus on three IDEs used for R and/or Python: RStudio, VS Code, 
 ### RStudio
 
 RStudio is an IDE specifically designed for R, a programming language widely used for statistical computing and graphics.
-It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management.
-(see @fig-rstudio-layout).
+It provides a user-friendly interface that integrates a code editor, a console, and tools for plotting, history, debugging, and package management, as shown in @fig-rstudio-layout.
 
 ![Rstudio layout](images/Rstudio_layout.png){#fig-rstudio-layout .lightbox fig-align="center"}
 
