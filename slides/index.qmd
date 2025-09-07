@@ -1,1 +1,2 @@
 - [Pitch slides](pitch.html)
+- [Day 1](day1)

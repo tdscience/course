@@ -1,6 +1,6 @@
 ---
 title: "Schedule"
-description-meta: "Detailed schedule for the Data Science and Digital Tools for Transport Planning course, including session timings and topics."
+description-meta: "Detailed schedule for the Tools and Skills for Reproducible Transport Research course, including session timings and topics."
 pagetitle: "Course Schedule"
 ---
 

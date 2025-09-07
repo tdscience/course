@@ -1,10 +1,10 @@
 Package: tdscience-course
-Title: Data Science and Digital Tools for Transport Planning Course
+Title: Tools and Skills for Reproducible Transport Research Course
 Version: 0.1.0
 Authors@R: c(
     person("Your Name", "your.email@example.com", role = c("aut", "cre"))
   )
-Description: Course materials and practical workbooks for Data Science and Digital Tools for Transport Planning.
+Description: Course materials and practical workbooks for Tools and Skills for Reproducible Transport Research.
 License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Science and Digital Tools for Transport Planning"
+  title: "Tools and Skills for Reproducible Transport Research"
   favicon: images/icon.png
   repo-url: "https://github.com/tdscience/course"
   repo-actions: [issue]
@@ -26,7 +26,7 @@ website:
       - href: schedule.qmd
         text: Schedule
       # - href: tp-schedule.qmd
-      #   text: Data Science and Digital Tools for Transport Planning
+      #   text: Tools and Skills for Reproducible Transport Research
       - href: materials.qmd
         text: Materials
       - href: prerequisites.qmd
@@ -44,7 +44,8 @@ format:
     # css: styles.css
     toc: true
     title-prefix: "Data Science Course - "
-    author-meta: "Robin Lovelace"
+    number-sections: true
+    author-meta: "Robin Lovelace & contributors"
     date-meta: "2025"
     copyright: "© 2025 Robin Lovelace"
     license: "CC BY-SA"
