@@ -289,6 +289,27 @@ code .
 
 :::
 
+#### Open an issue
+
+From the IDE with the course repo open, open a terminal (e.g. with Ctrl+' on Windows or F1 and then type "focus terminal") and run the following command to create a new issue:
+
+```sh
+gh issue create
+```
+
+::: {.callout-note}
+You can toggle the terminal view with Ctrl+J in VS Code. In RStudio, VS Code, and Positron, Ctrl+1 focusses on the source editor pane.
+:::
+
+#### Create a branch
+
+You can also use the `gh` CLI to efficiently create a branch from the issue you just created. Assuming the issue number is 1, run:
+
+```sh
+gh issue develop 1 --checkout
+```
+
+#### Make changes
 
 - Add your name, GitHub username, favourite animal and where you're from to the people.csv file in the course repo at [github.com/tdscience/course/data/people.csv](https://github.com/tdscience/course/blob/main/data/people.csv)
 
