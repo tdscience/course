@@ -85,6 +85,21 @@ Links to learn more about devcontainers:
 -   [VS Code Devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
 -   [Discussion of limited support for devcontainers in Positron](https://github.com/posit-dev/positron/issues/4691)
 
+### Codespaces
+
+Codespaces is a cloud-based development environment provided by GitHub that allows you to create, manage, and share development environments directly from your GitHub repositories, as illustrated in @fig-codespace.
+
+![Course content rendered in an interactive Python cell in GitHub Codespaces](images/codespace.png){#fig-codespace .lightbox fig-align="center"}
+
+You can create a codespaces instance from any GitHub repository with the following URL pattern:
+
+https://codespaces.new/{username}/{repository}?quickstart=1
+
+So for this course, you can use https://codespaces.new/tdscience/course?quickstart=1 which is the link below, a good thing to add to your GitHub README files (see README.md):
+
+[![Open in DevContainer](https://img.shields.io/badge/Open%20in%20DevContainer-blue?logo=visual-studio-code)](https://codespaces.new/tdscience/course?quickstart=1)
+
+
 ### Python interpreter
 
 VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project.
