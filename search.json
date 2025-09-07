@@ -327,7 +327,7 @@
     "href": "basic-example.html",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "",
-    "text": "x = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\n# Latitude, Longitude of IGOT\nigot_lon_lat = [(-9.142685, 38.736946)]\n# Create a square of 0.01 degrees around the point\nimport geopandas as gpd\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "x = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\nimport geopandas as gpd\nimport shapely\n\n# Create a shapely Point geometry for IGOT\n# 38.7493402,-9.155268\n# Note: (longitude, latitude)\nigot_point = shapely.Point(-9.155268, 38.7493402)  \n\n# Create a GeoSeries from the point\nigot_geom = gpd.GeoSeries([igot_point], crs=\"EPSG:4326\")\n\n# Combine geometry with attributes in a dictionary\nigot_data = {\n    'name': ['IGOT-ULisboa'],\n    'geometry': igot_geom\n}\n\n# Create a GeoDataFrame\nigot_layer = gpd.GeoDataFrame(igot_data)\nigot_layer\nigot_layer.explore()\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "plan.html",
