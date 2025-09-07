@@ -266,6 +266,10 @@ gh repo clone tdscience/course
 code course # open the course folder with VS Code
 ```
 
-- Add your name, favourite animal and where you're from to the people.csv file in the course repo at [github.com/tdscience/course/data/people.csv](https://github.com/tdscience/course/blob/main/data/people.csv)
+- Add your name, GitHub username, favourite animal and where you're from to the people.csv file in the course repo at [github.com/tdscience/course/data/people.csv](https://github.com/tdscience/course/blob/main/data/people.csv)
+
+::: callout-note
+To reduce conflicts, edit a specific line number. This number should be assigned to you by the instructor, but if not, pick a random line number to edit between 3 and 100.
+:::
 
 ### Create a repository and make changes
