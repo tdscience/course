@@ -4,5 +4,5 @@
 #'
 #' @export
 hello_course <- function() {
-  message("Welcome to Data Science and Digital Tools for Transport Planning!")
+  message("Welcome to Tools and Skills for Reproducible Transport Research!")
 }

@@ -1,6 +1,6 @@
 ---
 title: "Prerequisites"
-description-meta: "Software and knowledge prerequisites for the Data Science and Digital Tools for Transport Planning course, including setup instructions and testing code."
+description-meta: "Software and knowledge prerequisites for the Tools and Skills for Reproducible Transport Research course, including setup instructions and testing code."
 pagetitle: "Course Prerequisites"
 ---
 

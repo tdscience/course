@@ -82,57 +82,9 @@ See the [prerequisites](prerequisites) page for details and to test your setup.
 
 # Draft agenda and contents
 
-## Day 1 (morning)
+See the [schedule](../schedule.html)
 
-- 09:30-10:00 Introduction
-  - Welcome and introductions (participatory)
-  - Definitions and motivations
-  - Course structure and objectives 
-- 10:00-11:00 Development environments, system commands, and version control
-- 11:00-11:15 Break
-- 11:15-12:30 Sharing code and data
-- 12:30-13:30 Lunch
-
-## Day 1 (afternoon)
-
-- 13:30-15:00 Reproducible papers and documentation with Quarto
-    - Introduction to Quarto ...
-    - Practical: creating a minimal reproducible paper
-- 15:00-15:15 Break
-- 15:15-16:30 Cross-references and citations with Quarto
-    - Cross-references
-    - Citations
-    - Bibliographies
-    - Tables and figures
-    - Practical: adding citations and references to your paper
-
-## Day 2 (morning)
-
-- 09:30-10:30 Drafting a reproducible paper
-  - Recap of Day 1
-  - Topic selection
-  - Individual work on paper drafts
-- 10:30-10:45 Break
-- 10:45-12:00 Generating reproducible publication-quality visualisations
-  - An introduction to visualisation and web application development for transport planning
-  - A deep dive into ggplot2
-  - Practical: creating a visualisation for your paper
-  <!-- - Interactive content for papers
-  - Static vs dynamic web applications
-  - Practical introduction to Shiny for R and Python
-  - (Optional): Front-end development -->
-- 12:00-13:00 Lunch
-
-## Day 2 (afternoon)
-
-- 13:00-14:30 Editing other people's work
-  - Reviewing and commenting on papers
-  - Making changes and submitting Pull Requests
-  - Controlled chaos: choose a paper and make some changes!
-- 14:30-14:45 Break
-- 14:45-16:00 Working on papers
-  - Practical session bringing together elements from the course
-- 16:00-17:00 Presentations and wrap-up
+{{< include ../schedule.qmd >}}
 
 ## Practicalities
 
