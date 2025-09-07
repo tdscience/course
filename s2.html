@@ -228,7 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">12</span> Exercises</a>
   <ul class="collapse">
   <li><a href="#contribute-to-the-course-repo" id="toc-contribute-to-the-course-repo" class="nav-link" data-scroll-target="#contribute-to-the-course-repo"><span class="header-section-number">12.1</span> Contribute to the course repo</a></li>
-  <li><a href="#create-a-repository-and-make-changes" id="toc-create-a-repository-and-make-changes" class="nav-link" data-scroll-target="#create-a-repository-and-make-changes"><span class="header-section-number">12.2</span> Create a repository and make changes</a></li>
+  <li><a href="#adding-content-to-your-course-repo" id="toc-adding-content-to-your-course-repo" class="nav-link" data-scroll-target="#adding-content-to-your-course-repo"><span class="header-section-number">12.2</span> Adding content to your course repo</a></li>
+  <li><a href="#bonus-create-a-repo-from-a-template" id="toc-bonus-create-a-repo-from-a-template" class="nav-link" data-scroll-target="#bonus-create-a-repo-from-a-template"><span class="header-section-number">12.3</span> Bonus: Create a repo from a template</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://cli.github.com/manual/"><i class="bi bi-link-45deg"></i>gh CLI manual</a></li><li><a href="https://docs.github.com/en/desktop"><i class="bi bi-link-45deg"></i>GitHub Desktop documentation</a></li></ul></div></nav>
@@ -282,7 +283,7 @@ Figure&nbsp;1: Search results for transport data science repositories on GitHub 
 </figcaption>
 </figure>
 </div>
-<p>See the <a href="https://cli.github.com/manual/">gh CLI manual</a> for more details.</p>
+<p>See the <a href="https://cli.github.com/manual/gh_search">gh CLI manual</a> for more details.</p>
 </section>
 <section id="exploring-githubs-web-interface" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exploring-githubs-web-interface"><span class="header-section-number">1.2</span> Exploring GitHub’s web interface</h3>
@@ -558,8 +559,21 @@ Note
 </div>
 </section>
 </section>
-<section id="create-a-repository-and-make-changes" class="level3" data-number="12.2">
-<h3 data-number="12.2" class="anchored" data-anchor-id="create-a-repository-and-make-changes"><span class="header-section-number">12.2</span> Create a repository and make changes</h3>
+<section id="adding-content-to-your-course-repo" class="level3" data-number="12.2">
+<h3 data-number="12.2" class="anchored" data-anchor-id="adding-content-to-your-course-repo"><span class="header-section-number">12.2</span> Adding content to your course repo</h3>
+<!-- http://localhost:4766/s1.html#exercise -->
+<p>Building on the exercise to create a repository called <code>eitcourse</code> in <a href="./s1.html#exercise">Session 1</a>, start adding contents to your repository.</p>
+</section>
+<section id="bonus-create-a-repo-from-a-template" class="level3" data-number="12.3">
+<h3 data-number="12.3" class="anchored" data-anchor-id="bonus-create-a-repo-from-a-template"><span class="header-section-number">12.3</span> Bonus: Create a repo from a template</h3>
+<!-- https://github.com/Robinlovelace/reproducible-project-template -->
+<p>If you’re feeling ambitious, you can try creating a repo with GitHub actions and other things for building a website. You could do this as follows, for example, starting with the repo at <a href="https://github.com/Robinlovelace/reproducible-project-template">github.com/Robinlovelace/reproducible-project-template</a>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename eitcourse to eitcourse-old:</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo rename eitcourse-old <span class="at">--repo</span> robinlovelace/eitcourse</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Or delete as follows or from website:</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo delete eitcourse-old <span class="at">--yes</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new repo from template:</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo create eitcourse <span class="at">--template</span> robinlovelace/reproducible-project-template <span class="at">--public</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
