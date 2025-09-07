@@ -181,7 +181,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features"><span class="header-section-number">2.1</span> Core Features</a></li>
   <li><a href="#devcontainers" id="toc-devcontainers" class="nav-link" data-scroll-target="#devcontainers"><span class="header-section-number">2.2</span> Devcontainers</a></li>
-  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter"><span class="header-section-number">2.3</span> Python interpreter</a></li>
+  <li><a href="#codespaces" id="toc-codespaces" class="nav-link" data-scroll-target="#codespaces"><span class="header-section-number">2.3</span> Codespaces</a></li>
+  <li><a href="#python-interpreter" id="toc-python-interpreter" class="nav-link" data-scroll-target="#python-interpreter"><span class="header-section-number">2.4</span> Python interpreter</a></li>
   </ul></li>
   <li><a href="#the-system-shell-and-basic-commands" id="toc-the-system-shell-and-basic-commands" class="nav-link" data-scroll-target="#the-system-shell-and-basic-commands"><span class="header-section-number">3</span> The system shell and basic commands</a></li>
   <li><a href="#introduction-to-version-control" id="toc-introduction-to-version-control" class="nav-link" data-scroll-target="#introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</a>
@@ -301,16 +302,39 @@ Figure&nbsp;4: Running the code in basic-example.qmd inside a local devcontainer
 <li><a href="https://github.com/posit-dev/positron/issues/4691">Discussion of limited support for devcontainers in Positron</a></li>
 </ul>
 </section>
-<section id="python-interpreter" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="python-interpreter"><span class="header-section-number">2.3</span> Python interpreter</h3>
-<p>VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (<a href="#fig-python-interpreter" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<section id="codespaces" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="codespaces"><span class="header-section-number">2.3</span> Codespaces</h3>
+<p>Codespaces is a cloud-based development environment provided by GitHub that allows you to create, manage, and share development environments directly from your GitHub repositories, as illustrated in <a href="#fig-codespace" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-codespace" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-codespace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Course content rendered in an interactive Python cell in GitHub Codespaces"><img src="images/codespace.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codespace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Course content rendered in an interactive Python cell in GitHub Codespaces
+</figcaption>
+</figure>
+</div>
+<p>You can create a codespaces instance from any GitHub repository with the following URL pattern:</p>
+<p>https://codespaces.new/{username}/{repository}?quickstart=1</p>
+<p>So for this course, you can use https://codespaces.new/tdscience/course?quickstart=1 which is the link below, a good thing to add to your GitHub README files (see README.md):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://codespaces.new/tdscience/course?quickstart=1"><img src="https://img.shields.io/badge/Open%20in%20DevContainer-blue?logo=visual-studio-code.png" class="img-fluid figure-img"></a></p>
+<figcaption>Open in DevContainer</figcaption>
+</figure>
+</div>
+</section>
+<section id="python-interpreter" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="python-interpreter"><span class="header-section-number">2.4</span> Python interpreter</h3>
+<p>VS Code-code based IDEs, including VS Code and Positron, allow you to select the Python interpreter you want to use for your project. You can choose the version of Python to use in the dropdown menu in the Select Python Environment button that appears when you run Python code inside a .qmd file (<a href="#fig-python-interpreter" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <div id="fig-python-interpreter" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-python-interpreter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/python_interpreter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"><img src="images/python_interpreter.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="images/python_interpreter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file"><img src="images/python_interpreter.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-python-interpreter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file
+Figure&nbsp;6: Select Python interpreter menu in VS Code which appears after running a line of Python code in a .qmd file
 </figcaption>
 </figure>
 </div>
@@ -370,14 +394,14 @@ Figure&nbsp;5: Select Python interpreter menu in VS Code which appears after run
 <h2 data-number="4" class="anchored" data-anchor-id="introduction-to-version-control"><span class="header-section-number">4</span> Introduction to Version control</h2>
 <section id="git" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="git"><span class="header-section-number">4.1</span> Git</h3>
-<p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;6</a>?</p>
+<p>Working with any type of digital file usually involves preparing it, revising and editing its contents, and sharing with others to get feedback. After completing at least one round of this process you can end up with several different versions of the same file. Are you familiar with <a href="#fig-no-version-control" class="quarto-xref">Figure&nbsp;7</a>?</p>
 <div id="fig-no-version-control" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/version_control_humour.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-no-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Version control. From: <a href="https://programmerhumor.io/">programmerhumor.io</a>
+Figure&nbsp;7: Version control. From: <a href="https://programmerhumor.io/">programmerhumor.io</a>
 </figcaption>
 </figure>
 </div>
