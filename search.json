@@ -159,7 +159,7 @@
     "href": "s3.html#practical-creating-a-minimal-reproducible-paper",
     "title": "Reproducible papers and documentation with Quarto",
     "section": "8 Practical: creating a minimal reproducible paper",
-    "text": "8 Practical: creating a minimal reproducible paper\nBuilding on the exercise to create a repository called eitcourse in Session 1, add more contents to a placeholder paper, e.g. called eitpaper.qmd.\nTry adding the following and render the document to HTML after each step:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output\nAdd incorrect code to the code chunk to see how Quarto handles errors, e.g. x = 5 + banana\nBonus: Render it to PDF.\nBonus: use the quarto preview command to see your changes in real time."
+    "text": "8 Practical: creating a minimal reproducible paper\nBuilding on the exercise to create a repository called eitcourse in Session 1, add more contents to a placeholder paper, e.g. called eitpaper.qmd.\nTry adding the following and render the document to HTML after each step:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output\nAdd incorrect code to the code chunk to see how Quarto handles errors, e.g. x = 5 + banana\nPush the changes to GitHub\n\nRemember the commands git add ., git commit -m \"message\", and git push\n\nBonus: Render it to PDF.\nBonus: use the quarto preview command to see your changes in real time."
   },
   {
     "objectID": "collisions.html",
