@@ -588,7 +588,7 @@
     "href": "slides/day1.html#reproducible-research",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Reproducible research",
-    "text": "Reproducible research"
+    "text": "Reproducible research\n\n“Research is considered to be reproducible when the exact results can be reproduced if given access to the original data, software, or code.” Source: displayr.com"
   },
   {
     "objectID": "slides/day1.html#example-of-reproducible-research-networkmerge",
@@ -645,6 +645,13 @@
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Which to use? Open to debate!",
     "text": "Which to use? Open to debate!\n\n\nSource: Fosstodon\n\n\n\nSource: Reddit"
+  },
+  {
+    "objectID": "slides/day1.html#which-language-to-use",
+    "href": "slides/day1.html#which-language-to-use",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Which language to use?",
+    "text": "Which language to use?\n\n\nSaw a post from an influencer telling followers to “stop using R for anything – use Python like a normal person”\nAs a 10+ year R & Python user, the irony is that 2025 is the best time EVER to be using R.\nHere’s why: [image or embed]\n\n— Kyle Walker (@kylewalker.bsky.social) September 1, 2025 at 3:13 PM"
   },
   {
     "objectID": "slides/day1.html#bonus-live-demo-of-vs-code-time-permitting",
