@@ -1,0 +1,29 @@
+
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+people = readr::read_csv("data/people.csv")
+dim(people)
+names(people)
+# remove tbc rows:
+people = people |>
+  filter(name != "tbc") |>
+  # Make animal names consistent, lowercase
+  mutate(animal = tolower(animal))
+dim(people)
+animal_popularity = people |>
+  count(animal, sort=TRUE) |>
+  filter(n > 1)
+```
+
+See the most popular animals in @tbl-animal-popularity.
+
+
+```{r}
+#| label: tbl-animal-popularity
+knitr::kable(animal_popularity, caption = "Most popular animals")
+```
