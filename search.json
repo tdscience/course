@@ -152,14 +152,14 @@
     "href": "s3.html#demonstration-of-reproducible-papers",
     "title": "Reproducible papers and documentation with Quarto",
     "section": "7 Demonstration of reproducible papers",
-    "text": "7 Demonstration of reproducible papers\nA good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available here.\n\n7.1 Exercise\nCan you clone the repository and render the final version of the paper?"
+    "text": "7 Demonstration of reproducible papers\nA good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available here."
   },
   {
     "objectID": "s3.html#practical-creating-a-minimal-reproducible-paper",
     "href": "s3.html#practical-creating-a-minimal-reproducible-paper",
     "title": "Reproducible papers and documentation with Quarto",
     "section": "8 Practical: creating a minimal reproducible paper",
-    "text": "8 Practical: creating a minimal reproducible paper\nCan you create a short paper that produces a PDF or HTML file? The rendered document should include:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output"
+    "text": "8 Practical: creating a minimal reproducible paper\nBuilding on the exercise to create a repository called eitcourse in Session 1, add more contents to a placeholder paper, e.g. called eitpaper.qmd.\nTry adding the following and render the document to HTML after each step:\n\nAt least two types of headings (e.g. h1, h2, etc.)\nSome formatted text (e.g. bold, italic, etc.)\nA simple equation\nA code chunk that produces any type of output\nAdd incorrect code to the code chunk to see how Quarto handles errors, e.g. x = 5 + banana\nBonus: Render it to PDF.\nBonus: use the quarto preview command to see your changes in real time."
   },
   {
     "objectID": "collisions.html",
