@@ -34,7 +34,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-91c4a3a8cffbae36f904c725a2d9851b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -165,8 +185,8 @@ Juan Fonseca <a href="https://orcid.org/TBC" class="quarto-title-author-orcid"> 
 <h1>Introduction</h1>
 
 </section>
-<section id="course-overview-see-schedule-housekeeping" class="slide level2">
-<h2>Course overview (see <a href="../schedule.html">schedule</a>) + ‘housekeeping’</h2>
+<section id="course-overview-see-schedule" class="slide level2">
+<h2>Course overview (see <a href="../schedule.html">schedule</a>)</h2>
 <h3 id="day-1">Day 1</h3>
 <ul>
 <li><strong>09:30-10:00 Introduction</strong></li>
@@ -187,6 +207,20 @@ Juan Fonseca <a href="https://orcid.org/TBC" class="quarto-title-author-orcid"> 
 <li>13:30-14:30 Editing other people’s work<br>
 </li>
 <li>14:45-16:00 Working on papers -&gt; Presentations and wrap-up</li>
+</ul>
+</section>
+<section id="housekeeping" class="slide level2">
+<h2>Housekeeping</h2>
+<h3 id="wifi-if-eduroam-is-not-working">WiFi (if eduroam is not working):</h3>
+<ul>
+<li>SSID: Eventos IGOT</li>
+<li>Password: sAfrcutm</li>
+</ul>
+<h3 id="coffe-will-be-downstairs">Coffe will be downstairs</h3>
+<h3 id="toilets">Toilets:</h3>
+<ul>
+<li>Women’s in front of Room 2.1</li>
+<li>Men’s by the stairs and</li>
 </ul>
 </section>
 <section id="about-us" class="slide level2">
@@ -277,7 +311,7 @@ Juan Fonseca <a href="https://orcid.org/TBC" class="quarto-title-author-orcid"> 
 <section id="example-biclar" class="slide level2">
 <h2>Example: biclaR</h2>
 
-<img data-src="images/paste-6.png" class="r-stretch"><p>See <a href="https://biclar.tmlmobilidade.pt/index/">biclar.tmobilidad.pt source</a> code: <a href="#/0">github.com/u-shift</a></p>
+<img data-src="images/paste-6.png" class="r-stretch"><p>See <a href="https://biclar.tmlmobilidade.pt/index/">biclar.tmobilidad.pt source</a> code: <a href="#/0">github.com/u-shift</a> <span class="citation" data-cites="félix2025">(<a href="#/exercises-solo-working-through-the-practical-until-1230" role="doc-biblioref" onclick="">Félix, Moura, and Lovelace 2025</a>)</span>.</p>
 </section>
 <section id="course-principles" class="slide level2">
 <h2>Course principles</h2>
@@ -458,7 +492,7 @@ Table&nbsp;1: Comparison of IDEs for Data Science
 <p>As a 10+ year R &amp; Python user, the irony is that 2025 is the best time EVER to be using R.</p>
 <p>Here’s why: <br><br><a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg/post/3lxrrwkqmb72e?ref_src=embed">[image or embed]</a></p>
 <p></p>
-<p>— Kyle Walker (<a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg?ref_src=embed"><span class="citation" data-cites="kylewalker.bsky.social">@kylewalker.bsky.social</span></a>) <a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg/post/3lxrrwkqmb72e?ref_src=embed">September 1, 2025 at 3:13 PM</a></p>
+<p>— Kyle Walker (<a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg?ref_src=embed"><span class="citation" data-cites="kylewalker.bsky.social">(</span></a><a href="#/exercises-solo-working-through-the-practical-until-1230" role="doc-biblioref" onclick=""><strong>kylewalker.bsky.social?</strong></a>)) <a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg/post/3lxrrwkqmb72e?ref_src=embed">September 1, 2025 at 3:13 PM</a></p>
 </blockquote>
 <script async="" src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 </section>
@@ -551,10 +585,15 @@ Figure&nbsp;2
 <p>Share your changes with the world:</p>
 
 <img data-src="../images/push_commit.png" class="r-stretch"></section>
-<section id="exercises-solo-working-through-the-practical-until-1230" class="slide level2">
+<section id="exercises-solo-working-through-the-practical-until-1230" class="slide level2 smaller scrollable">
 <h2>Exercises: Solo working through the practical (until ~12:30)</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-félix2025" class="csl-entry" role="listitem">
+Félix, Rosa, Filipe Moura, and Robin Lovelace. 2025. <span>“Reproducible Methods for Modeling Combined Public Transport and Cycling Trips and Associated Benefits: Evidence from the biclaR Tool.”</span> <em>Computers, Environment and Urban Systems</em> 117 (April): 102230. <a href="https://doi.org/10.1016/j.compenvurbsys.2024.102230">https://doi.org/10.1016/j.compenvurbsys.2024.102230</a>.
+</div>
+</div>
 </section></section>
 
     </div>
