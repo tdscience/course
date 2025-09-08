@@ -82,7 +82,7 @@
     "href": "slides/pitch.html#day-1",
     "title": "Schedule",
     "section": "Day 1",
-    "text": "Day 1\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto"
+    "text": "Day 1\n\n\n\n\n\n\n\n\n\nTime\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nGetting set-up with git and github\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nSharing code and data\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nReproducible papers and documentation with Quarto + Cross-references and citations with Quarto"
   },
   {
     "objectID": "slides/pitch.html#day-2",
@@ -424,7 +424,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nGetting set-up with git and github\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nSharing code and data\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nReproducible papers and documentation with Quarto + Cross-references and citations with Quarto",
     "crumbs": [
       "Schedule"
     ]
@@ -434,7 +434,7 @@
     "href": "schedule.html#day-1",
     "title": "Schedule",
     "section": "",
-    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nSharing code and data\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nReproducible papers and documentation with Quarto\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nCross-references and citations with Quarto",
+    "text": "Time\nSession\n\n\n\n\n\n\n09:30 - 10:00\nIntroduction\n\n\n\n\n10:00 - 11:00\nDevelopment environments, system commands, and version control\n\n\n\n\n11:00 - 11:15\nBreak\n\n\n\n\n11:15 - 12:30\nGetting set-up with git and github\n\n\n\n\n12:30 - 13:30\nLunch\n\n\n\n\n13:30 - 15:00\nSharing code and data\n\n\n\n\n15:00 - 15:15\nBreak\n\n\n\n\n15:15 - 16:30\nReproducible papers and documentation with Quarto + Cross-references and citations with Quarto",
     "crumbs": [
       "Schedule"
     ]
