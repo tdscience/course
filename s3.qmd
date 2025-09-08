@@ -140,16 +140,18 @@ Combining Quarto and GitHub helps you make your research transparent, collaborat
 
 A good example of a reproducible paper that uses Quarto is the Route network simplification for transport planning, available [here](https://github.com/nptscot/networkmerge).
 
-### Exercise
-
-Can you clone the repository and render the final version of the paper?
-
 ## Practical: creating a minimal reproducible paper
 
-Can you create a short paper that produces a PDF or HTML file? The rendered document should include:
+Building on the exercise to create a repository called `eitcourse` in [Session 1](s1.qmd#exercise), add more contents to a placeholder paper, e.g. called `eitpaper.qmd`.
+
+Try adding the following and render the document to HTML after each step:
+
 
 - At least two types of headings (e.g. h1, h2, etc.)
 - Some formatted text (e.g. bold, italic, etc.)
 - A simple equation
 - A code chunk that produces any type of output
+- Add incorrect code to the code chunk to see how Quarto handles errors, e.g. `x = 5 + banana`
 
+- Bonus: Render it to PDF.
+- Bonus: use the `quarto preview` command to see your changes in real time. 
