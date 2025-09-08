@@ -1,4 +1,10 @@
-
+---
+title: "People and their favourite animals"
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
 
 ```{r}
 library(tidyverse)
@@ -6,6 +12,7 @@ library(tidyverse)
 
 
 ```{r}
+#| include: false
 people = readr::read_csv("data/people.csv")
 dim(people)
 names(people)
@@ -26,4 +33,31 @@ See the most popular animals in @tbl-animal-popularity.
 ```{r}
 #| label: tbl-animal-popularity
 knitr::kable(animal_popularity, caption = "Most popular animals")
+```
+
+See a map of locations where people are from in @fig-people-map.
+
+```{r}
+#| label: fig-people-map-data
+if (!file.exists("data/people_geo.gejson")) {
+  if (!requireNamespace("tidygeocoder", quietly = TRUE)) install.packages("tidygeocoder")
+  library(sf)
+  people_geo = people |>
+    tidygeocoder::geocode(address = from, method = 'osm', lat = latitude , long = longitude) |>
+    st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
+  people_geo
+  sf::write_sf(people_geo, "data/people_geo.geojson", delete_dsn = TRUE)
+} else {
+  library(sf)
+  people_geo = sf::read_sf("data/people_geo.geojson")
+}
+```
+
+```{r}
+#| label: fig-people-map
+#| fig-cap: Map showing where people are from and their favourite animals
+library(tmap)
+tmap_mode("view")
+tm_shape(people_geo) +
+  tm_dots(size = 1, fill = "animal")
 ```
