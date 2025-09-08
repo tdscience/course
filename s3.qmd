@@ -152,6 +152,8 @@ Try adding the following and render the document to HTML after each step:
 - A simple equation
 - A code chunk that produces any type of output
 - Add incorrect code to the code chunk to see how Quarto handles errors, e.g. `x = 5 + banana`
+- Push the changes to GitHub
+  - Remember the commands `git add .`, `git commit -m "message"`, and `git push`
 
 - Bonus: Render it to PDF.
 - Bonus: use the `quarto preview` command to see your changes in real time. 
