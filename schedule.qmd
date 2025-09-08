@@ -11,11 +11,11 @@ pagetitle: "Course Schedule"
 | 09:30 - 10:00 | Introduction |  | [{{< bi easel size=1.5em >}}](slides/day1.qmd) |
 | 10:00 - 11:00 | Development environments, system commands, and version control | [{{< bi file-earmark-code size=1.5em >}}](s1.qmd) |  |
 | 11:00 - 11:15 | Break |  |  |
-| 11:15 - 12:30 | Getting set-up with git and github | [{{< bi file-earmark-code size=1.5em >}}](s2.qmd) |  |
+| 11:15 - 12:30 | Getting set-up with git and github |  |  |
 | 12:30 - 13:30 | Lunch |  |  |
-| 13:30 - 15:00 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](s3.qmd) |  |
+| 13:30 - 15:00 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](s2.qmd) |  |
 | 15:00 - 15:15 | Break |  |  |
-| 15:15 - 16:30 | Reproducible papers and documentation with Quarto + Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s4.qmd) |  |
+| 15:15 - 16:30 | Reproducible papers and documentation with Quarto + Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s3.qmd) [{{< bi file-earmark-code size=1.5em >}}](s4.qmd) |  |
 
 : {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
