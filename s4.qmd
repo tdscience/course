@@ -68,25 +68,30 @@ To add captions to your code-generated tables and figures, use `fig-cap` or `tbl
 
 ## Citations
 
-Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating [Zotero](https://www.zotero.org/) into your workflow. This integration is already set up in RStudio and Positron in the visual editor. For VS Code, you can install an extension to use citations from your Zotero library, e.g. [Citation Picker for Zotero](https://marketplace.visualstudio.com/items?itemName=mblode.zotero).
+Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating [Zotero](https://www.zotero.org/) into your workflow. This integration is already set up for all IDEs in the visual editor.
+
+To activate the visual editor on Positron and VS Code, right-click on your qmd file and select `Edit in Visual Mode`.
+
+![Activate visual mode](images/visual_editor_menu.png)
+
+::: callout-tip
+To add captions to your code-generated tables and figures, use `fig-cap` or `tbl-cap` in the chunk headers.
+:::
 
 It is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The [Better BibTeX plug-in](https://retorque.re/zotero-better-bibtex/) can help with that.
 
-Once you have Zotero and your IDE integrated, the process should be smooth following these steps:
+To start adding references to your work, if you are in the visual editor, start by typing an `@`. A menu with a list of possible references will pop up.
 
-- Add a bibliography file (e.g., `references.bib`) to your project.
+![Menu with citable sources](images/menu_references.png)
 
-- In your YAML header, include:
+You can look for the source manually within that menu, but the most efficient way is to type directly the BibTeX citation key in Zotero.
 
-    ```
-    bibliography: references.bib
-    ```
+![Citation key in Zotero](images/citation_key_zotero.png)
 
-- To cite a source, use `[@key]` in your text:
+After selecting the source, a window will appear where all the details for that citation will appear. You can also choose where to add that citation. This means that the system does collect all the citations that you use in your work, and you do not have to worry about creating a bibliography manually!
 
-    ```
-    Recent studies show... [@smith2020].
-    ```
+![Citation window](images/citation_new.png)
+
 
 ## Bibliographies
 
