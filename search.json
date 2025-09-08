@@ -591,11 +591,11 @@
     "text": "Reproducible research\n\n“Research is considered to be reproducible when the exact results can be reproduced if given access to the original data, software, or code.” Source: displayr.com"
   },
   {
-    "objectID": "slides/day1.html#example-of-reproducible-research-networkmerge",
-    "href": "slides/day1.html#example-of-reproducible-research-networkmerge",
+    "objectID": "slides/day1.html#stages-of-open-and-reproducible-science",
+    "href": "slides/day1.html#stages-of-open-and-reproducible-science",
     "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Example of reproducible research: networkmerge",
-    "text": "Example of reproducible research: networkmerge\nSee paper website: https://nptscot.github.io/networkmerge/"
+    "section": "Stages of open and reproducible science",
+    "text": "Stages of open and reproducible science\n\n\n\nOpen access to the publications\nOpen access to sample (synthetic if sensitive) data\nOpen access to the code\nFully reproducible paper published with documentation\nProject deployed in tool for non-specialist use"
   },
   {
     "objectID": "slides/day1.html#example-rs5c-conference-slides",
@@ -603,6 +603,13 @@
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Example: rs5c conference slides",
     "text": "Example: rs5c conference slides\nSee slides website: https://robinlovelace.github.io/rs5c/"
+  },
+  {
+    "objectID": "slides/day1.html#example-of-reproducible-research-networkmerge",
+    "href": "slides/day1.html#example-of-reproducible-research-networkmerge",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Example of reproducible research: networkmerge",
+    "text": "Example of reproducible research: networkmerge\nSee paper website: https://nptscot.github.io/networkmerge/"
   },
   {
     "objectID": "slides/day1.html#example-biclar",
