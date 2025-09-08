@@ -97,14 +97,35 @@ Imagine a workflow that enabled:
 
 ![](images/paste-3.png)
 
+## Stages of open and reproducible science
 
-## Example of reproducible research: networkmerge
+::::: columns
+::: {.column width="40%"}
+1.  Open access to the publications
 
-See paper website: https://nptscot.github.io/networkmerge/
+2.  Open access to sample (synthetic if sensitive) data
+
+3.  Open access to the code
+
+4.  Fully reproducible paper published with documentation
+
+5.  Project deployed in tool for non-specialist use
+:::
+
+::: {.column width="60%"}
+![](images/paste-12.png)
+:::
+:::::
+
 
 ## Example: rs5c conference slides
 
 See slides website: https://robinlovelace.github.io/rs5c/
+
+
+## Example of reproducible research: networkmerge
+
+See paper website: https://nptscot.github.io/networkmerge/
 
 ## Example: biclaR
 
