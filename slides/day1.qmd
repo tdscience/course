@@ -117,19 +117,23 @@ Imagine a workflow that enabled:
 :::
 :::::
 
-
 ## Example: rs5c conference slides
 
-See slides website: https://robinlovelace.github.io/rs5c/
+See slides website: [robinlovelace.github.io/rs5c/](https://robinlovelace.github.io/rs5c/) (source code [github.com/robinlovelace/rs5c](https://github.com/Robinlovelace/rs5c/))
 
+![](images/paste-4.png)
 
 ## Example of reproducible research: networkmerge
 
-See paper website: https://nptscot.github.io/networkmerge/
+![](images/paste-5.png)
+
+See paper website: https://nptscot.github.io/networkmerge/ Source: [github.com/nptscot](https://github.com/nptscot)
 
 ## Example: biclaR
 
-See https://github.com/U-Shift/biclar
+![](images/paste-6.png)
+
+See [biclar.tmobilidad.pt source](https://biclar.tmlmobilidade.pt/index/) code: [github.com/u-shift](#0)
 
 ## Course principles
 
