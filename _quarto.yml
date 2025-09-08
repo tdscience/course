@@ -35,6 +35,8 @@ website:
         contents:
           - href: collisions.qmd
             text: Road traffic collisions
+          - href: peoplemap.qmd
+            text: People and their favourite animals
       - href: https://github.com/tdscience/course/discussions
         text: Forum
 
