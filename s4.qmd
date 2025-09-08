@@ -80,7 +80,7 @@ To add captions to your code-generated tables and figures, use `fig-cap` or `tbl
 
 It is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The [Better BibTeX plug-in](https://retorque.re/zotero-better-bibtex/) can help with that.
 
-To start adding references to your work, if you are the visual editor, start by typing an `@`. A menu with a list of possible references will pop-up.
+To start adding references to your work, if you are in the visual editor, start by typing an `@`. A menu with a list of possible references will pop up.
 
 ![Menu with citable sources](images/menu_references.png)
 
