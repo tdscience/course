@@ -602,21 +602,21 @@
     "href": "slides/day1.html#example-rs5c-conference-slides",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Example: rs5c conference slides",
-    "text": "Example: rs5c conference slides\nSee slides website: https://robinlovelace.github.io/rs5c/"
+    "text": "Example: rs5c conference slides\nSee slides website: robinlovelace.github.io/rs5c/ (source code github.com/robinlovelace/rs5c)"
   },
   {
     "objectID": "slides/day1.html#example-of-reproducible-research-networkmerge",
     "href": "slides/day1.html#example-of-reproducible-research-networkmerge",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Example of reproducible research: networkmerge",
-    "text": "Example of reproducible research: networkmerge\nSee paper website: https://nptscot.github.io/networkmerge/"
+    "text": "Example of reproducible research: networkmerge\n\nSee paper website: https://nptscot.github.io/networkmerge/ Source: github.com/nptscot"
   },
   {
     "objectID": "slides/day1.html#example-biclar",
     "href": "slides/day1.html#example-biclar",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Example: biclaR",
-    "text": "Example: biclaR\nSee https://github.com/U-Shift/biclar"
+    "text": "Example: biclaR\n\nSee biclar.tmobilidad.pt source code: github.com/u-shift"
   },
   {
     "objectID": "slides/day1.html#course-principles",
