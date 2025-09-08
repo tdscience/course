@@ -93,6 +93,11 @@ Imagine a workflow that enabled:
 
 <!-- TODO: copy slides across from tartu/road safety conferences -->
 
+"Research is considered to be reproducible when the exact results can be reproduced if given access to the original data, software, or code." Source: [displayr.com](https://www.displayr.com/what-is-reproducible-research/)
+
+![](images/paste-3.png)
+
+
 ## Example of reproducible research: networkmerge
 
 See paper website: https://nptscot.github.io/networkmerge/
@@ -168,23 +173,41 @@ knitr::kable(ides, caption = "Comparison of IDEs for Data Science")
 
 ::::: columns
 ::: column
-
 Source: [Fosstodon](https://fosstodon.org/@robinlovelace/115164201737081008)
 
 ![](images/paste-1.png)
 
 <!-- https://fosstodon.org/@robinlovelace/115164201737081008 -->
-
 :::
 
 ::: column
-
 Source: [Reddit](https://www.reddit.com/r/RStudio/comments/1msbm1o/positron_vs_rstudio/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 ![](images/paste-2.png)
-
 :::
 :::::
+
+## Which language to use?
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:ksubuwag725ajllqmo2ucrtg/app.bsky.feed.post/3lxrrwkqmb72e" data-bluesky-cid="bafyreiag46sexxkngqzlvak7gyvcqjbmgng3itgtnuxcbc7g4ov4stai4q" data-bluesky-embed-color-mode="system">
+
+<p lang>
+
+Saw a post from an influencer telling followers to "stop using R for anything -- use Python like a normal person"
+
+As a 10+ year R & Python user, the irony is that 2025 is the best time EVER to be using R.
+
+Here's why: <br><br><a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg/post/3lxrrwkqmb72e?ref_src=embed">\[image or embed\]</a>
+
+</p>
+
+— Kyle Walker (<a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg?ref_src=embed">@kylewalker.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:ksubuwag725ajllqmo2ucrtg/post/3lxrrwkqmb72e?ref_src=embed">September 1, 2025 at 3:13 PM</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+```
 
 ## Bonus: Live demo of VS Code (time permitting)
 
@@ -224,7 +247,6 @@ Use the search bar to discover projects and developers:
 Or with the `gh` CLI tool 😎
 
 ![Search results for transport data science repositories on GitHub using the gh CLI](../images/search-repos-gh-cli.png){#fig-search-repos-gh-cli .lightbox fig-align="center"}
-
 
 ## Repository structure
 
