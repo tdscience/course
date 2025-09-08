@@ -18,6 +18,7 @@ author:
     affiliations: University of Leeds
     role: Demonstrator
 date: 2025-09-08
+bibliography: references.bib
 ---
 
 # Introduction
@@ -133,7 +134,7 @@ See paper website: https://nptscot.github.io/networkmerge/ Source: [github.com/n
 
 ![](images/paste-6.png)
 
-See [biclar.tmobilidad.pt source](https://biclar.tmlmobilidade.pt/index/) code: [github.com/u-shift](#0)
+See [biclar.tmobilidad.pt source](https://biclar.tmlmobilidade.pt/index/) code: [github.com/u-shift](#0) [@félix2025].
 
 ## Course principles
 
