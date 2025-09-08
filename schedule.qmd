@@ -14,8 +14,8 @@ pagetitle: "Course Schedule"
 | 11:15 - 12:30 | Getting set-up with git and github |  |  |
 | 12:30 - 13:30 | Lunch |  |  |
 | 13:30 - 15:00 | Sharing code and data | [{{< bi file-earmark-code size=1.5em >}}](s2.qmd) |  |
-| 15:00 - 15:15 | Break |  |  |
-| 15:15 - 16:30 | Reproducible papers and documentation with Quarto + Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s3.qmd) [{{< bi file-earmark-code size=1.5em >}}](s4.qmd) |  |
+| 15:00 - 15:00 | Break |  |  |
+| 15:30 - 16:30 | Reproducible papers and documentation with Quarto + Cross-references and citations with Quarto | [{{< bi file-earmark-code size=1.5em >}}](s3.qmd) [{{< bi file-earmark-code size=1.5em >}}](s4.qmd) |  |
 
 : {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
