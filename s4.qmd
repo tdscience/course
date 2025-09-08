@@ -70,7 +70,7 @@ To add captions to your code-generated tables and figures, use `fig-cap` or `tbl
 
 Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating [Zotero](https://www.zotero.org/) into your workflow. This integration is already set up for all IDEs in the visual editor.
 
-To activate the visual editor on Positron and VS Code, right-click on your qmd file and select `Edit in Visual Model`.
+To activate the visual editor on Positron and VS Code, right-click on your qmd file and select `Edit in Visual Mode`.
 
 ![Activate visual mode](images/visual_editor_menu.png)
 
