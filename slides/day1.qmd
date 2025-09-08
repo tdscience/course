@@ -23,7 +23,7 @@ bibliography: references.bib
 
 # Introduction
 
-## Course overview (see [schedule](../schedule.qmd)) + 'housekeeping'
+## Course overview (see [schedule](../schedule.qmd)) 
 
 ### Day 1
 
@@ -39,6 +39,19 @@ bibliography: references.bib
 -   10:45-12:30 Generating reproducible publication-quality visualisations\
 -   13:30-14:30 Editing other people’s work\
 -   14:45-16:00 Working on papers -\> Presentations and wrap-up
+
+## Housekeeping
+
+### WiFi (if eduroam is not working):
+- SSID: Eventos IGOT
+- Password: sAfrcutm 
+
+### Coffe will be downstairs
+
+### Toilets:
+ 
+ - Women's in front of Room 2.1
+ - Men's by the stairs and 
 
 ## About us
 
