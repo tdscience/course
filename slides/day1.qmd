@@ -47,7 +47,10 @@ date: 2025-09-08
 
 ### Coffe will be downstairs
 
-### Men's toilets by the stairs and Women's in front of Room 2.1
+### Toilets:
+ 
+ - Women's in front of Room 2.1
+ - Men's by the stairs and 
 
 ## About us
 
