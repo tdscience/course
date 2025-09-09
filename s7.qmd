@@ -5,6 +5,34 @@ pagetitle: "Session 7: Peer Review and Collaboration"
 format: html
 ---
 
--   Reviewing and commenting on papers
--   Making changes and submitting Pull Requests
--   Controlled chaos: choose a paper and make some changes!
+# Rename your repo
+
+Search the official GitHub documentation at docs.github.com for "rename a repository".
+
+It should take you [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
+
+Follow the instructions to rename your repo to `eitcourse-yourname`.
+
+You can also rename it using the `gh cli` with:
+
+``` bash
+gh repo rename eitcourse-robinlovelace
+```
+
+It will ask you to confirm.
+Type "y" if you're sure.
+
+![](images/paste-6.png)
+
+Then, bingo, it will be renamed!
+
+```         
+✓ Renamed repository Robinlovelace/eitcourse-robinlovelace
+✓ Updated the "origin" remote
+```
+
+# Reviewing and commenting on papers
+
+# Making changes and submitting Pull Requests
+
+# Controlled chaos: choose a paper and make some changes!
