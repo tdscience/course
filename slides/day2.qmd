@@ -1,0 +1,124 @@
+---
+title: Tools and Skills for Reproducible Transport Research
+subtitle: Day 2
+format:
+  # Install plugin with quarto install extension grantmcdermott/quarto-revealjs-clean
+  clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Robin Lovelace
+    orcid: 0000-0001-5679-6536
+    email: r.lovelace@leeds.ac.uk
+    affiliations: University of Leeds
+    role: Course leader
+  - name: Juan Fonseca
+    orcid: TBC
+    affiliations: University of Leeds
+    role: Demonstrator
+date: 2025-09-09
+bibliography: references.bib
+---
+
+# Introduction
+
+## Course overview (see [schedule](../schedule.qmd))
+
+### Day 1 (recap)
+
+-   09:30-10:00 Introduction
+-   10:00-11:00 Development environments, system commands, and version control
+-   11:15-12:30 Sharing code and data
+-   13:30-15:00 Reproducible papers and documentation with Quarto
+-   15:15-16:30 Cross-references and citations with Quarto
+
+### Day 2
+
+-   **09:30-10:30 Drafting a reproducible paper**
+-   10:45-12:30 Generating reproducible publication-quality visualisations
+-   13:30-14:30 Editing other people's work
+-   14:45-16:00 Working on papers -> Presentations and wrap-up
+
+## Housekeeping
+
+### WiFi (if eduroam is not working):
+- SSID: Eventos IGOT
+- Password: sAfrcutm
+
+### Coffee will be downstairs
+
+### Toilets:
+
+- Women's in front of Room 2.1
+- Men's by the stairs
+
+## About us
+
+### Robin Lovelace
+
+-   Professor of Transport Data Science
+-   Focus: influencing decision-making, to make it more evidence-based
+-   R package developer and data scientist
+-   New methods for more reproducible, data-driven and participatory transport planning
+
+### Juan Fonseca
+
+-   PhD student at the University of Leeds
+-   Focus: fast and flexible models for estimating traffic
+-   Developer of {Telraamr} and {azuremapsr} R packages, the latter of which was recently published on CRAN
+
+## Recap of Day 1
+
+# Topic selection
+
+Mind-mapping tools including pen and paper and online tools such as [excalidraw](https://excalidraw.com/).
+
+An advantage with Excalidraw is that you can instantly share your mindmap and collaborate with others.
+
+See <https://excalidraw.com/#room=cf5501f9193c8345ee2d,h6D4Ddxni6JBK0dg0m2aZQ> for an example mindmap.
+
+![](../images/paste-4.png)
+
+# Exercises
+
+## Generate a 'mind map' of a topic of interest to you
+
+-   Go to [excalidraw](https://excalidraw.com/) and start sketching an idea, including inputs and outputs
+-   Bonus: discuss with a partner and get feedback
+
+## Create a reproducible paper skeleton
+
+Create a file called `paper.qmd` in your project folder, and add the following content:
+
+``` yaml
+---
+title: "Your title here"
+author: "Your name here"
+format: html
+---
+```
+
+Add headings with the following structure:
+
+``` markdown
+# Introduction {#sec-intro}
+
+<!-- TODO: add content -->
+
+# Methods {#sec-methods}
+
+# Results {#sec-results}
+
+# Discussion {#sec-discussion}
+
+# References
+```
+
+## Add your mindmap to the paper as Figure 1
+
+-   Export your mindmap from excalidraw as a PNG or JPG file or take a screenshot
+-   Save the image in a folder called `images` in your project folder, or paste it into the paper while in visual mode
+-   Add it to your paper under the Introduction section, with a caption
+
+## Any questions before we move to the practical session?
