@@ -114,6 +114,15 @@ Then, submit a pull request (PR) with:
 ``` bash
 gh pr create
 ```
+If you get an error about the default repo not being set, you can set the default repo with:
+
+``` bash
+gh repo set-default
+```
+
+Then choose the original repo, e.g. `KekeMerz/eitcourse-kekemerze`.
+
+Then, run the `gh pr create` command again.
 
 # Controlled chaos: choose a paper and make some changes!
 
