@@ -155,3 +155,15 @@ Add headings with the following structure:
 -   Export your mindmap from excalidraw as a PNG or JPG file or take a screenshot
 -   Save the image in a folder called `images` in your project folder, or paste it into the paper while in visual mode
 -   Add it to your paper under the Introduction section, with a caption
+
+## Push your changes to GitHub
+
+-   Use Git/GitHub to push your changes to your GitHub repo
+
+e.g. with:
+
+``` bash
+git add paper.qmd images/mindmap.png  # Add any other changed files too
+git commit -m "Add initial paper draft and mindmap figure"
+git push # or git push origin main if you want to be explicit
+```
