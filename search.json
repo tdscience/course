@@ -124,7 +124,14 @@
     "href": "slides/day2.html#recap-of-day-1",
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Recap of Day 1",
-    "text": "Recap of Day 1"
+    "text": "Recap of Day 1\nYou’ve forked a repo, now what?"
+  },
+  {
+    "objectID": "slides/day2.html#section",
+    "href": "slides/day2.html#section",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "",
+    "text": "You can sync your fork with the… “Sync fork” button.\n\nHow to do this with the gh cli"
   },
   {
     "objectID": "slides/day2.html#generate-a-mind-map-of-a-topic-of-interest-to-you",
