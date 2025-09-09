@@ -589,6 +589,13 @@
     "text": "3.4 Add your mindmap to the paper as Figure 1\n\nExport your mindmap from excalidraw as a PNG or JPG file or take a screenshot\nSave the image in a folder called images in your project folder, or paste it into the paper while in visual mode\nAdd it to your paper under the Introduction section, with a caption"
   },
   {
+    "objectID": "s5.html#push-your-changes-to-github",
+    "href": "s5.html#push-your-changes-to-github",
+    "title": "Drafting a reproducible paper",
+    "section": "3.5 Push your changes to GitHub",
+    "text": "3.5 Push your changes to GitHub\n\nUse Git/GitHub to push your changes to your GitHub repo\n\ne.g. with:\ngit add paper.qmd images/mindmap.png  # Add any other changed files too\ngit commit -m \"Add initial paper draft and mindmap figure\"\ngit push # or git push origin main if you want to be explicit"
+  },
+  {
     "objectID": "collisions.html",
     "href": "collisions.html",
     "title": "STATS19",
