@@ -124,7 +124,7 @@ See <https://excalidraw.com/#room=cf5501f9193c8345ee2d,h6D4Ddxni6JBK0dg0m2aZQ> f
 
 ## Create a reproducible paper skeleton
 
-Create a file called `paper.qmd` in your project folder, and add the following content:
+Add content to your paper draft or create a new file, e.g. called `paper.qmd`, and edit it e.g. to include the following content (add more advanced content if you already have this):
 
 ``` yaml
 ---
