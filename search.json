@@ -106,20 +106,6 @@
     "text": "Course overview (see schedule)\nDay 1 (recap)\n\nDevelopment environments, 2) Sharing code (Git/GitHub), 3) Introduction to Quarto 4) Cross-references and citations with Quarto\n\nDay 2\n\n09:30-10:30 Drafting a reproducible paper\n10:45-12:30 Generating reproducible publication-quality visualisations\n13:30-14:30 Editing other people’s work\n14:45-16:00 Working on papers -&gt; Presentations and wrap-up"
   },
   {
-    "objectID": "slides/day2.html#lets-recap-what-we-covered-yesterday",
-    "href": "slides/day2.html#lets-recap-what-we-covered-yesterday",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Let’s recap what we covered yesterday:",
-    "text": "Let’s recap what we covered yesterday:\n\nSession 1: Setting up a reproducible environment with R, RStudio, and Git/GitHub\nSession 2: Sharing code and data with GitHub\nSession 3: Writing reproducible papers with Quarto\nSession 4: Cross-references and citations with Quarto"
-  },
-  {
-    "objectID": "slides/day2.html#decision",
-    "href": "slides/day2.html#decision",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Decision!",
-    "text": "Decision!\n\nLive demo of creating a repo, forking, cloning, editing, pushing, pulling, making a PR?\nWeb UI, gh cli, or both?\nMe, you, or both?"
-  },
-  {
     "objectID": "slides/day2.html#recap-of-day-1",
     "href": "slides/day2.html#recap-of-day-1",
     "title": "Tools and Skills for Reproducible Transport Research",
@@ -132,13 +118,6 @@
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Syncing your fork",
     "text": "Syncing your fork\nYou can sync your fork with the.. “Sync fork” button.\n\nClick “Update branch”."
-  },
-  {
-    "objectID": "slides/day2.html#using-the-github-documentation",
-    "href": "slides/day2.html#using-the-github-documentation",
-    "title": "Tools and Skills for Reproducible Transport Research",
-    "section": "Using the (GitHub) documentation",
-    "text": "Using the (GitHub) documentation\n\nSearch on docs.github.com for “syncing a fork”."
   },
   {
     "objectID": "slides/day2.html#update-branch",
@@ -565,7 +544,7 @@
     "href": "s5.html#using-official-documentation",
     "title": "Drafting a reproducible paper",
     "section": "3.1 Using official documentation",
-    "text": "3.1 Using official documentation\n\nSearch either docs.github.com or cli.github.com/manual for a topic that interests you\nTake a look at the equivalent Quarto official documentation site\n\nNavigate to the Figures documentation section\n\nBookmark pages that interest you"
+    "text": "3.1 Using official documentation\n\nSearch either docs.github.com or cli.github.com/manual for a topic that interests you\nTake a look at the equivalent Quarto official documentation site\n\nNavigate to the Figures documentation section\n\nBookmark pages that interest"
   },
   {
     "objectID": "s5.html#generate-a-mind-map-of-a-topic-of-interest-to-you",
