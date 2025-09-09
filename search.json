@@ -183,6 +183,41 @@
     "text": "Any questions before we move to the practical session?"
   },
   {
+    "objectID": "slides/day2.html#feedback-form",
+    "href": "slides/day2.html#feedback-form",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Feedback form",
+    "text": "Feedback form\nPlease provide feedback with the QR code so we can improve the course."
+  },
+  {
+    "objectID": "slides/day2.html#merging-prs",
+    "href": "slides/day2.html#merging-prs",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Merging PRs",
+    "text": "Merging PRs\nSee the documentation on PRs at docs.github.com.\nAnd specifically, the reviewing PRs section at https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests."
+  },
+  {
+    "objectID": "slides/day2.html#pull-requests-in-the-wild",
+    "href": "slides/day2.html#pull-requests-in-the-wild",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Pull requests in the wild",
+    "text": "Pull requests in the wild\n\nSee the ROpenSci slopes PR for an example."
+  },
+  {
+    "objectID": "slides/day2.html#example-of-quarto-in-production",
+    "href": "slides/day2.html#example-of-quarto-in-production",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Example of ‘Quarto in production’",
+    "text": "Example of ‘Quarto in production’\nPresentation from Gonçalo Matos\nSee his work at https://github.com/gmatosferreira"
+  },
+  {
+    "objectID": "slides/day2.html#publishing-your-work",
+    "href": "slides/day2.html#publishing-your-work",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Publishing your work",
+    "text": "Publishing your work\nAfter you’ve created your paper, you have many options for publishing it.\nSee https://quarto.org/docs/publishing/ for details."
+  },
+  {
     "objectID": "materials.html",
     "href": "materials.html",
     "title": "Course Materials",
@@ -323,7 +358,7 @@
     "href": "s8.html",
     "title": "Working on papers and publishing your work",
     "section": "",
-    "text": "1 Exercise\nWork on your project repo, bringing together elements from the course, ready to present your work to the group.\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "1 Exercise\nWork on your project repo, bringing together elements from the course, ready to present your work to the group.\nBonus: publish your work to a website using GitHub Pages.\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "peoplemap.html",
