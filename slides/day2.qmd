@@ -231,3 +231,9 @@ Max 2 minutes to say:
 - What you learned
 
 ## Thank you!
+
+- Feel free to get in touch with me (Robin) or Juan if you have questions via email (or of course GitHub!)
+
+- Plug: 2 courses on [data science for transport planning](https://www.robinlovelace.net/talk/data-science-for-transport-planning-2-day-course/), upcoming
+- Plug: Mobile Tartu Summer School in June
+- Thanks: the amazing people who build Quarto and the other tools we have used
