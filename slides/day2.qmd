@@ -36,6 +36,19 @@ bibliography: references.bib
 -   13:30-14:30 Editing other people's work
 -   14:45-16:00 Working on papers -\> Presentations and wrap-up
 
+## Let's recap what we covered yesterday:
+
+-   [Session 1](s1.qmd): Setting up a reproducible environment with R, RStudio, and Git/GitHub
+-   [Session 2](s2.qmd): Sharing code and data with GitHub
+-   [Session 3](s3.qmd): Writing reproducible papers with Quarto
+-   [Session 4](s4.qmd): Cross-references and citations with Quarto
+
+## Decision!
+
+- Live demo of creating a repo, forking, cloning, editing, pushing, pulling, making a PR?
+- Web UI, gh cli, or both?
+- Me, you, or both?
+
 ## Recap of Day 1
 
 You've forked a repo, now what?
@@ -49,6 +62,11 @@ You can sync your fork with the.. "Sync fork" button.
 ![](../images/resync2.png)
 
 Click "Update branch".
+
+## Using the (GitHub) documentation
+
+<!-- https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork -->
+Search on [docs.github.com](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) for "syncing a fork".
 
 ## Update branch
 
