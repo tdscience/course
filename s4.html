@@ -297,16 +297,49 @@ Tip
 </section>
 <section id="citations" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="citations"><span class="header-section-number">3</span> Citations</h2>
-<p>Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating <a href="https://www.zotero.org/">Zotero</a> into your workflow. This integration is already set up in RStudio and Positron in the visual editor. For VS Code, you can install an extension to use citations from your Zotero library, e.g.&nbsp;<a href="https://marketplace.visualstudio.com/items?itemName=mblode.zotero">Citation Picker for Zotero</a>.</p>
+<p>Citations to reference external sources such as journal articles, books, or websites can also be used in Quarto. They can be added manually, but we recommend integrating <a href="https://www.zotero.org/">Zotero</a> into your workflow. This integration is already set up for all IDEs in the visual editor.</p>
+<p>To activate the visual editor on Positron and VS Code, right-click on your qmd file and select <code>Edit in Visual Mode</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/visual_editor_menu.png" class="img-fluid figure-img"></p>
+<figcaption>Activate visual mode</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To add captions to your code-generated tables and figures, use <code>fig-cap</code> or <code>tbl-cap</code> in the chunk headers.</p>
+</div>
+</div>
 <p>It is also important to have a tidy set of citation keys for your references, since you will use those to reference them in your text. The <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX plug-in</a> can help with that.</p>
-<p>Once you have Zotero and your IDE integrated, the process should be smooth following these steps:</p>
-<ul>
-<li><p>Add a bibliography file (e.g., <code>references.bib</code>) to your project.</p></li>
-<li><p>In your YAML header, include:</p>
-<pre><code>bibliography: references.bib</code></pre></li>
-<li><p>To cite a source, use <code>[@key]</code> in your text:</p>
-<pre><code>Recent studies show... [@smith2020].</code></pre></li>
-</ul>
+<p>To start adding references to your work, if you are in the visual editor, start by typing an <code>@</code>. A menu with a list of possible references will pop up.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/menu_references.png" class="img-fluid figure-img"></p>
+<figcaption>Menu with citable sources</figcaption>
+</figure>
+</div>
+<p>You can look for the source manually within that menu, but the most efficient way is to type directly the BibTeX citation key in Zotero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/citation_key_zotero.png" class="img-fluid figure-img"></p>
+<figcaption>Citation key in Zotero</figcaption>
+</figure>
+</div>
+<p>After selecting the source, a window will appear where all the details for that citation will appear. You can also choose where to add that citation. This means that the system does collect all the citations that you use in your work, and you do not have to worry about creating a bibliography manually!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/citation_new.png" class="img-fluid figure-img"></p>
+<figcaption>Citation window</figcaption>
+</figure>
+</div>
 </section>
 <section id="bibliographies" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="bibliographies"><span class="header-section-number">4</span> Bibliographies</h2>
@@ -324,11 +357,6 @@ Tip
 <li>Create a figure and a table, each with a label and caption.</li>
 <li>Reference your figure and table in the text using cross-references.</li>
 <li>Render your document and check that citations, references, and cross-references are formatted correctly.</li>
-<li>Bonus: Find someone else’s <code>eitcourse</code> repo and clone it. Can you reproduce the results?
-<ul>
-<li>You could ask you neighbour to share their repository with you.</li>
-<li>Or try <code>robinlovelace/eitcourse</code> or <code>juanfonsecals1/eitcourse</code>.</li>
-</ul></li>
 </ul>
 
 

@@ -209,7 +209,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#recap-of-day-1" id="toc-recap-of-day-1" class="nav-link active" data-scroll-target="#recap-of-day-1"><span class="header-section-number">1</span> Recap of Day 1</a></li>
+  <li><a href="#recap-of-day-1" id="toc-recap-of-day-1" class="nav-link active" data-scroll-target="#recap-of-day-1"><span class="header-section-number">1</span> Recap of Day 1</a>
+  <ul class="collapse">
+  <li><a href="#syncing-your-fork" id="toc-syncing-your-fork" class="nav-link" data-scroll-target="#syncing-your-fork"><span class="header-section-number">1.1</span> Syncing your fork</a></li>
+  </ul></li>
   <li><a href="#topic-selection" id="toc-topic-selection" class="nav-link" data-scroll-target="#topic-selection"><span class="header-section-number">2</span> Topic selection</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3</span> Exercises</a>
   <ul class="collapse">
@@ -244,6 +247,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="recap-of-day-1" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Recap of Day 1</h1>
+<p>Let’s recap what we covered yesterday:</p>
+<ul>
+<li><a href="./s1.html">Session 1</a>: Setting up a reproducible environment with R, RStudio, and Git/GitHub</li>
+<li><a href="./s2.html">Session 2</a>: Sharing code and data with GitHub</li>
+<li><a href="./s3.html">Session 3</a>: Writing reproducible papers with Quarto</li>
+<li><a href="./s4.html">Session 4</a>: Cross-references and citations with Quarto</li>
+</ul>
+<section id="syncing-your-fork" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="syncing-your-fork"><span class="header-section-number">1.1</span> Syncing your fork</h2>
+<p>You’ve forked a repo, now what?</p>
+<p><img src="images/resync1.png" class="img-fluid"></p>
+<p>You can sync your fork with the… “Sync fork” button.</p>
+<p><img src="images/resync2.png" class="img-fluid"></p>
+<p>Click “Update branch”.</p>
+<p>After syncing:</p>
+<pre><code>This branch is 2 commits ahead of, 3 commits behind tdscience/course:main.</code></pre>
+<p>How to do this with the <code>gh cli</code>: use <code>gh repo sync</code>.</p>
+<p>Example usage from this morning showing how to deal with merge conflicts:</p>
+<pre><code>robin@robin-Apollo:~/github/robinlovelace$ gh repo clone course
+fatal: destination path 'course' already exists and is not an empty directory.
+failed to run git: exit status 128
+robin@robin-Apollo:~/github/robinlovelace$ cd course/
+robin@robin-Apollo:~/github/robinlovelace/course$ git log -n 2
+commit c4b203b33714390e1d7d380ddc8d8ef1d4aeb131 (HEAD -&gt; main, origin/main, origin/HEAD)
+Author: robinlovelace &lt;rob00x@gmail.com&gt;
+Date:   Mon Sep 8 14:22:47 2025 +0100
+
+    Update people.csv
+
+commit 32b3c1dd0acae412eefc051abb67c723725c0caa (upstream/main, upstream/HEAD)
+Merge: ae4354e c561743
+Author: Robin Lovelace &lt;Robinlovelace@users.noreply.github.com&gt;
+Date:   Mon Sep 8 14:07:26 2025 +0100
+
+    Merge pull request #42 from tdscience/Robinlovelace-patch-1
+    
+    Fix capitalization of 'Red kite' in people.csv
+robin@robin-Apollo:~/github/robinlovelace/course$ gh repo sync
+can't sync because there are diverging changes; use `--force` to overwrite the destination branch
+robin@robin-Apollo:~/github/robinlovelace/course$ 
+robin@robin-Apollo:~/github/robinlovelace/course$ 
+robin@robin-Apollo:~/github/robinlovelace/course$ gh repo sync --force
+✓ Synced the "main" branch from "tdscience/course" to local repository
+robin@robin-Apollo:~/github/robinlovelace/course$ git pull
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+robin@robin-Apollo:~/github/robinlovelace/course$ git config pull.rebase false
+robin@robin-Apollo:~/github/robinlovelace/course$ git pull
+Auto-merging data/people.csv
+Merge made by the 'ort' strategy.
+ data/people.csv | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+</section>
 </section>
 <section id="topic-selection" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Topic selection</h1>
@@ -264,23 +331,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="create-a-reproducible-paper-skeleton" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="create-a-reproducible-paper-skeleton"><span class="header-section-number">3.2</span> Create a reproducible paper skeleton</h2>
 <p>Create a file called <code>paper.qmd</code> in your project folder, and add the following content:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your title here"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your name here"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your title here"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your name here"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add headings with the following structure:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction {#sec-intro}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: add content --&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methods {#sec-methods}</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Results {#sec-results}</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion {#sec-discussion}</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction {#sec-intro}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co">: add content --&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methods {#sec-methods}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Results {#sec-results}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion {#sec-discussion}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="add-your-mindmap-to-the-paper-as-figure-1" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="add-your-mindmap-to-the-paper-as-figure-1"><span class="header-section-number">3.3</span> Add your mindmap to the paper as Figure 1</h2>
