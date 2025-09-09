@@ -255,6 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✓ Updated the "origin" remote</code></pre>
 <section id="forking-you-colleagues-repo" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="forking-you-colleagues-repo"><span class="header-section-number">1.1</span> Forking you colleague’s repo</h2>
+<p>Find the username you have been assigned to in the <a href="https://github.com/tdscience/course/blob/main/data/people_updated.csv">people_updated.csv file</a>.</p>
 <p>Find the repo associated with the colleague. If the username of the person you’re assigned to is called kekeMerz, for example, you can find them with the gh search command as follows, for example:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> search repos <span class="at">--owner</span> kekeMerz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see something like this:</p>
@@ -281,7 +282,7 @@ robin@robin-Apollo:~/github/tdscience/course$</code></pre>
 <h1 data-number="3"><span class="header-section-number">3</span> Making changes and submitting Pull Requests</h1>
 <p>Open their repo in an editor</p>
 <p>Open RStudio and click ‘open project’, navigating to the folder you just cloned, or create new project if there is no .Rproj file.</p>
-<p>e.g.&nbsp;</p>
+<p>e.g.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/github/eitcourse-kekemerz</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Or Rstudio</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> ~/github/eitcourse-kekemerz/eitcourse.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,6 +300,10 @@ robin@robin-Apollo:~/github/tdscience/course$</code></pre>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, submit a pull request (PR) with:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> pr create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you get an error about the default repo not being set, you can set the default repo with:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo set-default</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then choose the original repo, e.g.&nbsp;<code>KekeMerz/eitcourse-kekemerze</code>.</p>
+<p>Then, run the <code>gh pr create</code> command again.</p>
 </section>
 <section id="controlled-chaos-choose-a-paper-and-make-some-changes" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Controlled chaos: choose a paper and make some changes!</h1>
