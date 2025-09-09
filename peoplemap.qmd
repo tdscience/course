@@ -45,6 +45,9 @@ if (!file.exists("data/people_geo.gejson")) {
   library(sf)
   people_geo = people |>
     tidygeocoder::geocode(address = from, method = 'osm', lat = latitude , long = longitude) |>
+    # add random jitter to avoid overplotting
+    mutate(latitude = latitude + rnorm(n(), 0, 1),
+           longitude = longitude + rnorm(n(), 0, 1)) |>
     st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
   people_geo
   sf::write_sf(people_geo, "data/people_geo.geojson", delete_dsn = TRUE)
@@ -68,5 +71,15 @@ Here's an equation for calculating the number of animals in each category:
 $$
 N = \sum_{i=1}^{k} n_i
 $$
+
+```{r}
+# Save updated csv file
+people_updated = people_geo |>
+  filter(!str_detect(username, "robin|juan")) |>
+  st_drop_geometry() |>
+  select(username)
+people_updated$reviews = c(people_updated$username[-1], people_updated$username[1])
+readr::write_csv(people_updated, "data/people_updated.csv")
+```
 
 # References
