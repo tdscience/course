@@ -38,20 +38,21 @@ bibliography: references.bib
 -   **09:30-10:30 Drafting a reproducible paper**
 -   10:45-12:30 Generating reproducible publication-quality visualisations
 -   13:30-14:30 Editing other people's work
--   14:45-16:00 Working on papers -> Presentations and wrap-up
+-   14:45-16:00 Working on papers -\> Presentations and wrap-up
 
 ## Housekeeping
 
 ### WiFi (if eduroam is not working):
-- SSID: Eventos IGOT
-- Password: sAfrcutm
+
+-   SSID: Eventos IGOT
+-   Password: sAfrcutm
 
 ### Coffee will be downstairs
 
 ### Toilets:
 
-- Women's in front of Room 2.1
-- Men's by the stairs
+-   Women's in front of Room 2.1
+-   Men's by the stairs
 
 ## About us
 
@@ -70,7 +71,18 @@ bibliography: references.bib
 
 ## Recap of Day 1
 
+You've forked a repo, now what?
 
+![](images/paste-7.png)
+
+## 
+
+You can sync your fork with the...
+"Sync fork" button.
+
+![](images/paste-8.png)
+
+How to do this with the `gh cli`
 
 # Topic selection
 
