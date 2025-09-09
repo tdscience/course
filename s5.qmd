@@ -6,19 +6,19 @@ format:
   html:
     other-links:
       - text: Day 2 slides
-        href: slides/day2.qmd
+        href: slides/day2.html
       - text: Course schedule
-        href: schedule.qmd
+        href: schedule.html
 ---
 
 # Recap of Day 1
 
 Let's recap what we covered yesterday:
 
-- [Session 1](s1.qmd): Setting up a reproducible environment with R, RStudio, and Git/GitHub
-- [Session 2](s2.qmd): Sharing code and data with GitHub
-- [Session 3](s3.qmd): Writing reproducible papers with Quarto
-- [Session 4](s4.qmd): Cross-references and citations with Quarto
+-   [Session 1](s1.qmd): Setting up a reproducible environment with R, RStudio, and Git/GitHub
+-   [Session 2](s2.qmd): Sharing code and data with GitHub
+-   [Session 3](s3.qmd): Writing reproducible papers with Quarto
+-   [Session 4](s4.qmd): Cross-references and citations with Quarto
 
 ## Syncing your fork
 
@@ -35,7 +35,7 @@ Click "Update branch".
 
 After syncing:
 
-```
+```         
 This branch is 2 commits ahead of, 3 commits behind tdscience/course:main.
 ```
 
@@ -43,7 +43,7 @@ How to do this with the `gh cli`: use `gh repo sync`.
 
 Example usage from this morning showing how to deal with merge conflicts:
 
-```
+```         
 robin@robin-Apollo:~/github/robinlovelace$ gh repo clone course
 fatal: destination path 'course' already exists and is not an empty directory.
 failed to run git: exit status 128
@@ -91,6 +91,10 @@ Merge made by the 'ort' strategy.
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
+See docs.github.com for more info and search the site.
+
+![](images/paste-5.png)
+
 # Topic selection
 
 Mind-mapping tools including pen and paper and online tools such as [excalidraw](https://excalidraw.com/).
@@ -102,6 +106,16 @@ See <https://excalidraw.com/#room=cf5501f9193c8345ee2d,h6D4Ddxni6JBK0dg0m2aZQ> f
 ![](images/paste-4.png)
 
 # Exercises
+
+## Using official documentation
+
+-   Search either [docs.github.com](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) or [cli.github.com/manual](https://cli.github.com/manual/) for a topic that interests you
+
+-   Take a look at the equivalent Quarto official documentation site
+
+    -   Navigate to the Figures documentation section
+
+-   Bookmark pages that interest
 
 ## Generate a 'mind map' of a topic of interest to you
 

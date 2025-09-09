@@ -27,11 +27,7 @@ bibliography: references.bib
 
 ### Day 1 (recap)
 
--   09:30-10:00 Introduction
--   10:00-11:00 Development environments, system commands, and version control
--   11:15-12:30 Sharing code and data
--   13:30-15:00 Reproducible papers and documentation with Quarto
--   15:15-16:30 Cross-references and citations with Quarto
+1) Development environments, 2) Sharing code (Git/GitHub), 3) Introduction to Quarto 4) Cross-references and citations with Quarto
 
 ### Day 2
 
@@ -40,47 +36,21 @@ bibliography: references.bib
 -   13:30-14:30 Editing other people's work
 -   14:45-16:00 Working on papers -\> Presentations and wrap-up
 
-## Housekeeping
-
-### WiFi (if eduroam is not working):
-
--   SSID: Eventos IGOT
--   Password: sAfrcutm
-
-### Coffee will be downstairs
-
-### Toilets:
-
--   Women's in front of Room 2.1
--   Men's by the stairs
-
-## About us
-
-### Robin Lovelace
-
--   Professor of Transport Data Science
--   Focus: influencing decision-making, to make it more evidence-based
--   R package developer and data scientist
--   New methods for more reproducible, data-driven and participatory transport planning
-
-### Juan Fonseca
-
--   PhD student at the University of Leeds
--   Focus: fast and flexible models for estimating traffic
--   Developer of {Telraamr} and {azuremapsr} R packages, the latter of which was recently published on CRAN
-
 ## Recap of Day 1
 
 You've forked a repo, now what?
 
 ![](../images/resync1.png)
 
-## 
+## Syncing your fork
 
-You can sync your fork with the...
-"Sync fork" button.
+You can sync your fork with the.. "Sync fork" button.
 
 ![](../images/resync2.png)
+
+Click "Update branch".
+
+## Update branch
 
 Click "Update branch".
 
@@ -142,7 +112,9 @@ Merge made by the 'ort' strategy.
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-# Topic selection
+
+
+## Topic selection
 
 Mind-mapping tools including pen and paper and online tools such as [excalidraw](https://excalidraw.com/).
 
