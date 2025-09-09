@@ -209,7 +209,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rename-your-repo" id="toc-rename-your-repo" class="nav-link active" data-scroll-target="#rename-your-repo"><span class="header-section-number">1</span> Rename your repo</a></li>
+  <li><a href="#rename-your-repo" id="toc-rename-your-repo" class="nav-link active" data-scroll-target="#rename-your-repo"><span class="header-section-number">1</span> Rename your repo</a>
+  <ul class="collapse">
+  <li><a href="#forking-you-colleagues-repo" id="toc-forking-you-colleagues-repo" class="nav-link" data-scroll-target="#forking-you-colleagues-repo"><span class="header-section-number">1.1</span> Forking you colleague’s repo</a></li>
+  </ul></li>
   <li><a href="#reviewing-and-commenting-on-papers" id="toc-reviewing-and-commenting-on-papers" class="nav-link" data-scroll-target="#reviewing-and-commenting-on-papers"><span class="header-section-number">2</span> Reviewing and commenting on papers</a></li>
   <li><a href="#making-changes-and-submitting-pull-requests" id="toc-making-changes-and-submitting-pull-requests" class="nav-link" data-scroll-target="#making-changes-and-submitting-pull-requests"><span class="header-section-number">3</span> Making changes and submitting Pull Requests</a></li>
   <li><a href="#controlled-chaos-choose-a-paper-and-make-some-changes" id="toc-controlled-chaos-choose-a-paper-and-make-some-changes" class="nav-link" data-scroll-target="#controlled-chaos-choose-a-paper-and-make-some-changes"><span class="header-section-number">4</span> Controlled chaos: choose a paper and make some changes!</a></li>
@@ -250,15 +253,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then, bingo, it will be renamed!</p>
 <pre><code>✓ Renamed repository Robinlovelace/eitcourse-robinlovelace
 ✓ Updated the "origin" remote</code></pre>
+<section id="forking-you-colleagues-repo" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="forking-you-colleagues-repo"><span class="header-section-number">1.1</span> Forking you colleague’s repo</h2>
+<p>Find the repo associated with the colleague. If the username of the person you’re assigned to is called kekeMerz, for example, you can find them with the gh search command as follows, for example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> search repos <span class="at">--owner</span> kekeMerz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see something like this:</p>
+<pre><code>Showing 1 of 1 repositories
+
+NAME                DESCRIPTION  VISIBILITY  UPDATED         
+KekeMerz/eitcourse               public      about 1 hour ago
+robin@robin-Apollo:~/github/tdscience/course$</code></pre>
+<p>Then, fork the repo with:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/github/</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo fork KekeMerz/eitcourse-kekemerze <span class="at">--clone</span><span class="op">=</span>true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="reviewing-and-commenting-on-papers" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Reviewing and commenting on papers</h1>
+<ul>
+<li><p>Open a comment in the repo you will will be editing</p></li>
+<li><p>First on the the web UI</p></li>
+<li><p>Then, for fun, with the following gh cli command:</p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue comment 1 <span class="at">--body</span> <span class="st">"Great work! I suggest adding a map."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="making-changes-and-submitting-pull-requests" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Making changes and submitting Pull Requests</h1>
+<p>Open their repo in an editor and make a minimal change, adding one empty line.</p>
+<p>Then, commit and push the change with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Great work! I suggest adding a map."</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bonus: make a more substantial change, e.g.&nbsp;adding a sentence, fixing a typo, or (ambitiously) adding a new figure.</p>
+<p>Then, commit and push the change with:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add a map to the paper."</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, submit a pull request (PR) with:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> pr create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="controlled-chaos-choose-a-paper-and-make-some-changes" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Controlled chaos: choose a paper and make some changes!</h1>
+<p>See https://github.com/tdscience/course/blob/main/data/people_updated.csv to find whose paper you will be commenting on and contributing to.</p>
 
 
 </section>

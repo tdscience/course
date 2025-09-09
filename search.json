@@ -279,7 +279,14 @@
     "href": "s7.html",
     "title": "Editing other people’s work",
     "section": "",
-    "text": "1 Rename your repo\nSearch the official GitHub documentation at docs.github.com for “rename a repository”.\nIt should take you here.\nFollow the instructions to rename your repo to eitcourse-yourname.\nYou can also rename it using the gh cli with:\ngh repo rename eitcourse-robinlovelace\nIt will ask you to confirm. Type “y” if you’re sure.\n\nThen, bingo, it will be renamed!\n✓ Renamed repository Robinlovelace/eitcourse-robinlovelace\n✓ Updated the \"origin\" remote\n\n\n2 Reviewing and commenting on papers\n\n\n3 Making changes and submitting Pull Requests\n\n\n4 Controlled chaos: choose a paper and make some changes!\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "Search the official GitHub documentation at docs.github.com for “rename a repository”.\nIt should take you here.\nFollow the instructions to rename your repo to eitcourse-yourname.\nYou can also rename it using the gh cli with:\ngh repo rename eitcourse-robinlovelace\nIt will ask you to confirm. Type “y” if you’re sure.\n\nThen, bingo, it will be renamed!\n✓ Renamed repository Robinlovelace/eitcourse-robinlovelace\n✓ Updated the \"origin\" remote\n\n\nFind the repo associated with the colleague. If the username of the person you’re assigned to is called kekeMerz, for example, you can find them with the gh search command as follows, for example:\ngh search repos --owner kekeMerz\nYou should see something like this:\nShowing 1 of 1 repositories\n\nNAME                DESCRIPTION  VISIBILITY  UPDATED         \nKekeMerz/eitcourse               public      about 1 hour ago\nrobin@robin-Apollo:~/github/tdscience/course$\nThen, fork the repo with:\ncd ~/github/\ngh repo fork KekeMerz/eitcourse-kekemerze --clone=true"
+  },
+  {
+    "objectID": "s7.html#forking-you-colleagues-repo",
+    "href": "s7.html#forking-you-colleagues-repo",
+    "title": "Editing other people’s work",
+    "section": "",
+    "text": "Find the repo associated with the colleague. If the username of the person you’re assigned to is called kekeMerz, for example, you can find them with the gh search command as follows, for example:\ngh search repos --owner kekeMerz\nYou should see something like this:\nShowing 1 of 1 repositories\n\nNAME                DESCRIPTION  VISIBILITY  UPDATED         \nKekeMerz/eitcourse               public      about 1 hour ago\nrobin@robin-Apollo:~/github/tdscience/course$\nThen, fork the repo with:\ncd ~/github/\ngh repo fork KekeMerz/eitcourse-kekemerze --clone=true"
   },
   {
     "objectID": "schedule.html",
