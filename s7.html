@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -169,8 +204,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#rename-your-repo" id="toc-rename-your-repo" class="nav-link active" data-scroll-target="#rename-your-repo"><span class="header-section-number">1</span> Rename your repo</a></li>
+  <li><a href="#reviewing-and-commenting-on-papers" id="toc-reviewing-and-commenting-on-papers" class="nav-link" data-scroll-target="#reviewing-and-commenting-on-papers"><span class="header-section-number">2</span> Reviewing and commenting on papers</a></li>
+  <li><a href="#making-changes-and-submitting-pull-requests" id="toc-making-changes-and-submitting-pull-requests" class="nav-link" data-scroll-target="#making-changes-and-submitting-pull-requests"><span class="header-section-number">3</span> Making changes and submitting Pull Requests</a></li>
+  <li><a href="#controlled-chaos-choose-a-paper-and-make-some-changes" id="toc-controlled-chaos-choose-a-paper-and-make-some-changes" class="nav-link" data-scroll-target="#controlled-chaos-choose-a-paper-and-make-some-changes"><span class="header-section-number">4</span> Controlled chaos: choose a paper and make some changes!</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -194,13 +238,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li>Reviewing and commenting on papers</li>
-<li>Making changes and submitting Pull Requests</li>
-<li>Controlled chaos: choose a paper and make some changes!</li>
-</ul>
+<section id="rename-your-repo" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Rename your repo</h1>
+<p>Search the official GitHub documentation at docs.github.com for “rename a repository”.</p>
+<p>It should take you <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository">here</a>.</p>
+<p>Follow the instructions to rename your repo to <code>eitcourse-yourname</code>.</p>
+<p>You can also rename it using the <code>gh cli</code> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo rename eitcourse-robinlovelace</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will ask you to confirm. Type “y” if you’re sure.</p>
+<p><img src="images/paste-6.png" class="img-fluid"></p>
+<p>Then, bingo, it will be renamed!</p>
+<pre><code>✓ Renamed repository Robinlovelace/eitcourse-robinlovelace
+✓ Updated the "origin" remote</code></pre>
+</section>
+<section id="reviewing-and-commenting-on-papers" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Reviewing and commenting on papers</h1>
+</section>
+<section id="making-changes-and-submitting-pull-requests" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Making changes and submitting Pull Requests</h1>
+</section>
+<section id="controlled-chaos-choose-a-paper-and-make-some-changes" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Controlled chaos: choose a paper and make some changes!</h1>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -610,7 +671,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

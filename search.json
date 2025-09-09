@@ -279,7 +279,7 @@
     "href": "s7.html",
     "title": "Editing other people’s work",
     "section": "",
-    "text": "Reviewing and commenting on papers\nMaking changes and submitting Pull Requests\nControlled chaos: choose a paper and make some changes!\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "1 Rename your repo\nSearch the official GitHub documentation at docs.github.com for “rename a repository”.\nIt should take you here.\nFollow the instructions to rename your repo to eitcourse-yourname.\nYou can also rename it using the gh cli with:\ngh repo rename eitcourse-robinlovelace\nIt will ask you to confirm. Type “y” if you’re sure.\n\nThen, bingo, it will be renamed!\n✓ Renamed repository Robinlovelace/eitcourse-robinlovelace\n✓ Updated the \"origin\" remote\n\n\n2 Reviewing and commenting on papers\n\n\n3 Making changes and submitting Pull Requests\n\n\n4 Controlled chaos: choose a paper and make some changes!\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "schedule.html",
@@ -314,9 +314,9 @@
   {
     "objectID": "s8.html",
     "href": "s8.html",
-    "title": "Working on papers",
+    "title": "Working on papers and publishing your work",
     "section": "",
-    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "1 Exercise\nWork on your project repo, bringing together elements from the course, ready to present your work to the group.\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "peoplemap.html",
