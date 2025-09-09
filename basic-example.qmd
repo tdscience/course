@@ -1,5 +1,21 @@
+---
+title: "Example paper"
+---
 
-```python
+See the mind map in @fig-mindmap.
+
+![Mindmap](images/clipboard-3828616400.png){#fig-mindmap}
+
+
+See @fig-rplot for a simple R plot.
+
+```{r}
+#| label: fig-rplot
+#| fig-cap: "A simple R plot"
+plot(1:9)
+```
+
+``` python
 #| eval: false
 x = 1
 x
