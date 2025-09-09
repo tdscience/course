@@ -31,8 +31,74 @@ Then, bingo, it will be renamed!
 ✓ Updated the "origin" remote
 ```
 
+## Forking you colleague's repo
+
+Find the repo associated with the colleague.
+If the username of the person you're assigned to is called kekeMerz, for example, you can find them with the gh search command as follows, for example:
+
+``` bash
+gh search repos --owner kekeMerz
+```
+
+You should see something like this:
+
+```
+Showing 1 of 1 repositories
+
+NAME                DESCRIPTION  VISIBILITY  UPDATED         
+KekeMerz/eitcourse               public      about 1 hour ago
+robin@robin-Apollo:~/github/tdscience/course$
+```
+
+Then, fork the repo with:
+
+``` bash
+cd ~/github/
+gh repo fork KekeMerz/eitcourse-kekemerze --clone=true
+```
+
 # Reviewing and commenting on papers
+
+-   Open a comment in the repo you will will be editing
+-   First on the the web UI
+
+
+- Then, for fun, with the following gh cli command:
+
+``` bash
+gh issue comment 1 --body "Great work! I suggest adding a map."
+```
+
+
 
 # Making changes and submitting Pull Requests
 
+Open their repo in an editor and make a minimal change, adding one empty line.
+
+Then, commit and push the change with:
+
+``` bash
+git add .
+git commit -m "Great work! I suggest adding a map."
+git push
+```
+
+Bonus: make a more substantial change, e.g. adding a sentence, fixing a typo, or (ambitiously) adding a new figure.
+
+Then, commit and push the change with:
+
+``` bash
+git add .
+git commit -m "Add a map to the paper."
+git push
+```
+
+Then, submit a pull request (PR) with:
+
+``` bash
+gh pr create
+```
+
 # Controlled chaos: choose a paper and make some changes!
+
+See https://github.com/tdscience/course/blob/main/data/people_updated.csv to find whose paper you will be commenting on and contributing to.
