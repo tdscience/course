@@ -64,6 +64,8 @@ We will not be able to go into the details of the use of `ggplot` and other pack
 - [Visualization for Social Data Science](https://vis4sds.github.io/vis4sds/)
 - [Plotnine](https://plotnine.org/)
 - [The R Graph Gallery](https://r-graph-gallery.com/)
+- [plotly: ggplotly](https://plotly.com/ggplot2/dumbbell-plots/)
+- [Interactive Content in Quarto](https://quarto.org/docs/interactive/)
 
 
 ## Practical: Creating a Visualisation for Your Paper
