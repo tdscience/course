@@ -9,3 +9,5 @@ format: html
 
 Work on your project repo, bringing together elements from the course, ready to present your work to the group.
 
+Bonus: publish your work to a website using GitHub Pages.
+
