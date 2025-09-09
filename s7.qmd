@@ -66,14 +66,30 @@ gh repo fork KekeMerz/eitcourse-kekemerze --clone=true
 - Then, for fun, with the following gh cli command:
 
 ``` bash
-gh issue comment 1 --body "Great work! I suggest adding a map."
+gh issue create
 ```
 
 
 
 # Making changes and submitting Pull Requests
 
-Open their repo in an editor and make a minimal change, adding one empty line.
+Open their repo in an editor
+
+Open RStudio and click 'open project', navigating to the folder you just cloned, or create new project if there is no .Rproj file.
+
+e.g. 
+
+``` bash
+code ~/github/eitcourse-kekemerz
+# Or Rstudio
+rstudio ~/github/eitcourse-kekemerz/eitcourse.Rproj
+```
+
+Optional: create a new branch with your issue.
+
+This avoids pushing to the main branch, but it's not essential for this exercise, let's keep it simple.
+
+and make a minimal change, adding one empty line.
 
 Then, commit and push the change with:
 
