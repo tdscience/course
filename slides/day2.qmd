@@ -222,3 +222,12 @@ See his work at https://github.com/gmatosferreira
 After you've created your paper, you have many options for publishing it.
 
 See <https://quarto.org/docs/publishing/> for details.
+
+## Presentations
+
+Max 2 minutes to say:
+
+- What you did
+- What you learned
+
+## Thank you!
