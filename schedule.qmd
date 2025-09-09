@@ -26,11 +26,13 @@ pagetitle: "Course Schedule"
 | 09:30 - 10:30 | Drafting a reproducible paper | [{{< bi file-earmark-code size=1.5em >}}](s5.qmd) | | |
 | 10:30 - 10:45 | Break | | | 
 | 10:45 - 12:30 | Generating reproducible publication-quality visualisations | [{{< bi file-earmark-code size=1.5em >}}](s6.qmd) | |
-| 12:30 - 13:30 | Lunch | | | 
+| 12:30 - 12:35 | Team photo! | | | 
+| 12:35 - 13:30 | Lunch | | | 
 | 13:30 - 14:30 | Editing other people’s work | [{{< bi file-earmark-code size=1.5em >}}](s7.qmd) | |
 | 14:30 - 14:45 | Break | | | 
 | 14:45 - 16:00 | Working on papers | [{{< bi file-earmark-code size=1.5em >}}](s8.qmd) | |
-| 16:00 - 17:00 | Presentations and wrap-up | | | 
+| 16:00 - 16:50 | Presentations and wrap-up | | |
+| 16:50 - 17:00 | Prize presentation, feedback and close | | | 
 
 : {tbl-colwidths="\[20,70,5,5\]" .sm .striped}
 
