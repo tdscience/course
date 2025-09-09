@@ -8,9 +8,9 @@
 
 <meta name="author" content="Robin Lovelace &amp; contributors">
 <meta name="dcterms.date" content="2025">
-<meta name="description" content="Create reproducible, publication-quality visualizations for transport planning using ggplot2 and other tools.">
+<meta name="description" content="Create reproducible, publication-quality visualisations for transport planning using ggplot2 and other tools.">
 
-<title>Session 6: Data Visualization – Data Science Course - </title>
+<title>Session 6: Data Visualisation – Data Science Course - </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -169,8 +204,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-data-visualisation" id="toc-introduction-to-data-visualisation" class="nav-link active" data-scroll-target="#introduction-to-data-visualisation"><span class="header-section-number">1</span> Introduction to Data Visualisation</a></li>
+  <li><a href="#web-application-development-for-transport-planning" id="toc-web-application-development-for-transport-planning" class="nav-link" data-scroll-target="#web-application-development-for-transport-planning"><span class="header-section-number">2</span> Web Application Development for Transport Planning</a></li>
+  <li><a href="#ggplot2-overview" id="toc-ggplot2-overview" class="nav-link" data-scroll-target="#ggplot2-overview"><span class="header-section-number">3</span> ggplot2 Overview</a></li>
+  <li><a href="#practical-creating-a-visualisation-for-your-paper" id="toc-practical-creating-a-visualisation-for-your-paper" class="nav-link" data-scroll-target="#practical-creating-a-visualisation-for-your-paper"><span class="header-section-number">4</span> Practical: Creating a Visualisation for Your Paper</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -194,13 +238,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-data-visualisation" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-to-data-visualisation"><span class="header-section-number">1</span> Introduction to Data Visualisation</h2>
+<p>Data visualisation is a key part of research to communicate complex data and insights clearly. Effective visualisations help reveal patterns, trends, and relationships in your data, making your research more accessible and impactful.</p>
 <ul>
-<li>An introduction to visualisation and web application development for transport planning</li>
-<li>A deep dive into ggplot2</li>
-<li>Practical: creating a visualisation for your paper</li>
+<li>Visualisations can be static (for publications) or interactive (for web applications).</li>
+<li>Reproducibility ensures that your figures can be regenerated from your code and data.</li>
+<li>Publication-quality graphics require attention to detail, clarity, and appropriate formatting.</li>
 </ul>
+</section>
+<section id="web-application-development-for-transport-planning" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="web-application-development-for-transport-planning"><span class="header-section-number">2</span> Web Application Development for Transport Planning</h2>
+<p>Web applications allow you to share interactive visualisations and analysis with a wider audience.</p>
+<ul>
+<li>Tools like Shiny (R) and Dash (Python) can be used to build web apps for transport data.</li>
+<li>Interactive maps, dashboards, and charts help stakeholders explore scenarios and results.</li>
+<li>Reproducible workflows ensure that web apps can be updated and maintained easily.</li>
+</ul>
+</section>
+<section id="ggplot2-overview" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ggplot2-overview"><span class="header-section-number">3</span> ggplot2 Overview</h2>
+<p><code>ggplot2</code> is a powerful and flexible R package for creating high-quality graphics. <code>ggplot</code> is based on the Grammar of Graphics, allowing you to build plots layer by layer.</p>
+<p>As an example, in the code below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Fuel Efficiency by Car Weight"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Miles per Gallon"</span>) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>- `ggplot(mtcars, aes(x = wt, y = mpg))` sets up the plot, specifying the data (`mtcars`) and mapping variables (`wt` for weight and `mpg` for miles per gallon) to the axes.
+- `geom_point()` adds a layer of points, creating a scatterplot.
+- `labs(title = "Fuel Efficiency by Car Weight", x = "Weight (1000 lbs)", y = "Miles per Gallon")` adds a title and axis labels for clarity.
+- `theme_minimal()` applies a clean, minimal theme for publication-quality appearance.</code></pre>
+<ul>
+<li>Supports a wide range of plot types: scatterplots, line charts, bar charts, maps, and more.</li>
+<li>Customisable themes, labels, colours, and annotations for publication-ready figures.</li>
+</ul>
+<p>Example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Fuel Efficiency by Car Weight"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Miles per Gallon"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="s6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We will not be able to go into the details of the use of <code>ggplot</code> and other packages. But if you are interested, here are some great resources:</p>
+<ul>
+<li><a href="https://vis4sds.github.io/vis4sds/">Visualization for Social Data Science</a></li>
+<li><a href="https://plotnine.org/">Plotnine</a></li>
+<li><a href="https://r-graph-gallery.com/">The R Graph Gallery</a></li>
+</ul>
+</section>
+<section id="practical-creating-a-visualisation-for-your-paper" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="practical-creating-a-visualisation-for-your-paper"><span class="header-section-number">4</span> Practical: Creating a Visualisation for Your Paper</h2>
+<p>Using the repository that you created yesterday. Try the following steps:</p>
+<ol type="1">
+<li>Choose a dataset relevant to your research. A small file is suggested.</li>
+<li>Copy the data to your repository.</li>
+<li>Add it to the <code>.gitignore</code> file (this is optional)</li>
+<li>Add the code in your <code>qmd</code> document to:
+<ul>
+<li>Use ggplot2 (or another tool) to create a clear, informative figure.</li>
+<li>Add appropriate labels, captions, and legends.</li>
+<li><strong>Extra:</strong> can you make it interactive?</li>
+</ul></li>
+<li>Render your document</li>
+<li>Stage, commit and push your changes</li>
+<li>Share your work</li>
+</ol>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>© 2025 Robin Lovelace</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -610,7 +731,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tdscience/course/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

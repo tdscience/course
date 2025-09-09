@@ -106,6 +106,20 @@
     "text": "Course overview (see schedule)\nDay 1 (recap)\n\nDevelopment environments, 2) Sharing code (Git/GitHub), 3) Introduction to Quarto 4) Cross-references and citations with Quarto\n\nDay 2\n\n09:30-10:30 Drafting a reproducible paper\n10:45-12:30 Generating reproducible publication-quality visualisations\n13:30-14:30 Editing other people’s work\n14:45-16:00 Working on papers -&gt; Presentations and wrap-up"
   },
   {
+    "objectID": "slides/day2.html#lets-recap-what-we-covered-yesterday",
+    "href": "slides/day2.html#lets-recap-what-we-covered-yesterday",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Let’s recap what we covered yesterday:",
+    "text": "Let’s recap what we covered yesterday:\n\nSession 1: Setting up a reproducible environment with R, RStudio, and Git/GitHub\nSession 2: Sharing code and data with GitHub\nSession 3: Writing reproducible papers with Quarto\nSession 4: Cross-references and citations with Quarto"
+  },
+  {
+    "objectID": "slides/day2.html#decision",
+    "href": "slides/day2.html#decision",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Decision!",
+    "text": "Decision!\n\nLive demo of creating a repo, forking, cloning, editing, pushing, pulling, making a PR?\nWeb UI, gh cli, or both?\nMe, you, or both?"
+  },
+  {
     "objectID": "slides/day2.html#recap-of-day-1",
     "href": "slides/day2.html#recap-of-day-1",
     "title": "Tools and Skills for Reproducible Transport Research",
@@ -118,6 +132,13 @@
     "title": "Tools and Skills for Reproducible Transport Research",
     "section": "Syncing your fork",
     "text": "Syncing your fork\nYou can sync your fork with the.. “Sync fork” button.\n\nClick “Update branch”."
+  },
+  {
+    "objectID": "slides/day2.html#using-the-github-documentation",
+    "href": "slides/day2.html#using-the-github-documentation",
+    "title": "Tools and Skills for Reproducible Transport Research",
+    "section": "Using the (GitHub) documentation",
+    "text": "Using the (GitHub) documentation\n\nSearch on docs.github.com for “syncing a fork”."
   },
   {
     "objectID": "slides/day2.html#update-branch",
@@ -495,7 +516,35 @@
     "href": "s6.html",
     "title": "Generating reproducible publication-quality visualisations",
     "section": "",
-    "text": "An introduction to visualisation and web application development for transport planning\nA deep dive into ggplot2\nPractical: creating a visualisation for your paper\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "Data visualisation is a key part of research to communicate complex data and insights clearly. Effective visualisations help reveal patterns, trends, and relationships in your data, making your research more accessible and impactful.\n\nVisualisations can be static (for publications) or interactive (for web applications).\nReproducibility ensures that your figures can be regenerated from your code and data.\nPublication-quality graphics require attention to detail, clarity, and appropriate formatting."
+  },
+  {
+    "objectID": "s6.html#introduction-to-data-visualisation",
+    "href": "s6.html#introduction-to-data-visualisation",
+    "title": "Generating reproducible publication-quality visualisations",
+    "section": "",
+    "text": "Data visualisation is a key part of research to communicate complex data and insights clearly. Effective visualisations help reveal patterns, trends, and relationships in your data, making your research more accessible and impactful.\n\nVisualisations can be static (for publications) or interactive (for web applications).\nReproducibility ensures that your figures can be regenerated from your code and data.\nPublication-quality graphics require attention to detail, clarity, and appropriate formatting."
+  },
+  {
+    "objectID": "s6.html#web-application-development-for-transport-planning",
+    "href": "s6.html#web-application-development-for-transport-planning",
+    "title": "Generating reproducible publication-quality visualisations",
+    "section": "2 Web Application Development for Transport Planning",
+    "text": "2 Web Application Development for Transport Planning\nWeb applications allow you to share interactive visualisations and analysis with a wider audience.\n\nTools like Shiny (R) and Dash (Python) can be used to build web apps for transport data.\nInteractive maps, dashboards, and charts help stakeholders explore scenarios and results.\nReproducible workflows ensure that web apps can be updated and maintained easily."
+  },
+  {
+    "objectID": "s6.html#ggplot2-overview",
+    "href": "s6.html#ggplot2-overview",
+    "title": "Generating reproducible publication-quality visualisations",
+    "section": "3 ggplot2 Overview",
+    "text": "3 ggplot2 Overview\nggplot2 is a powerful and flexible R package for creating high-quality graphics. ggplot is based on the Grammar of Graphics, allowing you to build plots layer by layer.\nAs an example, in the code below:\nlibrary(ggplot2)\ndata(mtcars)\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n- `ggplot(mtcars, aes(x = wt, y = mpg))` sets up the plot, specifying the data (`mtcars`) and mapping variables (`wt` for weight and `mpg` for miles per gallon) to the axes.\n- `geom_point()` adds a layer of points, creating a scatterplot.\n- `labs(title = \"Fuel Efficiency by Car Weight\", x = \"Weight (1000 lbs)\", y = \"Miles per Gallon\")` adds a title and axis labels for clarity.\n- `theme_minimal()` applies a clean, minimal theme for publication-quality appearance.\n\nSupports a wide range of plot types: scatterplots, line charts, bar charts, maps, and more.\nCustomisable themes, labels, colours, and annotations for publication-ready figures.\n\nExample:\n\nlibrary(ggplot2)\ndata(mtcars)\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWe will not be able to go into the details of the use of ggplot and other packages. But if you are interested, here are some great resources:\n\nVisualization for Social Data Science\nPlotnine\nThe R Graph Gallery"
+  },
+  {
+    "objectID": "s6.html#practical-creating-a-visualisation-for-your-paper",
+    "href": "s6.html#practical-creating-a-visualisation-for-your-paper",
+    "title": "Generating reproducible publication-quality visualisations",
+    "section": "4 Practical: Creating a Visualisation for Your Paper",
+    "text": "4 Practical: Creating a Visualisation for Your Paper\nUsing the repository that you created yesterday. Try the following steps:\n\nChoose a dataset relevant to your research. A small file is suggested.\nCopy the data to your repository.\nAdd it to the .gitignore file (this is optional)\nAdd the code in your qmd document to:\n\nUse ggplot2 (or another tool) to create a clear, informative figure.\nAdd appropriate labels, captions, and legends.\nExtra: can you make it interactive?\n\nRender your document\nStage, commit and push your changes\nShare your work"
   },
   {
     "objectID": "s5.html",
@@ -516,7 +565,7 @@
     "href": "s5.html#using-official-documentation",
     "title": "Drafting a reproducible paper",
     "section": "3.1 Using official documentation",
-    "text": "3.1 Using official documentation\n\nSearch either docs.github.com or cli.github.com/manual for a topic that interests you\nTake a look at the equivalent Quarto official documentation site\n\nNavigate to the Figures documentation section\n\nBookmark pages that interest"
+    "text": "3.1 Using official documentation\n\nSearch either docs.github.com or cli.github.com/manual for a topic that interests you\nTake a look at the equivalent Quarto official documentation site\n\nNavigate to the Figures documentation section\n\nBookmark pages that interest you"
   },
   {
     "objectID": "s5.html#generate-a-mind-map-of-a-topic-of-interest-to-you",
