@@ -579,7 +579,7 @@
     "href": "s5.html#create-a-reproducible-paper-skeleton",
     "title": "Drafting a reproducible paper",
     "section": "3.3 Create a reproducible paper skeleton",
-    "text": "3.3 Create a reproducible paper skeleton\nCreate a file called paper.qmd in your project folder, and add the following content:\n---\ntitle: \"Your title here\"\nauthor: \"Your name here\"\nformat: html\n---\nAdd headings with the following structure:\n# Introduction {#sec-intro}\n\n&lt;!-- TODO: add content --&gt;\n\n# Methods {#sec-methods}\n\n# Results {#sec-results}\n\n# Discussion {#sec-discussion}\n\n# References"
+    "text": "3.3 Create a reproducible paper skeleton\nAdd content to your paper draft or create a new file, e.g. called paper.qmd, and edit it e.g. to include the following content (add more advanced content if you already have this):\n---\ntitle: \"Your title here\"\nauthor: \"Your name here\"\nformat: html\n---\nAdd headings with the following structure:\n# Introduction {#sec-intro}\n\n&lt;!-- TODO: add content --&gt;\n\n# Methods {#sec-methods}\n\n# Results {#sec-results}\n\n# Discussion {#sec-discussion}\n\n# References"
   },
   {
     "objectID": "s5.html#add-your-mindmap-to-the-paper-as-figure-1",
