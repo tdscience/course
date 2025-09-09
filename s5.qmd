@@ -16,10 +16,14 @@ Let's recap what we covered yesterday:
 
 ## Syncing your fork
 
+You've forked a repo, now what?
+
+![](images/resync1.png)
+
 You can sync your fork with the...
 "Sync fork" button.
 
-![](../images/resync2.png)
+![](images/resync2.png)
 
 Click "Update branch".
 
