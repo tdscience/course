@@ -68,6 +68,8 @@ We will not be able to go into the details of the use of `ggplot` and other pack
 - [Interactive Content in Quarto](https://quarto.org/docs/interactive/)
 
 
+This is a test 
+
 ## Practical: Creating a Visualisation for Your Paper
 
 Using the repository that you created yesterday. Try the following steps:
