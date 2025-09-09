@@ -4,12 +4,12 @@ execute:
   echo: false
   message: false
   warning: false
+bibliography: references.bib
 ---
 
 ```{r}
 library(tidyverse)
 ```
-
 
 ```{r}
 #| include: false
@@ -29,13 +29,14 @@ animal_popularity = people |>
 
 See the most popular animals in @tbl-animal-popularity.
 
-
 ```{r}
 #| label: tbl-animal-popularity
 knitr::kable(animal_popularity, caption = "Most popular animals")
 ```
 
 See a map of locations where people are from in @fig-people-map.
+
+[@paulsen2024]
 
 ```{r}
 #| label: fig-people-map-data
@@ -61,3 +62,11 @@ tmap_mode("view")
 tm_shape(people_geo) +
   tm_dots(size = 1, fill = "animal")
 ```
+
+Here's an equation for calculating the number of animals in each category:
+
+$$
+N = \sum_{i=1}^{k} n_i
+$$
+
+# References

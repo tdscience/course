@@ -54,6 +54,6 @@ format:
 
 execute:
   freeze: false
-  cache: refresh
+  cache: true
 
 

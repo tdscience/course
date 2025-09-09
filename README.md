@@ -1,4 +1,3 @@
-![GitHub Actions](https://github.com/tdscience/course/workflows/publish/badge.svg)
 [![Open in DevContainer](https://img.shields.io/badge/Open%20in%20DevContainer-blue?logo=visual-studio-code)](https://codespaces.new/tdscience/course?quickstart=1)
 
 # Tools and Skills for Reproducible Transport Research

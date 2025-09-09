@@ -1,5 +1,5 @@
 
-```{python}
+```python
 #| eval: false
 x = 1
 x

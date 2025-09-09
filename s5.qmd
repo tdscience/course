@@ -5,6 +5,55 @@ pagetitle: "Session 5: Drafting Papers"
 format: html
 ---
 
--   Recap of Day 1
--   Topic selection
--   Individual work on paper drafts
+# Recap of Day 1
+
+# Topic selection
+
+Mind-mapping tools including pen and paper and online tools such as [excalidraw](https://excalidraw.com/).
+
+An advantage with Excalidraw is that you can instantly share your mindmap and collaborate with others.
+
+See <https://excalidraw.com/#room=cf5501f9193c8345ee2d,h6D4Ddxni6JBK0dg0m2aZQ> for an example mindmap.
+
+![](images/paste-4.png)
+
+# Exercises
+
+## Generate a 'mind map' of a topic of interest to you
+
+-   Go to [excalidraw](https://excalidraw.com/) and start sketching an idea, including inputs and outputs
+-   Bonus: discuss with a partner and get feedback
+
+## Create a reproducible paper skeleton
+
+Create a file called `paper.qmd` in your project folder, and add the following content:
+
+``` yaml
+---
+title: "Your title here"
+author: "Your name here"
+format: html
+---
+```
+
+Add headings with the following structure:
+
+``` markdown
+# Introduction {#sec-intro}
+
+<!-- TODO: add content -->
+
+# Methods {#sec-methods}
+
+# Results {#sec-results}
+
+# Discussion {#sec-discussion}
+
+# References
+```
+
+## Add your mindmap to the paper as Figure 1
+
+-   Export your mindmap from excalidraw as a PNG or JPG file or take a screenshot
+-   Save the image in a folder called `images` in your project folder, or paste it into the paper while in visual mode
+-   Add it to your paper under the Introduction section, with a caption
