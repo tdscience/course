@@ -2,7 +2,13 @@
 title: "Drafting a reproducible paper"
 description-meta: "Learn to draft reproducible papers, including topic selection and individual work on paper drafts."
 pagetitle: "Session 5: Drafting Papers"
-format: html
+format:
+  html:
+    other-links:
+      - text: Day 2 slides
+        href: slides/day2.qmd
+      - text: Course schedule
+        href: schedule.qmd
 ---
 
 # Recap of Day 1
