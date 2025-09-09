@@ -314,9 +314,9 @@
   {
     "objectID": "s8.html",
     "href": "s8.html",
-    "title": "Working on papers",
+    "title": "Working on papers and publishing your work",
     "section": "",
-    "text": "Practical session bringing together elements from the course\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "1 Exercise\nWork on your project repo, bringing together elements from the course, ready to present your work to the group.\n\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "peoplemap.html",
@@ -374,9 +374,9 @@
   {
     "objectID": "basic-example.html",
     "href": "basic-example.html",
-    "title": "Tools and Skills for Reproducible Transport Research",
+    "title": "Example paper",
     "section": "",
-    "text": "#| eval: false\nx = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\nimport geopandas as gpd\nimport shapely\n\n# Create a shapely Point geometry for IGOT\n# 38.7493402,-9.155268\n# Note: (longitude, latitude)\nigot_point = shapely.Point(-9.155268, 38.7493402)  \n\n# Create a GeoSeries from the point\nigot_geom = gpd.GeoSeries([igot_point], crs=\"EPSG:4326\")\n\n# Combine geometry with attributes in a dictionary\nigot_data = {\n    'name': ['IGOT-ULisboa'],\n    'geometry': igot_geom\n}\n\n# Create a GeoDataFrame\nigot_layer = gpd.GeoDataFrame(igot_data)\nigot_layer\nigot_layer.explore()\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
+    "text": "See the mind map in Figure 1.\n\n\n\n\n\n\nFigure 1: Mindmap\n\n\n\nSee Figure 2 for a simple R plot.\n\nplot(1:9)\n\n\n\n\n\n\n\nFigure 2: A simple R plot\n\n\n\n\n\n#| eval: false\nx = 1\nx\n# IGOT-ULisboa - Instituto de Geografia e Ordenamento do Território da Universidade de Lisboa\nimport geopandas as gpd\nimport shapely\n\n# Create a shapely Point geometry for IGOT\n# 38.7493402,-9.155268\n# Note: (longitude, latitude)\nigot_point = shapely.Point(-9.155268, 38.7493402)  \n\n# Create a GeoSeries from the point\nigot_geom = gpd.GeoSeries([igot_point], crs=\"EPSG:4326\")\n\n# Combine geometry with attributes in a dictionary\nigot_data = {\n    'name': ['IGOT-ULisboa'],\n    'geometry': igot_geom\n}\n\n# Create a GeoDataFrame\nigot_layer = gpd.GeoDataFrame(igot_data)\nigot_layer\nigot_layer.explore()\n\n\n\nReuseCC BY-SA 4.0Copyright© 2025 Robin Lovelace"
   },
   {
     "objectID": "tp-schedule.html",
@@ -537,7 +537,7 @@
     "href": "s6.html#ggplot2-overview",
     "title": "Generating reproducible publication-quality visualisations",
     "section": "3 ggplot2 Overview",
-    "text": "3 ggplot2 Overview\nggplot2 is a powerful and flexible R package for creating high-quality graphics. ggplot is based on the Grammar of Graphics, allowing you to build plots layer by layer.\nAs an example, in the code below:\nlibrary(ggplot2)\ndata(mtcars)\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n- `ggplot(mtcars, aes(x = wt, y = mpg))` sets up the plot, specifying the data (`mtcars`) and mapping variables (`wt` for weight and `mpg` for miles per gallon) to the axes.\n- `geom_point()` adds a layer of points, creating a scatterplot.\n- `labs(title = \"Fuel Efficiency by Car Weight\", x = \"Weight (1000 lbs)\", y = \"Miles per Gallon\")` adds a title and axis labels for clarity.\n- `theme_minimal()` applies a clean, minimal theme for publication-quality appearance.\n\nSupports a wide range of plot types: scatterplots, line charts, bar charts, maps, and more.\nCustomisable themes, labels, colours, and annotations for publication-ready figures.\n\nExample:\n\nlibrary(ggplot2)\ndata(mtcars)\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWe will not be able to go into the details of the use of ggplot and other packages. But if you are interested, here are some great resources:\n\nVisualization for Social Data Science\nPlotnine\nThe R Graph Gallery"
+    "text": "3 ggplot2 Overview\nggplot2 is a powerful and flexible R package for creating high-quality graphics. ggplot is based on the Grammar of Graphics, allowing you to build plots layer by layer.\nAs an example, in the code below:\nlibrary(ggplot2)\ndata(mtcars)\n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n- `ggplot(mtcars, aes(x = wt, y = mpg))` sets up the plot, specifying the data (`mtcars`) and mapping variables (`wt` for weight and `mpg` for miles per gallon) to the axes.\n- `geom_point()` adds a layer of points, creating a scatterplot.\n- `labs(title = \"Fuel Efficiency by Car Weight\", x = \"Weight (1000 lbs)\", y = \"Miles per Gallon\")` adds a title and axis labels for clarity.\n- `theme_minimal()` applies a clean, minimal theme for publication-quality appearance.\n\nSupports a wide range of plot types: scatterplots, line charts, bar charts, maps, and more.\nCustomisable themes, labels, colours, and annotations for publication-ready figures.\n\nExample:\n\nlibrary(ggplot2)\ndata(mtcars)\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  labs(title = \"Fuel Efficiency by Car Weight\",\n       x = \"Weight (1000 lbs)\",\n       y = \"Miles per Gallon\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWe will not be able to go into the details of the use of ggplot and other packages. But if you are interested, here are some great resources:\n\nVisualization for Social Data Science\nPlotnine\nThe R Graph Gallery\nplotly: ggplotly\nInteractive Content in Quarto"
   },
   {
     "objectID": "s6.html#practical-creating-a-visualisation-for-your-paper",
