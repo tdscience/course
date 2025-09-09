@@ -1,10 +1,82 @@
 ---
 title: "Generating reproducible publication-quality visualisations"
-description-meta: "Create reproducible, publication-quality visualizations for transport planning using ggplot2 and other tools."
-pagetitle: "Session 6: Data Visualization"
+description-meta: "Create reproducible, publication-quality visualisations for transport planning using ggplot2 and other tools."
+pagetitle: "Session 6: Data Visualisation"
 format: html
 ---
 
--   An introduction to visualisation and web application development for transport planning
--   A deep dive into ggplot2
--   Practical: creating a visualisation for your paper
+## Introduction to Data Visualisation
+
+Data visualisation is a key part of research to communicate complex data and insights clearly. Effective visualisations help reveal patterns, trends, and relationships in your data, making your research more accessible and impactful.
+
+-   Visualisations can be static (for publications) or interactive (for web applications).
+-   Reproducibility ensures that your figures can be regenerated from your code and data.
+-   Publication-quality graphics require attention to detail, clarity, and appropriate formatting.
+
+## Web Application Development for Transport Planning
+
+Web applications allow you to share interactive visualisations and analysis with a wider audience.
+
+-   Tools like Shiny (R) and Dash (Python) can be used to build web apps for transport data.
+-   Interactive maps, dashboards, and charts help stakeholders explore scenarios and results.
+-   Reproducible workflows ensure that web apps can be updated and maintained easily.
+
+## ggplot2 Overview 
+
+`ggplot2` is a powerful and flexible R package for creating high-quality graphics. `ggplot` is based on the Grammar of Graphics, allowing you to build plots layer by layer.
+
+As an example, in the code below:
+
+```r
+library(ggplot2)
+data(mtcars)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Fuel Efficiency by Car Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon") +
+  theme_minimal()
+```
+
+    - `ggplot(mtcars, aes(x = wt, y = mpg))` sets up the plot, specifying the data (`mtcars`) and mapping variables (`wt` for weight and `mpg` for miles per gallon) to the axes.
+    - `geom_point()` adds a layer of points, creating a scatterplot.
+    - `labs(title = "Fuel Efficiency by Car Weight", x = "Weight (1000 lbs)", y = "Miles per Gallon")` adds a title and axis labels for clarity.
+    - `theme_minimal()` applies a clean, minimal theme for publication-quality appearance.
+-   Supports a wide range of plot types: scatterplots, line charts, bar charts, maps, and more. 
+-   Customisable themes, labels, colours, and annotations for publication-ready figures.
+
+Example:
+
+```{r}
+library(ggplot2)
+data(mtcars)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Fuel Efficiency by Car Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon") +
+  theme_minimal()
+```
+
+We will not be able to go into the details of the use of `ggplot` and other packages. But if you are interested, here are some great resources:
+
+- [Visualization for Social Data Science](https://vis4sds.github.io/vis4sds/)
+- [Plotnine](https://plotnine.org/)
+- [The R Graph Gallery](https://r-graph-gallery.com/)
+
+
+## Practical: Creating a Visualisation for Your Paper
+
+Using the repository that you created yesterday. Try the following steps:
+
+1. Choose a dataset relevant to your research. A small file is suggested.
+2. Copy the data to your repository.
+3. Add it to the `.gitignore` file (this is optional)
+4. Add the code in your `qmd` document to:
+    -   Use ggplot2 (or another tool) to create a clear, informative figure.
+    -   Add appropriate labels, captions, and legends.
+    - **Extra:** can you make it interactive?
+5. Render your document
+5. Stage, commit and push your changes
+6. Share your work
