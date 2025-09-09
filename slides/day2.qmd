@@ -70,6 +70,8 @@ bibliography: references.bib
 
 ## Recap of Day 1
 
+
+
 # Topic selection
 
 Mind-mapping tools including pen and paper and online tools such as [excalidraw](https://excalidraw.com/).
